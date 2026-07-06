@@ -1,0 +1,363 @@
+<resources>
+    <!--  App-->
+    <string name="app_name">CNC Rechner</string>
+    <string name="premium_function">Premium-Funktionen</string>
+
+    <!--  Main-->
+    <string name="main_button1">Fräsen\nund Abstechen</string>
+    <string name="main_button2">Drehen\nund Ausdrehen</string>
+    <string name="main_button3">Werkzeuge</string>
+    <string name="main_button4">Passungstabellen</string>
+    <string name="tables">Passungs\ntabellen</string>
+    <string name="main_button6">Einstellungen</string>
+    <string name="news">Neuigkeiten</string>
+
+    <!--  Settings-->
+    <string name="language">App-Sprache:</string>
+    <string name="settings_button2">Weitere Apps</string>
+    <string name="settings_button3">App bewerten</string>
+    <string name="settings_button4">Kaffee spendieren</string>
+    <string name="settings_button5">Abonnement</string>
+    <string name="calc_system">Berechnungssystem</string>
+    <string name="error">App konnte nicht gefunden werden</string>
+    <string name="privacy">Datenschutzerklärung</string>
+    <string name="app_restart">Neustart erforderlich</string>
+    <string name="app_restart_dialog">Um die App-Sprache zu ändern, ist ein Neustart der Anwendung erforderlich.</string>
+    <string name="app_restart_dialog_ok">Ok</string>
+    <string name="app_restart_dialog_save">Sprache gespeichert</string>
+
+    <!--  Cutting and boring-->
+    <string name="calculate_txt">Berechnungsart:</string>
+    <string name="calculate">Berechnen</string>
+    <string name="clear">Leeren</string>
+    <string name="i">i</string>
+    <string name="VC">Vc</string>
+    <string name="DC">Dc</string>
+    <string name="FZ">Fz</string>
+    <string name="Z">Z</string>
+    <string name="JT">Jn</string>
+    <string name="AS">As</string>
+    <string name="T">T</string>
+    <string name="L">L</string>
+    <string name="VF">Vf</string>
+    <string name="LB">Lb</string>
+    <string name="AP">Ap</string>
+    <string name="Fn">Fn</string>
+    <string name="KC">Kc</string>
+    <string name="DM">Dm</string>
+    <string name="close">SCHLIESSEN</string>
+    <string name="f_colon">F:</string>
+    <string name="s_colon">S:</string>
+    <string name="fz_colon">Fz:</string>
+    <string name="HD">HD</string>
+    <string name="TD">TD</string>
+    <string name="Rm">Rm</string>
+    <string name="HV">HV</string>
+    <string name="HB">HB</string>
+    <string name="HRC">HRC</string>
+    <string name="PointA">Punkt A</string>
+    <string name="PointB">Punkt B</string>
+    <string name="center_colon">Mitte: </string>
+    <string name="F">F</string>
+    <string name="LM">Bearbeitungslänge (Lm)</string>
+    <string name="tc_colon">Maschinenzeit (Tc): </string>
+    <string name="q_colon">Zeitspanvolumen (Q): </string>
+    <string name="calculateResult">BERECHNUNGSERGEBNISSE</string>
+    <string name="premium_required_title">Diese Funktion ist nur in der Vollversion der App verfügbar.</string>
+    <string name="premium_required_button">JAHRESABONNEMENT KAUFEN</string>
+    <string name="premium_required_cancel">VIELLEICHT SPÄTER</string>
+    <string name="premium_required_text">PREMIUM-OPTION</string>
+    <string name="error2">Bitte füllen Sie alle Felder mit gültigen Daten aus</string>
+    <string name="informationtext">INFORMATION</string>
+    <string name="RE">RE</string>
+    <string name="dm">dm</string>
+    <string name="forming_abbr">Form.</string>
+    <string name="thread_eg">EG</string>
+    <string name="mixed_abbr">Misch.</string>
+    <string name="step1_milling_category">Werkzeugkategorie</string>
+    <string name="step2_milling_diameter">Durchmesser</string>
+    <string name="step1_tourning_system">System auswählen</string>
+    <string name="step2_tourning_radius">Radius rε auswählen</string>
+    <string name="step3_model">Modell</string>
+    <string name="cat_tap">Gewindebohrer</string>
+    <string name="cat_forming_tap">Gewindeformer</string>
+    <string name="cat_eg_tap">EG-Gewindebohrer (Helicoil)</string>
+    <string name="cat_mill">Fräser</string>
+    <string name="cat_drill">Bohrer</string>
+    <string name="cat_reamer">Reibahle</string>
+    <string name="cat_boring">Ausdrehwerkzeug</string>
+    <string name="drill_hint_label">Empfohlener Bohrer:</string>
+    <string name="params_loaded">Ceratizit-Parameter geladen</string>
+    <string name="vc_warn_high">Warnung: Vc überschreitet das Werkzeuglimit!</string>
+    <string name="vc_info_low">Information: Vc liegt unter dem empfohlenen Bereich.</string>
+    <string name="select_tool_hint">Material und Werkzeug auswählen</string>
+    <string name="label_min">Min</string>
+    <string name="label_opt">Opt</string>
+    <string name="label_max">Max</string>
+    <string name="hint_hole_diameter">Bohrungsdurchmesser Dm</string>
+    <string name="hint_pitch">Steigung P [mm]</string>
+    <string name="hint_feed_rev">fn [mm/U]</string>
+    <string name="hint_feed_tooth">fz [mm/Z]</string>
+    <string name="cat_sink">Senker</string>
+    <string name="cat_multi">Mehrfunktionswerkzeuge</string>
+    <string name="error_no_tool_for_material">Kein Werkzeug für dieses Material verfügbar</string>
+    <string name="parameters_load">Parameter geladen</string>
+    <string name="angleInfo">Länge muss &gt; 0 sein</string>
+    <string name="calculation_error">Berechnungsfehler: %1$s</string>
+    <string name="toast_thread_selected">Ausgewählt: %1$s</string>
+    <string name="header_name">Name</string>
+    <string name="header_pitch">P</string>
+    <string name="header_tpi">TPI</string>
+    <string name="header_min">Min</string>
+    <string name="header_max">Max</string>
+    <string name="header_drill">Bohrer</string>
+    <string name="roughness_label">Rauheit (Ra):</string>
+    <string name="taper_label">Neigungswinkel (α):</string>
+    <string name="unit_min">%1$.2f min</string>
+    <string name="unit_cm3_min">%1$.1f cm³/min</string>
+    <string name="unit_um">%1$.2f µm</string>
+    <string name="unit_deg">%1$.3f°</string>
+    <string name="toast_material_selected">Material %1$s: OK</string>
+    <string name="cat_threading_turning">Gewindedrehen</string>
+    <string name="cat_inserts">Wendeschneidplatten</string>
+    <string name="cat_turning">Drehen</string>
+    <string name="cat_turning_transverse">Querdrehen</string>
+    <string name="cat_boring_op">Ausdrehen</string>
+    <string name="cat_turning_mini">Minidrehen</string>
+    <string name="model_finishing">Schlichten</string>
+    <string name="model_medium">Mittlere Bearbeitung</string>
+    <string name="model_roughing">Schruppen</string>
+    <string name="model_boring">Ausdrehen</string>
+    <string name="model_light_grooving">Leichtes Einstechen</string>
+    <string name="model_steel">Stahl</string>
+    <string name="model_grooves">Nuten</string>
+    <string name="model_drill_ref">Bohrer</string>
+    <string name="model_tap">Gewindebohrer</string>
+    <string name="res_f_m">F (mm/min):</string>
+    <string name="res_n_m">n (U/min):</string>
+    <string name="res_f_inch">F (in/min):</string>
+    <string name="res_n_inch">n (RPM):</string>
+    <string name="res_tc">Tc (min):</string>
+    <string name="res_ra">Ra (µm):</string>
+    <string name="res_angle">Alpha (°):</string>
+    <string name="hardness_rm">Zugfestigkeit Rm [N/mm²]</string>
+    <string name="hardness_hv">Vickers (HV)</string>
+    <string name="hardness_hb">Brinell (HB)</string>
+    <string name="hardness_hrc">Rockwell (HRC)</string>
+    <string name="hardness_res_title">Umrechnungsergebnisse</string>
+    <string name="error_out_of_range">Wert außerhalb des Tabellenbereichs</string>
+    <string name="info_hardness">Der Rechner ermöglicht die Härteumwertung zwischen den Skalen Rm, HV, HB und HRC gemäß ISO 18265. Geben Sie einen Wert in eines der Felder ein, um die übrigen Ergebnisse zu erhalten.</string>
+    <string name="error_only_one_value">Bitte nur einen Wert zur Umrechnung eingeben.</string>
+    <string name="tool_select_base">Werkzeug aus Datenbank wählen (Optional)</string>
+    <string name="tool_select">Werkzeug ausgewählt </string>
+    <string name="d_lowercase">d</string>
+    <string name="D_uppercase">D</string>
+    <string name="back">Zurück</string>
+    <string name="vc_expert_title">Wie wählt man Vc aus?</string>
+    <string name="vc_expert_min">Minimum wählen: Bei instabiler Aufspannung, langem Werkzeugüberhang oder Trockenbearbeitung.</string>
+    <string name="vc_expert_opt">Optimum wählen: Standardarbeitsbedingungen.</string>
+    <string name="vc_expert_max">Maximum wählen: Neue Maschine, sehr starre Aufspannung und Hochdruckkühlung.</string>
+    <!-- Baza Danych-->
+    <string name="app_database_download">Datenbank wird geladen…</string>
+    <string name="app_database_download_eror">Ein unbekannter Fehler ist aufgetreten.</string>
+    <string name="app_database_download_try_again">Erneut versuchen</string>
+
+    <!--  Params-->
+    <string name="carbon_steel">Unlegierter Stahl (C45)</string>
+    <string name="alloy_steel">Legierter Stahl (40CrMo4)</string>
+    <string name="stainless_steel">Edelstahl (V2A / 304)</string>
+    <string name="aluminium">Aluminium (Si &lt; 10%)</string>
+    <string name="cast_iron">Grauguss</string>
+    <string name="titanium">Titan</string>
+    <string name="brass">Messing</string>
+    <string name="hardened_steel">Gehärteter Stahl (&gt;50 HRC)</string>
+    <string name="material">MATERIAL AUSWÄHLEN</string>
+    <string name="select_material_iso">Material auswählen:</string>
+    <string name="material_steel">P - Stahl</string>
+    <string name="material_stainless">M - Rostfreier Stahl</string>
+    <string name="material_cast_iron">K - Gusseisen</string>
+    <string name="material_non_ferrous">N - Nichteisenmetalle</string>
+    <string name="material_titanium_s_alloy">S - Titan/Warmfeste Leg.</string>
+    <string name="material_hardened">H - Gehärtete Werkstoffe</string>
+    <string name="M">M</string>
+    <string name="K">K</string>
+    <string name="N">N</string>
+    <string name="S">S</string>
+    <string name="H">H</string>
+    <string name="P">P</string>
+
+    <!-- Tolerances -->
+    <string name="tolerances">ISO-Toleranzen</string>
+    <string name="diameter_hint">Nennmaß (mm)</string>
+    <string name="hole_hint">Bohrung (z. B. H7)</string>
+    <string name="shaft_hint">Welle (z. B. h6)</string>
+    <string name="reset">Zurücksetzen</string>
+    <string name="fit_hole_label">Bohrung: %1$.3f / %2$.3f mm</string>
+    <string name="fit_shaft_label">Welle: %1$.3f / %2$.3f mm</string>
+    <string name="fit_clearance_label">Spiel min/max: %1$.3f / %2$.3f mm</string>
+    <string name="fit_interference_label">Übermaß min/max: %1$.3f / %2$.3f mm</string>
+    <string name="status_clearance">SPIELPASSUNG</string>
+    <string name="status_transition">ÜBERGANGSPASSUNG</string>
+    <string name="status_interference">ÜBERMASSPASSUNG (PRESSPASSUNG)</string>
+    <string name="desc_clearance">Die Teile haben immer Spiel, was eine freie Bewegung ermöglicht.</string>
+    <string name="desc_transition">Es kann sowohl Spiel als auch Übermaß auftreten. Erfordert Kraftaufwand bei der Montage (z. B. Schonhammer).</string>
+    <string name="desc_interference">Die Teile überschneiden sich immer. Erfordert eine Presse oder thermische Montage (Schrumpfen).</string>
+    <string name="fit_hole_dynamic">Bohrung: %1$s / %2$s %3$s</string>
+    <string name="fit_shaft_dynamic">Welle: %1$s / %2$s %3$s</string>
+    <string name="fit_clearance_dynamic">Spiel min/max: %1$s / %2$s %3$s</string>
+    <string name="fit_interference_dynamic">Übermaß min/max: %1$s / %2$s %3$s</string>
+    <string name="copy_action">Kopieren</string>
+
+    <!-- Fitting and Tables -->
+    <string name="holePitch">Steigung</string>
+    <string name="holeName">Tabelle</string>
+    <string name="holeMin">Min.</string>
+    <string name="holeMax">Max.</string>
+    <string name="hole">Nennmaß</string>
+
+    <!-- Tool -->
+    <string name="toolsName">Name</string>
+    <string name="save">Speichern</string>
+    <string name="tools">Werkzeuge</string>
+    <string name="other">Sonstiges</string>
+    <string name="edit">Werkzeug bearbeiten</string>
+    <string name="edit_short">Bearbeiten</string>
+    <string name="add">Werkzeug hinzufügen</string>
+    <string name="delete">Löschen</string>
+    <string name="no_notes_available">Keine Notizen vorhanden</string>
+    <string name="clipboard_label">CNC-Parameter</string>
+    <string name="params_copied">Parameter kopiert!</string>
+    <string name="copy_tool_template">Werkzeug: %1$s\nWerkstoff: %2$s\nS: %3$s U/min\nF: %4$s mm/min</string>
+    <string name="s_hint">S (U/min)</string>
+    <string name="f_hint">F (mm/min)</string>
+    <string name="notes_hint">Notizen hinzufügen (optional)</string>
+    <string name="calc_center">Zentrieren</string>
+    <string name="tools_error">Bitte geben Sie einen Werkzeugnamen ein, um es zu speichern.</string>
+    <string name="tools_error_code">tools_error</string>
+    <string name="label_feed">Vorschub (F): %s</string>
+    <string name="label_speed">Drehzahl (S): %s</string>
+    <string name="label_workpiece">Werkstück: %s</string>
+    <string name="label_notes">Notizen: %s</string>
+    <string name="unlocked">Freischalten</string>
+    <string name="tools_limit">In der kostenlosen Version können Sie maximal 3 Werkzeuge hinzufügen. Wechseln Sie zu Premium, um unbegrenzt viele hinzuzufügen!</string>
+    <string name="confirm_delete_one">Werkzeug löschen</string>
+    <string name="confirm_delete_tool">Möchten Sie das Werkzeug %s wirklich löschen?</string>
+    <string name="tool_search">Werkzeug suchen…</string>
+    <string name="cancel">Abbrechen</string>
+
+    <!--  Subscription-->
+    <string name="settings_subs">Abonnement</string>
+    <string name="status">Ihr Status:</string>
+    <string name="text_info1">Unterstützen Sie die App-Entwicklung und genießen Sie zusätzliche Vorteile:</string>
+    <string name="no_ads">Werbefrei</string>
+    <string name="buy_back">Käufe wiederherstellen</string>
+    <string name="subs_on">Abonnement aktiviert!</string>
+    <string name="subs_active">Aktiv</string>
+    <string name="subs_deactive">Kein Abonnement</string>
+    <string name="subs_annual_button">Jahresabo: </string>
+    <string name="subs_monthly_button">Monatsabo: </string>
+    <string name="subs_buy_button">Abonnieren</string>
+    <string name="subs_info">Die ersten 7 Tage sind völlig kostenlos. Sie können jederzeit in den Google Play-Einstellungen kündigen – wenn Sie dies vor Ablauf der ersten Woche tun, entstehen Ihnen keinerlei Kosten.</string>
+    <string name="subs_trial_button">7 Tage kostenlos testen\ndanach  / Jahr</string>
+
+    <string name="info_0_m"><![CDATA[<b>Fräsparameter</b><br/><br/><b>Vc</b> - Schnittgeschwindigkeit [m/min]<br/><b>Dc</b> - Werkzeugdurchmesser [mm]<br/><b>fz</b> - Vorschub pro Zahn [mm]<br/><b>z</b> - Zähnezahl (für Bohrer 1 eingeben)]]></string>
+    <string name="info_0_inch"><![CDATA[<b>Fräsparameter (Zoll)</b><br/><br/><b>Vc</b> - Schnittgeschwindigkeit [sfm]<br/><b>Dc</b> - Werkzeugdurchmesser [Zoll]<br/><b>fz</b> - Vorschub pro Zahn [Zoll]<br/><b>z</b> - Zähnezahl (für Bohrer 1 eingeben)]]></string>
+
+    <string name="info_1_m"><![CDATA[<b>Gewindefräsen</b><br/><br/><b>Vc</b> - Schnittgeschwindigkeit [m/min]<br/><b>Dc</b> - Werkzeugdurchmesser [mm]<br/><b>JT</b> - Gewindesteigung [mm]]]></string>
+    <string name="info_1_inch"><![CDATA[<b>Gewindefräsen (Zoll)</b><br/><br/><b>Vc</b> - Schnittgeschwindigkeit [sfm]<br/><b>Dc</b> - Werkzeugdurchmesser [Zoll]<br/><b>JT</b> - Gewindesteigung [Zoll]]]></string>
+
+    <string name="info_2_m"><![CDATA[<b>Ausdrehen / Reiben</b><br/><br/><b>HD</b> - Bohrungsdurchmesser [mm]<br/><b>TD</b> - Werkzeugdurchmesser [mm]<br/><b>F</b> - Vorschub [mm/min]]]></string>
+    <string name="info_2_inch"><![CDATA[<b>Ausdrehen / Reiben (Zoll)</b><br/><br/><b>HD</b> - Bohrungsdurchmesser [Zoll]<br/><b>TD</b> - Werkzeugdurchmesser [Zoll]<br/><b>F</b> - Vorschub [Zoll/min]]]></string>
+
+    <string name="info_4_m"><![CDATA[<b>Bandsägen (Option 1)</b><br/><br/><b>AS</b> - Spezifische Schnittfläche [mm²/min]<br/><b>T</b> - Zahnteilung [mm]<br/><b>Vc</b> - Schnittgeschwindigkeit [m/min]<br/><b>L</b> - Schnittlänge [mm]]]></string>
+    <string name="info_4_inch"><![CDATA[<b>Bandsägen (Option 1 - Zoll)</b><br/><br/><b>AS</b> - Spezifische Schnittfläche [in²/min]<br/><b>T</b> - Zahnteilung [Zoll]<br/><b>Vc</b> - Schnittgeschwindigkeit [sfm]<br/><b>L</b> - Schnittlänge [Zoll]]]></string>
+
+    <string name="info_5_m"><![CDATA[<b>Bandsägen (Option 2)</b><br/><br/><b>Vf</b> - Vorschubgeschwindigkeit [mm/min]<br/><b>Vc</b> - Schnittgeschwindigkeit [m/min]<br/><b>z</b> - Zähnezahl<br/><b>LB</b> - Sägebandlänge [mm]]]></string>
+    <string name="info_5_inch"><![CDATA[<b>Bandsägen (Option 2 - Zoll)</b><br/><br/><b>Vf</b> - Vorschubgeschwindigkeit [in/min]<br/><b>Vc</b> - Schnittgeschwindigkeit [sfm]<br/><b>z</b> - Zähnezahl<br/><b>LB</b> - Sägebandlänge [Zoll]]]></string>
+
+    <string name="info_6_m"><![CDATA[<b>Kreissägen (Option 1)</b><br/><br/><b>AS</b> - Spezifische Schnittfläche [mm²/min]<br/><b>Vc</b> - Schnittgeschwindigkeit [m/min]<br/><b>D</b> - Sägeblattdurchmesser [mm]<br/><b>z</b> - Zähnezahl<br/><b>L</b> - Schnittlänge [mm]]]></string>
+    <string name="info_6_inch"><![CDATA[<b>Kreissägen (Option 1 - Zoll)</b><br/><br/><b>AS</b> - Spezifische Schnittfläche [in²/min]<br/><b>Vc</b> - Schnittgeschwindigkeit [sfm]<br/><b>D</b> - Sägeblattdurchmesser [Zoll]<br/><b>z</b> - Zähnezahl<br/><b>L</b> - Schnittlänge [Zoll]]]></string>
+
+    <string name="info_7_m"><![CDATA[<b>Kreissägen (Option 2)</b><br/><br/><b>Vf</b> - Vorschubgeschwindigkeit [mm/min]<br/><b>Vc</b> - Schnittgeschwindigkeit [m/min]<br/><b>z</b> - Zähnezahl<br/><b>D</b> - Sägeblattdurchmesser [mm]]]></string>
+    <string name="info_7_inch"><![CDATA[<b>Kreissägen (Option 2 - Zoll)</b><br/><br/><b>Vf</b> - Vorschubgeschwindigkeit [Zoll/min]<br/><b>Vc</b> - Schnittgeschwindigkeit [sfm]<br/><b>z</b> - Zähnezahl<br/><b>D</b> - Sägeblattdurchmesser [Zoll]]]></string>
+
+    <string name="info_3_m"><![CDATA[<b>Drehen (Basis)</b><br/><br/><b>Vc</b> - Schnittgeschwindigkeit [m/min]<br/><b>Dm</b> - Materialdurchmesser [mm]<br/><b>fn</b> - Vorschub pro Umdrehung [mm/U]]]></string>
+    <string name="info_3_inch"><![CDATA[<b>Drehen (Basis - Zoll)</b><br/><br/><b>Vc</b> - Schnittgeschwindigkeit [sfm]<br/><b>Dm</b> - Materialdurchmesser [Zoll]<br/><b>fn</b> - Vorschub pro Umdrehung [Zoll/U]]]></string>
+
+    <string name="info_8_m"><![CDATA[
+    <b>Schnittdaten (Drehen)</b><br/><br/>
+    <b>DM</b> – Werkstückdurchmesser [mm]<br/>
+    <b>VC</b> – Schnittgeschwindigkeit [m/min]<br/>
+    <b>Fn</b> – Vorschub pro Umdrehung [mm/U]<br/>
+    <b>AP</b> – Schnitttiefe (pro Seite) [mm]<br/>
+    <b>KC</b> – Spezifische Schnittkraft [N/mm²]
+]]></string>
+
+    <string name="info_8_inch"><![CDATA[
+    <b>Schnittdaten (Drehen - Inch)</b><br/><br/>
+    <b>DM</b> – Werkstückdurchmesser [Zoll]<br/>
+    <b>VC</b> – Schnittgeschwindigkeit [ft/min]<br/>
+    <b>Fn</b> – Vorschub pro Umdrehung [in/U]<br/>
+    <b>AP</b> – Schnitttiefe (pro Seite) [Zoll]<br/>
+    <b>KC</b> – Spezifische Schnittkraft [lb/in²]
+]]></string>
+    <string name="info_9_m"><![CDATA[<b>Ausdrehen (Drehen)</b><br/><br/><b>Vc</b> - Schnittgeschwindigkeit [m/min]<br/><b>Dm</b> - Materialdurchmesser [mm]<br/><b>fn</b> - Vorschub pro Umdrehung [mm/U]]]></string>
+    <string name="info_9_inch"><![CDATA[<b>Ausdrehen (Drehen - Zoll)</b><br/><br/><b>Vc</b> - Schnittgeschwindigkeit [sfm]<br/><b>Dm</b> - Materialdurchmesser [Zoll]<br/><b>fn</b> - Vorschub pro Umdrehung [Zoll/U]]]></string>
+
+    <string name="info_10_m"><![CDATA[<b>Hauptzeit (Drehen)</b><br/><br/><b>Vc</b> - Schnittgeschwindigkeit [m/min]<br/><b>Dm</b> - Materialdurchmesser [mm]<br/><b>fn</b> - Vorschub pro Umdrehung [mm/U]<br/><b>Lm</b> - Schnittweglänge [mm]]]></string>
+    <string name="info_10_inch"><![CDATA[<b>Hauptzeit (Drehen - Zoll)</b><br/><br/><b>Vc</b> - Schnittgeschwindigkeit [sfm]<br/><b>Dm</b> - Materialdurchmesser [Zoll]<br/><b>fn</b> - Vorschub pro Umdrehung [Zoll/U]<br/><b>Lm</b> - Schnittweglänge [Zoll]]]></string>
+
+    <string name="info_11_m"><![CDATA[<b>Zeitspanvolumen (Drehen)</b><br/><br/><b>Vc</b> - Schnittgeschwindigkeit [m/min]<br/><b>ap</b> - Schnitttiefe [mm]<br/><b>fn</b> - Vorschub pro Umdrehung [mm/U]]]></string>
+    <string name="info_11_inch"><![CDATA[<b>Zeitspanvolumen (Drehen - Zoll)</b><br/><br/><b>Vc</b> - Schnittgeschwindigkeit [sfm]<br/><b>ap</b> - Schnitttiefe [Zoll]<br/><b>fn</b> - Vorschub pro Umdrehung [Zoll/U]]]></string>
+
+    <string name="info_12_m"><![CDATA[<b>Nullpunkt (Zentrieren)</b><br/><br/>Berechnet die Mitte eines Werkstücks zwischen zwei Punkten (A und B).<br/><br/><b>Formel:</b> (A + B) / 2]]></string>
+    <string name="info_12_inch"><![CDATA[<b>Nullpunkt (Zentrieren - Zoll)</b><br/><br/>Berechnet die Mitte eines Werkstücks zwischen zwei Punkten (A und B).<br/><br/><b>Formel:</b> (A + B) / 2]]></string>
+
+    <string name="info_13_m"><![CDATA[<b>Gewindebohren (Fräsen)</b><br/><br/><b>VC</b> - Schnittgeschwindigkeit [m/min]<br/><b>DM</b> - Gewindedurchmesser [mm]<br/><b>JT</b> - Gewindesteigung [mm]<br/><br/><i>Wichtig: Beim Gewindebohren ist der Vorschub pro Umdrehung (FN) immer gleich der Gewindesteigung (P).</i>]]></string>
+    <string name="info_13_inch"><![CDATA[<b>Gewindebohren (Fräsen - Zoll)</b><br/><br/><b>VC</b> - Schnittgeschwindigkeit [sfm]<br/><b>DM</b> - Gewindedurchmesser [Zoll]<br/><b>JT</b> - Gewindesteigung [TPI]<br/><br/><i>Wichtig: Beim Gewindebohren ist der Vorschub pro Umdrehung (FN) immer gleich der Gewindesteigung (P).</i>]]></string>
+
+    <string name="info_14_m"><![CDATA[<b>Oberflächenrauheit (Ra)</b><br/><br/><b>fn</b> - Vorschub pro Umdrehung [mm/U]<br/><b>re</b> - Eckenradius [mm]<br/><br/>Berechnete theoretische Oberflächenrauheit Ra in µm.]]></string>
+    <string name="info_14_inch"><![CDATA[<b>Oberflächenrauheit (Ra - Zoll)</b><br/><br/><b>fn</b> - Vorschub pro Umdrehung [Zoll/U]<br/><b>re</b> - Eckenradius [Zoll]<br/><br/>Berechnete theoretische Oberflächenrauheit Ra in µinch.]]></string>
+
+    <string name="info_15_m"><![CDATA[<b>Kegeldrehen</b><br/><br/><b>D</b> - Großer Durchmesser [mm]<br/><b>d</b> - Kleiner Durchmesser [mm]<br/><b>L</b> - Kegellänge [mm]<br/><br/>Berechnet den Kegelneigungswinkel und das Kegelverhältnis in Prozent.]]></string>
+    <string name="info_15_inch"><![CDATA[<b>Kegeldrehen (Zoll)</b><br/><br/><b>D</b> - Großer Durchmesser [Zoll]<br/><b>d</b> - Kleiner Durchmesser [Zoll]<br/><b>L</b> - Kegellänge [Zoll]<br/><br/>Berechnet den Kegelneigungswinkel und das Kegelverhältnis in Prozent.]]></string>
+
+    <string-array name="miling_spinner1_data">
+        <item>Schnittparameter</item>
+        <item>Gewindeparameter</item>
+        <item>Bandsägen Option 1</item>
+        <item>Bandsägen Option 2</item>
+        <item>Kreissägen Option 1</item>
+        <item>Kreissägen Option 2</item>
+        <item>Interpolationsparameter</item>
+        <item>Ausdrehparameter</item>
+        <item>Nullpunkt</item>
+        <item>Härtekonverter (Rm/HV/HB/HRC)</item>
+    </string-array>
+
+    <string-array name="tourning_spinner1_data">
+        <item>Schnittparameter</item>
+        <item>Ausdrehparameter</item>
+        <item>Gewindedrehen</item>
+        <item>Hauptzeit</item>
+        <item>Zeitspanvolumen</item>
+        <item>Oberflächenrauheit</item>
+        <item>Kegeldrehen</item>
+    </string-array>
+
+    <string-array name="spinner1_items">
+        <item>Metrisch</item>
+        <item>Zoll</item>
+    </string-array>
+
+    <string-array name="spinner3_items">
+        <item>Metrisches Gewinde</item>
+        <item>Gewinde für Einsätze (EG)</item>
+        <item>Amerikanisches Gewinde</item>
+        <item>Amerikanisches Rohrgewinde</item>
+        <item>Rohrgewinde</item>
+        <item>Whitworth-Gewinde</item>
+        <item>Gewindefurchen</item>
+        <item>Stahlpanzerrohrgewinde</item>
+    </string-array>
+</resources>

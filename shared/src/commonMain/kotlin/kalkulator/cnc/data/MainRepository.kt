@@ -1,0 +1,158 @@
+package kalkulator.cnc.data
+
+import kalkulator.cnc.data.dao.CncToolDao
+import kalkulator.cnc.remote.ApiService
+import kalkulator.cnc.remote.NewsResponse
+import kotlinx.coroutines.flow.Flow
+import kalkulator.cnc.data.dao.SubscriptionDao
+import kalkulator.cnc.entity.ThreadEntity
+import kotlinx.coroutines.flow.map
+import kalkulator.cnc.data.dao.ThreadDao
+import calculatorcnc.shared.generated.resources.Res
+import kalkulator.cnc.entity.UserToolEntity
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.serialization.json.Json
+import org.jetbrains.compose.resources.ExperimentalResourceApi
+import kalkulator.cnc.data.dao.UserToolDao
+import kalkulator.cnc.data.domain.CncCategory
+import kalkulator.cnc.entity.CncToolEntity
+
+class MainRepository(
+    private val apiService: ApiService,
+    private val cncToolDao: CncToolDao,
+    private val subscriptionDao: SubscriptionDao,
+    private val threadDao: ThreadDao,
+    private val userToolDao: UserToolDao
+) {
+    private val TAG = "[CNC_LOG]"
+
+    suspend fun getNews(): List<NewsResponse> {
+        return apiService.getNewsFeed() ?: emptyList()
+    }
+
+    suspend fun syncDatabase(systemLanguage: String, onProgress: (Int) -> Unit): Boolean {
+
+        initThreadsIfEmpty()
+
+        println("$TAG Rozpoczynam pobieranie rekordów z serwera dla języka: $systemLanguage...")
+
+        return try {
+            val records = apiService.getCncDatabase(lang = systemLanguage, since = null) { progress ->
+                onProgress(progress)
+            }
+
+            if (records != null) {
+                println("$TAG Pomyślnie pobrano ${records.size} rekordów! Zapisuję do lokalnej bazy Room...")
+                val entities = records.map { record ->
+                    CncToolEntity(
+                        articleNumber = record.articleNumber ?: "",
+                        toolCategory = record.toolCategory ?: "",
+                        toolModelName = record.toolModelName ?: "",
+                        materialGroup = record.materialGroup ?: "",
+                        diameter = record.diameter ?: 0.0,
+                        flutesCount = record.flutesCount ?: 0,
+                        vcMin = record.vcMin ?: 0.0,
+                        vcMax = record.vcMax ?: 0.0,
+                        feedStep = record.feedStep ?: 0.0,
+                        categoryCode = record.categoryCode ?: "UNKNOWN"
+                    )
+                }
+
+                cncToolDao.deleteAll()
+                cncToolDao.insertAll(entities)
+
+                println("$TAG Zapis do bazy zakończony sukcesem!")
+                true
+            } else {
+                println("$TAG Błąd: Funkcja getCncDatabase zwróciła null. Sprawdź logi z wewnątrz ApiService.")
+                false
+            }
+        } catch (e: Exception) {
+            println("$TAG 🔴 KRYTYCZNY BŁĄD POBIERANIA: ${e.message}")
+            e.printStackTrace()
+            false
+        }
+    }
+
+    @OptIn(ExperimentalResourceApi::class)
+    suspend fun initThreadsIfEmpty() {
+        try {
+
+            val count = threadDao.getThreadsCount()
+
+            if (count == 0) {
+                println("$TAG Tabela gwintów jest pusta. Ładuję z lokalnego pliku JSON...")
+
+                val bytes = Res.readBytes("files/threads.json")
+                val jsonString = bytes.decodeToString()
+
+                val jsonParser = Json { ignoreUnknownKeys = true }
+                val threads = jsonParser.decodeFromString<List<ThreadEntity>>(jsonString)
+
+                threadDao.insertAll(threads)
+                println("$TAG Sukces! Załadowano ${threads.size} gwintów do lokalnej bazy.")
+            } else {
+                println("$TAG Tabele gwintów są już w bazie (ilość: $count). Pomijam ładowanie.")
+            }
+        } catch (e: Exception) {
+            println("$TAG 🔴 BŁĄD ŁADOWANIA GWINTÓW Z PLIKU: ${e.message}")
+            e.printStackTrace()
+        }
+    }
+
+    suspend fun hasTools(): Boolean {
+        return cncToolDao.getCount() > 0
+    }
+
+    fun getCategoriesByMaterial(material: String): Flow<List<CncCategory>> {
+        return cncToolDao.getCategoriesByMaterial(material)
+    }
+
+    fun getDiametersByCategoryAndMaterial(category: String, material: String): Flow<List<Double>> {
+        return cncToolDao.getDiametersByCategoryAndMaterial(category, material)
+    }
+
+    fun getModelsBySpecifics(category: String, material: String, diameter: Double): Flow<List<String>> {
+        return cncToolDao.getModelsBySpecifics(category, material, diameter)
+    }
+
+    suspend fun getParams(modelName: String, materialGroup: String, diameter: Double): CncToolEntity? {
+        return cncToolDao.getParams(modelName, materialGroup, diameter)
+    }
+
+    private val _isMetricFlow = MutableStateFlow(true)
+    val isMetricFlow: Flow<Boolean> = _isMetricFlow
+
+    fun setMetricSystem(isMetric: Boolean) {
+        _isMetricFlow.value = isMetric
+    }
+
+    private val _languageFlow = MutableStateFlow(0)
+    val languageFlow: Flow<Int> = _languageFlow
+
+    val isPremiumFlow: Flow<Boolean> = subscriptionDao.observePremiumStatus().map { it ?: false }
+
+    suspend fun getThreads(spinnerIdx: Int, tableIdx: Int): List<ThreadEntity> {
+        return threadDao.getThreads(spinnerIdx, tableIdx)
+    }
+
+    fun getAllUserTools(): Flow<List<UserToolEntity>> {
+        return userToolDao.getAllTools()
+    }
+
+    suspend fun deleteUserTool(tool: UserToolEntity) {
+        userToolDao.deleteTool(tool)
+    }
+
+    suspend fun getUserToolById(id: Int): UserToolEntity? {
+        return userToolDao.getToolById(id)
+    }
+
+    suspend fun insertUserTool(tool: UserToolEntity) {
+        userToolDao.insertTool(tool)
+    }
+
+    suspend fun updateUserTool(tool: UserToolEntity) {
+        userToolDao.updateTool(tool)
+    }
+}

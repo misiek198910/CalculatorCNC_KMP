@@ -1,0 +1,363 @@
+<resources>
+    <!--  App-->
+    <string name="app_name">CNC Calculator</string>
+    <string name="premium_function">Premium Features</string>
+
+    <!--  Main-->
+    <string name="main_button1">Milling\nand parting-off</string>
+    <string name="main_button2">Turning\nand boring</string>
+    <string name="main_button3">Tools</string>
+    <string name="main_button4">Limits and fits charts</string>
+    <string name="tables">Limits and \n fits charts</string>
+    <string name="main_button6">Settings</string>
+    <string name="news">What\'s new</string>
+
+    <!--  Settings-->
+    <string name="language">App language:</string>
+    <string name="settings_button2">More apps</string>
+    <string name="settings_button3">Rate the app</string>
+    <string name="settings_button4">Buy me a coffee</string>
+    <string name="settings_button5">Subscription</string>
+    <string name="calc_system">Measurement system</string>
+    <string name="error">App could not be found</string>
+    <string name="privacy">Privacy policy</string>
+    <string name="app_restart">Restart required</string>
+    <string name="app_restart_dialog">To change the app language, a restart is required.</string>
+    <string name="app_restart_dialog_ok">Ok</string>
+    <string name="app_restart_dialog_save">Language saved</string>
+
+    <!--  Cutting and boring-->
+    <string name="calculate_txt">Calculation type:</string>
+    <string name="calculate">Calculate</string>
+    <string name="clear">Clear</string>
+    <string name="i">i</string>
+    <string name="VC">Vc</string>
+    <string name="DC">Dc</string>
+    <string name="FZ">Fz</string>
+    <string name="Z">Z</string>
+    <string name="JT">Jn</string>
+    <string name="AS">As</string>
+    <string name="T">T</string>
+    <string name="L">L</string>
+    <string name="VF">Vf</string>
+    <string name="LB">Lb</string>
+    <string name="AP">Ap</string>
+    <string name="Fn">Fn</string>
+    <string name="KC">Kc</string>
+    <string name="DM">Dm</string>
+    <string name="close">CLOSE</string>
+    <string name="f_colon">F:</string>
+    <string name="s_colon">S:</string>
+    <string name="fz_colon">Fz:</string>
+    <string name="HD">HD</string>
+    <string name="TD">TD</string>
+    <string name="Rm">Rm</string>
+    <string name="HV">HV</string>
+    <string name="HB">HB</string>
+    <string name="HRC">HRC</string>
+    <string name="PointA">Point A</string>
+    <string name="PointB">Point B</string>
+    <string name="center_colon">Center: </string>
+    <string name="F">F</string>
+    <string name="LM">Machining length (Lm)</string>
+    <string name="tc_colon">Machining time (Tc): </string>
+    <string name="q_colon">Material removal rate (Q): </string>
+    <string name="calculateResult">CALCULATION RESULTS</string>
+    <string name="premium_required_title">This feature is only available in the full version of the app.</string>
+    <string name="premium_required_button">BUY ANNUAL SUBSCRIPTION</string>
+    <string name="premium_required_cancel">MAYBE LATER</string>
+    <string name="premium_required_text">PREMIUM OPTION</string>
+    <string name="error2">Please fill in all fields with valid data</string>
+    <string name="informationtext">INFORMATION</string>
+    <string name="RE">RE</string>
+    <string name="dm">dm</string>
+    <string name="forming_abbr">Form.</string>
+    <string name="thread_eg">EG</string>
+    <string name="mixed_abbr">Mix.</string>
+    <string name="step1_milling_category">Tool category</string>
+    <string name="step2_milling_diameter">Diameter</string>
+    <string name="step1_tourning_system">Select system</string>
+    <string name="step2_tourning_radius">Select radius rε</string>
+    <string name="step3_model">Model</string>
+    <string name="cat_tap">Thread tap</string>
+    <string name="cat_forming_tap">Roll forming tap</string>
+    <string name="cat_eg_tap">EG thread tap (Helicoil)</string>
+    <string name="cat_mill">Milling cutter</string>
+    <string name="cat_drill">Drill bit</string>
+    <string name="cat_reamer">Reamer</string>
+    <string name="cat_boring">Boring bar</string>
+    <string name="drill_hint_label">Recommended drill:</string>
+    <string name="params_loaded">Ceratizit parameters loaded</string>
+    <string name="vc_warn_high">Warning: Vc exceeds tool limit!</string>
+    <string name="vc_info_low">Information: Vc is below the recommended range.</string>
+    <string name="select_tool_hint">Select material and tool</string>
+    <string name="label_min">Min</string>
+    <string name="label_opt">Opt</string>
+    <string name="label_max">Max</string>
+    <string name="hint_hole_diameter">Hole diameter Dm</string>
+    <string name="hint_pitch">Pitch P [mm]</string>
+    <string name="hint_feed_rev">fn [mm/rev]</string>
+    <string name="hint_feed_tooth">fz [mm/tooth]</string>
+    <string name="cat_sink">Countersink</string>
+    <string name="cat_multi">Multi-functional tools</string>
+    <string name="error_no_tool_for_material">No tool available for this material</string>
+    <string name="parameters_load">Parameters loaded</string>
+    <string name="angleInfo">Length must be > 0</string>
+    <string name="calculation_error">Calculation error: %1$s</string>
+    <string name="toast_thread_selected">Selected: %1$s</string>
+    <string name="header_name">Name</string>
+    <string name="header_pitch">P</string>
+    <string name="header_tpi">TPI</string>
+    <string name="header_min">Min</string>
+    <string name="header_max">Max</string>
+    <string name="header_drill">Drill</string>
+    <string name="roughness_label">Roughness (Ra):</string>
+    <string name="taper_label">Taper angle (α):</string>
+    <string name="unit_min">%1$.2f min</string>
+    <string name="unit_cm3_min">%1$.1f cm³/min</string>
+    <string name="unit_um">%1$.2f µm</string>
+    <string name="unit_deg">%1$.3f°</string>
+    <string name="toast_material_selected">Material %1$s: OK</string>
+    <string name="cat_threading_turning">Thread turning</string>
+    <string name="cat_inserts">Inserts</string>
+    <string name="cat_turning">Turning</string>
+    <string name="cat_turning_transverse">Cross turning</string>
+    <string name="cat_boring_op">Boring</string>
+    <string name="cat_turning_mini">Mini turning</string>
+    <string name="model_finishing">Finishing</string>
+    <string name="model_medium">Medium machining</string>
+    <string name="model_roughing">Roughing</string>
+    <string name="model_boring">Boring</string>
+    <string name="model_light_grooving">Light grooving</string>
+    <string name="model_steel">Steel</string>
+    <string name="model_grooves">Grooves</string>
+    <string name="model_drill_ref">Drill</string>
+    <string name="model_tap">Thread tap</string>
+    <string name="res_f_m">F (mm/min):</string>
+    <string name="res_n_m">n (rpm):</string>
+    <string name="res_f_inch">F (in/min):</string>
+    <string name="res_n_inch">n (RPM):</string>
+    <string name="res_tc">Tc (min):</string>
+    <string name="res_ra">Ra (µm):</string>
+    <string name="res_angle">Alpha (°):</string>
+    <string name="hardness_rm">Tensile strength Rm [N/mm²]</string>
+    <string name="hardness_hv">Vickers (HV)</string>
+    <string name="hardness_hb">Brinell (HB)</string>
+    <string name="hardness_hrc">Rockwell (HRC)</string>
+    <string name="hardness_res_title">Conversion results</string>
+    <string name="error_out_of_range">Value out of chart range</string>
+    <string name="info_hardness">The calculator allows hardness conversion between Rm, HV, HB, and HRC scales in accordance with ISO 18265. Enter a value into one of the fields to obtain the remaining results.</string>
+    <string name="error_only_one_value">Please enter only one value for conversion.</string>
+    <string name="tool_select_base">Select tool from database (Optional)</string>
+    <string name="tool_select">Tool selected </string>
+    <string name="d_lowercase">d</string>
+    <string name="D_uppercase">D</string>
+    <string name="back">Back</string>
+    <string name="vc_expert_title">How to select Vc?</string>
+    <string name="vc_expert_min">Select Minimum: If you have an unstable setup, a long tool overhang, or are machining without coolant.</string>
+    <string name="vc_expert_opt">Select Optimum: Standard operating conditions.</string>
+    <string name="vc_expert_max">Select Maximum: New machine, highly rigid setup, and high-pressure cooling.</string>
+
+    <!-- Baza Danych-->
+    <string name="app_database_download">Downloading database…</string>
+    <string name="app_database_download_eror">An unknown error occurred.</string>
+    <string name="app_database_download_try_again">Try again</string>
+
+    <!--  Params-->
+    <string name="carbon_steel">Carbon steel (C45)</string>
+    <string name="alloy_steel">Alloy steel (40HM)</string>
+    <string name="stainless_steel">Stainless steel (304)</string>
+    <string name="aluminium">Aluminium (Si &lt; 10%)</string>
+    <string name="cast_iron">Grey cast iron</string>
+    <string name="titanium">Titanium</string>
+    <string name="brass">Brass</string>
+    <string name="hardened_steel">Hardened steel (&gt;50 HRC)</string>
+    <string name="material">SELECT MATERIAL</string>
+    <string name="select_material_iso">Select material:</string>
+    <string name="material_steel">P - Steel</string>
+    <string name="material_stainless">M - Stainless steel</string>
+    <string name="material_cast_iron">K - Cast iron</string>
+    <string name="material_non_ferrous">N - Non-ferrous metals</string>
+    <string name="material_titanium_s_alloy">S - Titanium/S-Alloy</string>
+    <string name="material_hardened">H - Hardened material</string>
+    <string name="M">M</string>
+    <string name="K">K</string>
+    <string name="N">N</string>
+    <string name="S">S</string>
+    <string name="H">H</string>
+    <string name="P">P</string>
+
+    <!-- Tolerances -->
+    <string name="tolerances">ISO Tolerances</string>
+    <string name="diameter_hint">Nominal diameter (mm)</string>
+    <string name="hole_hint">Hole (e.g., H7)</string>
+    <string name="shaft_hint">Shaft (e.g., h6)</string>
+    <string name="reset">Reset</string>
+    <string name="fit_hole_label">Hole: %1$.3f / %2$.3f mm</string>
+    <string name="fit_shaft_label">Shaft: %1$.3f / %2$.3f mm</string>
+    <string name="fit_clearance_label">Clearance min/max: %1$.3f / %2$.3f mm</string>
+    <string name="fit_interference_label">Interference min/max: %1$.3f / %2$.3f mm</string>
+    <string name="status_clearance">CLEARANCE FIT</string>
+    <string name="status_transition">TRANSITION FIT</string>
+    <string name="status_interference">INTERFERENCE FIT</string>
+    <string name="desc_clearance">The parts always maintain a clearance, allowing free relative movement.</string>
+    <string name="desc_transition">Either a clearance or an interference may occur. Requires a press or force assembly (e.g., rubber mallet).</string>
+    <string name="desc_interference">The parts always overlap. Requires a press or thermal assembly (shrink-fitting).</string>
+    <string name="fit_hole_dynamic">Hole: %1$s / %2$s %3$s</string>
+    <string name="fit_shaft_dynamic">Shaft: %1$s / %2$s %3$s</string>
+    <string name="fit_clearance_dynamic">Clearance min/max: %1$s / %2$s %3$s</string>
+    <string name="fit_interference_dynamic">Interference min/max: %1$s / %2$s %3$s</string>
+    <string name="copy_action">Copy</string>
+
+    <!-- Fitting and Tables -->
+    <string name="holePitch">Pitch</string>
+    <string name="holeName">Chart</string>
+    <string name="holeMin">Min.</string>
+    <string name="holeMax">Max.</string>
+    <string name="hole">Nominal</string>
+
+    <!-- Tool -->
+    <string name="toolsName">Name</string>
+    <string name="save">Save</string>
+    <string name="tools">Tools</string>
+    <string name="other">Other</string>
+    <string name="edit">Edit Tool</string>
+    <string name="edit_short">Edit</string>
+    <string name="add">Add Tool</string>
+    <string name="delete">Delete</string>
+    <string name="no_notes_available">No notes available</string>
+    <string name="clipboard_label">CNC Parameters</string>
+    <string name="params_copied">Parameters copied!</string>
+    <string name="copy_tool_template">Tool: %1$s\nMaterial: %2$s\nS: %3$s rpm\nF: %4$s mm/min</string>
+    <string name="s_hint">S (rpm)</string>
+    <string name="f_hint">F (mm/min)</string>
+    <string name="notes_hint">Add notes (optional)</string>
+    <string name="calc_center">Centering</string>
+    <string name="tools_error">Please enter a tool name to save it.</string>
+    <string name="tools_error_code">tools_error</string>
+    <string name="label_feed">Feed rate (F): %s</string>
+    <string name="label_speed">Spindle speed (S): %s</string>
+    <string name="label_workpiece">Workpiece: %s</string>
+    <string name="label_notes">Notes: %s</string>
+    <string name="unlocked">Unlock</string>
+    <string name="tools_limit">In the free version, you can add a maximum of 3 tools. Upgrade to Premium to add unlimited tools!</string>
+    <string name="confirm_delete_one">Delete tool</string>
+    <string name="confirm_delete_tool">Are you sure you want to delete the tool %s?</string>
+    <string name="tool_search">Search tool...</string>
+    <string name="cancel">Cancel</string>
+    <!--  Subscription-->
+    <string name="settings_subs">Subscription</string>
+    <string name="status">Your status:</string>
+    <string name="text_info1">Support the development of the app and enjoy premium benefits:</string>
+    <string name="no_ads">No ads</string>
+    <string name="buy_back">Restore purchases</string>
+    <string name="subs_on">Subscription activated!</string>
+    <string name="subs_active">Active</string>
+    <string name="subs_deactive">No subscription</string>
+    <string name="subs_annual_button">Annual subscription: </string>
+    <string name="subs_monthly_button">Monthly subscription: </string>
+    <string name="subs_buy_button">Buy subscription</string>
+    <string name="subs_info">The first 7 days are completely free. You can cancel at any time in your store settings – if you do so before the week ends, you will not be charged.</string>
+    <string name="subs_trial_button">Start 7-day free trial\nthen  / year</string>
+
+    <string name="info_0_m"><![CDATA[<b>Milling Parameters</b><br/><br/><b>VC</b> - Cutting speed [m/min]<br/><b>DC</b> - Tool diameter [mm]<br/><b>FZ</b> - Feed per tooth [mm]<br/><b>Z</b> - Number of teeth (for drill enter 1)]]></string>
+    <string name="info_0_inch"><![CDATA[<b>Milling Parameters (Inch)</b><br/><br/><b>VC</b> - Cutting speed [sfm]<br/><b>DC</b> - Tool diameter [inch]<br/><b>FZ</b> - Feed per tooth [inch]<br/><b>Z</b> - Number of teeth (for drill enter 1)]]></string>
+
+    <string name="info_1_m"><![CDATA[<b>Threading (Milling)</b><br/><br/><b>VC</b> - Cutting speed [m/min]<br/><b>DC</b> - Tool diameter [mm]<br/><b>JT</b> - Thread pitch [mm]]]></string>
+    <string name="info_1_inch"><![CDATA[<b>Threading (Milling - Inch)</b><br/><br/><b>VC</b> - Cutting speed [sfm]<br/><b>DC</b> - Tool diameter [inch]<br/><b>JT</b> - Thread pitch [inch]]]></string>
+
+    <string name="info_2_m"><![CDATA[<b>Boring / Reaming</b><br/><br/><b>HD</b> - Hole diameter [mm]<br/><b>TD</b> - Tool diameter [mm]<br/><b>F</b> - Feed [mm/min]]]></string>
+    <string name="info_2_inch"><![CDATA[<b>Boring / Reaming (Inch)</b><br/><br/><b>HD</b> - Hole diameter [inch]<br/><b>TD</b> - Tool diameter [inch]<br/><b>F</b> - Feed [inch/min]]]></string>
+
+    <string name="info_4_m"><![CDATA[<b>Band Saws (Option 1)</b><br/><br/><b>AS</b> - Unit cutting area [mm²/min]<br/><b>T</b> - Tooth pitch [mm]<br/><b>VC</b> - Cutting speed [m/min]<br/><b>L</b> - Cutting length [mm]]]></string>
+    <string name="info_4_inch"><![CDATA[<b>Band Saws (Option 1 - Inch)</b><br/><br/><b>AS</b> - Unit cutting area [in²/min]<br/><b>T</b> - Tooth pitch [inch]<br/><b>VC</b> - Cutting speed [sfm]<br/><b>L</b> - Cutting length [inch]]]></string>
+
+    <string name="info_5_m"><![CDATA[<b>Band Saws (Option 2)</b><br/><br/><b>VF</b> - Feed rate [mm/min]<br/><b>VC</b> - Cutting speed [m/min]<br/><b>Z</b> - Number of teeth<br/><b>LB</b> - Bandsaw length [mm]]]></string>
+    <string name="info_5_inch"><![CDATA[<b>Band Saws (Option 2 - Inch)</b><br/><br/><b>VF</b> - Feed rate [in/min]<br/><b>VC</b> - Cutting speed [sfm]<br/><b>Z</b> - Number of teeth<br/><b>LB</b> - Bandsaw length [inch]]]></string>
+
+    <string name="info_6_m"><![CDATA[<b>Circular Saws (Option 1)</b><br/><br/><b>AS</b> - Unit cutting area [mm²/min]<br/><b>VC</b> - Cutting speed [m/min]<br/><b>D</b> - Saw diameter [mm]<br/><b>Z</b> - Number of teeth<br/><b>L</b> - Cutting length [mm]]]></string>
+    <string name="info_6_inch"><![CDATA[<b>Circular Saws (Option 1 - Inch)</b><br/><br/><b>AS</b> - Unit cutting area [in²/min]<br/><b>VC</b> - Cutting speed [sfm]<br/><b>D</b> - Saw diameter [inch]<br/><b>Z</b> - Number of teeth<br/><b>L</b> - Cutting length [inch]]]></string>
+
+    <string name="info_7_m"><![CDATA[<b>Circular Saws (Option 2)</b><br/><br/><b>VF</b> - Feed rate [mm/min]<br/><b>VC</b> - Cutting speed [m/min]<br/><b>Z</b> - Number of teeth<br/><b>D</b> - Saw diameter [mm]]]></string>
+    <string name="info_7_inch"><![CDATA[<b>Circular Saws (Option 2 - Inch)</b><br/><br/><b>VF</b> - Feed rate [in/min]<br/><b>VC</b> - Cutting speed [sfm]<br/><b>Z</b> - Number of teeth<br/><b>D</b> - Saw diameter [inch]]]></string>
+
+    <string name="info_3_m"><![CDATA[<b>Turning (Basic)</b><br/><br/><b>VC</b> - Cutting speed [m/min]<br/><b>DM</b> - Material diameter [mm]<br/><b>FN</b> - Feed per revolution [mm/rev]]]></string>
+    <string name="info_3_inch"><![CDATA[<b>Turning (Basic - Inch)</b><br/><br/><b>VC</b> - Cutting speed [sfm]<br/><b>DM</b> - Material diameter [inch]<br/><b>FN</b> - Feed per revolution [in/rev]]]></string>
+
+    <string name="info_8_m"><![CDATA[
+    <b>Cutting Parameters (Turning)</b><br/><br/>
+    <b>DM</b> – Workpiece diameter [mm]<br/>
+    <b>VC</b> – Cutting speed [m/min]<br/>
+    <b>Fn</b> – Feed per revolution [mm/rev]<br/>
+    <b>AP</b> – Depth of cut (per side) [mm]<br/>
+    <b>KC</b> – Specific cutting force [N/mm²]
+]]></string>
+
+    <string name="info_8_inch"><![CDATA[
+    <b>Cutting Parameters (Turning - Inch)</b><br/><br/>
+    <b>DM</b> – Workpiece diameter [inch]<br/>
+    <b>VC</b> – Cutting speed [ft/min]<br/>
+    <b>Fn</b> – Feed per revolution [in/rev]<br/>
+    <b>AP</b> – Depth of cut (per side) [inch]<br/>
+    <b>KC</b> – Specific cutting force [lb/in²]
+]]></string>
+    <string name="info_9_m"><![CDATA[<b>Boring (Turning)</b><br/><br/><b>VC</b> - Cutting speed [m/min]<br/><b>DM</b> - Material diameter [mm]<br/><b>FN</b> - Feed per revolution [mm/rev]]]></string>
+    <string name="info_9_inch"><![CDATA[<b>Boring (Turning - Inch)</b><br/><br/><b>VC</b> - Cutting speed [sfm]<br/><b>DM</b> - Material diameter [inch]<br/><b>FN</b> - Feed per revolution [in/rev]]]></string>
+
+    <string name="info_10_m"><![CDATA[<b>Machine Time (Turning)</b><br/><br/><b>VC</b> - Cutting speed [m/min]<br/><b>DM</b> - Material diameter [mm]<br/><b>FN</b> - Feed per revolution [mm/rev]<br/><b>LM</b> - Cutting path length [mm]]]></string>
+    <string name="info_10_inch"><![CDATA[<b>Machine Time (Turning - Inch)</b><br/><br/><b>VC</b> - Cutting speed [sfm]<br/><b>DM</b> - Material diameter [inch]<br/><b>FN</b> - Feed per revolution [in/rev]<br/><b>LM</b> - Cutting path length [inch]]]></string>
+
+    <string name="info_11_m"><![CDATA[<b>Volume Efficiency (Turning)</b><br/><br/><b>VC</b> - Cutting speed [m/min]<br/><b>AP</b> - Cutting depth [mm]<br/><b>FN</b> - Feed per revolution [mm/rev]]]></string>
+    <string name="info_11_inch"><![CDATA[<b>Volume Efficiency (Turning - Inch)</b><br/><br/><b>VC</b> - Cutting speed [sfm]<br/><b>AP</b> - Cutting depth [inch]<br/><b>FN</b> - Feed per revolution [in/rev]]]></string>
+
+    <string name="info_12_m"><![CDATA[<b>Zero Point (Centring)</b><br/><br/>Calculates the center of a part between two points (A and B).<br/><br/><b>Formula:</b> (A + B) / 2]]></string>
+    <string name="info_12_inch"><![CDATA[<b>Zero Point (Centring - Inch)</b><br/><br/>Calculates the center of a part between two points (A and B).<br/><br/><b>Formula:</b> (A + B) / 2]]></string>
+
+    <string name="info_13_m"><![CDATA[<b>Threading (Milling)</b><br/><br/><b>VC</b> - Cutting speed [m/min]<br/><b>DM</b> - Thread diameter [mm]<br/><b>JT</b> - Thread pitch [mm]<br/><br/><i>Important: In tapping/threading, the feed per revolution (FN) is always equal to the thread pitch (P).</i>]]></string>
+    <string name="info_13_inch"><![CDATA[<b>Threading (Milling - Inch)</b><br/><br/><b>VC</b> - Cutting speed [sfm]<br/><b>DM</b> - Thread diameter [inch]<br/><b>JT</b> - Thread pitch [TPI]<br/><br/><i>Important: In tapping/threading, the feed per revolution (FN) is always equal to the thread pitch (P).</i>]]></string>
+
+    <string name="info_14_m"><![CDATA[<b>Surface Roughness (Ra)</b><br/><br/><b>FN</b> - Feed per revolution [mm/rev]<br/><b>RE</b> - Insert nose radius [mm]<br/><br/>Calculated theoretical surface roughness Ra in µm.]]></string>
+    <string name="info_14_inch"><![CDATA[<b>Surface Roughness (Ra - Inch)</b><br/><br/><b>FN</b> - Feed per revolution [in/rev]<br/><b>RE</b> - Insert nose radius [inch]<br/><br/>Calculated theoretical surface roughness Ra in µinch.]]></string>
+
+    <string name="info_15_m"><![CDATA[<b>Taper Turning</b><br/><br/><b>D</b> - Large diameter [mm]<br/><b>d</b> - Small diameter [mm]<br/><b>L</b> - Taper length [mm]<br/><br/>Calculates the cone inclination angle and taper percentage.]]></string>
+    <string name="info_15_inch"><![CDATA[<b>Taper Turning (Inch)</b><br/><br/><b>D</b> - Large diameter [inch]<br/><b>d</b> - Small diameter [inch]<br/><b>L</b> - Taper length [inch]<br/><br/>Calculates the cone inclination angle and taper percentage.]]></string>
+
+    <string-array name="miling_spinner1_data">
+        <item>Cutting Parameters</item>
+        <item>Threading Parameters</item>
+        <item>Band Saws Option 1</item>
+        <item>Band Saws Option 2</item>
+        <item>Circular Saws Option 1</item>
+        <item>Circular Saws Option 2</item>
+        <item>Interpolation Parameters</item>
+        <item>Boring Parameters</item>
+        <item>ZeroPoint</item>
+        <item>Hardness Converter (Rm/HV/HB/HRC)</item>
+    </string-array>
+
+    <string-array name="tourning_spinner1_data">
+        <item>Cutting Parameters</item>
+        <item>Boring Parameters</item>
+        <item>Threading</item>
+        <item>Machine Time</item>
+        <item>Volume Cutting Efficiency</item>
+        <item>Surface Roughness</item>
+        <item>Taper Turning</item>
+    </string-array>
+
+    <string-array name="spinner1_items">
+        <item>Metric</item>
+        <item>Inch</item>
+    </string-array>
+
+    <string-array name="spinner3_items">
+        <item>Metric thread</item>
+        <item>Thread for inserts</item>
+        <item>American Thread</item>
+        <item>American pipe thread</item>
+        <item>Pipe thread</item>
+        <item>Whitworth thread</item>
+        <item>Kneading</item>
+        <item>Thread for armored pipes</item>
+    </string-array>
+</resources>

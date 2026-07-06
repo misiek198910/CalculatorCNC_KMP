@@ -1,0 +1,213 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 3,
+    "identityHash": "dc3a2b8e7340596972979a7271d85a7d",
+    "entities": [
+      {
+        "tableName": "cnc_tools",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`articleNumber` TEXT NOT NULL, `toolCategory` TEXT NOT NULL, `toolModelName` TEXT NOT NULL, `materialGroup` TEXT NOT NULL, `diameter` REAL NOT NULL, `flutesCount` INTEGER NOT NULL, `vcMin` REAL NOT NULL, `vcMax` REAL NOT NULL, `feedStep` REAL NOT NULL, PRIMARY KEY(`articleNumber`, `materialGroup`))",
+        "fields": [
+          {
+            "fieldPath": "articleNumber",
+            "columnName": "articleNumber",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "toolCategory",
+            "columnName": "toolCategory",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "toolModelName",
+            "columnName": "toolModelName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "materialGroup",
+            "columnName": "materialGroup",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "diameter",
+            "columnName": "diameter",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "flutesCount",
+            "columnName": "flutesCount",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "vcMin",
+            "columnName": "vcMin",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "vcMax",
+            "columnName": "vcMax",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "feedStep",
+            "columnName": "feedStep",
+            "affinity": "REAL",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "articleNumber",
+            "materialGroup"
+          ]
+        }
+      },
+      {
+        "tableName": "user_tools",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `workpiece` TEXT, `name` TEXT NOT NULL, `f` TEXT, `s` TEXT, `notes` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "workpiece",
+            "columnName": "workpiece",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "f",
+            "columnName": "f",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "s",
+            "columnName": "s",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "notes",
+            "columnName": "notes",
+            "affinity": "TEXT"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        }
+      },
+      {
+        "tableName": "subscription_status",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `isPremium` INTEGER NOT NULL, `purchaseToken` TEXT, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isPremium",
+            "columnName": "isPremium",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "purchaseToken",
+            "columnName": "purchaseToken",
+            "affinity": "TEXT"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        }
+      },
+      {
+        "tableName": "threads",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `category_id` INTEGER NOT NULL, `table_id` INTEGER NOT NULL, `name` TEXT NOT NULL, `pitch` TEXT NOT NULL, `hole_min` TEXT NOT NULL, `hole_max` TEXT NOT NULL, `hole_size` TEXT NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "categoryId",
+            "columnName": "category_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tableId",
+            "columnName": "table_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pitch",
+            "columnName": "pitch",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "holeMin",
+            "columnName": "hole_min",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "holeMax",
+            "columnName": "hole_max",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "holeSize",
+            "columnName": "hole_size",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        }
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'dc3a2b8e7340596972979a7271d85a7d')"
+    ]
+  }
+}

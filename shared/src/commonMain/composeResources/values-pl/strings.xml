@@ -1,0 +1,368 @@
+<resources>
+    <!--  App-->
+    <string name="app_name">Kalkulator CNC</string>
+    <string name="premium_function">Funkcje Premium</string>
+
+    <!--  Main-->
+    <string name="main_button1">Frezowanie\nprzecinanie</string>
+    <string name="main_button2">Toczenie\nwytaczanie</string>
+    <string name="main_button3">Narzędzia</string>
+    <string name="main_button4">Tabele pasowania</string>
+    <string name="tables">Tabele \n pasowania</string>
+    <string name="main_button6">Ustawienia</string>
+    <string name="news">Nowości</string>
+
+    <!--  Settings-->
+    <string name="language">Język aplikacjii:</string>
+    <string name="settings_button2">Inne aplikacje</string>
+    <string name="settings_button3">Oceń aplikacje</string>
+    <string name="settings_button4">Postaw kawę</string>
+    <string name="settings_button5">Subskrypcja</string>
+    <string name="calc_system">System kalkulacji</string>
+    <string name="error">Nie można odnaleść aplikacjii</string>
+    <string name="privacy">Polityka prywatności</string>
+    <string name="app_restart">Wymagany restart</string>
+    <string name="app_restart_dialog">Aby zmienić język aplikacji, konieczne jest jej ponowne uruchomienie.</string>
+    <string name="app_restart_dialog_ok">Ok</string>
+    <string name="app_restart_dialog_save">Zapisano język</string>
+
+    <!--  Cutting and boring-->
+    <string name="calculate_txt">Rodzaj obliczeń:</string>
+    <string name="calculate">Oblicz</string>
+    <string name="clear">Wyczyść</string>
+    <string name="i">i</string>
+    <string name="VC">VC</string>
+    <string name="DC">DC</string>
+    <string name="FZ">Fz</string>
+    <string name="Z">Z</string>
+    <string name="JT">JT</string>
+    <string name="AS">AS</string>
+    <string name="T">T</string>
+    <string name="L">L</string>
+    <string name="VF">VF</string>
+    <string name="LB">LB</string>
+    <string name="AP">AP</string>
+    <string name="Fn">Fn</string>
+    <string name="KC">KC</string>
+    <string name="DM">DM</string>
+    <string name="close">ZAMKNIJ</string>
+    <string name="f_colon">F:</string>
+    <string name="s_colon">S:</string>
+    <string name="fz_colon">Fz:</string>
+    <string name="HD">HD</string>
+    <string name="TD">TD</string>
+    <string name="Rm">Rm</string>
+    <string name="HV">HV</string>
+    <string name="HB">HB</string>
+    <string name="HRC">HRC</string>
+    <string name="PointA">Punkt A</string>
+    <string name="PointB">Punkt B</string>
+    <string name="center_colon">Środek: </string>
+    <string name="F">F</string>
+    <string name="LM">Długość obróbki (LM)</string>
+    <string name="tc_colon">Czas maszynowy (Tc): </string>
+    <string name="q_colon">Wydajność (Q): </string>
+    <string name="calculateResult">WYNIKI OBLICZEŃ</string>
+    <string name="premium_required_title">Ta funkcja jest dostępna tylko w pełnej wersji aplikacji.</string>
+    <string name="premium_required_button">KUP SUBSKRYPCJĘ ROCZNĄ</string>
+    <string name="premium_required_cancel">MOŻE PÓŹNIEJ</string>
+    <string name="premium_required_text">OPCJA PREMIUM</string>
+    <string name="error2">Proszę uzupełnić wszystkie pola poprawnymi danymi</string>
+    <string name="informationtext">INFORMACJA</string>
+    <string name="RE">RE</string>
+    <string name="dm">dm</string>
+    <string name="forming_abbr">Wyg.</string>
+    <string name="thread_eg">EG</string>
+    <string name="mixed_abbr">Miesz.</string>
+    <string name="step1_milling_category">Kategoria narzędzia</string>
+    <string name="step2_milling_diameter">Średnica</string>
+    <string name="step1_tourning_system">Wybierz system</string>
+    <string name="step2_tourning_radius">Wybierz promień rε</string>
+    <string name="step3_model">Model</string>
+    <string name="cat_tap">Gwintownik</string>
+    <string name="cat_forming_tap">Wygniatak</string>
+    <string name="cat_eg_tap">Gwintownik EG (Helicoil)</string>
+    <string name="cat_mill">Frez</string>
+    <string name="cat_drill">Wiertło</string>
+    <string name="cat_reamer">Rozwiertak</string>
+    <string name="cat_boring">Wytaczadło</string>
+    <string name="drill_hint_label">Zalecane wiertło:</string>
+    <string name="params_loaded">Parametry Ceratizit załadowane</string>
+    <string name="vc_warn_high">Ostrzeżenie: Vc przekracza limit narzędzia!</string>
+    <string name="vc_info_low">Informacja: Vc poniżej zalecanego zakresu.</string>
+    <string name="select_tool_hint">Wybierz materiał i narzędzie</string>
+    <string name="label_min">Min</string>
+    <string name="label_opt">Opt</string>
+    <string name="label_max">Max</string>
+    <string name="hint_hole_diameter">Średnica otworu Dm</string>
+    <string name="hint_pitch">Skok P [mm]</string>
+    <string name="hint_feed_rev">fn [mm/obr]</string>
+    <string name="hint_feed_tooth">fz [mm/z]</string>
+    <string name="cat_sink">Pogłębiacz</string>
+    <string name="cat_multi">Narzędzia wielofunkcyjne</string>
+    <string name="error_no_tool_for_material">Brak narzędzia dla tego materiału</string>
+    <string name="parameters_load">Parametry załadowane</string>
+    <string name="angleInfo">Długość musi być > 0</string>
+    <string name="calculation_error">Błąd obliczeń: %1$s</string>
+    <string name="toast_thread_selected">Wybrano: %1$s</string>
+    <string name="header_name">Nazwa</string>
+    <string name="header_pitch">P</string>
+    <string name="header_tpi">TPI</string>
+    <string name="header_min">Min</string>
+    <string name="header_max">Max</string>
+    <string name="header_drill">Wiertło</string>
+    <string name="roughness_label">Chropowatość (Ra):</string>
+    <string name="taper_label">Kąt nachylenia (α):</string>
+    <string name="unit_min">%1$.2f min</string>
+    <string name="unit_cm3_min">%1$.1f cm³/min</string>
+    <string name="unit_um">%1$.2f µm</string>
+    <string name="unit_deg">%1$.3f°</string>
+    <string name="toast_material_selected">Materiał %1$s: OK</string>
+    <string name="cat_threading_turning">Toczenie gwintów</string>
+    <string name="cat_inserts">Płytki</string>
+    <string name="cat_turning">Toczenie</string>
+    <string name="cat_turning_transverse">Toczenie poprzeczne</string>
+    <string name="cat_boring_op">Wytaczanie</string>
+    <string name="cat_turning_mini">Toczenie mini</string>
+    <string name="model_finishing">Wykańczająca</string>
+    <string name="model_medium">Średnia</string>
+    <string name="model_roughing">Zgrubna</string>
+    <string name="model_boring">Wytaczanie</string>
+    <string name="model_light_grooving">Lekkie wcinanie</string>
+    <string name="model_steel">Stal</string>
+    <string name="model_grooves">Kanałki</string>
+    <string name="model_drill_ref">Wiertło</string>
+    <string name="model_tap">Gwintownik</string>
+    <string name="res_f_m">F (mm/min):</string>
+    <string name="res_n_m">n (obr/min):</string>
+    <string name="res_f_inch">F (in/min):</string>
+    <string name="res_n_inch">n (RPM):</string>
+    <string name="res_tc">Tc (min):</string>
+    <string name="res_ra">Ra (µm):</string>
+    <string name="res_angle">Alfa (°):</string>
+    <string name="hardness_rm">Wytrzymałość Rm [N/mm²]</string>
+    <string name="hardness_hv">Vickers (HV)</string>
+    <string name="hardness_hb">Brinell (HB)</string>
+    <string name="hardness_hrc">Rockwell (HRC)</string>
+    <string name="hardness_res_title">Wyniki konwersji</string>
+    <string name="error_out_of_range">Wartość poza zakresem tabeli</string>
+    <string name="info_hardness">Kalkulator pozwala na przeliczanie twardości pomiędzy skalami Rm, HV, HB i HRC zgodnie z normą ISO 18265. Wprowadź wartość w jedno z pól, aby uzyskać pozostałe wyniki.</string>
+    <string name="error_only_one_value">Proszę wprowadzić tylko jedną wartość do przeliczenia.</string>
+    <string name="tool_select_base">Wybierz narzędzie z bazy (Opcjonalnie)</string>
+    <string name="tool_select">Narzędzie wybrane </string>
+    <string name="d_lowercase">d</string>
+    <string name="D_uppercase">D</string>
+    <string name="back">Wróć</string>
+    <string name="vc_expert_title">Jak dobrać Vc?</string>
+    <string name="vc_expert_min">Wybierz Minimum: Jeśli masz niestabilne mocowanie, długie narzędzie lub pracujesz bez chłodzenia.</string>
+    <string name="vc_expert_opt">Wybierz Optimum: Standardowe warunki pracy.</string>
+    <string name="vc_expert_max">Wybierz Maximum: Nowa maszyna, bardzo sztywne mocowanie i intensywne chłodzenie.</string>
+
+    <!-- Baza Danych-->
+    <string name="app_database_download">Pobieranie bazy danych…</string>
+    <string name="app_database_download_eror">Wystąpił nieznany błąd.</string>
+    <string name="app_database_download_try_again">Spróbuj ponownie</string>
+
+    <!--  Params-->
+    <string name="carbon_steel">Stal węglowa (C45)</string>
+    <string name="alloy_steel">Stal stopowa (40HM)</string>
+    <string name="stainless_steel">Stal nierdzewna (304)</string>
+    <string name="aluminium">Aluminium (Si &lt; 10%)</string>
+    <string name="cast_iron">Żeliwo szare</string>
+    <string name="titanium">Tytan</string>
+    <string name="brass">Mosiądz</string>
+    <string name="hardened_steel">Stal hartowana (>50 HRC)</string>
+    <string name="material">WYBIERZ MATERIAŁ</string>
+    <string name="select_material_iso">Wybierz materiał:</string>
+    <string name="material_steel">P - Stal</string>
+    <string name="material_stainless">M - Stal nierdzewna</string>
+    <string name="material_cast_iron">K - Żeliwo</string>
+    <string name="material_non_ferrous">N - Metale nieżelazne</string>
+    <string name="material_titanium_s_alloy">S - Tytan/S-Stop</string>
+    <string name="material_hardened">H - Utwardzony</string>
+    <string name="M">M</string>
+    <string name="K">K</string>
+    <string name="N">N</string>
+    <string name="S">S</string>
+    <string name="H">H</string>
+    <string name="P">P</string>
+
+    <!-- Tolerances -->
+    <string name="tolerances">Tolerancje ISO</string>
+    <string name="diameter_hint">Średnica nominalna (mm)</string>
+    <string name="hole_hint">Otwór (np. H7)</string>
+    <string name="shaft_hint">Wałek (np. h6)</string>
+    <string name="reset">Resetuj</string>
+    <string name="fit_hole_label">Otwór: %1$.3f / %2$.3f mm</string>
+    <string name="fit_shaft_label">Wałek: %1$.3f / %2$.3f mm</string>
+    <string name="fit_clearance_label">Luz min/max: %1$.3f / %2$.3f mm</string>
+    <string name="fit_interference_label">Wcisk min/max: %1$.3f / %2$.3f mm</string>
+    <string name="status_clearance">PASOWANIE LUŹNE</string>
+    <string name="status_transition">PASOWANIE MIESZANE</string>
+    <string name="status_interference">PASOWANIE CIASNE (WCISK)</string>
+    <string name="desc_clearance">Elementy zawsze zachowują luz, co umożliwia swobodny ruch.</string>
+    <string name="desc_transition">Możliwy zarówno luz, jak i wcisk. Wymaga montażu siłowego (np. młotek gumowy).</string>
+    <string name="desc_interference">Części zawsze nachodzą na siebie. Wymaga prasy lub montażu termicznego.</string>
+    <string name="fit_hole_dynamic">Otwór: %1$s / %2$s %3$s</string>
+    <string name="fit_shaft_dynamic">Wałek: %1$s / %2$s %3$s</string>
+    <string name="fit_clearance_dynamic">Luz min/max: %1$s / %2$s %3$s</string>
+    <string name="fit_interference_dynamic">Wcisk min/max: %1$s / %2$s %3$s</string>
+    <string name="copy_action">Kopiuj</string>
+
+    <!-- Fitting and Tables -->
+    <string name="holePitch">Skok</string>
+    <string name="holeName">Tabela</string>
+    <string name="holeMin">Min.</string>
+    <string name="holeMax">Max.</string>
+    <string name="hole">Nominał</string>
+
+    <!-- Tool -->
+    <string name="toolsName">Nazwa</string>
+    <string name="save">Zapisz</string>
+    <string name="tools">Narzędzia</string>
+    <string name="other">Inne</string>
+    <string name="edit">Edytuj Narzędzie</string>
+    <string name="edit_short">Edytuj</string>
+    <string name="add">Dodaj Narzędzie</string>
+    <string name="delete">Usuń</string>
+    <string name="no_notes_available">Brak notatek</string>
+    <string name="clipboard_label">Parametry CNC</string>
+    <string name="params_copied">Parametry skopiowane!</string>
+    <string name="copy_tool_template">Narzędzie: %1$s\nMateriał: %2$s\nS: %3$s obr/min\nF: %4$s mm/min</string>
+    <string name="s_hint">S (obr/min)</string>
+    <string name="f_hint">F (mm/min)</string>
+    <string name="notes_hint">Dodaj notatki (opcjonalnie)</string>
+    <string name="calc_center">Centrowanie</string>
+    <string name="tools_error">Wpisz nazwę narzędzia, aby móc je zapisać.</string>
+    <string name="tools_error_code">tools_error</string>
+    <string name="label_feed">Posuw (F): %s</string>
+    <string name="label_speed">Obroty (S): %s</string>
+    <string name="label_workpiece">Obrabiany %s</string>
+    <string name="label_notes">Notatki %s</string>
+    <string name="unlocked">Odblokuj</string>
+    <string name="tools_limit">W darmowej wersji możesz dodać maksymalnie 3 narzędzia. Przejdź na Premium, aby dodawać ich nielimitowaną ilość!</string>
+    <string name="confirm_delete_one">Usuń narzędzie</string>
+    <string name="confirm_delete_tool">Czy na pewno chcesz usunąć narzędzie %s?</string>
+    <string name="tool_search">Szukaj narzędzia...</string>
+    <string name="cancel">Anuluj</string>
+
+    <!--  Subscription-->
+    <string name="settings_subs">Subskrypcja</string>
+    <string name="status">Twój status:</string>
+    <string name="text_info1">Wesprzyj rozwój aplikacji i ciesz się dodatkowymi korzyściami:</string>
+    <string name="no_ads">Brak reklam</string>
+    <string name="buy_back">Przywróć zakupy</string>
+    <string name="subs_on">Subskrypcja aktywowana!</string>
+    <string name="subs_active">Aktywna</string>
+    <string name="subs_deactive">Brak subskrypcji</string>
+    <string name="subs_annual_button">Subskrypcja roczna: </string>
+    <string name="subs_monthly_button">Subskrypcja miesięczna: </string>
+    <string name="subs_buy_button">Kup subskrypcję</string>
+    <string name="subs_info">Pierwsze 7 dni jest całkowicie darmowe. Możesz zrezygnować w dowolnym momencie w ustawieniach Google Play – jeśli zrobisz to przed upływem tygodnia, nie poniesiesz żadnych kosztów.</string>
+    <string name="subs_trial_button">Zacznij 7 dni za darmo\npotem  / rok</string>
+
+    <!--  Info texts-->
+    <string name="info_8_m"><![CDATA[
+    <b>Parametry skrawania (Toczenie)</b><br/><br/>
+    <b>DM</b> – Średnica obrabianego materiału [mm]<br/>
+    <b>VC</b> – Prędkość skrawania [m/min]<br/>
+    <b>Fn</b> – Posuw na obrót [mm/obr]<br/>
+    <b>AP</b> – Głębokość skrawania (naddatek na stronę) [mm]<br/>
+    <b>KC</b> – Opór właściwy materiału [N/mm²]
+]]></string>
+
+    <string name="info_8_inch"><![CDATA[
+    <b>Parametry skrawania (Toczenie - Cale)</b><br/><br/>
+    <b>DM</b> – Średnica obrabianego materiału [cal]<br/>
+    <b>VC</b> – Prędkość skrawania [stopa/min]<br/>
+    <b>Fn</b> – Posuw na obrót [cal/obr]<br/>
+    <b>AP</b> – Głębokość skrawania (naddatek na stronę) [cal]<br/>
+    <b>KC</b> – Opór właściwy skrawania [lb/cal²]
+]]></string>
+
+    <string name="info_0_m"><![CDATA[<b>Parametry frezowania</b><br/><br/><b>VC</b> - Prędkość skrawania [m/min]<br/><b>DC</b> - Średnica narzędzia [mm]<br/><b>FZ</b> - Posuw na ząb [mm]<br/><b>Z</b> - Ilość ostrzy (dla wiertła wpisz 1)]]></string>
+    <string name="info_0_inch"><![CDATA[<b>Parametry frezowania (Cale)</b><br/><br/><b>VC</b> - Prędkość skrawania [stopa/min]<br/><b>DC</b> - Średnica narzędzia [cal]<br/><b>FZ</b> - Posuw na ząb [cal]<br/><b>Z</b> - Ilość ostrzy (dla wiertła wpisz 1)]]></string>
+
+    <string name="info_1_m"><![CDATA[<b>Gwintowanie (Frezowanie)</b><br/><br/><b>VC</b> - Prędkość skrawania [m/min]<br/><b>DC</b> - Średnica narzędzia [mm]<br/><b>JT</b> - Skok gwintu [mm]]]></string>
+    <string name="info_1_inch"><![CDATA[<b>Gwintowanie (Frezowanie - Cale)</b><br/><br/><b>VC</b> - Prędkość skrawania [stopa/min]<br/><b>DC</b> - Średnica narzędzia [cal]<br/><b>JT</b> - Skok gwintu [cal]]]></string>
+
+    <string name="info_2_m"><![CDATA[<b>Rozwiercanie / Wytaczanie</b><br/><br/><b>HD</b> - Średnica otworu [mm]<br/><b>TD</b> - Średnica narzędzia [mm]<br/><b>F</b> - Posuw [mm/min]]]></string>
+    <string name="info_2_inch"><![CDATA[<b>Rozwiercanie / Wytaczanie (Cale)</b><br/><br/><b>HD</b> - Średnica otworu [cal]<br/><b>TD</b> - Średnica narzędzia [cal]<br/><b>F</b> - Posuw [cal/min]]]></string>
+
+    <string name="info_4_m"><![CDATA[<b>Piły Taśmowe (Opcja 1)</b><br/><br/><b>AS</b> - Jednostkowa pow. skrawania [mm²/min]<br/><b>T</b> - Podziałka zębów [mm]<br/><b>VC</b> - Prędkość skrawania [m/min]<br/><b>L</b> - Długość cięcia [mm]]]></string>
+    <string name="info_4_inch"><![CDATA[<b>Piły Taśmowe (Opcja 1 - Cale)</b><br/><br/><b>AS</b> - Jednostkowa pow. skrawania [cal²/min]<br/><b>T</b> - Podziałka zębów [cal]<br/><b>VC</b> - Prędkość skrawania [stopa/min]<br/><b>L</b> - Długość cięcia [cal]]]></string>
+
+    <string name="info_5_m"><![CDATA[<b>Piły Taśmowe (Opcja 2)</b><br/><br/><b>VF</b> - Prędkość posuwu [mm/min]<br/><b>VC</b> - Prędkość skrawania [m/min]<br/><b>Z</b> - Ilość ostrzy<br/><b>LB</b> - Długość taśmy [mm]]]></string>
+    <string name="info_5_inch"><![CDATA[<b>Piły Taśmowe (Opcja 2 - Cale)</b><br/><br/><b>VF</b> - Prędkość posuwu [cal/min]<br/><b>VC</b> - Prędkość skrawania [stopa/min]<br/><b>Z</b> - Ilość ostrzy<br/><b>LB</b> - Długość taśmy [cal]]]></string>
+
+    <string name="info_6_m"><![CDATA[<b>Piły Tarczowe (Opcja 1)</b><br/><br/><b>AS</b> - Jednostkowa pow. skrawania [mm²/min]<br/><b>VC</b> - Prędkość skrawania [m/min]<br/><b>D</b> - Średnica piły [mm]<br/><b>Z</b> - Ilość ostrzy<br/><b>L</b> - Długość cięcia [mm]]]></string>
+    <string name="info_6_inch"><![CDATA[<b>Piły Tarczowe (Opcja 1 - Cale)</b><br/><br/><b>AS</b> - Jednostkowa pow. skrawania [cal²/min]<br/><b>VC</b> - Prędkość skrawania [stopa/min]<br/><b>D</b> - Średnica piły [cal]<br/><b>Z</b> - Ilość ostrzy<br/><b>L</b> - Długość cięcia [cal]]]></string>
+
+    <string name="info_7_m"><![CDATA[<b>Piły Tarczowe (Opcja 2)</b><br/><br/><b>VF</b> - Prędkość posuwu [mm/min]<br/><b>VC</b> - Prędkość skrawania [m/min]<br/><b>Z</b> - Ilość ostrzy<br/><b>D</b> - Średnica piły [mm]]]></string>
+    <string name="info_7_inch"><![CDATA[<b>Piły Tarczowe (Opcja 2 - Cale)</b><br/><br/><b>VF</b> - Prędkość posuwu [cal/min]<br/><b>VC</b> - Prędkość skrawania [stopa/min]<br/><b>Z</b> - Ilość ostrzy<br/><b>D</b> - Średnica piły [cal]]]></string>
+
+    <string name="info_3_m"><![CDATA[<b>Toczenie (Podstawowe)</b><br/><br/><b>VC</b> - Prędkość skrawania [m/min]<br/><b>DM</b> - Średnica materiału [mm]<br/><b>FN</b> - Posuw na obrót [mm/obr]]]></string>
+    <string name="info_3_inch"><![CDATA[<b>Toczenie (Podstawowe - Cale)</b><br/><br/><b>VC</b> - Prędkość skrawania [stopa/min]<br/><b>DM</b> - Średnica materiału [cal]<br/><b>FN</b> - Posuw na obrót [cal/obr]]]></string>
+
+
+    <string name="info_9_m"><![CDATA[<b>Wytaczanie (Toczenie)</b><br/><br/><b>VC</b> - Prędkość skrawania [m/min]<br/><b>DM</b> - Średnica materiału [mm]<br/><b>FN</b> - Posuw na obrót [mm/obr]]]></string>
+    <string name="info_9_inch"><![CDATA[<b>Wytaczanie (Toczenie - Cale)</b><br/><br/><b>VC</b> - Prędkość skrawania [stopa/min]<br/><b>DM</b> - Średnica materiału [cal]<br/><b>FN</b> - Posuw na obrót [cal/obr]]]></string>
+
+    <string name="info_10_m"><![CDATA[<b>Czas maszynowy (Toczenie)</b><br/><br/><b>VC</b> - Prędkość skrawania [m/min]<br/><b>DM</b> - Średnica materiału [mm]<br/><b>FN</b> - Posuw na obrót [mm/obr]<br/><b>LM</b> - Długość drogi skrawania [mm]]]></string>
+    <string name="info_10_inch"><![CDATA[<b>Czas maszynowy (Toczenie - Cale)</b><br/><br/><b>VC</b> - Prędkość skrawania [stopa/min]<br/><b>DM</b> - Średnica materiału [cal]<br/><b>FN</b> - Posuw na obrót [cal/obr]<br/><b>LM</b> - Długość drogi skrawania [cal]]]></string>
+
+    <string name="info_11_m"><![CDATA[<b>Wydajność objętościowa (Toczenie)</b><br/><br/><b>VC</b> - Prędkość skrawania [m/min]<br/><b>AP</b> - Głębokość cięcia [mm]<br/><b>FN</b> - Posuw na obrót [mm/obr]]]></string>
+    <string name="info_11_inch"><![CDATA[<b>Wydajność objętościowa (Toczenie - Cale)</b><br/><br/><b>VC</b> - Prędkość skrawania [stopa/min]<br/><b>AP</b> - Głębokość cięcia [cal]<br/><b>FN</b> - Posuw na obrót [cal/obr]]]></string>
+
+    <string name="info_12_m"><![CDATA[<b>Punkt Zerowy (Centrowanie)</b><br/><br/>Funkcja pozwala obliczyć środek detalu między dwoma punktami (A i B).<br/><br/><b>Wzór:</b> (A + B) / 2]]></string>
+    <string name="info_12_inch"><![CDATA[<b>Punkt Zerowy (Centrowanie - Cale)</b><br/><br/>Funkcja pozwala obliczyć środek detalu między dwoma punktami (A i B).<br/><br/><b>Wzór:</b> (A + B) / 2]]></string>
+
+    <string name="info_13_m"><![CDATA[<b>Gwintowanie (Frezowanie)</b><br/><br/><b>VC</b> - Prędkość skrawania [m/min]<br/><b>DM</b> - Średnica gwintu [mm]<br/><b>JT</b> - Skok gwintu [mm]<br/><br/><i>Ważne: W gwintowaniu posuw na obrót (FN) jest zawsze równy skokowi gwintu (P).</i>]]></string>
+    <string name="info_13_inch"><![CDATA[<b>Gwintowanie (Frezowanie - Cale)</b><br/><br/><b>VC</b> - Prędkość skrawania [stopa/min]<br/><b>DM</b> - Średnica gwintu [cal]<br/><b>JT</b> - Skok gwintu [TPI / cal]<br/><br/><i>Ważne: W gwintowaniu posuw na obrót (FN) jest zawsze równy skokowi gwintu (P).</i>]]></string>
+
+    <string name="info_14_m"><![CDATA[<b>Chropowatość powierzchni (Ra)</b><br/><br/><b>FN</b> - Posuw na obrót [mm/obr]<br/><b>RE</b> - Promień naroża płytki [mm]<br/><br/>Wyliczana teoretyczna chropowatość profilu Ra w µm.]]></string>
+    <string name="info_14_inch"><![CDATA[<b>Chropowatość powierzchni (Ra - Cale)</b><br/><br/><b>FN</b> - Posuw na obrót [cal/obr]<br/><b>RE</b> - Promień naroża płytki [cal]<br/><br/>Wyliczana teoretyczna chropowatość profilu Ra w µcal.]]></string>
+
+    <string name="info_15_m"><![CDATA[<b>Toczenie stożka</b><br/><br/><b>D</b> - Średnica większa [mm]<br/><b>d</b> - Średnica mniejsza [mm]<br/><b>L</b> - Długość stożka [mm]<br/><br/>Funkcja oblicza kąt nachylenia stożka oraz zbieżność.]]></string>
+    <string name="info_15_inch"><![CDATA[<b>Toczenie stożka (Cale)</b><br/><br/><b>D</b> - Średnica większa [cal]<br/><b>d</b> - Średnica mniejsza [cal]<br/><b>L</b> - Długość stożka [cal]<br/><br/>Funkcja oblicza kąt nachylenia stożka oraz zbieżność.]]></string>
+
+    <!--  Arrays-->
+    <string-array name="miling_spinner1_data">
+        <item>Parametry Skrawania</item>
+        <item>Parametry Gwintowania</item>
+        <item>Piły Taśmowe Opcja 1</item>
+        <item>Piły Taśmowe Opcja 2</item>
+        <item>Piły Tarczowe Opcja 1</item>
+        <item>Piły Tarczowe Opcja 2</item>
+        <item>Parametry Interpolacjii</item>
+        <item>Parametry Wytaczania</item>
+        <item>Punkt Zerowy</item>
+        <item>Konwerter Twardości (Rm/HV/HB/HRC)</item>
+    </string-array>
+
+    <string-array name="tourning_spinner1_data">
+        <item>Parametry Skrawania</item>
+        <item>Parametry Wytaczania</item>
+        <item>Gwintowanie</item>
+        <item>Czas Maszynowy</item>
+        <item>Wydajność skrawania</item>
+        <item>Chropowatość powierzchni</item>
+        <item>Toczenie stożka</item>
+    </string-array>
+
+    <string-array name="spinner1_items">
+        <item>Metryczny</item>
+        <item>Calowy</item>
+    </string-array>
+
+    <string-array name="spinner3_items">
+        <item>Gwint metryczny</item>
+        <item>Gwint do wkładek</item>
+        <item>Gwint Amerykański</item>
+        <item>Gwint Amerykański rurowy</item>
+        <item>Gwint rurowy</item>
+        <item>Gwint Whitwortha</item>
+        <item>Wygniatanie</item>
+        <item>Gwint do rurek pancernych</item>
+    </string-array>
+</resources>

@@ -1,0 +1,5402 @@
+[
+    {
+        "category_id": 0,
+        "hole_max": "0.785",
+        "hole_min": "0.729",
+        "hole_size": "0.75",
+        "id": 1,
+        "name": "M1",
+        "pitch": "0.25",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "1.679",
+        "hole_min": "1.567",
+        "hole_size": "1.60",
+        "id": 2,
+        "name": "M2",
+        "pitch": "0.40",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "2.599",
+        "hole_min": "2.459",
+        "hole_size": "2.50",
+        "id": 3,
+        "name": "M3",
+        "pitch": "0.50",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "3.422",
+        "hole_min": "3.242",
+        "hole_size": "3.30",
+        "id": 4,
+        "name": "M4",
+        "pitch": "0.70",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "4.344",
+        "hole_min": "4.134",
+        "hole_size": "4.20",
+        "id": 5,
+        "name": "M5",
+        "pitch": "0.80",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "5.153",
+        "hole_min": "4.917",
+        "hole_size": "5.00",
+        "id": 6,
+        "name": "M6",
+        "pitch": "1.00",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "6.912",
+        "hole_min": "6.647",
+        "hole_size": "6.80",
+        "id": 7,
+        "name": "M8",
+        "pitch": "1.25",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "8.676",
+        "hole_min": "8.376",
+        "hole_size": "8.50",
+        "id": 8,
+        "name": "M10",
+        "pitch": "1.50",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "10.441",
+        "hole_min": "10.106",
+        "hole_size": "10.20",
+        "id": 9,
+        "name": "M12",
+        "pitch": "1.75",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "2.684",
+        "hole_min": "2.621",
+        "hole_size": "2.65",
+        "id": 10,
+        "name": "M3x0.35",
+        "pitch": "0.35",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "3.599",
+        "hole_min": "3.459",
+        "hole_size": "3.50",
+        "id": 11,
+        "name": "M4x0.5",
+        "pitch": "0.50",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "4.599",
+        "hole_min": "4.459",
+        "hole_size": "4.50",
+        "id": 12,
+        "name": "M5x0.5",
+        "pitch": "0.50",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "5.378",
+        "hole_min": "5.188",
+        "hole_size": "5.25",
+        "id": 13,
+        "name": "M6x0.75",
+        "pitch": "0.75",
+        "table_id": 1
+    },
+    {
+        "category_id": 4,
+        "hole_max": "8.848",
+        "hole_min": "8.566",
+        "hole_size": "8.80",
+        "id": 14,
+        "name": "G 1/8-28",
+        "pitch": "28",
+        "table_id": 0
+    },
+    {
+        "category_id": 4,
+        "hole_max": "11.890",
+        "hole_min": "11.455",
+        "hole_size": "11.80",
+        "id": 15,
+        "name": "G 1/4-19",
+        "pitch": "19",
+        "table_id": 0
+    },
+    {
+        "category_id": 4,
+        "hole_max": "15.395",
+        "hole_min": "14.950",
+        "hole_size": "15.25",
+        "id": 16,
+        "name": "G 3/8-19",
+        "pitch": "19",
+        "table_id": 0
+    },
+    {
+        "category_id": 4,
+        "hole_max": "19.173",
+        "hole_min": "18.632",
+        "hole_size": "19.00",
+        "id": 17,
+        "name": "G 1/2-14",
+        "pitch": "14",
+        "table_id": 0
+    },
+    {
+        "category_id": 5,
+        "hole_max": "1.231",
+        "hole_min": "1.045",
+        "hole_size": "1.20",
+        "id": 18,
+        "name": "1/16-60",
+        "pitch": "60",
+        "table_id": 0
+    },
+    {
+        "category_id": 5,
+        "hole_max": "1.911",
+        "hole_min": "1.703",
+        "hole_size": "1.85",
+        "id": 19,
+        "name": "3/32-48",
+        "pitch": "48",
+        "table_id": 0
+    },
+    {
+        "category_id": 5,
+        "hole_max": "2.590",
+        "hole_min": "2.362",
+        "hole_size": "2.50",
+        "id": 20,
+        "name": "1/8-40",
+        "pitch": "40",
+        "table_id": 0
+    },
+    {
+        "category_id": 6,
+        "hole_max": "2.80",
+        "hole_min": "2.76",
+        "hole_size": "2.80",
+        "id": 21,
+        "name": "M3",
+        "pitch": "0.50",
+        "table_id": 0
+    },
+    {
+        "category_id": 6,
+        "hole_max": "3.72",
+        "hole_min": "3.66",
+        "hole_size": "3.70",
+        "id": 22,
+        "name": "M4",
+        "pitch": "0.70",
+        "table_id": 0
+    },
+    {
+        "category_id": 6,
+        "hole_max": "4.66",
+        "hole_min": "4.60",
+        "hole_size": "4.65",
+        "id": 23,
+        "name": "M5",
+        "pitch": "0.80",
+        "table_id": 0
+    },
+    {
+        "category_id": 6,
+        "hole_max": "5.59",
+        "hole_min": "5.51",
+        "hole_size": "5.55",
+        "id": 24,
+        "name": "M6",
+        "pitch": "1.00",
+        "table_id": 0
+    },
+    {
+        "category_id": 2,
+        "hole_max": "1.582",
+        "hole_min": "1.425",
+        "hole_size": "1.55",
+        "id": 25,
+        "name": "Nr. 1 - 64 UNC",
+        "pitch": "64",
+        "table_id": 0
+    },
+    {
+        "category_id": 2,
+        "hole_max": "5.268",
+        "hole_min": "4.976",
+        "hole_size": "5.10",
+        "id": 26,
+        "name": "1/4 - 20 UNC",
+        "pitch": "20",
+        "table_id": 0
+    },
+    {
+        "category_id": 2,
+        "hole_max": "11.013",
+        "hole_min": "10.592",
+        "hole_size": "10.80",
+        "id": 27,
+        "name": "1/2 - 13 UNC",
+        "pitch": "13",
+        "table_id": 0
+    },
+    {
+        "category_id": 2,
+        "hole_max": "22.598",
+        "hole_min": "21.963",
+        "hole_size": "22.25",
+        "id": 28,
+        "name": "1 - 8 UNC",
+        "pitch": "8",
+        "table_id": 0
+    },
+    {
+        "category_id": 2,
+        "hole_max": "1.306",
+        "hole_min": "1.181",
+        "hole_size": "1.25",
+        "id": 29,
+        "name": "0-80 UNF",
+        "pitch": "80",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "5.580",
+        "hole_min": "5.367",
+        "hole_size": "5.50",
+        "id": 30,
+        "name": "1/4-28 UNF",
+        "pitch": "28",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "11.618",
+        "hole_min": "11.326",
+        "hole_size": "11.50",
+        "id": 31,
+        "name": "1/2-20 UNF",
+        "pitch": "20",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "5.679",
+        "hole_min": "5.491",
+        "hole_size": "5.55",
+        "id": 32,
+        "name": "1/4-32 UNEF",
+        "pitch": "32",
+        "table_id": 2
+    },
+    {
+        "category_id": 2,
+        "hole_max": "11.931",
+        "hole_min": "11.718",
+        "hole_size": "11.80",
+        "id": 33,
+        "name": "1/2-28 UNEF",
+        "pitch": "28",
+        "table_id": 2
+    },
+    {
+        "category_id": 3,
+        "hole_max": "6.39",
+        "hole_min": "5.95",
+        "hole_size": "6.15",
+        "id": 34,
+        "name": "1/16-27 NPT",
+        "pitch": "27",
+        "table_id": 0
+    },
+    {
+        "category_id": 3,
+        "hole_max": "11.36",
+        "hole_min": "10.73",
+        "hole_size": "11.10",
+        "id": 35,
+        "name": "1/4-18 NPT",
+        "pitch": "18",
+        "table_id": 0
+    },
+    {
+        "category_id": 3,
+        "hole_max": "18.32",
+        "hole_min": "17.47",
+        "hole_size": "17.90",
+        "id": 36,
+        "name": "1/2-14 NPT",
+        "pitch": "14",
+        "table_id": 0
+    },
+    {
+        "category_id": 3,
+        "hole_max": "29.69",
+        "hole_min": "28.64",
+        "hole_size": "29.00",
+        "id": 37,
+        "name": "1-11.5 NPT",
+        "pitch": "11.5",
+        "table_id": 0
+    },
+    {
+        "category_id": 3,
+        "hole_max": "38.45",
+        "hole_min": "37.37",
+        "hole_size": "37.70",
+        "id": 38,
+        "name": "1 1/4-11.5 NPT",
+        "pitch": "11.5",
+        "table_id": 0
+    },
+    {
+        "category_id": 3,
+        "hole_max": "44.52",
+        "hole_min": "43.44",
+        "hole_size": "43.70",
+        "id": 39,
+        "name": "1 1/2-11.5 NPT",
+        "pitch": "11.5",
+        "table_id": 0
+    },
+    {
+        "category_id": 3,
+        "hole_max": "56.56",
+        "hole_min": "55.45",
+        "hole_size": "55.60",
+        "id": 40,
+        "name": "2-11.5 NPT",
+        "pitch": "11.5",
+        "table_id": 0
+    },
+    {
+        "category_id": 3,
+        "hole_max": "83.52",
+        "hole_min": "81.90",
+        "hole_size": "82.30",
+        "id": 41,
+        "name": "3-8 NPT",
+        "pitch": "8",
+        "table_id": 0
+    },
+    {
+        "category_id": 1,
+        "hole_max": "6.868",
+        "hole_min": "6.625",
+        "hole_size": "6.70",
+        "id": 42,
+        "name": "EG 1/4-20",
+        "pitch": "20",
+        "table_id": 2
+    },
+    {
+        "category_id": 1,
+        "hole_max": "13.393",
+        "hole_min": "13.123",
+        "hole_size": "13.30",
+        "id": 43,
+        "name": "EG 1/2-13",
+        "pitch": "13",
+        "table_id": 2
+    },
+    {
+        "category_id": 1,
+        "hole_max": "8.407",
+        "hole_min": "8.217",
+        "hole_size": "8.3",
+        "id": 44,
+        "name": "EG M 8x1",
+        "pitch": "1.00",
+        "table_id": 1
+    },
+    {
+        "category_id": 1,
+        "hole_max": "10.407",
+        "hole_min": "10.217",
+        "hole_size": "10.3",
+        "id": 45,
+        "name": "EG M 10x1",
+        "pitch": "1.00",
+        "table_id": 1
+    },
+    {
+        "category_id": 5,
+        "hole_max": "3.213",
+        "hole_min": "2.952",
+        "hole_size": "3.10",
+        "id": 46,
+        "name": "5/32-32",
+        "pitch": "32",
+        "table_id": 0
+    },
+    {
+        "category_id": 5,
+        "hole_max": "3.745",
+        "hole_min": "3.407",
+        "hole_size": "3.60",
+        "id": 47,
+        "name": "3/16-24",
+        "pitch": "24",
+        "table_id": 0
+    },
+    {
+        "category_id": 5,
+        "hole_max": "4.539",
+        "hole_min": "4.201",
+        "hole_size": "4.50",
+        "id": 48,
+        "name": "7/32-24",
+        "pitch": "24",
+        "table_id": 0
+    },
+    {
+        "category_id": 5,
+        "hole_max": "5.155",
+        "hole_min": "4.724",
+        "hole_size": "5.00",
+        "id": 49,
+        "name": "1/4-20",
+        "pitch": "20",
+        "table_id": 0
+    },
+    {
+        "category_id": 5,
+        "hole_max": "6.591",
+        "hole_min": "6.131",
+        "hole_size": "6.50",
+        "id": 50,
+        "name": "5/16-18",
+        "pitch": "18",
+        "table_id": 0
+    },
+    {
+        "category_id": 5,
+        "hole_max": "7.988",
+        "hole_min": "7.493",
+        "hole_size": "7.90",
+        "id": 51,
+        "name": "3/8-16",
+        "pitch": "16",
+        "table_id": 0
+    },
+    {
+        "category_id": 5,
+        "hole_max": "9.330",
+        "hole_min": "8.790",
+        "hole_size": "9.20",
+        "id": 52,
+        "name": "7/16-14",
+        "pitch": "14",
+        "table_id": 0
+    },
+    {
+        "category_id": 5,
+        "hole_max": "10.590",
+        "hole_min": "9.989",
+        "hole_size": "10.50",
+        "id": 53,
+        "name": "1/2-12",
+        "pitch": "12",
+        "table_id": 0
+    },
+    {
+        "category_id": 5,
+        "hole_max": "12.178",
+        "hole_min": "11.577",
+        "hole_size": "12.00",
+        "id": 54,
+        "name": "9/16-12",
+        "pitch": "12",
+        "table_id": 0
+    },
+    {
+        "category_id": 5,
+        "hole_max": "13.558",
+        "hole_min": "12.919",
+        "hole_size": "13.40",
+        "id": 55,
+        "name": "5/8-11",
+        "pitch": "11",
+        "table_id": 0
+    },
+    {
+        "category_id": 5,
+        "hole_max": "16.484",
+        "hole_min": "15.798",
+        "hole_size": "16.40",
+        "id": 56,
+        "name": "3/4-10",
+        "pitch": "10",
+        "table_id": 0
+    },
+    {
+        "category_id": 5,
+        "hole_max": "19.354",
+        "hole_min": "18.612",
+        "hole_size": "19.25",
+        "id": 57,
+        "name": "7/8-9",
+        "pitch": "9",
+        "table_id": 0
+    },
+    {
+        "category_id": 5,
+        "hole_max": "22.148",
+        "hole_min": "21.335",
+        "hole_size": "22.00",
+        "id": 58,
+        "name": "1-8",
+        "pitch": "8",
+        "table_id": 0
+    },
+    {
+        "category_id": 5,
+        "hole_max": "24.833",
+        "hole_min": "23.929",
+        "hole_size": "24.75",
+        "id": 59,
+        "name": "1 1/8-7",
+        "pitch": "7",
+        "table_id": 0
+    },
+    {
+        "category_id": 5,
+        "hole_max": "28.008",
+        "hole_min": "27.104",
+        "hole_size": "27.50",
+        "id": 60,
+        "name": "1 1/4-7",
+        "pitch": "7",
+        "table_id": 0
+    },
+    {
+        "category_id": 5,
+        "hole_max": "30.529",
+        "hole_min": "29.505",
+        "hole_size": "30.00",
+        "id": 61,
+        "name": "1 3/8-6",
+        "pitch": "6",
+        "table_id": 0
+    },
+    {
+        "category_id": 5,
+        "hole_max": "33.704",
+        "hole_min": "32.680",
+        "hole_size": "33.50",
+        "id": 62,
+        "name": "1 1/2-6",
+        "pitch": "6",
+        "table_id": 0
+    },
+    {
+        "category_id": 5,
+        "hole_max": "35.965",
+        "hole_min": "34.771",
+        "hole_size": "35.50",
+        "id": 63,
+        "name": "1 5/8-5",
+        "pitch": "5",
+        "table_id": 0
+    },
+    {
+        "category_id": 5,
+        "hole_max": "39.104",
+        "hole_min": "37.946",
+        "hole_size": "39.00",
+        "id": 64,
+        "name": "1 3/4-5",
+        "pitch": "5",
+        "table_id": 0
+    },
+    {
+        "category_id": 5,
+        "hole_max": "41.705",
+        "hole_min": "40.398",
+        "hole_size": "41.50",
+        "id": 65,
+        "name": "1 7/8-4.5",
+        "pitch": "4.5",
+        "table_id": 0
+    },
+    {
+        "category_id": 5,
+        "hole_max": "44.880",
+        "hole_min": "43.573",
+        "hole_size": "44.50",
+        "id": 66,
+        "name": "2-4.5",
+        "pitch": "4.5",
+        "table_id": 0
+    },
+    {
+        "category_id": 5,
+        "hole_max": "50.468",
+        "hole_min": "49.020",
+        "hole_size": "50.00",
+        "id": 67,
+        "name": "2 1/4-4",
+        "pitch": "4",
+        "table_id": 0
+    },
+    {
+        "category_id": 5,
+        "hole_max": "56.818",
+        "hole_min": "55.370",
+        "hole_size": "56.00",
+        "id": 68,
+        "name": "2 1/2-4",
+        "pitch": "4",
+        "table_id": 0
+    },
+    {
+        "category_id": 1,
+        "hole_max": "2.697",
+        "hole_min": "2.597",
+        "hole_size": "2.65",
+        "id": 69,
+        "name": "EG M 2.5",
+        "pitch": "0.45",
+        "table_id": 0
+    },
+    {
+        "category_id": 1,
+        "hole_max": "3.221",
+        "hole_min": "3.109",
+        "hole_size": "3.15",
+        "id": 70,
+        "name": "EG M 3",
+        "pitch": "0.50",
+        "table_id": 0
+    },
+    {
+        "category_id": 1,
+        "hole_max": "3.755",
+        "hole_min": "3.630",
+        "hole_size": "3.70",
+        "id": 71,
+        "name": "EG M 3.5",
+        "pitch": "0.60",
+        "table_id": 0
+    },
+    {
+        "category_id": 1,
+        "hole_max": "4.292",
+        "hole_min": "4.152",
+        "hole_size": "4.20",
+        "id": 72,
+        "name": "EG M 4",
+        "pitch": "0.70",
+        "table_id": 0
+    },
+    {
+        "category_id": 1,
+        "hole_max": "5.334",
+        "hole_min": "5.174",
+        "hole_size": "5.25",
+        "id": 73,
+        "name": "EG M 5",
+        "pitch": "0.80",
+        "table_id": 0
+    },
+    {
+        "category_id": 1,
+        "hole_max": "6.407",
+        "hole_min": "6.217",
+        "hole_size": "6.30",
+        "id": 74,
+        "name": "EG M 6",
+        "pitch": "1.00",
+        "table_id": 0
+    },
+    {
+        "category_id": 1,
+        "hole_max": "8.483",
+        "hole_min": "8.217",
+        "hole_size": "8.40",
+        "id": 75,
+        "name": "EG M 8",
+        "pitch": "1.25",
+        "table_id": 0
+    },
+    {
+        "category_id": 1,
+        "hole_max": "10.560",
+        "hole_min": "10.324",
+        "hole_size": "10.50",
+        "id": 76,
+        "name": "EG M 10",
+        "pitch": "1.50",
+        "table_id": 0
+    },
+    {
+        "category_id": 1,
+        "hole_max": "12.645",
+        "hole_min": "12.380",
+        "hole_size": "12.50",
+        "id": 77,
+        "name": "EG M 12",
+        "pitch": "1.75",
+        "table_id": 0
+    },
+    {
+        "category_id": 1,
+        "hole_max": "14.733",
+        "hole_min": "14.433",
+        "hole_size": "14.50",
+        "id": 78,
+        "name": "EG M 14",
+        "pitch": "2.00",
+        "table_id": 0
+    },
+    {
+        "category_id": 1,
+        "hole_max": "16.733",
+        "hole_min": "16.433",
+        "hole_size": "16.50",
+        "id": 79,
+        "name": "EG M 16",
+        "pitch": "2.00",
+        "table_id": 0
+    },
+    {
+        "category_id": 1,
+        "hole_max": "18.897",
+        "hole_min": "18.542",
+        "hole_size": "18.80",
+        "id": 80,
+        "name": "EG M 18",
+        "pitch": "2.50",
+        "table_id": 0
+    },
+    {
+        "category_id": 1,
+        "hole_max": "20.897",
+        "hole_min": "20.542",
+        "hole_size": "20.80",
+        "id": 81,
+        "name": "EG M 20",
+        "pitch": "2.50",
+        "table_id": 0
+    },
+    {
+        "category_id": 1,
+        "hole_max": "22.897",
+        "hole_min": "22.542",
+        "hole_size": "22.80",
+        "id": 82,
+        "name": "EG M 22",
+        "pitch": "2.50",
+        "table_id": 0
+    },
+    {
+        "category_id": 1,
+        "hole_max": "25.049",
+        "hole_min": "24.649",
+        "hole_size": "24.75",
+        "id": 83,
+        "name": "EG M 24",
+        "pitch": "3.00",
+        "table_id": 0
+    },
+    {
+        "category_id": 1,
+        "hole_max": "10.438",
+        "hole_min": "10.217",
+        "hole_size": "10.4",
+        "id": 84,
+        "name": "EG M 10x1.25",
+        "pitch": "1.25",
+        "table_id": 1
+    },
+    {
+        "category_id": 1,
+        "hole_max": "12.438",
+        "hole_min": "12.217",
+        "hole_size": "12.4",
+        "id": 85,
+        "name": "EG M 12x1.25",
+        "pitch": "1.25",
+        "table_id": 1
+    },
+    {
+        "category_id": 1,
+        "hole_max": "12.560",
+        "hole_min": "12.324",
+        "hole_size": "12.5",
+        "id": 86,
+        "name": "EG M 12x1.5",
+        "pitch": "1.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 1,
+        "hole_max": "14.560",
+        "hole_min": "14.324",
+        "hole_size": "14.5",
+        "id": 87,
+        "name": "EG M 14x1.5",
+        "pitch": "1.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 1,
+        "hole_max": "16.560",
+        "hole_min": "16.324",
+        "hole_size": "16.5",
+        "id": 88,
+        "name": "EG M 16x1.5",
+        "pitch": "1.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 1,
+        "hole_max": "18.560",
+        "hole_min": "18.324",
+        "hole_size": "18.5",
+        "id": 89,
+        "name": "EG M 18x1.5",
+        "pitch": "1.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 1,
+        "hole_max": "18.733",
+        "hole_min": "18.433",
+        "hole_size": "18.5",
+        "id": 90,
+        "name": "EG M 18x2",
+        "pitch": "2",
+        "table_id": 1
+    },
+    {
+        "category_id": 1,
+        "hole_max": "20.560",
+        "hole_min": "20.324",
+        "hole_size": "20.5",
+        "id": 91,
+        "name": "EG M 20x1.5",
+        "pitch": "1.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 1,
+        "hole_max": "2.441",
+        "hole_min": "2.282",
+        "hole_size": "2.35",
+        "id": 92,
+        "name": "EG 2-56",
+        "pitch": "56",
+        "table_id": 2
+    },
+    {
+        "category_id": 1,
+        "hole_max": "2.804",
+        "hole_min": "2.630",
+        "hole_size": "2.70",
+        "id": 93,
+        "name": "EG 3-48",
+        "pitch": "48",
+        "table_id": 2
+    },
+    {
+        "category_id": 1,
+        "hole_max": "3.180",
+        "hole_min": "2.982",
+        "hole_size": "3.05",
+        "id": 94,
+        "name": "EG 4-40",
+        "pitch": "40",
+        "table_id": 2
+    },
+    {
+        "category_id": 1,
+        "hole_max": "3.487",
+        "hole_min": "3.312",
+        "hole_size": "3.40",
+        "id": 95,
+        "name": "EG 5-40",
+        "pitch": "40",
+        "table_id": 2
+    },
+    {
+        "category_id": 1,
+        "hole_max": "3.879",
+        "hole_min": "3.677",
+        "hole_size": "3.70",
+        "id": 96,
+        "name": "EG 6-32",
+        "pitch": "32",
+        "table_id": 2
+    },
+    {
+        "category_id": 1,
+        "hole_max": "4.524",
+        "hole_min": "4.338",
+        "hole_size": "4.40",
+        "id": 97,
+        "name": "EG 8-32",
+        "pitch": "32",
+        "table_id": 2
+    },
+    {
+        "category_id": 1,
+        "hole_max": "5.283",
+        "hole_min": "5.055",
+        "hole_size": "5.10",
+        "id": 98,
+        "name": "EG 10-24",
+        "pitch": "24",
+        "table_id": 2
+    },
+    {
+        "category_id": 1,
+        "hole_max": "5.944",
+        "hole_min": "5.715",
+        "hole_size": "5.80",
+        "id": 99,
+        "name": "EG 12-24",
+        "pitch": "24",
+        "table_id": 2
+    },
+    {
+        "category_id": 1,
+        "hole_max": "8.489",
+        "hole_min": "8.244",
+        "hole_size": "8.40",
+        "id": 100,
+        "name": "EG 5/16-18",
+        "pitch": "18",
+        "table_id": 2
+    },
+    {
+        "category_id": 1,
+        "hole_max": "10.127",
+        "hole_min": "9.869",
+        "hole_size": "10.00",
+        "id": 101,
+        "name": "EG 3/8-16",
+        "pitch": "16",
+        "table_id": 2
+    },
+    {
+        "category_id": 1,
+        "hole_max": "11.783",
+        "hole_min": "11.505",
+        "hole_size": "11.70",
+        "id": 102,
+        "name": "EG 7/16-14",
+        "pitch": "14",
+        "table_id": 2
+    },
+    {
+        "category_id": 1,
+        "hole_max": "15.031",
+        "hole_min": "14.747",
+        "hole_size": "15.00",
+        "id": 103,
+        "name": "EG 9/16-12",
+        "pitch": "12",
+        "table_id": 2
+    },
+    {
+        "category_id": 1,
+        "hole_max": "16.676",
+        "hole_min": "16.376",
+        "hole_size": "16.50",
+        "id": 104,
+        "name": "EG 5/8-11",
+        "pitch": "11",
+        "table_id": 2
+    },
+    {
+        "category_id": 1,
+        "hole_max": "19.908",
+        "hole_min": "19.598",
+        "hole_size": "19.75",
+        "id": 105,
+        "name": "EG 3/4-10",
+        "pitch": "10",
+        "table_id": 2
+    },
+    {
+        "category_id": 1,
+        "hole_max": "2.405",
+        "hole_min": "2.270",
+        "hole_size": "2.30",
+        "id": 106,
+        "name": "EG 2-64",
+        "pitch": "64",
+        "table_id": 3
+    },
+    {
+        "category_id": 1,
+        "hole_max": "2.758",
+        "hole_min": "2.614",
+        "hole_size": "2.65",
+        "id": 107,
+        "name": "EG 3-56",
+        "pitch": "56",
+        "table_id": 3
+    },
+    {
+        "category_id": 1,
+        "hole_max": "3.122",
+        "hole_min": "2.962",
+        "hole_size": "3.00",
+        "id": 108,
+        "name": "EG 4-48",
+        "pitch": "48",
+        "table_id": 3
+    },
+    {
+        "category_id": 1,
+        "hole_max": "3.467",
+        "hole_min": "3.300",
+        "hole_size": "3.30",
+        "id": 109,
+        "name": "EG 5-44",
+        "pitch": "44",
+        "table_id": 3
+    },
+    {
+        "category_id": 1,
+        "hole_max": "3.818",
+        "hole_min": "3.644",
+        "hole_size": "3.70",
+        "id": 110,
+        "name": "EG 6-40",
+        "pitch": "40",
+        "table_id": 3
+    },
+    {
+        "category_id": 1,
+        "hole_max": "4.498",
+        "hole_min": "4.321",
+        "hole_size": "4.40",
+        "id": 111,
+        "name": "EG 8-36",
+        "pitch": "36",
+        "table_id": 3
+    },
+    {
+        "category_id": 1,
+        "hole_max": "5.184",
+        "hole_min": "4.999",
+        "hole_size": "5.10",
+        "id": 112,
+        "name": "EG 10-32",
+        "pitch": "32",
+        "table_id": 3
+    },
+    {
+        "category_id": 1,
+        "hole_max": "6.721",
+        "hole_min": "6.545",
+        "hole_size": "6.60",
+        "id": 113,
+        "name": "EG 1/4-28",
+        "pitch": "28",
+        "table_id": 3
+    },
+    {
+        "category_id": 1,
+        "hole_max": "8.351",
+        "hole_min": "8.166",
+        "hole_size": "8.20",
+        "id": 114,
+        "name": "EG 5/16-24",
+        "pitch": "24",
+        "table_id": 3
+    },
+    {
+        "category_id": 1,
+        "hole_max": "9.931",
+        "hole_min": "9.754",
+        "hole_size": "9.80",
+        "id": 115,
+        "name": "EG 3/8-24",
+        "pitch": "24",
+        "table_id": 3
+    },
+    {
+        "category_id": 1,
+        "hole_max": "11.585",
+        "hole_min": "11.387",
+        "hole_size": "11.40",
+        "id": 116,
+        "name": "EG 7/16-20",
+        "pitch": "20",
+        "table_id": 3
+    },
+    {
+        "category_id": 1,
+        "hole_max": "13.172",
+        "hole_min": "12.970",
+        "hole_size": "13.00",
+        "id": 117,
+        "name": "EG 1/2-20",
+        "pitch": "20",
+        "table_id": 3
+    },
+    {
+        "category_id": 4,
+        "hole_max": "6.843",
+        "hole_min": "6.561",
+        "hole_size": "6.80",
+        "id": 118,
+        "name": "G 1/16-28",
+        "pitch": "28",
+        "table_id": 0
+    },
+    {
+        "category_id": 4,
+        "hole_max": "21.129",
+        "hole_min": "20.588",
+        "hole_size": "21.00",
+        "id": 119,
+        "name": "G 5/8-14",
+        "pitch": "14",
+        "table_id": 0
+    },
+    {
+        "category_id": 4,
+        "hole_max": "24.659",
+        "hole_min": "24.188",
+        "hole_size": "24.50",
+        "id": 120,
+        "name": "G 3/4-14",
+        "pitch": "14",
+        "table_id": 0
+    },
+    {
+        "category_id": 4,
+        "hole_max": "28.419",
+        "hole_min": "27.878",
+        "hole_size": "28.25",
+        "id": 121,
+        "name": "G 7/8-14",
+        "pitch": "14",
+        "table_id": 0
+    },
+    {
+        "category_id": 4,
+        "hole_max": "30.932",
+        "hole_min": "30.292",
+        "hole_size": "30.75",
+        "id": 122,
+        "name": "G 1-12",
+        "pitch": "12",
+        "table_id": 0
+    },
+    {
+        "category_id": 4,
+        "hole_max": "35.580",
+        "hole_min": "34.940",
+        "hole_size": "35.50",
+        "id": 123,
+        "name": "G 1 1/8-11",
+        "pitch": "11",
+        "table_id": 0
+    },
+    {
+        "category_id": 4,
+        "hole_max": "39.593",
+        "hole_min": "38.953",
+        "hole_size": "39.50",
+        "id": 124,
+        "name": "G 1 1/4-11",
+        "pitch": "11",
+        "table_id": 0
+    },
+    {
+        "category_id": 4,
+        "hole_max": "42.006",
+        "hole_min": "41.366",
+        "hole_size": "41.90",
+        "id": 125,
+        "name": "G 1 3/8-11",
+        "pitch": "11",
+        "table_id": 0
+    },
+    {
+        "category_id": 4,
+        "hole_max": "45.486",
+        "hole_min": "44.846",
+        "hole_size": "45.25",
+        "id": 126,
+        "name": "G 1 1/2-11",
+        "pitch": "11",
+        "table_id": 0
+    },
+    {
+        "category_id": 4,
+        "hole_max": "51.429",
+        "hole_min": "50.789",
+        "hole_size": "51.00",
+        "id": 127,
+        "name": "G 1 3/4-11",
+        "pitch": "11",
+        "table_id": 0
+    },
+    {
+        "category_id": 4,
+        "hole_max": "63.393",
+        "hole_min": "62.753",
+        "hole_size": "63.00",
+        "id": 128,
+        "name": "G 2 1/4-11",
+        "pitch": "11",
+        "table_id": 0
+    },
+    {
+        "category_id": 4,
+        "hole_max": "72.868",
+        "hole_min": "72.229",
+        "hole_size": "72.60",
+        "id": 129,
+        "name": "G 2 1/2-11",
+        "pitch": "11",
+        "table_id": 0
+    },
+    {
+        "category_id": 4,
+        "hole_max": "85.567",
+        "hole_min": "84.927",
+        "hole_size": "85.00",
+        "id": 130,
+        "name": "G 3-11",
+        "pitch": "11",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "0.885",
+        "hole_min": "0.829",
+        "hole_size": "0.85",
+        "id": 131,
+        "name": "M1.1",
+        "pitch": "0.25",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "0.985",
+        "hole_min": "0.929",
+        "hole_size": "0.95",
+        "id": 132,
+        "name": "M1.2",
+        "pitch": "0.25",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "1.142",
+        "hole_min": "1.075",
+        "hole_size": "1.10",
+        "id": 133,
+        "name": "M1.4",
+        "pitch": "0.30",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "1.321",
+        "hole_min": "1.221",
+        "hole_size": "1.25",
+        "id": 134,
+        "name": "M1.6",
+        "pitch": "0.35",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "1.421",
+        "hole_min": "1.321",
+        "hole_size": "1.35",
+        "id": 135,
+        "name": "M1.7",
+        "pitch": "0.35",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "1.521",
+        "hole_min": "1.421",
+        "hole_size": "1.45",
+        "id": 136,
+        "name": "M1.8",
+        "pitch": "0.35",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "1.838",
+        "hole_min": "1.713",
+        "hole_size": "1.75",
+        "id": 137,
+        "name": "M2.2",
+        "pitch": "0.45",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "1.938",
+        "hole_min": "1.813",
+        "hole_size": "1.85",
+        "id": 138,
+        "name": "M2.3",
+        "pitch": "0.40",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "2.138",
+        "hole_min": "2.013",
+        "hole_size": "2.05",
+        "id": 139,
+        "name": "M2.5",
+        "pitch": "0.45",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "2.238",
+        "hole_min": "2.113",
+        "hole_size": "2.15",
+        "id": 140,
+        "name": "M2.6",
+        "pitch": "0.45",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "3.010",
+        "hole_min": "2.850",
+        "hole_size": "2.90",
+        "id": 141,
+        "name": "M3.5",
+        "pitch": "0.60",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "3.878",
+        "hole_min": "3.688",
+        "hole_size": "3.70",
+        "id": 142,
+        "name": "M4.5",
+        "pitch": "0.75",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "6.153",
+        "hole_min": "5.917",
+        "hole_size": "6.00",
+        "id": 143,
+        "name": "M7",
+        "pitch": "1.00",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "7.912",
+        "hole_min": "7.647",
+        "hole_size": "7.80",
+        "id": 144,
+        "name": "M9",
+        "pitch": "1.25",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "9.676",
+        "hole_min": "9.376",
+        "hole_size": "9.50",
+        "id": 145,
+        "name": "M11",
+        "pitch": "1.50",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "12.210",
+        "hole_min": "11.835",
+        "hole_size": "12.00",
+        "id": 146,
+        "name": "M14",
+        "pitch": "2.00",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "14.210",
+        "hole_min": "13.835",
+        "hole_size": "14.00",
+        "id": 147,
+        "name": "M16",
+        "pitch": "2.00",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "15.744",
+        "hole_min": "15.294",
+        "hole_size": "15.50",
+        "id": 148,
+        "name": "M18",
+        "pitch": "2.50",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "17.744",
+        "hole_min": "17.294",
+        "hole_size": "17.50",
+        "id": 149,
+        "name": "M20",
+        "pitch": "2.50",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "19.744",
+        "hole_min": "19.294",
+        "hole_size": "19.50",
+        "id": 150,
+        "name": "M22",
+        "pitch": "2.50",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "21.252",
+        "hole_min": "20.752",
+        "hole_size": "21.00",
+        "id": 151,
+        "name": "M24",
+        "pitch": "3.00",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "23.252",
+        "hole_min": "23.752",
+        "hole_size": "24.00",
+        "id": 152,
+        "name": "M27",
+        "pitch": "3.00",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "26.771",
+        "hole_min": "26.211",
+        "hole_size": "26.50",
+        "id": 153,
+        "name": "M30",
+        "pitch": "3.50",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "29.771",
+        "hole_min": "29.211",
+        "hole_size": "29.50",
+        "id": 154,
+        "name": "M33",
+        "pitch": "3.50",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "32.270",
+        "hole_min": "31.670",
+        "hole_size": "32.00",
+        "id": 155,
+        "name": "M36",
+        "pitch": "4.00",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "35.270",
+        "hole_min": "34.670",
+        "hole_size": "35.00",
+        "id": 156,
+        "name": "M39",
+        "pitch": "4.00",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "37.799",
+        "hole_min": "37.129",
+        "hole_size": "37.50",
+        "id": 157,
+        "name": "M42",
+        "pitch": "4.50",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "40.799",
+        "hole_min": "40.129",
+        "hole_size": "40.50",
+        "id": 158,
+        "name": "M45",
+        "pitch": "4.50",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "43.297",
+        "hole_min": "42.587",
+        "hole_size": "43.00",
+        "id": 159,
+        "name": "M48",
+        "pitch": "5.0",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "47.297",
+        "hole_min": "46.587",
+        "hole_size": "47.00",
+        "id": 160,
+        "name": "M52",
+        "pitch": "5.0",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "50.795",
+        "hole_min": "50.046",
+        "hole_size": "50.50",
+        "id": 161,
+        "name": "M56",
+        "pitch": "5.5",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "54.795",
+        "hole_min": "54.046",
+        "hole_size": "54.50",
+        "id": 162,
+        "name": "M60",
+        "pitch": "5.5",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "58.305",
+        "hole_min": "57.505",
+        "hole_size": "58.00",
+        "id": 163,
+        "name": "M64",
+        "pitch": "6.0",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "62.305",
+        "hole_min": "62.505",
+        "hole_size": "62.00",
+        "id": 164,
+        "name": "M68",
+        "pitch": "6.0",
+        "table_id": 0
+    },
+    {
+        "category_id": 0,
+        "hole_max": "1.785",
+        "hole_min": "1.729",
+        "hole_size": "1.75",
+        "id": 165,
+        "name": "M2x0.25",
+        "pitch": "0.25",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "1.985",
+        "hole_min": "1.929",
+        "hole_size": "1.95",
+        "id": 166,
+        "name": "M2.2x0.25",
+        "pitch": "0.25",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "2.085",
+        "hole_min": "2.029",
+        "hole_size": "2.05",
+        "id": 167,
+        "name": "M2.3x0.25",
+        "pitch": "0.25",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "2.221",
+        "hole_min": "2.121",
+        "hole_size": "2.15",
+        "id": 168,
+        "name": "M2.5x0.35",
+        "pitch": "0.35",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "2.785",
+        "hole_min": "2.729",
+        "hole_size": "2.75",
+        "id": 169,
+        "name": "M3x0.25",
+        "pitch": "0.25",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "2.721",
+        "hole_min": "2.621",
+        "hole_size": "2.65",
+        "id": 170,
+        "name": "M3x0.35",
+        "pitch": "0.35",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "3.221",
+        "hole_min": "3.121",
+        "hole_size": "3.15",
+        "id": 171,
+        "name": "M3.5x0.35",
+        "pitch": "0.35",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "3.721",
+        "hole_min": "3.621",
+        "hole_size": "3.65",
+        "id": 172,
+        "name": "M4x0.35",
+        "pitch": "0.35",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "3.599",
+        "hole_min": "3.459",
+        "hole_size": "3.50",
+        "id": 173,
+        "name": "M4x0.5",
+        "pitch": "0.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "4.099",
+        "hole_min": "3.959",
+        "hole_size": "4.00",
+        "id": 174,
+        "name": "M4.5x0.5",
+        "pitch": "0.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "4.721",
+        "hole_min": "4.621",
+        "hole_size": "4.65",
+        "id": 175,
+        "name": "M5x0.35",
+        "pitch": "0.35",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "4.599",
+        "hole_min": "4.459",
+        "hole_size": "4.50",
+        "id": 176,
+        "name": "M5x0.5",
+        "pitch": "0.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "4.378",
+        "hole_min": "4.188",
+        "hole_size": "4.20",
+        "id": 177,
+        "name": "M5x0.75",
+        "pitch": "0.75",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "5.599",
+        "hole_min": "5.459",
+        "hole_size": "5.50",
+        "id": 178,
+        "name": "M6x0.5",
+        "pitch": "0.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "5.378",
+        "hole_min": "5.188",
+        "hole_size": "5.25",
+        "id": 179,
+        "name": "M6x0.75",
+        "pitch": "0.75",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "6.599",
+        "hole_min": "6.459",
+        "hole_size": "6.50",
+        "id": 180,
+        "name": "M7x0.5",
+        "pitch": "0.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "6.378",
+        "hole_min": "6.188",
+        "hole_size": "6.25",
+        "id": 181,
+        "name": "M7x0.75",
+        "pitch": "0.75",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "7.599",
+        "hole_min": "7.459",
+        "hole_size": "7.50",
+        "id": 182,
+        "name": "M8x0.5",
+        "pitch": "0.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "7.378",
+        "hole_min": "7.188",
+        "hole_size": "7.25",
+        "id": 183,
+        "name": "M8x0.75",
+        "pitch": "0.75",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "7.153",
+        "hole_min": "6.917",
+        "hole_size": "7.00",
+        "id": 184,
+        "name": "M8x1",
+        "pitch": "1",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "8.378",
+        "hole_min": "8.188",
+        "hole_size": "8.25",
+        "id": 185,
+        "name": "M9x0.75",
+        "pitch": "0.75",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "8.153",
+        "hole_min": "7.917",
+        "hole_size": "8.00",
+        "id": 186,
+        "name": "M9x1",
+        "pitch": "1",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "9.599",
+        "hole_min": "9.459",
+        "hole_size": "9.50",
+        "id": 187,
+        "name": "M10x0.5",
+        "pitch": "0.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "9.378",
+        "hole_min": "9.188",
+        "hole_size": "9.25",
+        "id": 188,
+        "name": "M10x0.75",
+        "pitch": "0.75",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "9.153",
+        "hole_min": "8.917",
+        "hole_size": "9.00",
+        "id": 189,
+        "name": "M10x1",
+        "pitch": "1",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "8.912",
+        "hole_min": "8.647",
+        "hole_size": "8.75",
+        "id": 190,
+        "name": "M10x1.25",
+        "pitch": "1.25",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "10.153",
+        "hole_min": "9.917",
+        "hole_size": "10.00",
+        "id": 191,
+        "name": "M11x1",
+        "pitch": "1",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "11.599",
+        "hole_min": "11.459",
+        "hole_size": "11.50",
+        "id": 192,
+        "name": "M12x0.5",
+        "pitch": "0.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "11.153",
+        "hole_min": "10.917",
+        "hole_size": "11.00",
+        "id": 193,
+        "name": "M12x1",
+        "pitch": "1",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "10.912",
+        "hole_min": "10.647",
+        "hole_size": "10.50",
+        "id": 194,
+        "name": "M12x1.25",
+        "pitch": "1.25",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "12.153",
+        "hole_min": "11.917",
+        "hole_size": "12.00",
+        "id": 195,
+        "name": "M13x1",
+        "pitch": "1",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "13.378",
+        "hole_min": "13.188",
+        "hole_size": "13.20",
+        "id": 196,
+        "name": "M14x0.75",
+        "pitch": "0.75",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "13.153",
+        "hole_min": "12.917",
+        "hole_size": "13.00",
+        "id": 197,
+        "name": "M14x1",
+        "pitch": "1",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "12.912",
+        "hole_min": "12.647",
+        "hole_size": "12.75",
+        "id": 198,
+        "name": "M14x1.25",
+        "pitch": "1.25",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "12.676",
+        "hole_min": "12.376",
+        "hole_size": "12.50",
+        "id": 199,
+        "name": "M14x1.5",
+        "pitch": "1.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "14.153",
+        "hole_min": "13.917",
+        "hole_size": "14.00",
+        "id": 200,
+        "name": "M15x1",
+        "pitch": "1",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "13.676",
+        "hole_min": "13.376",
+        "hole_size": "13.50",
+        "id": 201,
+        "name": "M15x1.5",
+        "pitch": "1.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "15.378",
+        "hole_min": "15.188",
+        "hole_size": "15.20",
+        "id": 202,
+        "name": "M16x0.75",
+        "pitch": "0.75",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "15.153",
+        "hole_min": "14.917",
+        "hole_size": "15.00",
+        "id": 203,
+        "name": "M16x1",
+        "pitch": "1",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "14.912",
+        "hole_min": "14.647",
+        "hole_size": "14.80",
+        "id": 204,
+        "name": "M16x1.25",
+        "pitch": "1.25",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "14.676",
+        "hole_min": "14.376",
+        "hole_size": "14.50",
+        "id": 205,
+        "name": "M16x1.5",
+        "pitch": "1.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "16.153",
+        "hole_min": "15.917",
+        "hole_size": "16.00",
+        "id": 206,
+        "name": "M17x1",
+        "pitch": "1",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "17.153",
+        "hole_min": "16.917",
+        "hole_size": "17.00",
+        "id": 207,
+        "name": "M18x1",
+        "pitch": "1",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "16.676",
+        "hole_min": "16.376",
+        "hole_size": "16.50",
+        "id": 208,
+        "name": "M18x1.5",
+        "pitch": "1.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "16.210",
+        "hole_min": "15.835",
+        "hole_size": "16.00",
+        "id": 209,
+        "name": "M18x2",
+        "pitch": "2",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "19.153",
+        "hole_min": "18.917",
+        "hole_size": "19.00",
+        "id": 210,
+        "name": "M20x1",
+        "pitch": "1",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "18.676",
+        "hole_min": "18.376",
+        "hole_size": "18.50",
+        "id": 211,
+        "name": "M20x1.5",
+        "pitch": "1.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "18.210",
+        "hole_min": "17.835",
+        "hole_size": "18.00",
+        "id": 212,
+        "name": "M20x2",
+        "pitch": "2",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "21.153",
+        "hole_min": "20.917",
+        "hole_size": "21.00",
+        "id": 213,
+        "name": "M22x1",
+        "pitch": "1",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "20.676",
+        "hole_min": "20.376",
+        "hole_size": "20.50",
+        "id": 214,
+        "name": "M22x1.5",
+        "pitch": "1.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "20.210",
+        "hole_min": "19.835",
+        "hole_size": "20.00",
+        "id": 215,
+        "name": "M22x2",
+        "pitch": "2",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "22.676",
+        "hole_min": "22.356",
+        "hole_size": "22.50",
+        "id": 216,
+        "name": "M24x1.5",
+        "pitch": "1.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "22.210",
+        "hole_min": "21.835",
+        "hole_size": "22.00",
+        "id": 217,
+        "name": "M24x2",
+        "pitch": "2",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "23.153",
+        "hole_min": "22.917",
+        "hole_size": "23.00",
+        "id": 218,
+        "name": "M25x1",
+        "pitch": "1",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "23.676",
+        "hole_min": "23.376",
+        "hole_size": "23.50",
+        "id": 219,
+        "name": "M25x1.5",
+        "pitch": "1.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "24.676",
+        "hole_min": "24.276",
+        "hole_size": "24.50",
+        "id": 220,
+        "name": "M26x1.5",
+        "pitch": "1.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "26.153",
+        "hole_min": "25.917",
+        "hole_size": "26.00",
+        "id": 221,
+        "name": "M27x1",
+        "pitch": "1",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "25.676",
+        "hole_min": "25.376",
+        "hole_size": "25.50",
+        "id": 222,
+        "name": "M27x1.5",
+        "pitch": "1.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "25.210",
+        "hole_min": "24.835",
+        "hole_size": "25.00",
+        "id": 223,
+        "name": "M27x2",
+        "pitch": "2",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "26.676",
+        "hole_min": "26.376",
+        "hole_size": "26.50",
+        "id": 224,
+        "name": "M28x1.5",
+        "pitch": "1.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "26.210",
+        "hole_min": "25.835",
+        "hole_size": "26.00",
+        "id": 225,
+        "name": "M28x2",
+        "pitch": "2",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "29.153",
+        "hole_min": "28.917",
+        "hole_size": "29.00",
+        "id": 226,
+        "name": "M30x1",
+        "pitch": "1",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "28.676",
+        "hole_min": "28.376",
+        "hole_size": "28.50",
+        "id": 227,
+        "name": "M30x1.5",
+        "pitch": "1.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "28.210",
+        "hole_min": "27.835",
+        "hole_size": "28.00",
+        "id": 228,
+        "name": "M30x2",
+        "pitch": "2",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "30.676",
+        "hole_min": "30.376",
+        "hole_size": "30.50",
+        "id": 229,
+        "name": "M32x1.5",
+        "pitch": "1.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "30.210",
+        "hole_min": "29.835",
+        "hole_size": "30.00",
+        "id": 230,
+        "name": "M32x2",
+        "pitch": "2",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "31.676",
+        "hole_min": "31.375",
+        "hole_size": "31.50",
+        "id": 231,
+        "name": "M33x1.5",
+        "pitch": "1.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "31.210",
+        "hole_min": "30.835",
+        "hole_size": "31.00",
+        "id": 232,
+        "name": "M33x2",
+        "pitch": "2",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "32.676",
+        "hole_min": "32.376",
+        "hole_size": "32.50",
+        "id": 233,
+        "name": "M34x1.5",
+        "pitch": "1.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "33.676",
+        "hole_min": "33.376",
+        "hole_size": "33.50",
+        "id": 234,
+        "name": "M35x1.5",
+        "pitch": "1.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "34.676",
+        "hole_min": "34.376",
+        "hole_size": "34.50",
+        "id": 235,
+        "name": "M36x1.5",
+        "pitch": "1.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "34.210",
+        "hole_min": "33.835",
+        "hole_size": "34.00",
+        "id": 236,
+        "name": "M36x2",
+        "pitch": "2",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "33.252",
+        "hole_min": "32.752",
+        "hole_size": "33.00",
+        "id": 237,
+        "name": "M36x3",
+        "pitch": "3",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "36.676",
+        "hole_min": "36.376",
+        "hole_size": "36.50",
+        "id": 238,
+        "name": "M38x1.5",
+        "pitch": "1.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "37.676",
+        "hole_min": "37.376",
+        "hole_size": "37.50",
+        "id": 239,
+        "name": "M39x1.5",
+        "pitch": "1.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "37.210",
+        "hole_min": "36.835",
+        "hole_size": "37.00",
+        "id": 240,
+        "name": "M39x2",
+        "pitch": "2",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "36.252",
+        "hole_min": "35.752",
+        "hole_size": "36.00",
+        "id": 241,
+        "name": "M39x3",
+        "pitch": "3",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "38.676",
+        "hole_min": "38.376",
+        "hole_size": "38.50",
+        "id": 242,
+        "name": "M40x1.5",
+        "pitch": "1.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "38.210",
+        "hole_min": "37.835",
+        "hole_size": "38.00",
+        "id": 243,
+        "name": "M40x2",
+        "pitch": "2",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "37.252",
+        "hole_min": "36.752",
+        "hole_size": "37.00",
+        "id": 244,
+        "name": "M40x3",
+        "pitch": "3",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "40.676",
+        "hole_min": "40.375",
+        "hole_size": "40.50",
+        "id": 245,
+        "name": "M42x1.5",
+        "pitch": "1.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "40.210",
+        "hole_min": "39.835",
+        "hole_size": "40.00",
+        "id": 246,
+        "name": "M42x2",
+        "pitch": "2",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "39.252",
+        "hole_min": "38.752",
+        "hole_size": "39.00",
+        "id": 247,
+        "name": "M42x3",
+        "pitch": "3",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "43.676",
+        "hole_min": "43.376",
+        "hole_size": "43.50",
+        "id": 248,
+        "name": "M45x1.5",
+        "pitch": "1.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "43.210",
+        "hole_min": "42.835",
+        "hole_size": "43.00",
+        "id": 249,
+        "name": "M45x2",
+        "pitch": "2",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "42.252",
+        "hole_min": "41.752",
+        "hole_size": "42.00",
+        "id": 250,
+        "name": "M45x3",
+        "pitch": "3",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "46.676",
+        "hole_min": "46.376",
+        "hole_size": "46.50",
+        "id": 251,
+        "name": "M48x1.5",
+        "pitch": "1.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "46.210",
+        "hole_min": "45.835",
+        "hole_size": "46.00",
+        "id": 252,
+        "name": "M48x2",
+        "pitch": "2",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "45.252",
+        "hole_min": "44.752",
+        "hole_size": "45.00",
+        "id": 253,
+        "name": "M48x3",
+        "pitch": "3",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "48.676",
+        "hole_min": "48.376",
+        "hole_size": "48.50",
+        "id": 254,
+        "name": "M50x1.5",
+        "pitch": "1.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "48.210",
+        "hole_min": "47.835",
+        "hole_size": "48.00",
+        "id": 255,
+        "name": "M50x2",
+        "pitch": "2",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "47.252",
+        "hole_min": "46.752",
+        "hole_size": "47.00",
+        "id": 256,
+        "name": "M50x3",
+        "pitch": "3",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "50.676",
+        "hole_min": "50.376",
+        "hole_size": "50.50",
+        "id": 257,
+        "name": "M52x1.5",
+        "pitch": "1.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "50.210",
+        "hole_min": "49.835",
+        "hole_size": "50.00",
+        "id": 258,
+        "name": "M52x2",
+        "pitch": "2",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "47.087",
+        "hole_min": "46.587",
+        "hole_size": "49.00",
+        "id": 259,
+        "name": "M52x3",
+        "pitch": "3",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "54.676",
+        "hole_min": "54.376",
+        "hole_size": "54.50",
+        "id": 260,
+        "name": "M56x1.5",
+        "pitch": "1.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "54.210",
+        "hole_min": "53.835",
+        "hole_size": "54.00",
+        "id": 261,
+        "name": "M56x2",
+        "pitch": "2",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "53.252",
+        "hole_min": "52.752",
+        "hole_size": "53.00",
+        "id": 262,
+        "name": "M56x3",
+        "pitch": "3",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "56.676",
+        "hole_min": "56.376",
+        "hole_size": "56.50",
+        "id": 263,
+        "name": "M58x1.5",
+        "pitch": "1.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "58.676",
+        "hole_min": "58.376",
+        "hole_size": "58.50",
+        "id": 264,
+        "name": "M60x1.5",
+        "pitch": "1.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "58.210",
+        "hole_min": "57.835",
+        "hole_size": "58.00",
+        "id": 265,
+        "name": "M60x2",
+        "pitch": "2",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "57.252",
+        "hole_min": "56.752",
+        "hole_size": "57.00",
+        "id": 266,
+        "name": "M60x3",
+        "pitch": "3",
+        "table_id": 1
+    },
+    {
+        "category_id": 6,
+        "hole_max": "2.653",
+        "hole_min": "2.513",
+        "hole_size": "2.60",
+        "id": 267,
+        "name": "MJ3x0.5",
+        "pitch": "0.5",
+        "table_id": 0
+    },
+    {
+        "category_id": 6,
+        "hole_max": "3.498",
+        "hole_min": "3.318",
+        "hole_size": "3.40",
+        "id": 268,
+        "name": "MJ4x0.7",
+        "pitch": "0.7",
+        "table_id": 0
+    },
+    {
+        "category_id": 6,
+        "hole_max": "4.421",
+        "hole_min": "4.221",
+        "hole_size": "4.30",
+        "id": 269,
+        "name": "MJ5x0.8",
+        "pitch": "0.8",
+        "table_id": 0
+    },
+    {
+        "category_id": 6,
+        "hole_max": "5.215",
+        "hole_min": "5.026",
+        "hole_size": "5.10",
+        "id": 270,
+        "name": "MJ6x1",
+        "pitch": "1",
+        "table_id": 0
+    },
+    {
+        "category_id": 6,
+        "hole_max": "6.994",
+        "hole_min": "6.782",
+        "hole_size": "6.90",
+        "id": 271,
+        "name": "MJ8x1.25",
+        "pitch": "1.25",
+        "table_id": 0
+    },
+    {
+        "category_id": 6,
+        "hole_max": "8.779",
+        "hole_min": "8.539",
+        "hole_size": "8.70",
+        "id": 272,
+        "name": "MJ10x1.5",
+        "pitch": "1.5",
+        "table_id": 0
+    },
+    {
+        "category_id": 6,
+        "hole_max": "10.563",
+        "hole_min": "10.295",
+        "hole_size": "10.50",
+        "id": 273,
+        "name": "MJ12x1.75",
+        "pitch": "1.75",
+        "table_id": 0
+    },
+    {
+        "category_id": 6,
+        "hole_max": "14.351",
+        "hole_min": "14.051",
+        "hole_size": "14.30",
+        "id": 274,
+        "name": "MJ16x2",
+        "pitch": "2",
+        "table_id": 0
+    },
+    {
+        "category_id": 3,
+        "hole_max": "9.246",
+        "hole_min": "9.1",
+        "hole_size": "9.1",
+        "id": 275,
+        "name": "1/8-27 NPSM",
+        "pitch": "27",
+        "table_id": 1
+    },
+    {
+        "category_id": 3,
+        "hole_max": "12.217",
+        "hole_min": "12",
+        "hole_size": "12",
+        "id": 276,
+        "name": "1/4-18 NPSM",
+        "pitch": "18",
+        "table_id": 1
+    },
+    {
+        "category_id": 3,
+        "hole_max": "15.545",
+        "hole_min": "15.5",
+        "hole_size": "15.5",
+        "id": 277,
+        "name": "3/8-18 NPSM",
+        "pitch": "18",
+        "table_id": 1
+    },
+    {
+        "category_id": 3,
+        "hole_max": "19.279",
+        "hole_min": "19",
+        "hole_size": "19",
+        "id": 278,
+        "name": "1/2-14 NPSM",
+        "pitch": "14",
+        "table_id": 1
+    },
+    {
+        "category_id": 3,
+        "hole_max": "24.639",
+        "hole_min": "24.5",
+        "hole_size": "24.5",
+        "id": 279,
+        "name": "3/4-14 NPSM",
+        "pitch": "14",
+        "table_id": 1
+    },
+    {
+        "category_id": 3,
+        "hole_max": "39.497",
+        "hole_min": "39.5",
+        "hole_size": "39.5",
+        "id": 280,
+        "name": "1 1/4-11.5 NPSM",
+        "pitch": "11.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 3,
+        "hole_max": "45.568",
+        "hole_min": "45.5",
+        "hole_size": "45.5",
+        "id": 281,
+        "name": "1 1/2-11.5 NPSM",
+        "pitch": "11.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 3,
+        "hole_max": "57.607",
+        "hole_min": "57.5",
+        "hole_size": "57.5",
+        "id": 282,
+        "name": "2-11.5 NPSM",
+        "pitch": "11.5",
+        "table_id": 1
+    },
+    {
+        "category_id": 3,
+        "hole_max": "69.266",
+        "hole_min": "69",
+        "hole_size": "69",
+        "id": 283,
+        "name": "2 1/2-8 NPSM",
+        "pitch": "8",
+        "table_id": 1
+    },
+    {
+        "category_id": 3,
+        "hole_max": "85.166",
+        "hole_min": "85",
+        "hole_size": "85",
+        "id": 284,
+        "name": "3-8 NPSM",
+        "pitch": "8",
+        "table_id": 1
+    },
+    {
+        "category_id": 3,
+        "hole_max": "8.74",
+        "hole_min": "8.31",
+        "hole_size": "8.40",
+        "id": 285,
+        "name": "1/8-27 NPT",
+        "pitch": "27",
+        "table_id": 0
+    },
+    {
+        "category_id": 3,
+        "hole_max": "14.80",
+        "hole_min": "14.15",
+        "hole_size": "14.30",
+        "id": 286,
+        "name": "3/8-18 NPT",
+        "pitch": "18",
+        "table_id": 0
+    },
+    {
+        "category_id": 3,
+        "hole_max": "23.67",
+        "hole_min": "22.79",
+        "hole_size": "23.30",
+        "id": 287,
+        "name": "3/4-14 NPT",
+        "pitch": "14",
+        "table_id": 0
+    },
+    {
+        "category_id": 3,
+        "hole_max": "67.62",
+        "hole_min": "66.14",
+        "hole_size": "66.30",
+        "id": 288,
+        "name": "2 1/2-8 NPT",
+        "pitch": "8",
+        "table_id": 0
+    },
+    {
+        "category_id": 3,
+        "hole_max": "6.41",
+        "hole_min": "5.97",
+        "hole_size": "6.1",
+        "id": 289,
+        "name": "1/16-27 NPTF",
+        "pitch": "27",
+        "table_id": 2
+    },
+    {
+        "category_id": 3,
+        "hole_max": "8.77",
+        "hole_min": "8.33",
+        "hole_size": "8.4",
+        "id": 290,
+        "name": "1/8-27 NPTF",
+        "pitch": "27",
+        "table_id": 2
+    },
+    {
+        "category_id": 3,
+        "hole_max": "11.40",
+        "hole_min": "10.77",
+        "hole_size": "11.0",
+        "id": 291,
+        "name": "1/4-18 NPTF",
+        "pitch": "18",
+        "table_id": 2
+    },
+    {
+        "category_id": 3,
+        "hole_max": "14.84",
+        "hole_min": "14.19",
+        "hole_size": "14.5",
+        "id": 292,
+        "name": "3/8-18 NPTF",
+        "pitch": "18",
+        "table_id": 2
+    },
+    {
+        "category_id": 3,
+        "hole_max": "18.33",
+        "hole_min": "17.48",
+        "hole_size": "17.5",
+        "id": 293,
+        "name": "1/2-14 NPTF",
+        "pitch": "14",
+        "table_id": 2
+    },
+    {
+        "category_id": 3,
+        "hole_max": "23.72",
+        "hole_min": "22.84",
+        "hole_size": "23.0",
+        "id": 294,
+        "name": "3/4-14 NPTF",
+        "pitch": "14",
+        "table_id": 2
+    },
+    {
+        "category_id": 3,
+        "hole_max": "29.76",
+        "hole_min": "28.62",
+        "hole_size": "29.0",
+        "id": 295,
+        "name": "1-11.5 NPTF",
+        "pitch": "11.5",
+        "table_id": 2
+    },
+    {
+        "category_id": 3,
+        "hole_max": "38.52",
+        "hole_min": "37.44",
+        "hole_size": "37.5",
+        "id": 296,
+        "name": "1 1/4-11.5 NPTF",
+        "pitch": "11.5",
+        "table_id": 2
+    },
+    {
+        "category_id": 3,
+        "hole_max": "44.59",
+        "hole_min": "43.50",
+        "hole_size": "43.5",
+        "id": 297,
+        "name": "1 1/2-11.5 NPTF",
+        "pitch": "11.5",
+        "table_id": 2
+    },
+    {
+        "category_id": 3,
+        "hole_max": "56.62",
+        "hole_min": "55.51",
+        "hole_size": "56.0",
+        "id": 298,
+        "name": "2-11.5 NPTF",
+        "pitch": "11.5",
+        "table_id": 2
+    },
+    {
+        "category_id": 3,
+        "hole_max": "67.71",
+        "hole_min": "66.03",
+        "hole_size": "66.0",
+        "id": 299,
+        "name": "2 1/2-8 NPTF",
+        "pitch": "8",
+        "table_id": 2
+    },
+    {
+        "category_id": 3,
+        "hole_max": "83.62",
+        "hole_min": "81.80",
+        "hole_size": "82.0",
+        "id": 300,
+        "name": "3-8 NPTF",
+        "pitch": "8",
+        "table_id": 2
+    },
+    {
+        "category_id": 7,
+        "hole_max": "11.45",
+        "hole_min": "11.30",
+        "hole_size": "11.40",
+        "id": 301,
+        "name": "PG 7",
+        "pitch": "1.27",
+        "table_id": 0
+    },
+    {
+        "category_id": 7,
+        "hole_max": "14.01",
+        "hole_min": "13.86",
+        "hole_size": "14.00",
+        "id": 302,
+        "name": "PG 9",
+        "pitch": "1.27",
+        "table_id": 0
+    },
+    {
+        "category_id": 7,
+        "hole_max": "17.41",
+        "hole_min": "17.26",
+        "hole_size": "17.25",
+        "id": 303,
+        "name": "PG 11",
+        "pitch": "1.27",
+        "table_id": 0
+    },
+    {
+        "category_id": 7,
+        "hole_max": "19.21",
+        "hole_min": "19.06",
+        "hole_size": "19.00",
+        "id": 304,
+        "name": "PG 13.5",
+        "pitch": "1.27",
+        "table_id": 0
+    },
+    {
+        "category_id": 7,
+        "hole_max": "21.31",
+        "hole_min": "21.16",
+        "hole_size": "21.25",
+        "id": 305,
+        "name": "PG 16",
+        "pitch": "1.27",
+        "table_id": 0
+    },
+    {
+        "category_id": 7,
+        "hole_max": "27.03",
+        "hole_min": "26.78",
+        "hole_size": "27.00",
+        "id": 306,
+        "name": "PG 21",
+        "pitch": "1.588",
+        "table_id": 0
+    },
+    {
+        "category_id": 7,
+        "hole_max": "35.73",
+        "hole_min": "35.48",
+        "hole_size": "35.50",
+        "id": 307,
+        "name": "PG 29",
+        "pitch": "1.588",
+        "table_id": 0
+    },
+    {
+        "category_id": 7,
+        "hole_max": "45.73",
+        "hole_min": "45.48",
+        "hole_size": "45.50",
+        "id": 308,
+        "name": "PG 36",
+        "pitch": "1.588",
+        "table_id": 0
+    },
+    {
+        "category_id": 7,
+        "hole_max": "52.73",
+        "hole_min": "52.48",
+        "hole_size": "52.50",
+        "id": 309,
+        "name": "PG 42",
+        "pitch": "1.588",
+        "table_id": 0
+    },
+    {
+        "category_id": 7,
+        "hole_max": "58.03",
+        "hole_min": "57.78",
+        "hole_size": "58.00",
+        "id": 310,
+        "name": "PG 48",
+        "pitch": "1.588",
+        "table_id": 0
+    },
+    {
+        "category_id": 5,
+        "hole_max": "2.10",
+        "hole_min": "2.10",
+        "hole_size": "2.10",
+        "id": 311,
+        "name": "3/32-48",
+        "pitch": "48",
+        "table_id": 1
+    },
+    {
+        "category_id": 5,
+        "hole_max": "2.85",
+        "hole_min": "2.85",
+        "hole_size": "2.85",
+        "id": 312,
+        "name": "1/8-40",
+        "pitch": "40",
+        "table_id": 1
+    },
+    {
+        "category_id": 5,
+        "hole_max": "3.55",
+        "hole_min": "3.55",
+        "hole_size": "3.55",
+        "id": 313,
+        "name": "5/32-32",
+        "pitch": "32",
+        "table_id": 1
+    },
+    {
+        "category_id": 5,
+        "hole_max": "4.20",
+        "hole_min": "4.20",
+        "hole_size": "4.20",
+        "id": 314,
+        "name": "3/16-24",
+        "pitch": "24",
+        "table_id": 1
+    },
+    {
+        "category_id": 5,
+        "hole_max": "5.70",
+        "hole_min": "5.70",
+        "hole_size": "5.70",
+        "id": 315,
+        "name": "1/4-20",
+        "pitch": "20",
+        "table_id": 1
+    },
+    {
+        "category_id": 5,
+        "hole_max": "7.20",
+        "hole_min": "7.20",
+        "hole_size": "7.20",
+        "id": 316,
+        "name": "5/16-18",
+        "pitch": "18",
+        "table_id": 1
+    },
+    {
+        "category_id": 5,
+        "hole_max": "8.70",
+        "hole_min": "8.70",
+        "hole_size": "8.70",
+        "id": 317,
+        "name": "3/8-16",
+        "pitch": "16",
+        "table_id": 1
+    },
+    {
+        "category_id": 5,
+        "hole_max": "10.20",
+        "hole_min": "10.20",
+        "hole_size": "10.20",
+        "id": 318,
+        "name": "7/16-14",
+        "pitch": "14",
+        "table_id": 1
+    },
+    {
+        "category_id": 5,
+        "hole_max": "11.60",
+        "hole_min": "11.60",
+        "hole_size": "11.60",
+        "id": 319,
+        "name": "1/2-12",
+        "pitch": "12",
+        "table_id": 1
+    },
+    {
+        "category_id": 5,
+        "hole_max": "13.20",
+        "hole_min": "13.20",
+        "hole_size": "13.20",
+        "id": 320,
+        "name": "9/16-12",
+        "pitch": "12",
+        "table_id": 1
+    },
+    {
+        "category_id": 5,
+        "hole_max": "14.70",
+        "hole_min": "14.70",
+        "hole_size": "14.70",
+        "id": 321,
+        "name": "5/8-11",
+        "pitch": "11",
+        "table_id": 1
+    },
+    {
+        "category_id": 5,
+        "hole_max": "16.25",
+        "hole_min": "16.25",
+        "hole_size": "16.25",
+        "id": 322,
+        "name": "11/16-11",
+        "pitch": "11",
+        "table_id": 1
+    },
+    {
+        "category_id": 5,
+        "hole_max": "17.70",
+        "hole_min": "17.70",
+        "hole_size": "17.70",
+        "id": 323,
+        "name": "3/4-10",
+        "pitch": "10",
+        "table_id": 1
+    },
+    {
+        "category_id": 5,
+        "hole_max": "20.75",
+        "hole_min": "20.75",
+        "hole_size": "20.75",
+        "id": 324,
+        "name": "7/8-9",
+        "pitch": "9",
+        "table_id": 1
+    },
+    {
+        "category_id": 5,
+        "hole_max": "23.75",
+        "hole_min": "23.75",
+        "hole_size": "23.75",
+        "id": 325,
+        "name": "1-8",
+        "pitch": "8",
+        "table_id": 1
+    },
+    {
+        "category_id": 1,
+        "hole_max": "3.40",
+        "hole_min": "3.40",
+        "hole_size": "3.40",
+        "id": 326,
+        "name": "EG M 3",
+        "pitch": "0.50",
+        "table_id": 4
+    },
+    {
+        "category_id": 1,
+        "hole_max": "4.60",
+        "hole_min": "4.60",
+        "hole_size": "4.60",
+        "id": 327,
+        "name": "EG M 4",
+        "pitch": "0.70",
+        "table_id": 4
+    },
+    {
+        "category_id": 1,
+        "hole_max": "5.65",
+        "hole_min": "5.65",
+        "hole_size": "5.65",
+        "id": 328,
+        "name": "EG M 5",
+        "pitch": "0.80",
+        "table_id": 4
+    },
+    {
+        "category_id": 1,
+        "hole_max": "6.85",
+        "hole_min": "6.85",
+        "hole_size": "6.85",
+        "id": 329,
+        "name": "EG M 6",
+        "pitch": "1.00",
+        "table_id": 4
+    },
+    {
+        "category_id": 1,
+        "hole_max": "9.05",
+        "hole_min": "9.05",
+        "hole_size": "9.05",
+        "id": 330,
+        "name": "EG M 8",
+        "pitch": "1.25",
+        "table_id": 4
+    },
+    {
+        "category_id": 1,
+        "hole_max": "11.30",
+        "hole_min": "11.30",
+        "hole_size": "11.30",
+        "id": 331,
+        "name": "EG M 10",
+        "pitch": "1.50",
+        "table_id": 4
+    },
+    {
+        "category_id": 1,
+        "hole_max": "13.50",
+        "hole_min": "13.50",
+        "hole_size": "13.50",
+        "id": 332,
+        "name": "EG M 12",
+        "pitch": "1.75",
+        "table_id": 4
+    },
+    {
+        "category_id": 4,
+        "hole_max": "7.25",
+        "hole_min": "7.25",
+        "hole_size": "7.25",
+        "id": 333,
+        "name": "G 1/16",
+        "pitch": "28",
+        "table_id": 1
+    },
+    {
+        "category_id": 4,
+        "hole_max": "9.25",
+        "hole_min": "9.25",
+        "hole_size": "9.25",
+        "id": 334,
+        "name": "G 1/8-28",
+        "pitch": "28",
+        "table_id": 1
+    },
+    {
+        "category_id": 4,
+        "hole_max": "12.50",
+        "hole_min": "12.50",
+        "hole_size": "12.50",
+        "id": 335,
+        "name": "G 1/4-28",
+        "pitch": "28",
+        "table_id": 1
+    },
+    {
+        "category_id": 4,
+        "hole_max": "16.00",
+        "hole_min": "16.00",
+        "hole_size": "16.00",
+        "id": 336,
+        "name": "G 3/8-19",
+        "pitch": "19",
+        "table_id": 1
+    },
+    {
+        "category_id": 4,
+        "hole_max": "20.00",
+        "hole_min": "20.00",
+        "hole_size": "20.00",
+        "id": 337,
+        "name": "G 1/2-19",
+        "pitch": "19",
+        "table_id": 1
+    },
+    {
+        "category_id": 4,
+        "hole_max": "22.00",
+        "hole_min": "22.00",
+        "hole_size": "22.00",
+        "id": 338,
+        "name": "G 5/8-14",
+        "pitch": "14",
+        "table_id": 1
+    },
+    {
+        "category_id": 4,
+        "hole_max": "25.50",
+        "hole_min": "25.50",
+        "hole_size": "25.50",
+        "id": 339,
+        "name": "G 3/4-14",
+        "pitch": "14",
+        "table_id": 1
+    },
+    {
+        "category_id": 4,
+        "hole_max": "29.25",
+        "hole_min": "29.25",
+        "hole_size": "29.25",
+        "id": 340,
+        "name": "G 7/8-14",
+        "pitch": "14",
+        "table_id": 1
+    },
+    {
+        "category_id": 4,
+        "hole_max": "32.00",
+        "hole_min": "32.00",
+        "hole_size": "32.00",
+        "id": 341,
+        "name": "G 1-11",
+        "pitch": "11",
+        "table_id": 1
+    },
+    {
+        "category_id": 0,
+        "hole_max": "0.88",
+        "hole_min": "0.88",
+        "hole_size": "0.88",
+        "id": 342,
+        "name": "M1",
+        "pitch": "0.25",
+        "table_id": 2
+    },
+    {
+        "category_id": 0,
+        "hole_max": "0.98",
+        "hole_min": "0.98",
+        "hole_size": "0.98",
+        "id": 343,
+        "name": "M1.1",
+        "pitch": "0.25",
+        "table_id": 2
+    },
+    {
+        "category_id": 0,
+        "hole_max": "1.08",
+        "hole_min": "1.08",
+        "hole_size": "1.08",
+        "id": 344,
+        "name": "M1.2",
+        "pitch": "0.25",
+        "table_id": 2
+    },
+    {
+        "category_id": 0,
+        "hole_max": "1.26",
+        "hole_min": "1.26",
+        "hole_size": "1.26",
+        "id": 345,
+        "name": "M1.4",
+        "pitch": "0.30",
+        "table_id": 2
+    },
+    {
+        "category_id": 0,
+        "hole_max": "1.45",
+        "hole_min": "1.45",
+        "hole_size": "1.45",
+        "id": 346,
+        "name": "M1.6",
+        "pitch": "0.35",
+        "table_id": 2
+    },
+    {
+        "category_id": 0,
+        "hole_max": "1.55",
+        "hole_min": "1.55",
+        "hole_size": "1.55",
+        "id": 347,
+        "name": "M1.7",
+        "pitch": "0.35",
+        "table_id": 2
+    },
+    {
+        "category_id": 0,
+        "hole_max": "1.65",
+        "hole_min": "1.65",
+        "hole_size": "1.65",
+        "id": 348,
+        "name": "M1.8",
+        "pitch": "0.35",
+        "table_id": 2
+    },
+    {
+        "category_id": 0,
+        "hole_max": "1.82",
+        "hole_min": "1.82",
+        "hole_size": "1.82",
+        "id": 349,
+        "name": "M2",
+        "pitch": "0.40",
+        "table_id": 2
+    },
+    {
+        "category_id": 0,
+        "hole_max": "2.00",
+        "hole_min": "2.00",
+        "hole_size": "2.00",
+        "id": 350,
+        "name": "M2.2",
+        "pitch": "0.45",
+        "table_id": 2
+    },
+    {
+        "category_id": 0,
+        "hole_max": "2.10",
+        "hole_min": "2.10",
+        "hole_size": "2.10",
+        "id": 351,
+        "name": "M2.3",
+        "pitch": "0.40",
+        "table_id": 2
+    },
+    {
+        "category_id": 0,
+        "hole_max": "2.30",
+        "hole_min": "2.30",
+        "hole_size": "2.30",
+        "id": 352,
+        "name": "M2.5",
+        "pitch": "0.45",
+        "table_id": 2
+    },
+    {
+        "category_id": 0,
+        "hole_max": "2.40",
+        "hole_min": "2.40",
+        "hole_size": "2.40",
+        "id": 353,
+        "name": "M2.6",
+        "pitch": "0.45",
+        "table_id": 2
+    },
+    {
+        "category_id": 0,
+        "hole_max": "2.80",
+        "hole_min": "2.80",
+        "hole_size": "2.80",
+        "id": 354,
+        "name": "M3",
+        "pitch": "0.50",
+        "table_id": 2
+    },
+    {
+        "category_id": 0,
+        "hole_max": "3.25",
+        "hole_min": "3.25",
+        "hole_size": "3.25",
+        "id": 355,
+        "name": "M3.5",
+        "pitch": "0.60",
+        "table_id": 2
+    },
+    {
+        "category_id": 0,
+        "hole_max": "3.70",
+        "hole_min": "3.70",
+        "hole_size": "3.70",
+        "id": 356,
+        "name": "M4",
+        "pitch": "0.70",
+        "table_id": 2
+    },
+    {
+        "category_id": 0,
+        "hole_max": "4.65",
+        "hole_min": "4.65",
+        "hole_size": "4.65",
+        "id": 357,
+        "name": "M5",
+        "pitch": "0.80",
+        "table_id": 2
+    },
+    {
+        "category_id": 0,
+        "hole_max": "5.55",
+        "hole_min": "5.55",
+        "hole_size": "5.55",
+        "id": 358,
+        "name": "M6",
+        "pitch": "1.00",
+        "table_id": 2
+    },
+    {
+        "category_id": 0,
+        "hole_max": "7.40",
+        "hole_min": "7.40",
+        "hole_size": "7.40",
+        "id": 359,
+        "name": "M8",
+        "pitch": "1.25",
+        "table_id": 2
+    },
+    {
+        "category_id": 0,
+        "hole_max": "9.30",
+        "hole_min": "9.30",
+        "hole_size": "9.30",
+        "id": 360,
+        "name": "M10",
+        "pitch": "1.50",
+        "table_id": 2
+    },
+    {
+        "category_id": 0,
+        "hole_max": "11.20",
+        "hole_min": "11.20",
+        "hole_size": "11.20",
+        "id": 361,
+        "name": "M12",
+        "pitch": "1.75",
+        "table_id": 2
+    },
+    {
+        "category_id": 0,
+        "hole_max": "13.10",
+        "hole_min": "13.10",
+        "hole_size": "13.10",
+        "id": 362,
+        "name": "M14",
+        "pitch": "2.00",
+        "table_id": 2
+    },
+    {
+        "category_id": 0,
+        "hole_max": "15.10",
+        "hole_min": "15.10",
+        "hole_size": "15.10",
+        "id": 363,
+        "name": "M16",
+        "pitch": "2.00",
+        "table_id": 2
+    },
+    {
+        "category_id": 0,
+        "hole_max": "16.90",
+        "hole_min": "16.90",
+        "hole_size": "16.90",
+        "id": 364,
+        "name": "M18",
+        "pitch": "2.50",
+        "table_id": 2
+    },
+    {
+        "category_id": 0,
+        "hole_max": "18.90",
+        "hole_min": "18.90",
+        "hole_size": "18.90",
+        "id": 365,
+        "name": "M20",
+        "pitch": "2.50",
+        "table_id": 2
+    },
+    {
+        "category_id": 0,
+        "hole_max": "20.90",
+        "hole_min": "20.90",
+        "hole_size": "20.90",
+        "id": 366,
+        "name": "M22",
+        "pitch": "2.50",
+        "table_id": 2
+    },
+    {
+        "category_id": 0,
+        "hole_max": "22.70",
+        "hole_min": "22.70",
+        "hole_size": "22.70",
+        "id": 367,
+        "name": "M24",
+        "pitch": "3.00",
+        "table_id": 2
+    },
+    {
+        "category_id": 0,
+        "hole_max": "3.80",
+        "hole_min": "3.80",
+        "hole_size": "3.80",
+        "id": 368,
+        "name": "M4x0.5",
+        "pitch": "0.50",
+        "table_id": 3
+    },
+    {
+        "category_id": 0,
+        "hole_max": "4.80",
+        "hole_min": "4.80",
+        "hole_size": "4.80",
+        "id": 369,
+        "name": "M5x0.5",
+        "pitch": "0.50",
+        "table_id": 3
+    },
+    {
+        "category_id": 0,
+        "hole_max": "5.80",
+        "hole_min": "5.80",
+        "hole_size": "5.80",
+        "id": 370,
+        "name": "M6x0.5",
+        "pitch": "0.50",
+        "table_id": 3
+    },
+    {
+        "category_id": 0,
+        "hole_max": "5.65",
+        "hole_min": "5.65",
+        "hole_size": "5.65",
+        "id": 371,
+        "name": "M6x0.75",
+        "pitch": "0.75",
+        "table_id": 3
+    },
+    {
+        "category_id": 0,
+        "hole_max": "6.65",
+        "hole_min": "6.65",
+        "hole_size": "6.65",
+        "id": 372,
+        "name": "M7x0.75",
+        "pitch": "0.75",
+        "table_id": 3
+    },
+    {
+        "category_id": 0,
+        "hole_max": "7.65",
+        "hole_min": "7.65",
+        "hole_size": "7.65",
+        "id": 373,
+        "name": "M8x0.75",
+        "pitch": "0.75",
+        "table_id": 3
+    },
+    {
+        "category_id": 0,
+        "hole_max": "7.55",
+        "hole_min": "7.55",
+        "hole_size": "7.55",
+        "id": 374,
+        "name": "M8x1.0",
+        "pitch": "1.00",
+        "table_id": 3
+    },
+    {
+        "category_id": 0,
+        "hole_max": "9.65",
+        "hole_min": "9.65",
+        "hole_size": "9.65",
+        "id": 375,
+        "name": "M10x0.75",
+        "pitch": "0.75",
+        "table_id": 3
+    },
+    {
+        "category_id": 0,
+        "hole_max": "9.55",
+        "hole_min": "9.55",
+        "hole_size": "9.55",
+        "id": 376,
+        "name": "M10x1.0",
+        "pitch": "1.00",
+        "table_id": 3
+    },
+    {
+        "category_id": 0,
+        "hole_max": "9.40",
+        "hole_min": "9.40",
+        "hole_size": "9.40",
+        "id": 377,
+        "name": "M10x1.25",
+        "pitch": "1.25",
+        "table_id": 3
+    },
+    {
+        "category_id": 0,
+        "hole_max": "11.55",
+        "hole_min": "11.55",
+        "hole_size": "11.55",
+        "id": 378,
+        "name": "M12x1.0",
+        "pitch": "1.00",
+        "table_id": 3
+    },
+    {
+        "category_id": 0,
+        "hole_max": "11.40",
+        "hole_min": "11.40",
+        "hole_size": "11.40",
+        "id": 379,
+        "name": "M12x1.25",
+        "pitch": "1.25",
+        "table_id": 3
+    },
+    {
+        "category_id": 0,
+        "hole_max": "11.30",
+        "hole_min": "11.30",
+        "hole_size": "11.30",
+        "id": 380,
+        "name": "M12x1.5",
+        "pitch": "1.50",
+        "table_id": 3
+    },
+    {
+        "category_id": 0,
+        "hole_max": "13.55",
+        "hole_min": "13.55",
+        "hole_size": "13.55",
+        "id": 381,
+        "name": "M14x1.0",
+        "pitch": "1.00",
+        "table_id": 3
+    },
+    {
+        "category_id": 0,
+        "hole_max": "13.30",
+        "hole_min": "13.30",
+        "hole_size": "13.30",
+        "id": 382,
+        "name": "M14x1.5",
+        "pitch": "1.50",
+        "table_id": 3
+    },
+    {
+        "category_id": 0,
+        "hole_max": "15.55",
+        "hole_min": "15.55",
+        "hole_size": "15.55",
+        "id": 383,
+        "name": "M16x1.0",
+        "pitch": "1.00",
+        "table_id": 3
+    },
+    {
+        "category_id": 0,
+        "hole_max": "15.30",
+        "hole_min": "15.30",
+        "hole_size": "15.30",
+        "id": 384,
+        "name": "M16x1.5",
+        "pitch": "1.50",
+        "table_id": 3
+    },
+    {
+        "category_id": 0,
+        "hole_max": "17.55",
+        "hole_min": "17.55",
+        "hole_size": "17.55",
+        "id": 385,
+        "name": "M18x1.0",
+        "pitch": "1.00",
+        "table_id": 3
+    },
+    {
+        "category_id": 0,
+        "hole_max": "17.30",
+        "hole_min": "17.30",
+        "hole_size": "17.30",
+        "id": 386,
+        "name": "M18x1.5",
+        "pitch": "1.50",
+        "table_id": 3
+    },
+    {
+        "category_id": 0,
+        "hole_max": "19.30",
+        "hole_min": "19.30",
+        "hole_size": "19.30",
+        "id": 387,
+        "name": "M20x1.5",
+        "pitch": "1.50",
+        "table_id": 3
+    },
+    {
+        "category_id": 0,
+        "hole_max": "19.10",
+        "hole_min": "19.10",
+        "hole_size": "19.10",
+        "id": 388,
+        "name": "M20x2.0",
+        "pitch": "2.00",
+        "table_id": 3
+    },
+    {
+        "category_id": 0,
+        "hole_max": "21.30",
+        "hole_min": "21.30",
+        "hole_size": "21.30",
+        "id": 389,
+        "name": "M22x1.5",
+        "pitch": "1.50",
+        "table_id": 3
+    },
+    {
+        "category_id": 2,
+        "hole_max": "1.97",
+        "hole_min": "1.97",
+        "hole_size": "1.97",
+        "id": 390,
+        "name": "UNC 2-56",
+        "pitch": "56",
+        "table_id": 3
+    },
+    {
+        "category_id": 2,
+        "hole_max": "2.26",
+        "hole_min": "2.26",
+        "hole_size": "2.26",
+        "id": 391,
+        "name": "UNC 3-48",
+        "pitch": "48",
+        "table_id": 3
+    },
+    {
+        "category_id": 2,
+        "hole_max": "2.55",
+        "hole_min": "2.55",
+        "hole_size": "2.55",
+        "id": 392,
+        "name": "UNC 4-40",
+        "pitch": "40",
+        "table_id": 3
+    },
+    {
+        "category_id": 2,
+        "hole_max": "2.87",
+        "hole_min": "2.87",
+        "hole_size": "2.87",
+        "id": 393,
+        "name": "UNC 5-40",
+        "pitch": "40",
+        "table_id": 3
+    },
+    {
+        "category_id": 2,
+        "hole_max": "3.15",
+        "hole_min": "3.15",
+        "hole_size": "3.15",
+        "id": 394,
+        "name": "UNC 6-32",
+        "pitch": "32",
+        "table_id": 3
+    },
+    {
+        "category_id": 2,
+        "hole_max": "3.80",
+        "hole_min": "3.80",
+        "hole_size": "3.80",
+        "id": 395,
+        "name": "UNC 8-32",
+        "pitch": "32",
+        "table_id": 3
+    },
+    {
+        "category_id": 2,
+        "hole_max": "4.30",
+        "hole_min": "4.30",
+        "hole_size": "4.30",
+        "id": 396,
+        "name": "UNC 10-24",
+        "pitch": "24",
+        "table_id": 3
+    },
+    {
+        "category_id": 2,
+        "hole_max": "5.00",
+        "hole_min": "5.00",
+        "hole_size": "5.00",
+        "id": 397,
+        "name": "UNC 12-24",
+        "pitch": "24",
+        "table_id": 3
+    },
+    {
+        "category_id": 2,
+        "hole_max": "5.75",
+        "hole_min": "5.75",
+        "hole_size": "5.75",
+        "id": 398,
+        "name": "UNC 1/4-20",
+        "pitch": "20",
+        "table_id": 3
+    },
+    {
+        "category_id": 2,
+        "hole_max": "7.25",
+        "hole_min": "7.25",
+        "hole_size": "7.25",
+        "id": 399,
+        "name": "UNC 5/16-18",
+        "pitch": "18",
+        "table_id": 3
+    },
+    {
+        "category_id": 2,
+        "hole_max": "8.75",
+        "hole_min": "8.75",
+        "hole_size": "8.75",
+        "id": 400,
+        "name": "UNC 3/8-16",
+        "pitch": "16",
+        "table_id": 3
+    },
+    {
+        "category_id": 2,
+        "hole_max": "10.30",
+        "hole_min": "10.30",
+        "hole_size": "10.30",
+        "id": 401,
+        "name": "UNC 7/16-14",
+        "pitch": "14",
+        "table_id": 3
+    },
+    {
+        "category_id": 2,
+        "hole_max": "11.80",
+        "hole_min": "11.80",
+        "hole_size": "11.80",
+        "id": 402,
+        "name": "UNC 1/2-13",
+        "pitch": "13",
+        "table_id": 3
+    },
+    {
+        "category_id": 2,
+        "hole_max": "13.30",
+        "hole_min": "13.30",
+        "hole_size": "13.30",
+        "id": 403,
+        "name": "UNC 9/16-12",
+        "pitch": "12",
+        "table_id": 3
+    },
+    {
+        "category_id": 2,
+        "hole_max": "14.80",
+        "hole_min": "14.80",
+        "hole_size": "14.80",
+        "id": 404,
+        "name": "UNC 5/8-11",
+        "pitch": "11",
+        "table_id": 3
+    },
+    {
+        "category_id": 2,
+        "hole_max": "17.90",
+        "hole_min": "17.90",
+        "hole_size": "17.90",
+        "id": 405,
+        "name": "UNC 3/4-10",
+        "pitch": "10",
+        "table_id": 3
+    },
+    {
+        "category_id": 2,
+        "hole_max": "6.00",
+        "hole_min": "6.00",
+        "hole_size": "6.00",
+        "id": 406,
+        "name": "UNEF 1/4-32",
+        "pitch": "32",
+        "table_id": 5
+    },
+    {
+        "category_id": 2,
+        "hole_max": "7.60",
+        "hole_min": "7.60",
+        "hole_size": "7.60",
+        "id": 407,
+        "name": "UNEF 5/16-32",
+        "pitch": "32",
+        "table_id": 5
+    },
+    {
+        "category_id": 2,
+        "hole_max": "9.10",
+        "hole_min": "9.10",
+        "hole_size": "9.10",
+        "id": 408,
+        "name": "UNEF 3/8-32",
+        "pitch": "32",
+        "table_id": 5
+    },
+    {
+        "category_id": 2,
+        "hole_max": "10.70",
+        "hole_min": "10.70",
+        "hole_size": "10.70",
+        "id": 409,
+        "name": "UNEF 7/16-28",
+        "pitch": "28",
+        "table_id": 5
+    },
+    {
+        "category_id": 2,
+        "hole_max": "12.30",
+        "hole_min": "12.30",
+        "hole_size": "12.30",
+        "id": 410,
+        "name": "UNEF 1/2-28",
+        "pitch": "28",
+        "table_id": 5
+    },
+    {
+        "category_id": 2,
+        "hole_max": "13.80",
+        "hole_min": "13.80",
+        "hole_size": "13.80",
+        "id": 411,
+        "name": "UNEF 9/16-24",
+        "pitch": "24",
+        "table_id": 5
+    },
+    {
+        "category_id": 2,
+        "hole_max": "15.40",
+        "hole_min": "15.40",
+        "hole_size": "15.40",
+        "id": 412,
+        "name": "UNEF 5/8-24",
+        "pitch": "24",
+        "table_id": 5
+    },
+    {
+        "category_id": 2,
+        "hole_max": "18.50",
+        "hole_min": "18.50",
+        "hole_size": "18.50",
+        "id": 413,
+        "name": "UNEF 3/4-20",
+        "pitch": "20",
+        "table_id": 5
+    },
+    {
+        "category_id": 2,
+        "hole_max": "21.60",
+        "hole_min": "21.60",
+        "hole_size": "21.60",
+        "id": 414,
+        "name": "UNEF 7/8-20",
+        "pitch": "20",
+        "table_id": 5
+    },
+    {
+        "category_id": 2,
+        "hole_max": "24.80",
+        "hole_min": "24.80",
+        "hole_size": "24.80",
+        "id": 415,
+        "name": "UNEF 1-20",
+        "pitch": "20",
+        "table_id": 5
+    },
+    {
+        "category_id": 2,
+        "hole_max": "2.00",
+        "hole_min": "2.00",
+        "hole_size": "2.00",
+        "id": 416,
+        "name": "UNF 2-64",
+        "pitch": "64",
+        "table_id": 4
+    },
+    {
+        "category_id": 2,
+        "hole_max": "2.30",
+        "hole_min": "2.30",
+        "hole_size": "2.30",
+        "id": 417,
+        "name": "UNF 3-56",
+        "pitch": "56",
+        "table_id": 4
+    },
+    {
+        "category_id": 2,
+        "hole_max": "2.60",
+        "hole_min": "2.60",
+        "hole_size": "2.60",
+        "id": 418,
+        "name": "UNF 4-48",
+        "pitch": "48",
+        "table_id": 4
+    },
+    {
+        "category_id": 2,
+        "hole_max": "2.90",
+        "hole_min": "2.90",
+        "hole_size": "2.90",
+        "id": 419,
+        "name": "UNF 5-44",
+        "pitch": "44",
+        "table_id": 4
+    },
+    {
+        "category_id": 2,
+        "hole_max": "3.20",
+        "hole_min": "3.20",
+        "hole_size": "3.20",
+        "id": 420,
+        "name": "UNF 6-40",
+        "pitch": "40",
+        "table_id": 4
+    },
+    {
+        "category_id": 2,
+        "hole_max": "3.85",
+        "hole_min": "3.85",
+        "hole_size": "3.85",
+        "id": 421,
+        "name": "UNF 8-36",
+        "pitch": "36",
+        "table_id": 4
+    },
+    {
+        "category_id": 2,
+        "hole_max": "4.45",
+        "hole_min": "4.45",
+        "hole_size": "4.45",
+        "id": 422,
+        "name": "UNF 10-32",
+        "pitch": "32",
+        "table_id": 4
+    },
+    {
+        "category_id": 2,
+        "hole_max": "5.05",
+        "hole_min": "5.05",
+        "hole_size": "5.05",
+        "id": 423,
+        "name": "UNF 12-28",
+        "pitch": "28",
+        "table_id": 4
+    },
+    {
+        "category_id": 2,
+        "hole_max": "5.90",
+        "hole_min": "5.90",
+        "hole_size": "5.90",
+        "id": 424,
+        "name": "UNF 1/4-28",
+        "pitch": "28",
+        "table_id": 4
+    },
+    {
+        "category_id": 2,
+        "hole_max": "7.45",
+        "hole_min": "7.45",
+        "hole_size": "7.45",
+        "id": 425,
+        "name": "UNF 5/16-24",
+        "pitch": "24",
+        "table_id": 4
+    },
+    {
+        "category_id": 2,
+        "hole_max": "9.00",
+        "hole_min": "9.00",
+        "hole_size": "9.00",
+        "id": 426,
+        "name": "UNF 3/8-24",
+        "pitch": "24",
+        "table_id": 4
+    },
+    {
+        "category_id": 2,
+        "hole_max": "10.50",
+        "hole_min": "10.50",
+        "hole_size": "10.50",
+        "id": 427,
+        "name": "UNF 7/16-20",
+        "pitch": "20",
+        "table_id": 4
+    },
+    {
+        "category_id": 2,
+        "hole_max": "12.10",
+        "hole_min": "12.10",
+        "hole_size": "12.10",
+        "id": 428,
+        "name": "UNF 1/2-20",
+        "pitch": "20",
+        "table_id": 4
+    },
+    {
+        "category_id": 2,
+        "hole_max": "13.70",
+        "hole_min": "13.70",
+        "hole_size": "13.70",
+        "id": 429,
+        "name": "UNF 9/16-18",
+        "pitch": "18",
+        "table_id": 4
+    },
+    {
+        "category_id": 2,
+        "hole_max": "15.25",
+        "hole_min": "15.25",
+        "hole_size": "15.25",
+        "id": 430,
+        "name": "UNF 5/8-18",
+        "pitch": "18",
+        "table_id": 4
+    },
+    {
+        "category_id": 2,
+        "hole_max": "18.40",
+        "hole_min": "18.40",
+        "hole_size": "18.40",
+        "id": 431,
+        "name": "UNF 3/4-16",
+        "pitch": "16",
+        "table_id": 4
+    },
+    {
+        "category_id": 2,
+        "hole_max": "21.40",
+        "hole_min": "21.40",
+        "hole_size": "21.40",
+        "id": 432,
+        "name": "UNF 7/8-14",
+        "pitch": "14",
+        "table_id": 4
+    },
+    {
+        "category_id": 2,
+        "hole_max": "24.45",
+        "hole_min": "24.45",
+        "hole_size": "24.45",
+        "id": 433,
+        "name": "UNF 1-12",
+        "pitch": "12",
+        "table_id": 4
+    },
+    {
+        "category_id": 2,
+        "hole_max": "25.962",
+        "hole_min": "25.138",
+        "hole_size": "25.40",
+        "id": 434,
+        "name": "1 1/8-8 UN",
+        "pitch": "8",
+        "table_id": 6
+    },
+    {
+        "category_id": 2,
+        "hole_max": "29.126",
+        "hole_min": "28.313",
+        "hole_size": "28.50",
+        "id": 435,
+        "name": "1 1/4-8 UN",
+        "pitch": "8",
+        "table_id": 6
+    },
+    {
+        "category_id": 2,
+        "hole_max": "35.456",
+        "hole_min": "34.663",
+        "hole_size": "35.00",
+        "id": 436,
+        "name": "1 1/2-8 UN",
+        "pitch": "8",
+        "table_id": 6
+    },
+    {
+        "category_id": 2,
+        "hole_max": "38.623",
+        "hole_min": "37.838",
+        "hole_size": "38.10",
+        "id": 437,
+        "name": "1 5/8-8 UN",
+        "pitch": "8",
+        "table_id": 6
+    },
+    {
+        "category_id": 2,
+        "hole_max": "41.790",
+        "hole_min": "41.013",
+        "hole_size": "41.50",
+        "id": 438,
+        "name": "1 3/4-8 UN",
+        "pitch": "8",
+        "table_id": 6
+    },
+    {
+        "category_id": 2,
+        "hole_max": "44.957",
+        "hole_min": "44.188",
+        "hole_size": "44.45",
+        "id": 439,
+        "name": "1 7/8-8 UN",
+        "pitch": "8",
+        "table_id": 6
+    },
+    {
+        "category_id": 2,
+        "hole_max": "48.125",
+        "hole_min": "47.363",
+        "hole_size": "48.00",
+        "id": 440,
+        "name": "2-8 UN",
+        "pitch": "8",
+        "table_id": 6
+    },
+    {
+        "category_id": 2,
+        "hole_max": "54.462",
+        "hole_min": "53.713",
+        "hole_size": "54.00",
+        "id": 441,
+        "name": "2 1/4-8 UN",
+        "pitch": "8",
+        "table_id": 6
+    },
+    {
+        "category_id": 2,
+        "hole_max": "10",
+        "hole_min": "9.7",
+        "hole_size": "9.85",
+        "id": 442,
+        "name": "7/16\"-20",
+        "pitch": "20",
+        "table_id": 7
+    },
+    {
+        "category_id": 2,
+        "hole_max": "11.6",
+        "hole_min": "11.3",
+        "hole_size": "11.45",
+        "id": 443,
+        "name": "1/2\"-20",
+        "pitch": "20",
+        "table_id": 7
+    },
+    {
+        "category_id": 2,
+        "hole_max": "13",
+        "hole_min": "12.7",
+        "hole_size": "12.85",
+        "id": 444,
+        "name": "9/16\"-18",
+        "pitch": "18",
+        "table_id": 7
+    },
+    {
+        "category_id": 2,
+        "hole_max": "14.73",
+        "hole_min": "14.4",
+        "hole_size": "14.55",
+        "id": 445,
+        "name": "5/8\"-18",
+        "pitch": "18",
+        "table_id": 7
+    },
+    {
+        "category_id": 2,
+        "hole_max": "16.1",
+        "hole_min": "15.8",
+        "hole_size": "15.95",
+        "id": 446,
+        "name": "11/16\"-16",
+        "pitch": "16",
+        "table_id": 7
+    },
+    {
+        "category_id": 2,
+        "hole_max": "17.6",
+        "hole_min": "17.3",
+        "hole_size": "17.45",
+        "id": 447,
+        "name": "3/4\"-16",
+        "pitch": "16",
+        "table_id": 7
+    },
+    {
+        "category_id": 2,
+        "hole_max": "19.3",
+        "hole_min": "18.9",
+        "hole_size": "19.10",
+        "id": 448,
+        "name": "13/16\"-16",
+        "pitch": "16",
+        "table_id": 7
+    },
+    {
+        "category_id": 2,
+        "hole_max": "20.5",
+        "hole_min": "20.2",
+        "hole_size": "20.35",
+        "id": 449,
+        "name": "7/8\"-14",
+        "pitch": "14",
+        "table_id": 7
+    },
+    {
+        "category_id": 2,
+        "hole_max": "23.8",
+        "hole_min": "23.4",
+        "hole_size": "23.60",
+        "id": 450,
+        "name": "1\"-14",
+        "pitch": "14",
+        "table_id": 7
+    },
+    {
+        "category_id": 2,
+        "hole_max": "24.7",
+        "hole_min": "24.3",
+        "hole_size": "24.50",
+        "id": 451,
+        "name": "1.1/16\"-12",
+        "pitch": "12",
+        "table_id": 7
+    },
+    {
+        "category_id": 2,
+        "hole_max": "27.9",
+        "hole_min": "27.6",
+        "hole_size": "27.75",
+        "id": 452,
+        "name": "1.3/16\"-12",
+        "pitch": "12",
+        "table_id": 7
+    },
+    {
+        "category_id": 2,
+        "hole_max": "31.2",
+        "hole_min": "30.8",
+        "hole_size": "31.00",
+        "id": 453,
+        "name": "1.5/16\"-12",
+        "pitch": "12",
+        "table_id": 7
+    },
+    {
+        "category_id": 2,
+        "hole_max": "34.7",
+        "hole_min": "34.3",
+        "hole_size": "34.50",
+        "id": 454,
+        "name": "1.7/16\"-12",
+        "pitch": "12",
+        "table_id": 7
+    },
+    {
+        "category_id": 2,
+        "hole_max": "39.1",
+        "hole_min": "38.7",
+        "hole_size": "38.90",
+        "id": 455,
+        "name": "1.5/8\"-12",
+        "pitch": "12",
+        "table_id": 7
+    },
+    {
+        "category_id": 2,
+        "hole_max": "41",
+        "hole_min": "40.6",
+        "hole_size": "40.80",
+        "id": 456,
+        "name": "1.11/16\"-12",
+        "pitch": "12",
+        "table_id": 7
+    },
+    {
+        "category_id": 2,
+        "hole_max": "49",
+        "hole_min": "48.6",
+        "hole_size": "48.80",
+        "id": 457,
+        "name": "2\"-12",
+        "pitch": "12",
+        "table_id": 7
+    },
+    {
+        "category_id": 2,
+        "hole_max": "61.8",
+        "hole_min": "61.3",
+        "hole_size": "61.55",
+        "id": 458,
+        "name": "2.1/2\"-12",
+        "pitch": "12",
+        "table_id": 7
+    },
+    {
+        "category_id": 2,
+        "hole_max": "127.9",
+        "hole_min": "127.5",
+        "hole_size": "127.70",
+        "id": 459,
+        "name": "5.1/2\"-(DIN 11)",
+        "pitch": "11",
+        "table_id": 7
+    },
+    {
+        "category_id": 2,
+        "hole_max": "7.267",
+        "hole_min": "7.079",
+        "hole_size": "7.10",
+        "id": 460,
+        "name": "5/16-32 UNEF",
+        "pitch": "32",
+        "table_id": 2
+    },
+    {
+        "category_id": 2,
+        "hole_max": "8.854",
+        "hole_min": "8.666",
+        "hole_size": "8.80",
+        "id": 461,
+        "name": "3/8-32 UNEF",
+        "pitch": "32",
+        "table_id": 2
+    },
+    {
+        "category_id": 2,
+        "hole_max": "10.343",
+        "hole_min": "10.130",
+        "hole_size": "10.20",
+        "id": 462,
+        "name": "7/16-28 UNEF",
+        "pitch": "28",
+        "table_id": 2
+    },
+    {
+        "category_id": 2,
+        "hole_max": "13.388",
+        "hole_min": "13.142",
+        "hole_size": "13.20",
+        "id": 463,
+        "name": "9/16-24 UNEF",
+        "pitch": "24",
+        "table_id": 2
+    },
+    {
+        "category_id": 2,
+        "hole_max": "14.976",
+        "hole_min": "14.729",
+        "hole_size": "14.80",
+        "id": 464,
+        "name": "5/8-24 UNEF",
+        "pitch": "24",
+        "table_id": 2
+    },
+    {
+        "category_id": 2,
+        "hole_max": "1.613",
+        "hole_min": "1.473",
+        "hole_size": "1.55",
+        "id": 465,
+        "name": "1-72 UNF",
+        "pitch": "72",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "1.913",
+        "hole_min": "1.755",
+        "hole_size": "1.85",
+        "id": 466,
+        "name": "2-64 UNF",
+        "pitch": "64",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "2.197",
+        "hole_min": "2.024",
+        "hole_size": "2.15",
+        "id": 467,
+        "name": "3-56 UNF",
+        "pitch": "56",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "2.459",
+        "hole_min": "2.271",
+        "hole_size": "2.40",
+        "id": 468,
+        "name": "4-48 UNF",
+        "pitch": "48",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "2.741",
+        "hole_min": "2.550",
+        "hole_size": "2.70",
+        "id": 469,
+        "name": "5-44 UNF",
+        "pitch": "44",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "3.023",
+        "hole_min": "2.819",
+        "hole_size": "2.95",
+        "id": 470,
+        "name": "6-40 UNF",
+        "pitch": "40",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "3.607",
+        "hole_min": "3.404",
+        "hole_size": "3.50",
+        "id": 471,
+        "name": "8-36 UNF",
+        "pitch": "36",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "4.166",
+        "hole_min": "3.962",
+        "hole_size": "4.10",
+        "id": 472,
+        "name": "10-32 UNF",
+        "pitch": "32",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "4.724",
+        "hole_min": "4.496",
+        "hole_size": "4.60",
+        "id": 473,
+        "name": "12-28 UNF",
+        "pitch": "28",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "7.038",
+        "hole_min": "6.792",
+        "hole_size": "6.90",
+        "id": 474,
+        "name": "5/16-24 UNF",
+        "pitch": "24",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "8.626",
+        "hole_min": "8.379",
+        "hole_size": "8.50",
+        "id": 475,
+        "name": "3/8-24 UNF",
+        "pitch": "24",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "10.030",
+        "hole_min": "9.738",
+        "hole_size": "9.90",
+        "id": 476,
+        "name": "7/16-20 UNF",
+        "pitch": "20",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "13.084",
+        "hole_min": "12.761",
+        "hole_size": "12.90",
+        "id": 477,
+        "name": "9/16-18 UNF",
+        "pitch": "18",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "14.671",
+        "hole_min": "14.348",
+        "hole_size": "14.50",
+        "id": 478,
+        "name": "5/8-18 UNF",
+        "pitch": "18",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "17.689",
+        "hole_min": "17.330",
+        "hole_size": "17.50",
+        "id": 479,
+        "name": "3/4-16 UNF",
+        "pitch": "16",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "20.663",
+        "hole_min": "20.262",
+        "hole_size": "20.40",
+        "id": 480,
+        "name": "7/8-14 UNF",
+        "pitch": "14",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "23.569",
+        "hole_min": "23.109",
+        "hole_size": "23.25",
+        "id": 481,
+        "name": "1-12 UNF",
+        "pitch": "12",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "26.744",
+        "hole_min": "26.284",
+        "hole_size": "26.50",
+        "id": 482,
+        "name": "1 1/8-12 UNF",
+        "pitch": "12",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "29.919",
+        "hole_min": "29.459",
+        "hole_size": "29.50",
+        "id": 483,
+        "name": "1 1/4-12 UNF",
+        "pitch": "12",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "33.094",
+        "hole_min": "32.634",
+        "hole_size": "33.00",
+        "id": 484,
+        "name": "1 3/8-12 UNF",
+        "pitch": "12",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "36.269",
+        "hole_min": "35.809",
+        "hole_size": "36.10",
+        "id": 485,
+        "name": "1 1/2-12 UNF",
+        "pitch": "12",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "1.613",
+        "hole_min": "1.473",
+        "hole_size": "1.55",
+        "id": 486,
+        "name": "1-72 UNF",
+        "pitch": "72",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "1.913",
+        "hole_min": "1.755",
+        "hole_size": "1.85",
+        "id": 487,
+        "name": "2-64 UNF",
+        "pitch": "64",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "2.197",
+        "hole_min": "2.024",
+        "hole_size": "2.15",
+        "id": 488,
+        "name": "3-56 UNF",
+        "pitch": "56",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "2.459",
+        "hole_min": "2.271",
+        "hole_size": "2.40",
+        "id": 489,
+        "name": "4-48 UNF",
+        "pitch": "48",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "2.741",
+        "hole_min": "2.550",
+        "hole_size": "2.70",
+        "id": 490,
+        "name": "5-44 UNF",
+        "pitch": "44",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "3.023",
+        "hole_min": "2.819",
+        "hole_size": "2.95",
+        "id": 491,
+        "name": "6-40 UNF",
+        "pitch": "40",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "3.607",
+        "hole_min": "3.404",
+        "hole_size": "3.50",
+        "id": 492,
+        "name": "8-36 UNF",
+        "pitch": "36",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "4.166",
+        "hole_min": "3.962",
+        "hole_size": "4.10",
+        "id": 493,
+        "name": "10-32 UNF",
+        "pitch": "32",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "4.724",
+        "hole_min": "4.496",
+        "hole_size": "4.60",
+        "id": 494,
+        "name": "12-28 UNF",
+        "pitch": "28",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "7.038",
+        "hole_min": "6.792",
+        "hole_size": "6.90",
+        "id": 495,
+        "name": "5/16-24 UNF",
+        "pitch": "24",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "8.626",
+        "hole_min": "8.379",
+        "hole_size": "8.50",
+        "id": 496,
+        "name": "3/8-24 UNF",
+        "pitch": "24",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "10.030",
+        "hole_min": "9.738",
+        "hole_size": "9.90",
+        "id": 497,
+        "name": "7/16-20 UNF",
+        "pitch": "20",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "13.084",
+        "hole_min": "12.761",
+        "hole_size": "12.90",
+        "id": 498,
+        "name": "9/16-18 UNF",
+        "pitch": "18",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "14.671",
+        "hole_min": "14.348",
+        "hole_size": "14.50",
+        "id": 499,
+        "name": "5/8-18 UNF",
+        "pitch": "18",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "17.689",
+        "hole_min": "17.330",
+        "hole_size": "17.50",
+        "id": 500,
+        "name": "3/4-16 UNF",
+        "pitch": "16",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "20.663",
+        "hole_min": "20.262",
+        "hole_size": "20.40",
+        "id": 501,
+        "name": "7/8-14 UNF",
+        "pitch": "14",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "23.569",
+        "hole_min": "23.109",
+        "hole_size": "23.25",
+        "id": 502,
+        "name": "1-12 UNF",
+        "pitch": "12",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "26.744",
+        "hole_min": "26.284",
+        "hole_size": "26.50",
+        "id": 503,
+        "name": "1 1/8-12 UNF",
+        "pitch": "12",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "29.919",
+        "hole_min": "29.459",
+        "hole_size": "29.50",
+        "id": 504,
+        "name": "1 1/4-12 UNF",
+        "pitch": "12",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "33.094",
+        "hole_min": "32.634",
+        "hole_size": "33.00",
+        "id": 505,
+        "name": "1 3/8-12 UNF",
+        "pitch": "12",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "36.269",
+        "hole_min": "35.809",
+        "hole_size": "36.10",
+        "id": 506,
+        "name": "1 1/2-12 UNF",
+        "pitch": "12",
+        "table_id": 1
+    },
+    {
+        "category_id": 2,
+        "hole_max": "1.570",
+        "hole_min": "1.467",
+        "hole_size": "1.50",
+        "id": 507,
+        "name": "1-64 UNJC",
+        "pitch": "64",
+        "table_id": 8
+    },
+    {
+        "category_id": 2,
+        "hole_max": "1.860",
+        "hole_min": "1.742",
+        "hole_size": "1.80",
+        "id": 508,
+        "name": "2-56 UNJC",
+        "pitch": "56",
+        "table_id": 8
+    },
+    {
+        "category_id": 2,
+        "hole_max": "2.137",
+        "hole_min": "1.999",
+        "hole_size": "2.05",
+        "id": 509,
+        "name": "3-48 UNJC",
+        "pitch": "48",
+        "table_id": 8
+    },
+    {
+        "category_id": 2,
+        "hole_max": "2.397",
+        "hole_min": "2.226",
+        "hole_size": "2.30",
+        "id": 510,
+        "name": "4-40 UNJC",
+        "pitch": "40",
+        "table_id": 8
+    },
+    {
+        "category_id": 2,
+        "hole_max": "2.721",
+        "hole_min": "2.556",
+        "hole_size": "2.65",
+        "id": 511,
+        "name": "5-40 UNJC",
+        "pitch": "40",
+        "table_id": 8
+    },
+    {
+        "category_id": 2,
+        "hole_max": "2.938",
+        "hole_min": "2.732",
+        "hole_size": "2.80",
+        "id": 512,
+        "name": "6-32 UNJC",
+        "pitch": "32",
+        "table_id": 8
+    },
+    {
+        "category_id": 2,
+        "hole_max": "3.599",
+        "hole_min": "3.393",
+        "hole_size": "3.50",
+        "id": 513,
+        "name": "8-32 UNJC",
+        "pitch": "32",
+        "table_id": 8
+    },
+    {
+        "category_id": 2,
+        "hole_max": "4.064",
+        "hole_min": "3.795",
+        "hole_size": "3.90",
+        "id": 514,
+        "name": "10-24 UNJC",
+        "pitch": "24",
+        "table_id": 8
+    },
+    {
+        "category_id": 2,
+        "hole_max": "4.704",
+        "hole_min": "4.455",
+        "hole_size": "4.60",
+        "id": 515,
+        "name": "12-24 UNJC",
+        "pitch": "24",
+        "table_id": 8
+    },
+    {
+        "category_id": 2,
+        "hole_max": "5.387",
+        "hole_min": "5.113",
+        "hole_size": "5.20",
+        "id": 516,
+        "name": "1/4-20 UNJC",
+        "pitch": "20",
+        "table_id": 8
+    },
+    {
+        "category_id": 2,
+        "hole_max": "6.833",
+        "hole_min": "6.563",
+        "hole_size": "6.70",
+        "id": 517,
+        "name": "5/16-18 UNJC",
+        "pitch": "18",
+        "table_id": 8
+    },
+    {
+        "category_id": 2,
+        "hole_max": "8.255",
+        "hole_min": "7.978",
+        "hole_size": "8.10",
+        "id": 518,
+        "name": "3/8-16 UNJC",
+        "pitch": "16",
+        "table_id": 8
+    },
+    {
+        "category_id": 2,
+        "hole_max": "9.637",
+        "hole_min": "9.344",
+        "hole_size": "9.50",
+        "id": 519,
+        "name": "7/16-14 UNJC",
+        "pitch": "14",
+        "table_id": 8
+    },
+    {
+        "category_id": 2,
+        "hole_max": "11.093",
+        "hole_min": "10.796",
+        "hole_size": "10.90",
+        "id": 520,
+        "name": "1/2-13 UNJC",
+        "pitch": "13",
+        "table_id": 8
+    },
+    {
+        "category_id": 2,
+        "hole_max": "12.480",
+        "hole_min": "12.226",
+        "hole_size": "12.30",
+        "id": 521,
+        "name": "10/16-12 UNJC",
+        "pitch": "12",
+        "table_id": 8
+    },
+    {
+        "category_id": 2,
+        "hole_max": "13.902",
+        "hole_min": "13.625",
+        "hole_size": "13.70",
+        "id": 522,
+        "name": "5/8-11 UNJC",
+        "pitch": "11",
+        "table_id": 8
+    },
+    {
+        "category_id": 2,
+        "hole_max": "16.880",
+        "hole_min": "16.575",
+        "hole_size": "16.75",
+        "id": 523,
+        "name": "3/4-10 UNJC",
+        "pitch": "10",
+        "table_id": 8
+    },
+    {
+        "category_id": 2,
+        "hole_max": "1.297",
+        "hole_min": "1.215",
+        "hole_size": "1.25",
+        "id": 524,
+        "name": "0-80 UNJF",
+        "pitch": "80",
+        "table_id": 9
+    },
+    {
+        "category_id": 2,
+        "hole_max": "1.602",
+        "hole_min": "1.510",
+        "hole_size": "1.55",
+        "id": 525,
+        "name": "1-72 UNJF",
+        "pitch": "72",
+        "table_id": 9
+    },
+    {
+        "category_id": 2,
+        "hole_max": "1.900",
+        "hole_min": "1.797",
+        "hole_size": "1.85",
+        "id": 526,
+        "name": "2-64 UNJF",
+        "pitch": "64",
+        "table_id": 9
+    },
+    {
+        "category_id": 2,
+        "hole_max": "2.191",
+        "hole_min": "2.073",
+        "hole_size": "2.10",
+        "id": 527,
+        "name": "3-56 UNJF",
+        "pitch": "56",
+        "table_id": 9
+    },
+    {
+        "category_id": 2,
+        "hole_max": "2.467",
+        "hole_min": "2.329",
+        "hole_size": "2.40",
+        "id": 528,
+        "name": "4-48 UNJF",
+        "pitch": "48",
+        "table_id": 9
+    },
+    {
+        "category_id": 2,
+        "hole_max": "2.763",
+        "hole_min": "2.613",
+        "hole_size": "2.70",
+        "id": 529,
+        "name": "5-44 UNJF",
+        "pitch": "44",
+        "table_id": 9
+    },
+    {
+        "category_id": 2,
+        "hole_max": "3.051",
+        "hole_min": "2.886",
+        "hole_size": "2.95",
+        "id": 530,
+        "name": "6-40 UNJF",
+        "pitch": "40",
+        "table_id": 9
+    },
+    {
+        "category_id": 2,
+        "hole_max": "3.662",
+        "hole_min": "3.479",
+        "hole_size": "3.60",
+        "id": 531,
+        "name": "8-36 UNJF",
+        "pitch": "36",
+        "table_id": 9
+    },
+    {
+        "category_id": 2,
+        "hole_max": "4.253",
+        "hole_min": "4.053",
+        "hole_size": "4.15",
+        "id": 532,
+        "name": "10-32 UNJF",
+        "pitch": "32",
+        "table_id": 9
+    },
+    {
+        "category_id": 2,
+        "hole_max": "4.815",
+        "hole_min": "4.602",
+        "hole_size": "4.70",
+        "id": 533,
+        "name": "12-28 UNJF",
+        "pitch": "28",
+        "table_id": 9
+    },
+    {
+        "category_id": 2,
+        "hole_max": "5.662",
+        "hole_min": "5.466",
+        "hole_size": "5.60",
+        "id": 534,
+        "name": "1/4-28 UNJF",
+        "pitch": "28",
+        "table_id": 9
+    },
+    {
+        "category_id": 2,
+        "hole_max": "7.110",
+        "hole_min": "6.907",
+        "hole_size": "7.00",
+        "id": 535,
+        "name": "5/16-24 UNJF",
+        "pitch": "24",
+        "table_id": 9
+    },
+    {
+        "category_id": 2,
+        "hole_max": "8.680",
+        "hole_min": "8.494",
+        "hole_size": "8.60",
+        "id": 536,
+        "name": "3/8-24 UNJF",
+        "pitch": "24",
+        "table_id": 9
+    },
+    {
+        "category_id": 2,
+        "hole_max": "10.083",
+        "hole_min": "9.875",
+        "hole_size": "10.00",
+        "id": 537,
+        "name": "7/16-20 UNJF",
+        "pitch": "20",
+        "table_id": 9
+    },
+    {
+        "category_id": 2,
+        "hole_max": "11.660",
+        "hole_min": "11.463",
+        "hole_size": "11.50",
+        "id": 538,
+        "name": "1/2-20 UNJF",
+        "pitch": "20",
+        "table_id": 9
+    },
+    {
+        "category_id": 2,
+        "hole_max": "13.123",
+        "hole_min": "12.913",
+        "hole_size": "13.00",
+        "id": 539,
+        "name": "9/16-18 UNJF",
+        "pitch": "18",
+        "table_id": 9
+    },
+    {
+        "category_id": 2,
+        "hole_max": "14.702",
+        "hole_min": "14.500",
+        "hole_size": "14.50",
+        "id": 540,
+        "name": "5/8-18 UNJF",
+        "pitch": "18",
+        "table_id": 9
+    }
+]

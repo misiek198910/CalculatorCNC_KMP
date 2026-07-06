@@ -1,0 +1,349 @@
+<resources>
+    <!--  App-->
+    <string name="app_name">Calculateur CNC</string>
+    <string name="premium_function">Fonctions Premium</string>
+
+    <!--  Main-->
+    <string name="main_button1">Fraisage\net tronçonnage</string>
+    <string name="main_button2">Tournage\net alésage</string>
+    <string name="main_button3">Outils</string>
+    <string name="main_button4">Tableaux d\'ajustements</string>
+    <string name="tables">Tableaux d\'\najustements</string>
+    <string name="main_button6">Paramètres</string>
+    <string name="news">Nouveautés</string>
+
+    <!--  Settings-->
+    <string name="language">Langue de l\'application :</string>
+    <string name="settings_button2">Autres applications</string>
+    <string name="settings_button3">Évaluer l\'application</string>
+    <string name="settings_button4">Offrez-moi un café</string>
+    <string name="settings_button5">Abonnement</string>
+    <string name="calc_system">Système de calcul</string>
+    <string name="error">Impossible de trouver l\'application</string>
+    <string name="privacy">Politique de confidentialité</string>
+    <string name="app_restart">Redémarrage requis</string>
+    <string name="app_restart_dialog">Pour changer la langue de l\'application, un redémarrage est nécessaire.</string>
+    <string name="app_restart_dialog_ok">Ok</string>
+    <string name="app_restart_dialog_save">Langue enregistrée</string>
+
+    <!--  Cutting and boring-->
+    <string name="calculate_txt">Type de calcul :</string>
+    <string name="calculate">Calculer</string>
+    <string name="clear">Effacer</string>
+    <string name="i">i</string>
+    <string name="VC">Vc</string>
+    <string name="DC">Dc</string>
+    <string name="FZ">Fz</string>
+    <string name="Z">Z</string>
+    <string name="JT">Jn</string>
+    <string name="AS">As</string>
+    <string name="T">T</string>
+    <string name="L">L</string>
+    <string name="VF">Vf</string>
+    <string name="LB">Lb</string>
+    <string name="AP">Ap</string>
+    <string name="Fn">Fn</string>
+    <string name="KC">Kc</string>
+    <string name="DM">Dm</string>
+    <string name="close">FERMER</string>
+    <string name="f_colon">F :</string>
+    <string name="s_colon">S :</string>
+    <string name="fz_colon">Fz :</string>
+    <string name="HD">HD</string>
+    <string name="TD">TD</string>
+    <string name="Rm">Rm</string>
+    <string name="HV">HV</string>
+    <string name="HB">HB</string>
+    <string name="HRC">HRC</string>
+    <string name="PointA">Point A</string>
+    <string name="PointB">Point B</string>
+    <string name="center_colon">Centre : </string>
+    <string name="F">F</string>
+    <string name="LM">Longueur de usinage (Lm)</string>
+    <string name="tc_colon">Temps d\'usinage (Tc) : </string>
+    <string name="q_colon">Débit de copeaux (Q) : </string>
+    <string name="calculateResult">RÉSULTATS DU CALCUL</string>
+    <string name="premium_required_title">Cette fonction est uniquement disponible dans la version complète de l\'application.</string>
+    <string name="premium_required_button">ACHETER L\'ABONNEMENT ANNUEL</string>
+    <string name="premium_required_cancel">PLUS TARD</string>
+    <string name="premium_required_text">OPTION PREMIUM</string>
+    <string name="error2">Veuillez remplir tous les champs avec des données valides</string>
+    <string name="informationtext">INFORMATION</string>
+    <string name="RE">RE</string>
+    <string name="dm">dm</string>
+    <string name="forming_abbr">Déform.</string>
+    <string name="thread_eg">EG</string>
+    <string name="mixed_abbr">Mixte</string>
+    <string name="step1_milling_category">Catégorie d\'outil</string>
+    <string name="step2_milling_diameter">Diamètre</string>
+    <string name="step1_tourning_system">Sélectionner le système</string>
+    <string name="step2_tourning_radius">Sélectionner le rayon rε</string>
+    <string name="step3_model">Modèle</string>
+    <string name="cat_tap">Taraud</string>
+    <string name="cat_forming_tap">Taraud à refouler</string>
+    <string name="cat_eg_tap">Taraud EG (Helicoil)</string>
+    <string name="cat_mill">Fraise</string>
+    <string name="cat_drill">Foret</string>
+    <string name="cat_reamer">Alésoir</string>
+    <string name="cat_boring">Barre d\'alésage</string>
+    <string name="drill_hint_label">Foret recommandé :</string>
+    <string name="params_loaded">Paramètres Ceratizit chargés</string>
+    <string name="vc_warn_high">Attention : Vc dépasse la limite de l\'outil !</string>
+    <string name="vc_info_low">Information : Vc est inférieure à la plage recommandée.</string>
+    <string name="select_tool_hint">Sélectionner le matériau et l\'outil</string>
+    <string name="label_min">Min</string>
+    <string name="label_opt">Opt</string>
+    <string name="label_max">Max</string>
+    <string name="hint_hole_diameter">Diamètre du trou Dm</string>
+    <string name="hint_pitch">Pas P [mm]</string>
+    <string name="hint_feed_rev">fn [mm/tr]</string>
+    <string name="hint_feed_tooth">fz [mm/dent]</string>
+    <string name="cat_sink">Fraise à chanfreiner</string>
+    <string name="cat_multi">Outils multifonctions</string>
+    <string name="error_no_tool_for_material">Aucun outil disponible pour ce matériau</string>
+    <string name="parameters_load">Paramètres chargés</string>
+    <string name="angleInfo">La longueur doit être &gt; 0</string>
+    <string name="calculation_error">Erreur de calcul : %1$s</string>
+    <string name="toast_thread_selected">Sélectionné : %1$s</string>
+    <string name="header_name">Nom</string>
+    <string name="header_pitch">P</string>
+    <string name="header_tpi">TPI</string>
+    <string name="header_min">Min</string>
+    <string name="header_max">Max</string>
+    <string name="header_drill">Foret</string>
+    <string name="roughness_label">Rugosité (Ra) :</string>
+    <string name="taper_label">Angle d\'inclinaison (α) :</string>
+    <string name="unit_min">%1$.2f min</string>
+    <string name="unit_cm3_min">%1$.1f cm³/min</string>
+    <string name="unit_um">%1$.2f µm</string>
+    <string name="unit_deg">%1$.3f°</string>
+    <string name="toast_material_selected">Matériau %1$s : OK</string>
+    <string name="cat_threading_turning">Filetage au tour</string>
+    <string name="cat_inserts">Plaquettes</string>
+    <string name="cat_turning">Tournage</string>
+    <string name="cat_turning_transverse">Tournage transversal</string>
+    <string name="cat_boring_op">Alésage</string>
+    <string name="cat_turning_mini">Mini-tournage</string>
+    <string name="model_finishing">Finition</string>
+    <string name="model_medium">Usinage moyen</string>
+    <string name="model_roughing">Ébauche</string>
+    <string name="model_boring">Alésage</string>
+    <string name="model_light_grooving">Gorge légère</string>
+    <string name="model_steel">Acier</string>
+    <string name="model_grooves">Gorges</string>
+    <string name="model_drill_ref">Foret</string>
+    <string name="model_tap">Taraud</string>
+    <string name="res_f_m">F (mm/min) :</string>
+    <string name="res_n_m">n (tr/min) :</string>
+    <string name="res_f_inch">F (in/min) :</string>
+    <string name="res_n_inch">n (RPM) :</string>
+    <string name="res_tc">Tc (min) :</string>
+    <string name="res_ra">Ra (µm) :</string>
+    <string name="res_angle">Alpha (°) :</string>
+    <string name="hardness_rm">Résistance à la traction Rm [N/mm²]</string>
+    <string name="hardness_hv">Vickers (HV)</string>
+    <string name="hardness_hb">Brinell (HB)</string>
+    <string name="hardness_hrc">Rockwell (HRC)</string>
+    <string name="hardness_res_title">Résultats de la conversion</string>
+    <string name="error_out_of_range">Valeur hors des limites du tableau</string>
+    <string name="info_hardness">Le calculateur permet de convertir la dureté entre les échelles Rm, HV, HB et HRC conformément à la norme ISO 18265. Entrez une valeur dans l\'un des champs pour obtenir les autres résultats.</string>
+    <string name="error_only_one_value">Veuillez saisir une seule valeur pour la conversion.</string>
+    <string name="tool_select_base">Sélectionner un outil dans la base (Optionnel)</string>
+    <string name="tool_select">Outil sélectionné </string>
+    <string name="d_lowercase">d</string>
+    <string name="D_uppercase">D</string>
+    <string name="back">Retour</string>
+    <string name="vc_expert_title">Comment choisir Vc ?</string>
+    <string name="vc_expert_min">Sélectionner Minimum : Si votre montage est instable, si l\'outil a un grand porte-à-faux ou si vous travaillez sans lubrification.</string>
+    <string name="vc_expert_opt">Sélectionner Optimum : Conditions de travail standard.</string>
+    <string name="vc_expert_max">Sélectionner Maximum : Machine neuve, montage très rigide et lubrification haute pression.</string>
+    <!-- Baza Danych-->
+    <string name="app_database_download">Téléchargement de la base de données…</string>
+    <string name="app_database_download_eror">Une erreur inconnue est survenue.</string>
+    <string name="app_database_download_try_again">Réessayer</string>
+
+    <!--  Params-->
+    <string name="carbon_steel">Acier au carbone (C45)</string>
+    <string name="alloy_steel">Acier allié (40CrMo4)</string>
+    <string name="stainless_steel">Acier inoxydable (304)</string>
+    <string name="aluminium">Aluminium (Si &lt; 10%)</string>
+    <string name="cast_iron">Fonte grise</string>
+    <string name="titanium">Titane</string>
+    <string name="brass">Laiton</string>
+    <string name="hardened_steel">Acier trempé (&gt;50 HRC)</string>
+    <string name="material">SÉLECTIONNER LE MATÉRIAU</string>
+    <string name="select_material_iso">Sélectionner le matériau :</string>
+    <string name="material_steel">P - Acier</string>
+    <string name="material_stainless">M - Acier inoxydable</string>
+    <string name="material_cast_iron">K - Fonte</string>
+    <string name="material_non_ferrous">N - Métaux non ferreux</string>
+    <string name="material_titanium_s_alloy">S - Titane/Alliages thermo-résistants</string>
+    <string name="material_hardened">H - Matériaux traités</string>
+    <string name="M">M</string>
+    <string name="K">K</string>
+    <string name="N">N</string>
+    <string name="S">S</string>
+    <string name="H">H</string>
+    <string name="P">P</string>
+
+    <!-- Tolerances -->
+    <string name="tolerances">Tolérances ISO</string>
+    <string name="diameter_hint">Diamètre nominal (mm)</string>
+    <string name="hole_hint">Alésage (ex. H7)</string>
+    <string name="shaft_hint">Arbre (ex. h6)</string>
+    <string name="reset">Réinitialiser</string>
+    <string name="fit_hole_label">Alésage : %1$.3f / %2$.3f mm</string>
+    <string name="fit_shaft_label">Arbre : %1$.3f / %2$.3f mm</string>
+    <string name="fit_clearance_label">Jeu min/max : %1$.3f / %2$.3f mm</string>
+    <string name="fit_interference_label">Serrage min/max : %1$.3f / %2$.3f mm</string>
+    <string name="status_clearance">AJUSTEMENT AVEC JEU</string>
+    <string name="status_transition">AJUSTEMENT INCERTAIN</string>
+    <string name="status_interference">AJUSTEMENT SERRÉ (AVEC INTERFÉRENCE)</string>
+    <string name="desc_clearance">Les pièces conservent toujours un jeu, ce qui permet un mouvement libre.</string>
+    <string name="desc_transition">Un jeu ou un serrage est possible. Nécessite un montage en force (ex. maillet en caoutchouc).</string>
+    <string name="desc_interference">Les pièces se chevauchent toujours. Nécessite une presse ou un montage thermique (frettage).</string>
+    <string name="fit_hole_dynamic">Alésage : %1$s / %2$s %3$s</string>
+    <string name="fit_shaft_dynamic">Arbre : %1$s / %2$s %3$s</string>
+    <string name="fit_clearance_dynamic">Jeu min/max : %1$s / %2$s %3$s</string>
+    <string name="fit_interference_dynamic">Serrage min/max : %1$s / %2$s %3$s</string>
+    <string name="copy_action">Copier</string>
+
+    <!-- Fitting and Tables -->
+    <string name="holePitch">Pas</string>
+    <string name="holeName">Tableau</string>
+    <string name="holeMin">Min.</string>
+    <string name="holeMax">Max.</string>
+    <string name="hole">Nominal</string>
+
+    <!-- Tool -->
+    <string name="toolsName">Nom</string>
+    <string name="save">Enregistrer</string>
+    <string name="tools">Outils</string>
+    <string name="other">Autre</string>
+    <string name="edit">Modifier l\'outil</string>
+    <string name="edit_short">Modifier</string>
+    <string name="add">Ajouter un outil</string>
+    <string name="delete">Supprimer</string>
+    <string name="no_notes_available">Aucune note disponible</string>
+    <string name="clipboard_label">Paramètres CNC</string>
+    <string name="params_copied">Paramètres copiés !</string>
+    <string name="copy_tool_template">Outil : %1$s\nMatériau : %2$s\nS : %3$s tr/min\nF : %4$s mm/min</string>
+    <string name="s_hint">S (tr/min)</string>
+    <string name="f_hint">F (mm/min)</string>
+    <string name="notes_hint">Ajouter des notes (optionnel)</string>
+    <string name="calc_center">Centrage</string>
+    <string name="tools_error">Veuillez saisir un nom d\'outil pour pouvoir l\'enregistrer.</string>
+    <string name="tools_error_code">tools_error</string>
+    <string name="label_feed">Avance (F) : %s</string>
+    <string name="label_speed">Vitesse (S) : %s</string>
+    <string name="label_workpiece">Pièce : %s</string>
+    <string name="label_notes">Notes : %s</string>
+    <string name="unlocked">Débloquer</string>
+    <string name="tools_limit">Dans la version gratuite, vous pouvez ajouter un maximum de 3 outils. Passez à la version Premium pour en ajouter de manière illimitée !</string>
+    <string name="confirm_delete_one">Supprimer l\'outil</string>
+    <string name="confirm_delete_tool">Êtes-vous sûr de vouloir supprimer l\'outil %s ?</string>
+    <string name="tool_search">Rechercher un outil…</string>
+    <string name="cancel">Annuler</string>
+
+    <!--  Subscription-->
+    <string name="settings_subs">Abonnement</string>
+    <string name="status">Votre statut :</string>
+    <string name="text_info1">Soutenez le développement de l\'application et profitez d\'avantages supplémentaires :</string>
+    <string name="no_ads">Sans publicité</string>
+    <string name="buy_back">Restaurer les achats</string>
+    <string name="subs_on">Abonnement activé !</string>
+    <string name="subs_active">Actif</string>
+    <string name="subs_deactive">Aucun abonnement</string>
+    <string name="subs_annual_button">Abonnement annuel : </string>
+    <string name="subs_monthly_button">Abonnement mensuel : </string>
+    <string name="subs_buy_button">Acheter l\'abonnement</string>
+    <string name="subs_info">Les 7 premiers jours sont entièrement gratuits. Vous pouvez annuler à tout moment dans les paramètres de Google Play – si vous le faites avant la fin de la semaine, aucun frais ne vous sera facturé.</string>
+    <string name="subs_trial_button">Commencer l\'essai gratuit de 7 jours\npuis  / an</string>
+    <string name="info_0_m"><![CDATA[<b>Paramètres de fraisage</b><br/><br/><b>VC</b> - Vitesse de coupe [m/min]<br/><b>DC</b> - Diamètre de l\'outil [mm]<br/><b>FZ</b> - Avance par dent [mm]<br/><b>Z</b> - Nombre de dents (pour les forets, entrez 1)]]></string>
+    <string name="info_0_inch"><![CDATA[<b>Paramètres de fraisage (Pouces)</b><br/><br/><b>VC</b> - Vitesse de coupe [pieds/min]<br/><b>DC</b> - Diamètre de l\'outil [pouce]<br/><b>FZ</b> - Avance par dent [pouce]<br/><b>Z</b> - Nombre de dents (pour les forets, entrez 1)]]></string>
+    <string name="info_1_m"><![CDATA[<b>Taraudage (Fraisage)</b><br/><br/><b>VC</b> - Vitesse de coupe [m/min]<br/><b>DC</b> - Diamètre de l\'outil [mm]<br/><b>JT</b> - Pas du filet [mm]]]></string>
+    <string name="info_1_inch"><![CDATA[<b>Taraudage (Fraisage - Pouces)</b><br/><br/><b>VC</b> - Vitesse de coupe [pieds/min]<br/><b>DC</b> - Diamètre de l\'outil [pouce]<br/><b>JT</b> - Pas du filet [pouce]]]></string>
+    <string name="info_2_m"><![CDATA[<b>Alésage / Alésage à l\'outil</b><br/><br/><b>HD</b> - Diamètre du trou [mm]<br/><b>TD</b> - Diamètre de l\'outil [mm]<br/><b>F</b> - Avance [mm/min]]]></string>
+    <string name="info_2_inch"><![CDATA[<b>Alésage / Alésage à l\'outil (Pouces)</b><br/><br/><b>HD</b> - Diamètre du trou [pouce]<br/><b>TD</b> - Diamètre de l\'outil [pouce]<br/><b>F</b> - Avance [pouce/min]]]></string>
+    <string name="info_4_m"><![CDATA[<b>Scies à ruban (Option 1)</b><br/><br/><b>AS</b> - Surface de coupe unitaire [mm²/min]<br/><b>T</b> - Pas des dents [mm]<br/><b>VC</b> - Vitesse de coupe [m/min]<br/><b>L</b> - Longueur de coupe [mm]]]></string>
+    <string name="info_4_inch"><![CDATA[<b>Scies à ruban (Option 1 - Pouces)</b><br/><br/><b>AS</b> - Surface de coupe unitaire [pouce²/min]<br/><b>T</b> - Pas des dents [pouce]<br/><b>VC</b> - Vitesse de coupe [pieds/min]<br/><b>L</b> - Longueur de coupe [pouce]]]></string>
+    <string name="info_5_m"><![CDATA[<b>Scies à ruban (Option 2)</b><br/><br/><b>VF</b> - Vitesse d\'avance [mm/min]<br/><b>VC</b> - Vitesse de coupe [m/min]<br/><b>Z</b> - Nombre de dents<br/><b>LB</b> - Longueur du ruban [mm]]]></string>
+    <string name="info_5_inch"><![CDATA[<b>Scies à ruban (Option 2 - Pouces)</b><br/><br/><b>VF</b> - Vitesse d\'avance [pouce/min]<br/><b>VC</b> - Vitesse de coupe [pieds/min]<br/><b>Z</b> - Nombre de dents<br/><b>LB</b> - Longueur du ruban [pouce]]]></string>
+    <string name="info_6_m"><![CDATA[<b>Scies circulaires (Option 1)</b><br/><br/><b>AS</b> - Surface de coupe unitaire [mm²/min]<br/><b>VC</b> - Vitesse de coupe [m/min]<br/><b>D</b> - Diamètre de la lame [mm]<br/><b>Z</b> - Nombre de dents<br/><b>L</b> - Longueur de coupe [mm]]]></string>
+    <string name="info_6_inch"><![CDATA[<b>Scies circulaires (Option 1 - Pouces)</b><br/><br/><b>AS</b> - Surface de coupe unitaire [pouce²/min]<br/><b>VC</b> - Vitesse de coupe [pieds/min]<br/><b>D</b> - Diamètre de la lame [pouce]<br/><b>Z</b> - Nombre de dents<br/><b>L</b> - Longueur de coupe [pouce]]]></string>
+    <string name="info_7_m"><![CDATA[<b>Scies circulaires (Option 2)</b><br/><br/><b>VF</b> - Vitesse d\'avance [mm/min]<br/><b>VC</b> - Vitesse de coupe [m/min]<br/><b>Z</b> - Nombre de dents<br/><b>D</b> - Diamètre de la lame [mm]]]></string>
+    <string name="info_7_inch"><![CDATA[<b>Scies circulaires (Option 2 - Pouces)</b><br/><br/><b>VF</b> - Vitesse d\'avance [pouce/min]<br/><b>VC</b> - Vitesse de coupe [pieds/min]<br/><b>Z</b> - Nombre de dents<br/><b>D</b> - Diamètre de la lame [pouce]]]></string>
+    <string name="info_3_m"><![CDATA[<b>Tournage (Standard)</b><br/><br/><b>VC</b> - Vitesse de coupe [m/min]<br/><b>DM</b> - Diamètre de la pièce [mm]<br/><b>FN</b> - Avance par tour [mm/tr]]]></string>
+    <string name="info_3_inch"><![CDATA[<b>Tournage (Standard - Pouces)</b><br/><br/><b>VC</b> - Vitesse de coupe [pieds/min]<br/><b>DM</b> - Diamètre de la pièce [pouce]<br/><b>FN</b> - Avance par tour [pouce/tr]]]></string>
+
+    <string name="info_8_m"><![CDATA[
+    <b>Paramètres de coupe (Tournage)</b><br/><br/>
+    <b>DM</b> – Diamètre de la pièce [mm]<br/>
+    <b>VC</b> – Vitesse de coupe [m/min]<br/>
+    <b>Fn</b> – Avance par tour [mm/tr]<br/>
+    <b>AP</b> – Profondeur de coupe (par côté) [mm]<br/>
+    <b>KC</b> – Force spécifique de coupe [N/mm²]
+]]></string>
+
+    <string name="info_8_inch"><![CDATA[
+    <b>Paramètres de coupe (Tournage - Pouces)</b><br/><br/>
+    <b>DM</b> – Diamètre de la pièce [pouce]<br/>
+    <b>VC</b> – Vitesse de coupe [pi/min]<br/>
+    <b>Fn</b> – Avance par tour [po/tr]<br/>
+    <b>AP</b> – Profondeur de coupe (par côté) [pouce]<br/>
+    <b>KC</b> – Force spécifique de coupe [lb/po²]
+]]></string>
+    <string name="info_9_m"><![CDATA[<b>Alésage (Tournage)</b><br/><br/><b>VC</b> - Vitesse de coupe [m/min]<br/><b>DM</b> - Diamètre de la pièce [mm]<br/><b>FN</b> - Avance par tour [mm/tr]]]></string>
+    <string name="info_9_inch"><![CDATA[<b>Alésage (Tournage - Pouces)</b><br/><br/><b>VC</b> - Vitesse de coupe [pieds/min]<br/><b>DM</b> - Diamètre de la pièce [pouce]<br/><b>FN</b> - Avance par tour [pouce/tr]]]></string>
+    <string name="info_10_m"><![CDATA[<b>Temps d\'usinage (Tournage)</b><br/><br/><b>VC</b> - Vitesse de coupe [m/min]<br/><b>DM</b> - Diamètre de la pièce [mm]<br/><b>FN</b> - Avance par tour [mm/tr]<br/><b>LM</b> - Longueur d\'usinage [mm]]]></string>
+    <string name="info_10_inch"><![CDATA[<b>Temps d\'usinage (Tournage - Pouces)</b><br/><br/><b>VC</b> - Vitesse de coupe [pieds/min]<br/><b>DM</b> - Diamètre de la pièce [pouce]<br/><b>FN</b> - Avance par tour [pouce/tr]<br/><b>LM</b> - Longueur d\'usinage [pouce]]]></string>
+    <string name="info_11_m"><![CDATA[<b>Débit de matière (Tournage)</b><br/><br/><b>VC</b> - Vitesse de coupe [m/min]<br/><b>AP</b> - Profondeur de passe [mm]<br/><b>FN</b> - Avance par tour [mm/tr]]]></string>
+    <string name="info_11_inch"><![CDATA[<b>Débit de matière (Tournage - Pouces)</b><br/><br/><b>VC</b> - Vitesse de coupe [pieds/min]<br/><b>AP</b> - Profondeur de passe [pouce]<br/><b>FN</b> - Avance par tour [pouce/tr]]]></string>
+    <string name="info_12_m"><![CDATA[<b>Point Zéro (Centrage)</b><br/><br/>Cette fonction permet de calculer le centre de la pièce entre deux points (A et B).<br/><br/><b>Formule :</b> (A + B) / 2]]></string>
+    <string name="info_12_inch"><![CDATA[<b>Point Zéro (Centrage - Pouces)</b><br/><br/>Cette fonction permet de calculer le centre de la pièce entre two points (A et B).<br/><br/><b>Formule :</b> (A + B) / 2]]></string>
+    <string name="info_13_m"><![CDATA[<b>Taraudage (Fraisage)</b><br/><br/><b>VC</b> - Vitesse de coupe [m/min]<br/><b>DM</b> - Diamètre du filetage [mm]<br/><b>JT</b> - Pas du filetage [mm]<br/><br/><i>Important : En taraudage, l\'avance par tour (FN) est toujours égale au pas du filetage (P).</i>]]></string>
+    <string name="info_13_inch"><![CDATA[<b>Taraudage (Fraisage - Pouces)</b><br/><br/><b>VC</b> - Vitesse de coupe [sfm]<br/><b>DM</b> - Diamètre du filetage [pouce]<br/><b>JT</b> - Pas du filetage [TPI]<br/><br/><i>Important : En taraudage, l\'avance par tour (FN) est toujours égale au pas du filetage (P).</i>]]></string>
+    <string name="info_14_m"><![CDATA[<b>Rugosité de surface (Ra)</b><br/><br/><b>FN</b> - Avance par tour [mm/tr]<br/><b>RE</b> - Rayon de bec de la plaquette [mm]<br/><br/>Rugosité théorique du profil Ra calculée en µm.]]></string>
+    <string name="info_14_inch"><![CDATA[<b>Rugosité de surface (Ra - Pouces)</b><br/><br/><b>FN</b> - Avance par tour [pouce/tr]<br/><b>RE</b> - Rayon de bec de la plaquette [pouce]<br/><br/>Rugosité théorique du profil Ra calculée en µpouce.]]></string>
+    <string name="info_15_m"><![CDATA[<b>Tournage conique</b><br/><br/><b>D</b> - Diamètre majeur [mm]<br/><b>d</b> - Diamètre mineur [mm]<br/><b>L</b> - Longueur du cône [mm]<br/><br/>La fonction calcule l\'angle d\'inclinaison du cône et la conicité.]]></string>
+    <string name="info_15_inch"><![CDATA[<b>Tournage conique (Pouces)</b><br/><br/><b>D</b> - Diamètre majeur [pouce]<br/><b>d</b> - Diamètre mineur [pouce]<br/><b>L</b> - Longueur du cône [pouce]<br/><br/>La fonction calcule l\'angle d\'inclinaison du cône et la conicité.]]></string>
+
+    <string-array name="miling_spinner1_data">
+        <item>Paramètres de coupe</item>
+        <item>Paramètres de taraudage</item>
+        <item>Scies à ruban Option 1</item>
+        <item>Scies à ruban Option 2</item>
+        <item>Scies circulaires Option 1</item>
+        <item>Scies circulaires Option 2</item>
+        <item>Paramètres d\'interpolation</item>
+        <item>Paramètres d\'alésage</item>
+        <item>Point Zéro</item>
+        <item>Convertisseur de dureté (Rm/HV/HB/HRC)</item>
+    </string-array>
+
+    <string-array name="tourning_spinner1_data">
+        <item>Paramètres de coupe</item>
+        <item>Paramètres d\'alésage</item>
+        <item>Filetage</item>
+        <item>Temps d\'usinage</item>
+        <item>Débit de matière (Q)</item>
+        <item>Rugosité de surface</item>
+        <item>Tournage conique</item>
+    </string-array>
+
+    <string-array name="spinner1_items">
+        <item>Métrique</item>
+        <item>Pouces</item>
+    </string-array>
+
+    <string-array name="spinner3_items">
+        <item>Filetage métrique</item>
+        <item>Filetage pour inserts (EG)</item>
+        <item>Filetage américain (UNC/UNF)</item>
+        <item>Filetage américain NPT</item>
+        <item>Filetage Gaz (BSP)</item>
+        <item>Filetage Whitworth</item>
+        <item>Taraudage par déformation</item>
+        <item>Filetage électrique (PG)</item>
+    </string-array>
+</resources>
