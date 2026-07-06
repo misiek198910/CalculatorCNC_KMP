@@ -219,82 +219,166 @@ fun MyToolsScreen(
 @Composable
 fun UserToolCard(tool: UserToolEntity, onEditClick: () -> Unit, onDeleteClick: () -> Unit) {
     Card(
-        colors = CardDefaults.cardColors(containerColor = Color(0x33000000)),
-        border = BorderStroke(1.dp, Color(0x40FFFFFF)),
+        // Użyłem koloru tła z Twojego XML (#CC001F3F)
+        colors = CardDefaults.cardColors(containerColor = Color(0xCC001F3F)),
+        border = BorderStroke(1.dp, Color(0x33FFFFFF)),
+        shape = RoundedCornerShape(16.dp),
         modifier = Modifier
             .fillMaxWidth()
-            .height(230.dp)
+            .height(230.dp) // Zgodnie z prośbą trzymamy ten rozmiar
+            .padding(horizontal = 8.dp, vertical = 4.dp)
     ) {
         Column(
             modifier = Modifier
                 .padding(12.dp)
                 .fillMaxSize()
         ) {
-            Text(
-                text = tool.name,
-                color = Color.White,
-                fontSize = 16.sp,
-                fontWeight = FontWeight.Bold,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis
-            )
-            Spacer(modifier = Modifier.height(4.dp))
+            // 1. Nazwa narzędzia + Ikona (Tools)
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Image(
+                    painter = painterResource(Res.drawable.tools),
+                    contentDescription = null,
+                    modifier = Modifier.size(20.dp)
+                )
+                Spacer(modifier = Modifier.width(8.dp))
+                Text(
+                    text = tool.name,
+                    color = Color.White,
+                    fontSize = 16.sp, // Zmniejszone z 18sp
+                    fontWeight = FontWeight.Bold,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis
+                )
+            }
 
+            Spacer(modifier = Modifier.height(6.dp))
 
-            Column(modifier = Modifier.weight(1f)) {
-                if (!tool.workpiece.isNullOrBlank()) {
+            // 2. Obrabiany materiał + Ikona (Material)
+            if (!tool.workpiece.isNullOrBlank()) {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Image(
+                        painter = painterResource(Res.drawable.material),
+                        contentDescription = null,
+                        modifier = Modifier.size(18.dp)
+                    )
+                    Spacer(modifier = Modifier.width(8.dp))
                     Text(
-                        text = stringResource(Res.string.label_workpiece).formatKmp(tool.workpiece),
+                        text = tool.workpiece,
                         color = Color(0xFFBDBDBD),
                         fontSize = 12.sp,
                         maxLines = 1,
                         overflow = TextOverflow.Ellipsis
                     )
                 }
-                if (!tool.f.isNullOrBlank()) {
-                    Text(
-                        text = stringResource(Res.string.label_feed).formatKmp(tool.f),
-                        color = Color(0xFFBDBDBD),
-                        fontSize = 12.sp,
-                        maxLines = 1
-                    )
-                }
+            }
 
+            HorizontalDivider(
+                color = Color(0x33FFFFFF),
+                modifier = Modifier.padding(vertical = 8.dp)
+            )
+
+            // 3. Parametry S i F (w jednym rzędzie, po lewej i prawej)
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
                 if (!tool.s.isNullOrBlank()) {
-                    Text(
-                        text = stringResource(Res.string.label_speed).formatKmp(tool.s),
-                        color = Color(0xFFBDBDBD),
-                        fontSize = 12.sp,
-                        maxLines = 1
-                    )
+                    Row(
+                        modifier = Modifier.weight(1f),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Image(
+                            painter = painterResource(Res.drawable.rotate),
+                            contentDescription = null,
+                            modifier = Modifier.size(22.dp)
+                        )
+                        Spacer(modifier = Modifier.width(6.dp))
+                        Text(
+                            text = tool.s,
+                            color = Color.White,
+                            fontSize = 14.sp,
+                            maxLines = 1,
+                            overflow = TextOverflow.Ellipsis
+                        )
+                    }
                 }
 
+                if (!tool.f.isNullOrBlank()) {
+                    Row(
+                        modifier = Modifier.weight(1f),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Image(
+                            painter = painterResource(Res.drawable.feed),
+                            contentDescription = null,
+                            modifier = Modifier.size(22.dp)
+                        )
+                        Spacer(modifier = Modifier.width(6.dp))
+                        Text(
+                            text = tool.f,
+                            color = Color.White,
+                            fontSize = 14.sp,
+                            maxLines = 1,
+                            overflow = TextOverflow.Ellipsis
+                        )
+                    }
+                }
+            }
+
+            // 4. Sekcja notatek wypełniająca wolną przestrzeń i spychająca przyciski na dół
+            Column(
+                modifier = Modifier
+                    .weight(1f)
+                    .padding(top = 8.dp)
+            ) {
                 if (!tool.notes.isNullOrBlank()) {
+                    HorizontalDivider(
+                        color = Color(0x1AFFFFFF),
+                        modifier = Modifier.padding(bottom = 4.dp)
+                    )
                     Text(
-                        text = stringResource(Res.string.label_notes).formatKmp(tool.notes),
+                        text = "Notatki:", // Jeśli masz to w Res.string, można podmienić
                         color = Color(0xFFBDBDBD),
+                        fontSize = 11.sp,
+                        fontWeight = FontWeight.Bold
+                    )
+                    Text(
+                        text = tool.notes,
+                        color = Color.White,
                         fontSize = 12.sp,
-                        maxLines = 3,
+                        maxLines = 2,
                         overflow = TextOverflow.Ellipsis,
-                        modifier = Modifier.padding(top = 4.dp)
+                        modifier = Modifier.padding(top = 2.dp)
                     )
                 }
             }
 
-            HorizontalDivider(color = Color(0x1AFFFFFF))
+            HorizontalDivider(color = Color(0x22FFFFFF))
 
+            // 5. Przyciski akcji wyrównane do prawej (jak w XML gravity="end")
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(top = 8.dp),
-                horizontalArrangement = Arrangement.SpaceBetween,
+                    .padding(top = 4.dp),
+                horizontalArrangement = Arrangement.End,
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 IconButton(onClick = onEditClick, modifier = Modifier.size(32.dp)) {
-                    Icon(Icons.Default.Edit, contentDescription = stringResource(Res.string.edit_short), tint = Color.White, modifier = Modifier.size(20.dp))
+                    Icon(
+                        imageVector = Icons.Default.Edit,
+                        contentDescription = stringResource(Res.string.edit_short),
+                        tint = Color.White,
+                        modifier = Modifier.size(18.dp)
+                    )
                 }
+                Spacer(modifier = Modifier.width(8.dp))
                 IconButton(onClick = onDeleteClick, modifier = Modifier.size(32.dp)) {
-                    Icon(Icons.Default.Delete, contentDescription = stringResource(Res.string.delete), tint = Color(0xFFE57373), modifier = Modifier.size(20.dp))
+                    Icon(
+                        imageVector = Icons.Default.Delete,
+                        contentDescription = stringResource(Res.string.delete),
+                        tint = Color(0xFFE57373),
+                        modifier = Modifier.size(18.dp)
+                    )
                 }
             }
         }
@@ -318,7 +402,6 @@ fun createMixedList(tools: List<UserToolEntity>): List<MyToolsListItem> {
     val result = mutableListOf<MyToolsListItem>()
     tools.forEachIndexed { index, tool ->
         result.add(MyToolsListItem.Tool(tool))
-        // Zmiana modulo na 2, żeby dodawać reklamę po każdym pełnym rzędzie (co dwa elementy)
         if ((index + 1) % 4 == 0) {
             result.add(MyToolsListItem.Ad)
         }

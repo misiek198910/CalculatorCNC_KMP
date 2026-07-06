@@ -33,7 +33,7 @@ import kalkulator.cnc.entity.ThreadEntity
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TablesScreen(onBack: () -> Unit, repository: MainRepository, initialSpinnerIdx: Int = 0, adContent: @Composable () -> Unit = {}) {
+fun TablesScreen(onBack: () -> Unit, repository: MainRepository, initialSpinnerIdx: Int = 0, adContent: @Composable () -> Unit = {}, showInterstitialAd: () -> Unit = {}) {
     var spinnerIdx by remember { mutableStateOf(initialSpinnerIdx) }
     var tableIdx by remember { mutableStateOf(0) }
     var expandedDropdown by remember { mutableStateOf(false) }
@@ -41,6 +41,9 @@ fun TablesScreen(onBack: () -> Unit, repository: MainRepository, initialSpinnerI
     val formingAbbr = stringResource(Res.string.forming_abbr)
     val mixedAbbr = stringResource(Res.string.mixed_abbr)
     val threadEg = stringResource(Res.string.thread_eg)
+    val isPremium by repository.isPremiumFlow.collectAsState(initial = false)
+    var isInitialized by remember { mutableStateOf(false) }
+    var interactionCount by remember { mutableIntStateOf(0) }
 
     val buttonLabels = remember(spinnerIdx) {
         when (spinnerIdx) {
@@ -63,7 +66,16 @@ fun TablesScreen(onBack: () -> Unit, repository: MainRepository, initialSpinnerI
     }
 
     LaunchedEffect(spinnerIdx, tableIdx) {
+
         threadsData = repository.getThreads(spinnerIdx, tableIdx)
+
+        if (isInitialized && !isPremium) {
+            interactionCount++
+            if (interactionCount % 3 == 0) {
+                showInterstitialAd()
+            }
+        }
+        isInitialized = true
     }
 
     Box(modifier = Modifier.fillMaxSize()) {

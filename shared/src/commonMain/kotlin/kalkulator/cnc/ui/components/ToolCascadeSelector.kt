@@ -32,6 +32,7 @@ fun ToolCascadeSelector(
     isDiameterPremium: (Double) -> Boolean,
     isModelPremium: (String) -> Boolean,
     onPremiumClick: () -> Unit,
+    onModelSelected: (String) -> Unit,
     modifier: Modifier = Modifier
 ) {
     val selectedIso by viewModel.selectedMaterialGroup.collectAsState()
@@ -91,7 +92,10 @@ fun ToolCascadeSelector(
                     items = models,
                     selectedItem = selectedModel ?: "",
                     isItemLocked = { !isPremium && isModelPremium(it) },
-                    onItemSelected = { viewModel.setModel(it) },
+                    onItemSelected = {
+                        viewModel.setModel(it)
+                        onModelSelected(it)
+                    },
                     onLockedClick = onPremiumClick
                 )
             }

@@ -9,6 +9,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import kotlinx.datetime.Instant
+import kotlinx.datetime.toInstant
 
 class AppViewModel(
     private val repository: MainRepository
@@ -63,15 +64,23 @@ class AppViewModel(
         }
     }
 
-    private fun loadNews() {
+     fun loadNews() {
         viewModelScope.launch {
             _isLoadingNews.value = true
             _newsErrorMessage.value = null
             try {
+                // 1. Logujemy próbę połączenia
+                println("[DEBUG] Próba pobrania newsów z API...")
                 val responseList = RemoteClient.apiService.getNewsFeed()
 
+                // 2. Sprawdzamy co przyszło
                 if (responseList != null) {
+                    println("[DEBUG] Otrzymano listę newsów o rozmiarze: ${responseList.size}")
+
                     _newsList.value = responseList.map { apiItem ->
+                        // Logujemy datę dla każdego elementu, żeby sprawdzić format
+                        println("[DEBUG] Parsowanie newsa: ${apiItem.title}, data: ${apiItem.publish_date}")
+
                         NewsItem(
                             title = apiItem.title ?: "Brak tytułu",
                             content = apiItem.content ?: "",
@@ -79,17 +88,25 @@ class AppViewModel(
                             actionLink = apiItem.action_link,
                             imageUrl = apiItem.image_url,
                             timestamp = try {
-                                apiItem.publish_date?.let { Instant.parse(it).toEpochMilliseconds() }
+                                apiItem.publish_date?.let { dateStr ->
+                                    val isoDate = dateStr.replace(" ", "T")
+                                    kotlinx.datetime.LocalDateTime.parse(isoDate)
+                                        .toInstant(kotlinx.datetime.TimeZone.UTC)
+                                        .toEpochMilliseconds()
+                                }
                             } catch (e: Exception) {
+                                println("[CNC_LOG] Błąd parsowania daty: ${e.message}")
                                 null
                             }
                         )
                     }
                 } else {
+                    println("[DEBUG] API zwróciło NULL (błąd połączenia lub pusta odpowiedź)")
                     _newsErrorMessage.value = "Błąd: Brak danych z serwera"
                 }
             } catch (e: Exception) {
-                _newsErrorMessage.value = "Błąd połączenia: ${e.message ?: "Nieznany błąd"}"
+                println("[DEBUG] Wyjątek w loadNews: ${e.message}")
+                _newsErrorMessage.value = "Błąd połączenia: ${e.message}"
             } finally {
                 _isLoadingNews.value = false
             }

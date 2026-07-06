@@ -3,7 +3,9 @@ package kalkulator.cnc.ui.screens
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.gestures.detectTapGestures
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -42,9 +44,8 @@ import kotlin.math.round
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TolerancesScreen(onBack: () -> Unit, repository: MainRepository, onNavigateToPremium: () -> Unit, adContent: @Composable () -> Unit = {}) {
+fun TolerancesScreen(onBack: () -> Unit, repository: MainRepository, onNavigateToPremium: () -> Unit, adContent: @Composable () -> Unit = {}, showInterstitialAd: () -> Unit = {}) {
     val isPremium by repository.isPremiumFlow.collectAsState(initial = false)
-    val focusManager = LocalFocusManager.current
     val clipboardManager = LocalClipboardManager.current
     val availableHoles = TolerancesCalculator.getHoleLabels()
     val availableShafts = TolerancesCalculator.getShaftLabels()
@@ -65,6 +66,8 @@ fun TolerancesScreen(onBack: () -> Unit, repository: MainRepository, onNavigateT
 
     val isMetric by repository.isMetricFlow.collectAsState(initial = true)
 
+    val focusManager = androidx.compose.ui.platform.LocalFocusManager.current
+    val interactionSource = remember { MutableInteractionSource() }
 
     fun calculateFit() {
         val dia = diameterInput.replace(',', '.').toDoubleOrNull()
@@ -75,6 +78,8 @@ fun TolerancesScreen(onBack: () -> Unit, repository: MainRepository, onNavigateT
             fitResult = null
         }
     }
+
+
 
     LaunchedEffect(diameterInput, selectedHole, selectedShaft) {
         calculateFit()
@@ -90,6 +95,12 @@ fun TolerancesScreen(onBack: () -> Unit, repository: MainRepository, onNavigateT
                         awaitPointerEvent()
                     }
                 }
+            }
+            .clickable(
+                interactionSource = interactionSource,
+                indication = null
+            ) {
+                focusManager.clearFocus()
             }
     ) {
         Image(
@@ -431,6 +442,10 @@ fun TolerancesScreen(onBack: () -> Unit, repository: MainRepository, onNavigateT
                         selectedHole = "H7"
                         selectedShaft = "h6"
                         fitResult = null
+
+                        if (!isPremium) {
+                            showInterstitialAd()
+                        }
                     },
                     colors = ButtonDefaults.buttonColors(containerColor = ApplicationNewBlue),
                     shape = RoundedCornerShape(12.dp),

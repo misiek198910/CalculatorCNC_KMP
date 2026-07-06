@@ -13,6 +13,7 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.Clear // DODANY IMPORT
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -168,6 +169,7 @@ fun AddToolScreen(toolId: Int?, onBack: () -> Unit, repository: MainRepository, 
                         .imePadding()
                         .padding(16.dp)
                 ) {
+
                     Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(bottom = 16.dp)) {
                         Image(
                             painter = painterResource(Res.drawable.tools),
@@ -177,10 +179,17 @@ fun AddToolScreen(toolId: Int?, onBack: () -> Unit, repository: MainRepository, 
                         OutlinedTextField(
                             value = name,
                             onValueChange = { name = it },
-                            label = { Text(stringResource(Res.string.toolsName)) },
+                            label = { Text(text = stringResource(Res.string.toolsName), fontSize = 11.sp, maxLines = 1, softWrap = false)},
                             colors = getTextFieldColors(),
                             singleLine = true,
                             keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next),
+                            trailingIcon = {
+                                if (name.isNotEmpty()) {
+                                    IconButton(onClick = { name = "" }) {
+                                        Icon(Icons.Default.Clear, contentDescription = "Wyczyść", tint = Color.White)
+                                    }
+                                }
+                            },
                             modifier = Modifier.fillMaxWidth().height(64.dp)
                         )
                     }
@@ -198,10 +207,17 @@ fun AddToolScreen(toolId: Int?, onBack: () -> Unit, repository: MainRepository, 
                             OutlinedTextField(
                                 value = sValue,
                                 onValueChange = { sValue = it },
-                                label = { Text(stringResource(Res.string.s_hint)) },
+                                label = { Text(text = stringResource(Res.string.s_hint), fontSize = 11.sp, maxLines = 1, softWrap = false)},
                                 colors = getTextFieldColors(),
                                 singleLine = true,
                                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number, imeAction = ImeAction.Next),
+                                trailingIcon = {
+                                    if (sValue.isNotEmpty()) {
+                                        IconButton(onClick = { sValue = "" }) {
+                                            Icon(Icons.Default.Clear, contentDescription = "Wyczyść", tint = Color.White)
+                                        }
+                                    }
+                                },
                                 modifier = Modifier.fillMaxWidth().height(64.dp)
                             )
                         }
@@ -214,10 +230,17 @@ fun AddToolScreen(toolId: Int?, onBack: () -> Unit, repository: MainRepository, 
                             OutlinedTextField(
                                 value = fValue,
                                 onValueChange = { fValue = it },
-                                label = { Text(stringResource(Res.string.f_hint)) },
+                                label = { Text(text = stringResource(Res.string.f_hint), fontSize = 11.sp, maxLines = 1, softWrap = false)},
                                 colors = getTextFieldColors(),
                                 singleLine = true,
                                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number, imeAction = ImeAction.Next),
+                                trailingIcon = {
+                                    if (fValue.isNotEmpty()) {
+                                        IconButton(onClick = { fValue = "" }) {
+                                            Icon(Icons.Default.Clear, contentDescription = "Wyczyść", tint = Color.White)
+                                        }
+                                    }
+                                },
                                 modifier = Modifier.fillMaxWidth().height(64.dp)
                             )
                         }
@@ -229,16 +252,13 @@ fun AddToolScreen(toolId: Int?, onBack: () -> Unit, repository: MainRepository, 
                             contentDescription = null,
                             modifier = Modifier.size(45.dp).padding(end = 12.dp)
                         )
-                        Box(modifier = Modifier.weight(1f).height(64.dp).clickable {
-                            focusManager.clearFocus()
-                            showMaterialDialog = true
-                        }) {
+                        Box(modifier = Modifier.weight(1f).height(64.dp)) {
                             OutlinedTextField(
                                 value = workpiece,
                                 onValueChange = {},
                                 readOnly = true,
                                 enabled = false,
-                                label = { Text(stringResource(Res.string.material)) },
+                                label = { Text(text = stringResource(Res.string.material), fontSize = 11.sp, maxLines = 1, softWrap = false)},
                                 colors = getTextFieldColors().copy(
                                     disabledTextColor = Color.White,
                                     disabledLabelColor = Color(0xFFBDBDBD),
@@ -247,15 +267,42 @@ fun AddToolScreen(toolId: Int?, onBack: () -> Unit, repository: MainRepository, 
                                 ),
                                 modifier = Modifier.fillMaxSize()
                             )
+
+                            Box(
+                                modifier = Modifier
+                                    .fillMaxSize()
+                                    .padding(end = if (workpiece.isNotEmpty()) 48.dp else 0.dp)
+                                    .clickable {
+                                        focusManager.clearFocus()
+                                        showMaterialDialog = true
+                                    }
+                            )
+
+                            if (workpiece.isNotEmpty()) {
+                                IconButton(
+                                    onClick = { workpiece = "" },
+                                    modifier = Modifier.align(Alignment.CenterEnd)
+                                ) {
+                                    Icon(Icons.Default.Clear, contentDescription = "Wyczyść", tint = Color.White)
+                                }
+                            }
                         }
                     }
+
                     OutlinedTextField(
                         value = notes,
                         onValueChange = { notes = it },
-                        label = { Text(stringResource(Res.string.notes_hint)) },
+                        label = { Text(text = stringResource(Res.string.notes_hint), fontSize = 11.sp, maxLines = 1, softWrap = false)},
                         colors = getTextFieldColors(),
                         keyboardOptions = KeyboardOptions(imeAction = ImeAction.Done),
                         keyboardActions = KeyboardActions(onDone = { focusManager.clearFocus() }),
+                        trailingIcon = {
+                            if (notes.isNotEmpty()) {
+                                IconButton(onClick = { notes = "" }) {
+                                    Icon(Icons.Default.Clear, contentDescription = "Wyczyść", tint = Color.White)
+                                }
+                            }
+                        },
                         modifier = Modifier.fillMaxWidth().height(150.dp)
                     )
                 }

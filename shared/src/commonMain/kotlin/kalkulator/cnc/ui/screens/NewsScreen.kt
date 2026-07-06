@@ -10,6 +10,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
@@ -50,6 +51,11 @@ fun NewsScreen(onBack: () -> Unit, repository: MainRepository, adContent: @Compo
             AppViewModel(repository)
         }
     })
+
+    LaunchedEffect(Unit) {
+        viewModel.loadNews()
+    }
+
     val newsList by viewModel.newsList.collectAsState()
     val isLoading by viewModel.isLoadingNews.collectAsState()
     val errorMessage by viewModel.newsErrorMessage.collectAsState()

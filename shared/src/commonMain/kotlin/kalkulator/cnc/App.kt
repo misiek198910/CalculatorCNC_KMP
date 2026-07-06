@@ -145,7 +145,8 @@ fun App(
                 TablesScreen(
                     onBack = { currentScreen = Screen.Main },
                     repository = repository,
-                    adContent = adContent
+                    adContent = adContent,
+                    showInterstitialAd = showInterstitialAd
                 )
             }
             is Screen.Tolerances -> {
@@ -153,7 +154,8 @@ fun App(
                     onBack = { currentScreen = Screen.Main },
                     repository = repository,
                     onNavigateToPremium = { currentScreen = Screen.Subscription },
-                    adContent = adContent
+                    adContent = adContent,
+                    showInterstitialAd = showInterstitialAd
                 )
             }
             is Screen.Privacy -> {

@@ -23,7 +23,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontStyle
@@ -51,10 +53,18 @@ import org.jetbrains.compose.resources.stringArrayResource
 import org.jetbrains.compose.resources.stringResource
 import kotlin.math.pow
 import kotlin.math.roundToInt
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.runtime.remember
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MillingScreen(onBack: () -> Unit, repository: MainRepository, adContent: @Composable () -> Unit = {}, showInterstitialAd: () -> Unit = {}) {
+fun MillingScreen(
+    onBack: () -> Unit,
+    repository: MainRepository,
+    adContent: @Composable () -> Unit = {},
+    showInterstitialAd: () -> Unit = {}
+) {
 
     val isPremium by repository.isPremiumFlow.collectAsState(initial = false)
     var selectedOperationIndex by remember { mutableStateOf(0) }
@@ -74,10 +84,25 @@ fun MillingScreen(onBack: () -> Unit, repository: MainRepository, adContent: @Co
     val selectedIso by toolViewModel.selectedMaterialGroup.collectAsState()
 
     val allCategories by toolViewModel.categories.collectAsState()
+    val selectedModel by toolViewModel.selectedModel.collectAsState()
+    val selectedCategory by toolViewModel.selectedCategory.collectAsState()
 
     val filteredCategories = remember(allCategories, selectedOperationIndex) {
         val techKeywords = when (selectedOperationIndex) {
-            0 -> listOf("MILL_HEAD", "MILL_VHM", "MILL_HSS", "MILL_OTHER", "DRILL_HSSE", "DRILL_HSS", "DRILL_VHM", "DRILL_OTHER", "REAMER", "COUNTERSINK", "MULTITOOL")
+            0 -> listOf(
+                "MILL_HEAD",
+                "MILL_VHM",
+                "MILL_HSS",
+                "MILL_OTHER",
+                "DRILL_HSSE",
+                "DRILL_HSS",
+                "DRILL_VHM",
+                "DRILL_OTHER",
+                "REAMER",
+                "COUNTERSINK",
+                "MULTITOOL"
+            )
+
             1 -> listOf("THREAD_TAP", "THREAD_TAP_EG", "THREAD_FORM")
             7 -> listOf("BORING", "MULTITOOL")
             else -> emptyList()
@@ -126,6 +151,9 @@ fun MillingScreen(onBack: () -> Unit, repository: MainRepository, adContent: @Co
         }
     }
 
+    val focusManager = androidx.compose.ui.platform.LocalFocusManager.current
+    val interactionSource = remember { MutableInteractionSource() }
+
     LaunchedEffect(selectedOperationIndex) {
         inputValues = List(fieldLabels.size) { "" }
         result = null
@@ -138,14 +166,21 @@ fun MillingScreen(onBack: () -> Unit, repository: MainRepository, adContent: @Co
             val optVc = ((tool.vcMin + tool.vcMax) / 2).toInt().toString()
 
             val vcIndex = fieldLabels.indexOfFirst { it.contains("Vc", true) }
-            val dcIndex = fieldLabels.indexOfFirst { it.contains("DC", true) || it.contains("DM", true) }
-            val fzIndex = fieldLabels.indexOfFirst { it.contains("Fz", true) || it.contains("Fn", true) }
+            val dcIndex =
+                fieldLabels.indexOfFirst { it.contains("DC", true) || it.contains("DM", true) }
+            val fzIndex =
+                fieldLabels.indexOfFirst { it.contains("Fz", true) || it.contains("Fn", true) }
             val zIndex = fieldLabels.indexOfFirst { it == "Z" }
 
+            val jtIndex = fieldLabels.indexOfFirst { it.contains("JT", true) }
+
             if (vcIndex != -1) newValues[vcIndex] = optVc
-            if (dcIndex != -1 && selectedOperationIndex != 7) newValues[dcIndex] = tool.diameter.toString()
+            if (dcIndex != -1 && selectedOperationIndex != 7) newValues[dcIndex] =
+                tool.diameter.toString()
             if (fzIndex != -1) newValues[fzIndex] = tool.feedStep.toString()
             if (zIndex != -1) newValues[zIndex] = tool.flutesCount.toString()
+
+            if (jtIndex != -1) newValues[jtIndex] = tool.feedStep.toString()
 
             inputValues = newValues
         }
@@ -158,7 +193,16 @@ fun MillingScreen(onBack: () -> Unit, repository: MainRepository, adContent: @Co
         }
     }
 
-    Box(modifier = Modifier.fillMaxSize()) {
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .clickable(
+                interactionSource = interactionSource,
+                indication = null
+            ) {
+                focusManager.clearFocus()
+            }
+    ) {
         Image(
             painter = painterResource(Res.drawable.background_portrait),
             contentDescription = null,
@@ -187,12 +231,25 @@ fun MillingScreen(onBack: () -> Unit, repository: MainRepository, adContent: @Co
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     IconButton(onClick = onBack) {
-                        Icon(imageVector = Icons.Default.ArrowBack, contentDescription = stringResource(Res.string.back), tint = Color.White)
+                        Icon(
+                            imageVector = Icons.Default.ArrowBack,
+                            contentDescription = stringResource(Res.string.back),
+                            tint = Color.White
+                        )
                     }
                     Spacer(modifier = Modifier.weight(1f))
-                    Text(stringResource(Res.string.main_button1), color = Color.White, fontSize = 16.sp, fontWeight = FontWeight.Bold)
+                    Text(
+                        stringResource(Res.string.main_button1),
+                        color = Color.White,
+                        fontSize = 16.sp,
+                        fontWeight = FontWeight.Bold
+                    )
                     Spacer(modifier = Modifier.width(12.dp))
-                    Image(painter = painterResource(Res.drawable.spindle), contentDescription = null, modifier = Modifier.size(40.dp))
+                    Image(
+                        painter = painterResource(Res.drawable.spindle),
+                        contentDescription = null,
+                        modifier = Modifier.size(40.dp)
+                    )
                     Spacer(modifier = Modifier.weight(1f))
                 }
 
@@ -288,7 +345,11 @@ fun MillingScreen(onBack: () -> Unit, repository: MainRepository, adContent: @Co
                                 verticalAlignment = Alignment.CenterVertically
                             ) {
                                 Text(
-                                    text = if (selectedIso.isEmpty()) stringResource(Res.string.tool_select_base) else stringResource(Res.string.tool_select, selectedIso),
+                                    text = when {
+                                        !selectedModel.isNullOrEmpty() -> selectedModel!!
+
+                                        else -> stringResource(Res.string.tool_select_base)
+                                    },
                                     color = Color.White,
                                     fontSize = 14.sp,
                                     modifier = Modifier.weight(1f)
@@ -310,12 +371,16 @@ fun MillingScreen(onBack: () -> Unit, repository: MainRepository, adContent: @Co
                                 isCategoryPremium = isCategoryPremium,
                                 isDiameterPremium = isDiameterPremium,
                                 isModelPremium = isModelPremium,
-                                onPremiumClick = { showPremiumDialog = true }
+                                onPremiumClick = { showPremiumDialog = true },
+                                onModelSelected = { model ->
+                                    isToolCardExpanded = false
+                                }
                             )
                         }
                     }
                 }
 
+                Spacer(modifier = Modifier.height(16.dp))
                 Spacer(modifier = Modifier.height(16.dp))
 
                 val vcIndex = fieldLabels.indexOfFirst { it.contains("Vc", true) }
@@ -339,14 +404,23 @@ fun MillingScreen(onBack: () -> Unit, repository: MainRepository, adContent: @Co
                         OutlinedTextField(
                             value = inputValues.getOrElse(index) { "" },
                             onValueChange = { newValue ->
-                                if (newValue.isEmpty() || newValue.matches(Regex("^\\d*\\.?\\d*$"))) {
+                                // Zamiana przecinka na kropkę
+                                val sanitizedValue = newValue.replace(',', '.')
+
+                                if (sanitizedValue.isEmpty() || sanitizedValue.matches(Regex("^\\d*\\.?\\d*$"))) {
                                     val newValues = inputValues.toMutableList()
-                                    newValues[index] = newValue
+                                    newValues[index] = sanitizedValue
                                     inputValues = newValues
                                 }
                             },
                             label = { Text(label) },
-                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
+                            keyboardOptions = KeyboardOptions(
+                                keyboardType = KeyboardType.Decimal,
+                                imeAction = androidx.compose.ui.text.input.ImeAction.Done
+                            ),
+                            keyboardActions = androidx.compose.foundation.text.KeyboardActions(
+                                onDone = { focusManager.clearFocus() }
+                            ),
                             colors = OutlinedTextFieldDefaults.colors(
                                 focusedTextColor = Color.White,
                                 unfocusedTextColor = Color.White,
@@ -384,9 +458,15 @@ fun MillingScreen(onBack: () -> Unit, repository: MainRepository, adContent: @Co
                     },
                     modifier = Modifier.size(56.dp),
                     shape = RoundedCornerShape(12.dp),
-                    colors = IconButtonDefaults.filledIconButtonColors(containerColor = ApplicationNewBlue, contentColor = Color.White)
+                    colors = IconButtonDefaults.filledIconButtonColors(
+                        containerColor = ApplicationNewBlue,
+                        contentColor = Color.White
+                    )
                 ) {
-                    Icon(imageVector = Icons.Default.Refresh, contentDescription = stringResource(Res.string.clear))
+                    Icon(
+                        imageVector = Icons.Default.Refresh,
+                        contentDescription = stringResource(Res.string.clear)
+                    )
                 }
 
                 Spacer(modifier = Modifier.width(12.dp))
@@ -394,7 +474,11 @@ fun MillingScreen(onBack: () -> Unit, repository: MainRepository, adContent: @Co
                 Button(
                     onClick = {
                         val numericValues = inputValues.map { it.toDoubleOrNull() ?: 0.0 }
-                        result = MillingCalculator.calculate(selectedOperationIndex, numericValues, isMetric)
+                        result = MillingCalculator.calculate(
+                            selectedOperationIndex,
+                            numericValues,
+                            isMetric
+                        )
                         isToolCardExpanded = false
                         if (result != null) showResultDialog = true
                     },
@@ -402,7 +486,12 @@ fun MillingScreen(onBack: () -> Unit, repository: MainRepository, adContent: @Co
                     shape = RoundedCornerShape(12.dp),
                     colors = ButtonDefaults.buttonColors(containerColor = ApplicationNewBlue)
                 ) {
-                    Text(stringResource(Res.string.calculate), color = Color.White, fontSize = 16.sp, fontWeight = FontWeight.Bold)
+                    Text(
+                        stringResource(Res.string.calculate),
+                        color = Color.White,
+                        fontSize = 16.sp,
+                        fontWeight = FontWeight.Bold
+                    )
                 }
 
                 Spacer(modifier = Modifier.width(12.dp))
@@ -411,9 +500,15 @@ fun MillingScreen(onBack: () -> Unit, repository: MainRepository, adContent: @Co
                     onClick = { showInfoDialog = true },
                     modifier = Modifier.size(56.dp),
                     shape = RoundedCornerShape(12.dp),
-                    colors = IconButtonDefaults.filledIconButtonColors(containerColor = ApplicationNewBlue, contentColor = Color.White)
+                    colors = IconButtonDefaults.filledIconButtonColors(
+                        containerColor = ApplicationNewBlue,
+                        contentColor = Color.White
+                    )
                 ) {
-                    Icon(imageVector = Icons.Default.Info, contentDescription = stringResource(Res.string.informationtext))
+                    Icon(
+                        imageVector = Icons.Default.Info,
+                        contentDescription = stringResource(Res.string.informationtext)
+                    )
                 }
             }
 
@@ -450,9 +545,13 @@ fun MillingScreen(onBack: () -> Unit, repository: MainRepository, adContent: @Co
         ResultDialog(
             title = stringResource(Res.string.calculateResult),
             results = resultsList,
-            highlightedResult = if (!res.isHardnessMode && res.fz > 0) stringResource(Res.string.FZ) to res.fz.format(3) else null,
-            onClose = { showResultDialog = false
-                showInterstitialAd()}
+            highlightedResult = if (!res.isHardnessMode && res.fz > 0) stringResource(Res.string.FZ) to res.fz.format(
+                3
+            ) else null,
+            onClose = {
+                showResultDialog = false
+                showInterstitialAd()
+            }
         )
     }
 
@@ -475,11 +574,13 @@ fun MillingScreen(onBack: () -> Unit, repository: MainRepository, adContent: @Co
 
                 if (nextTagIndex == -1) {
                     val text = rawText.substring(currentIndex)
-                    withStyle(SpanStyle(
-                        fontWeight = if (isBold) FontWeight.Bold else null,
-                        fontStyle = if (isItalic) FontStyle.Italic else null,
-                        color = if (isBold) Color.White else Color.Unspecified
-                    )) {
+                    withStyle(
+                        SpanStyle(
+                            fontWeight = if (isBold) FontWeight.Bold else null,
+                            fontStyle = if (isItalic) FontStyle.Italic else null,
+                            color = if (isBold) Color.White else Color.Unspecified
+                        )
+                    ) {
                         append(text)
                     }
                     break
@@ -487,11 +588,13 @@ fun MillingScreen(onBack: () -> Unit, repository: MainRepository, adContent: @Co
 
                 if (nextTagIndex > currentIndex) {
                     val text = rawText.substring(currentIndex, nextTagIndex)
-                    withStyle(SpanStyle(
-                        fontWeight = if (isBold) FontWeight.Bold else null,
-                        fontStyle = if (isItalic) FontStyle.Italic else null,
-                        color = if (isBold) Color.White else Color.Unspecified
-                    )) {
+                    withStyle(
+                        SpanStyle(
+                            fontWeight = if (isBold) FontWeight.Bold else null,
+                            fontStyle = if (isItalic) FontStyle.Italic else null,
+                            color = if (isBold) Color.White else Color.Unspecified
+                        )
+                    ) {
                         append(text)
                     }
                 }
@@ -501,24 +604,30 @@ fun MillingScreen(onBack: () -> Unit, repository: MainRepository, adContent: @Co
                         isBold = true
                         currentIndex = nextTagIndex + 3
                     }
+
                     rawText.startsWith("</b>", nextTagIndex, ignoreCase = true) -> {
                         isBold = false
                         currentIndex = nextTagIndex + 4
                     }
+
                     rawText.startsWith("<i>", nextTagIndex, ignoreCase = true) -> {
                         isItalic = true
                         currentIndex = nextTagIndex + 3
                     }
+
                     rawText.startsWith("</i>", nextTagIndex, ignoreCase = true) -> {
                         isItalic = false
                         currentIndex = nextTagIndex + 4
                     }
+
                     else -> {
-                        withStyle(SpanStyle(
-                            fontWeight = if (isBold) FontWeight.Bold else null,
-                            fontStyle = if (isItalic) FontStyle.Italic else null,
-                            color = if (isBold) Color.White else Color.Unspecified
-                        )) {
+                        withStyle(
+                            SpanStyle(
+                                fontWeight = if (isBold) FontWeight.Bold else null,
+                                fontStyle = if (isItalic) FontStyle.Italic else null,
+                                color = if (isBold) Color.White else Color.Unspecified
+                            )
+                        ) {
                             append("<")
                         }
                         currentIndex = nextTagIndex + 1
@@ -531,7 +640,11 @@ fun MillingScreen(onBack: () -> Unit, repository: MainRepository, adContent: @Co
             onDismissRequest = { showInfoDialog = false },
             containerColor = ApplicationNewBlue,
             title = {
-                Text(stringResource(Res.string.informationtext), color = Color.White, fontWeight = FontWeight.Bold)
+                Text(
+                    stringResource(Res.string.informationtext),
+                    color = Color.White,
+                    fontWeight = FontWeight.Bold
+                )
             },
             text = {
                 Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -551,9 +664,21 @@ fun MillingScreen(onBack: () -> Unit, repository: MainRepository, adContent: @Co
                             fontSize = 14.sp
                         )
 
-                        Text(text = "• ${stringResource(Res.string.vc_expert_min)}", color = Color(0xFFBDBDBD), fontSize = 14.sp)
-                        Text(text = "• ${stringResource(Res.string.vc_expert_opt)}", color = Color(0xFFBDBDBD), fontSize = 14.sp)
-                        Text(text = "• ${stringResource(Res.string.vc_expert_max)}", color = Color(0xFFBDBDBD), fontSize = 14.sp)
+                        Text(
+                            text = "• ${stringResource(Res.string.vc_expert_min)}",
+                            color = Color(0xFFBDBDBD),
+                            fontSize = 14.sp
+                        )
+                        Text(
+                            text = "• ${stringResource(Res.string.vc_expert_opt)}",
+                            color = Color(0xFFBDBDBD),
+                            fontSize = 14.sp
+                        )
+                        Text(
+                            text = "• ${stringResource(Res.string.vc_expert_max)}",
+                            color = Color(0xFFBDBDBD),
+                            fontSize = 14.sp
+                        )
                     }
                 }
             },
@@ -569,11 +694,17 @@ fun MillingScreen(onBack: () -> Unit, repository: MainRepository, adContent: @Co
         AlertDialog(
             onDismissRequest = { showPremiumDialog = false },
             containerColor = ApplicationNewBlue,
-            title = { Row(verticalAlignment = Alignment.CenterVertically) {
-                Icon(Icons.Default.Lock, contentDescription = null, tint = Color(0xFFFFD700))
-                Spacer(modifier = Modifier.width(8.dp))
-                Text(stringResource(Res.string.premium_required_text), color = Color.White, fontWeight = FontWeight.Bold)
-            }},
+            title = {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Icon(Icons.Default.Lock, contentDescription = null, tint = Color(0xFFFFD700))
+                    Spacer(modifier = Modifier.width(8.dp))
+                    Text(
+                        stringResource(Res.string.premium_required_text),
+                        color = Color.White,
+                        fontWeight = FontWeight.Bold
+                    )
+                }
+            },
             text = {
                 Text(
                     text = stringResource(Res.string.premium_required_title),
@@ -593,16 +724,68 @@ fun MillingScreen(onBack: () -> Unit, repository: MainRepository, adContent: @Co
 @Composable
 fun getHintsForOperation(index: Int): List<String> {
     return when (index) {
-        0 -> listOf(stringResource(Res.string.VC), stringResource(Res.string.DC), stringResource(Res.string.FZ), stringResource(Res.string.Z))
-        1 -> listOf(stringResource(Res.string.VC), stringResource(Res.string.DC), stringResource(Res.string.JT))
-        2 -> listOf(stringResource(Res.string.AS), stringResource(Res.string.T), stringResource(Res.string.VC), stringResource(Res.string.L))
-        3 -> listOf(stringResource(Res.string.VF), stringResource(Res.string.VC), stringResource(Res.string.Z), stringResource(Res.string.LB))
-        4 -> listOf(stringResource(Res.string.AS), stringResource(Res.string.VC), stringResource(Res.string.D_uppercase), stringResource(Res.string.Z), stringResource(Res.string.L))
-        5 -> listOf(stringResource(Res.string.VF), stringResource(Res.string.VC), stringResource(Res.string.Z), stringResource(Res.string.D_uppercase))
-        6 -> listOf(stringResource(Res.string.HD), stringResource(Res.string.TD), stringResource(Res.string.F))
-        7 -> listOf(stringResource(Res.string.VC), stringResource(Res.string.DM), stringResource(Res.string.Fn))
+        0 -> listOf(
+            stringResource(Res.string.VC),
+            stringResource(Res.string.DC),
+            stringResource(Res.string.FZ),
+            stringResource(Res.string.Z)
+        )
+
+        1 -> listOf(
+            stringResource(Res.string.VC),
+            stringResource(Res.string.DC),
+            stringResource(Res.string.JT)
+        )
+
+        2 -> listOf(
+            stringResource(Res.string.AS),
+            stringResource(Res.string.T),
+            stringResource(Res.string.VC),
+            stringResource(Res.string.L)
+        )
+
+        3 -> listOf(
+            stringResource(Res.string.VF),
+            stringResource(Res.string.VC),
+            stringResource(Res.string.Z),
+            stringResource(Res.string.LB)
+        )
+
+        4 -> listOf(
+            stringResource(Res.string.AS),
+            stringResource(Res.string.VC),
+            stringResource(Res.string.D_uppercase),
+            stringResource(Res.string.Z),
+            stringResource(Res.string.L)
+        )
+
+        5 -> listOf(
+            stringResource(Res.string.VF),
+            stringResource(Res.string.VC),
+            stringResource(Res.string.Z),
+            stringResource(Res.string.D_uppercase)
+        )
+
+        6 -> listOf(
+            stringResource(Res.string.HD),
+            stringResource(Res.string.TD),
+            stringResource(Res.string.F)
+        )
+
+        7 -> listOf(
+            stringResource(Res.string.VC),
+            stringResource(Res.string.DM),
+            stringResource(Res.string.Fn)
+        )
+
         8 -> listOf(stringResource(Res.string.PointA), stringResource(Res.string.PointB))
-        9 -> listOf(stringResource(Res.string.hardness_rm), stringResource(Res.string.hardness_hv), stringResource(Res.string.hardness_hb), stringResource(Res.string.hardness_hrc))
+        9 -> listOf(
+            stringResource(Res.string.hardness_rm),
+            stringResource(Res.string.hardness_hv),
+            stringResource(Res.string.hardness_hb),
+            stringResource(Res.string.hardness_hrc)
+        )
+
         else -> emptyList()
     }
 }

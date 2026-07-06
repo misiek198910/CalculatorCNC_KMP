@@ -4,6 +4,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -112,6 +113,8 @@ fun TurningScreen(
     val selectedTool by toolViewModel.toolParameters.collectAsState()
     val selectedIso by toolViewModel.selectedMaterialGroup.collectAsState()
     val allCategories by toolViewModel.categories.collectAsState()
+    val selectedModel by toolViewModel.selectedModel.collectAsState()
+    val selectedCategory by toolViewModel.selectedCategory.collectAsState()
 
     val filteredCategories = remember(allCategories, selectedOperationIndex) {
         val techKeywords = when (selectedOperationIndex) {
@@ -139,6 +142,9 @@ fun TurningScreen(
     val isDiameterPremium: (Double) -> Boolean = { false }
     val isModelPremium: (String) -> Boolean = { false }
 
+    val focusManager = androidx.compose.ui.platform.LocalFocusManager.current
+    val interactionSource = remember { MutableInteractionSource() }
+
     LaunchedEffect(selectedOperationIndex) {
         inputValues = List(fieldLabels.size) { "" }
         result = null
@@ -153,10 +159,12 @@ fun TurningScreen(
             val vcIndex = fieldLabels.indexOfFirst { it.contains("Vc", true) }
             val dcIndex = fieldLabels.indexOfFirst { it.contains("DM", true) || it.contains("D ", true) }
             val fnIndex = fieldLabels.indexOfFirst { it.contains("Fn", true) || it.contains("f ", true) }
+            val jtIndex = fieldLabels.indexOfFirst { it.contains("JT", true) }
 
             if (vcIndex != -1) newValues[vcIndex] = optVc
             if (dcIndex != -1 && selectedOperationIndex == 1) newValues[dcIndex] = tool.diameter.toString()
             if (fnIndex != -1) newValues[fnIndex] = tool.feedStep.toString()
+            if (jtIndex != -1) newValues[jtIndex] = tool.feedStep.toString()
 
             inputValues = newValues
             isToolCardExpanded = false
@@ -172,7 +180,16 @@ fun TurningScreen(
         }
     }
 
-    Box(modifier = Modifier.fillMaxSize()) {
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .clickable(
+                interactionSource = interactionSource,
+                indication = null
+            ) {
+                focusManager.clearFocus()
+            }
+    ) {
         Image(
             painter = painterResource(Res.drawable.background_portrait),
             contentDescription = null,
@@ -303,10 +320,11 @@ fun TurningScreen(
                                 verticalAlignment = Alignment.CenterVertically
                             ) {
                                 Text(
-                                    text = if (selectedIso.isEmpty()) stringResource(Res.string.tool_select_base) else stringResource(
-                                        Res.string.tool_select,
-                                        selectedIso
-                                    ),
+                                    text = when {
+                                        !selectedModel.isNullOrEmpty() -> selectedModel!!
+
+                                        else -> stringResource(Res.string.tool_select_base)
+                                    },
                                     color = Color.White,
                                     fontSize = 14.sp,
                                     modifier = Modifier.weight(1f)
@@ -328,7 +346,10 @@ fun TurningScreen(
                                 isCategoryPremium = isCategoryPremium,
                                 isDiameterPremium = isDiameterPremium,
                                 isModelPremium = isModelPremium,
-                                onPremiumClick = { showPremiumDialog = true }
+                                onPremiumClick = { showPremiumDialog = true },
+                                onModelSelected = { model ->
+                                    isToolCardExpanded = false
+                                }
                             )
                         }
                     }

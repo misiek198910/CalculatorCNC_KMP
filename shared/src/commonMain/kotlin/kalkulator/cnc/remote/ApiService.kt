@@ -5,6 +5,7 @@ import io.ktor.client.call.body
 import io.ktor.client.plugins.onDownload
 import io.ktor.client.request.get
 import io.ktor.client.request.parameter
+import kalkulator.cnc.entity.NewsItem
 
 class ApiService(private val client: HttpClient) {
 
@@ -37,11 +38,9 @@ class ApiService(private val client: HttpClient) {
 
     suspend fun getNewsFeed(): List<NewsResponse>? {
         return try {
-            // Używamy adresu parafialnego
-            client.get("$parishBaseUrl/news").body()
+            client.get("$parishBaseUrl/news").body<List<NewsResponse>>()
         } catch (e: Exception) {
             println("[CNC_LOG] Błąd pobierania newsów: ${e.message}")
-            e.printStackTrace()
             null
         }
     }

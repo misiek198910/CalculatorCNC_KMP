@@ -87,6 +87,7 @@ kotlin {
             implementation(libs.play.services.ads)
         }
         commonMain.dependencies {
+            implementation(compose.ui)
             implementation(libs.compose.material.icons.extended)
             implementation(libs.coil.compose)
             implementation(libs.coil.network.ktor)
@@ -99,7 +100,6 @@ kotlin {
             implementation(libs.compose.runtime)
             implementation(libs.compose.foundation)
             implementation(libs.compose.material3)
-            implementation(libs.compose.ui)
             implementation(libs.compose.components.resources)
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
