@@ -27,6 +27,7 @@ billing = "9.1.0"
 composeMaterialIconsExtended = "1.7.0"
 play-services-ads = "23.6.0"
 ump = "3.0.0"
+firebase-bom = "33.1.2"
 
 [libraries]
 
@@ -67,6 +68,7 @@ ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "kto
 
 # FIREBASE
 firebase-analytics = { module = "dev.gitlive:firebase-analytics", version.ref = "firebase-gitlive" }
+firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebase-bom" }
 
 [plugins]
 

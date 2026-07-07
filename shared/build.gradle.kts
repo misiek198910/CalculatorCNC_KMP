@@ -49,14 +49,13 @@ extensions.configure<LibraryExtension> {
         }
 
         getByName("release") {
-            val bannerId = localProperties.getProperty("AD_BANNER_ID") ?: ""
-            val bannerInlineId = localProperties.getProperty("AD_BANNER_INLINE_ID") ?: ""
-            val adStartId = localProperties.getProperty("AD_START_UNIT_ID") ?: ""
+            val bannerId = localProperties.getProperty("ADMOB_BANNER_ID") ?: ""
+            val adStartId = localProperties.getProperty("ADMOB_ADSTART_ID") ?: ""
             val fullscreenId = localProperties.getProperty("ADMOB_FULLSCREEN_ID") ?: ""
             val inlineId = localProperties.getProperty("ADMOB_INLINE_ID") ?: ""
 
             buildConfigField("String", "AD_BANNER_ID", "\"$bannerId\"")
-            buildConfigField("String", "AD_BANNER_INLINE_ID", "\"$bannerInlineId\"")
+            buildConfigField("String", "AD_BANNER_INLINE_ID", "\"$inlineId\"")
             buildConfigField("String", "AD_START_UNIT_ID", "\"$adStartId\"")
             buildConfigField("String", "ADMOB_FULLSCREEN_ID", "\"$fullscreenId\"")
             buildConfigField("String", "ADMOB_INLINE_ID", "\"$inlineId\"")
@@ -86,6 +85,7 @@ kotlin {
             implementation(libs.ktor.client.okhttp)
             implementation(libs.billing.ktx)
             implementation(libs.play.services.ads)
+            implementation(project.dependencies.platform(libs.firebase.bom))
         }
         commonMain.dependencies {
             implementation(compose.ui)

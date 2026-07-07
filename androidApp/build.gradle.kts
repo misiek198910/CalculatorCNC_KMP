@@ -64,17 +64,16 @@ extensions.configure<ApplicationExtension> {
             isMinifyEnabled = false
             signingConfig = signingConfigs.getByName("release")
 
-            val adMobAppId = localProperties.getProperty("AD_APP_ID") ?: ""
-            val bannerId = localProperties.getProperty("AD_BANNER_ID") ?: ""
-            val bannerInlineId = localProperties.getProperty("AD_BANNER_INLINE_ID") ?: ""
-            val adStartId = localProperties.getProperty("AD_START_UNIT_ID") ?: ""
+            val adMobAppId = localProperties.getProperty("ADMOB_APP_ID") ?: ""
+            val bannerId = localProperties.getProperty("ADMOB_BANNER_ID") ?: ""
+            val adStartId = localProperties.getProperty("ADMOB_ADSTART_ID") ?: ""
             val fullscreenId = localProperties.getProperty("ADMOB_FULLSCREEN_ID") ?: ""
             val inlineId = localProperties.getProperty("ADMOB_INLINE_ID") ?: ""
 
             manifestPlaceholders["adMobAppId"] = adMobAppId
 
             buildConfigField("String", "AD_BANNER_ID", "\"$bannerId\"")
-            buildConfigField("String", "AD_BANNER_INLINE_ID", "\"$bannerInlineId\"")
+            buildConfigField("String", "AD_BANNER_INLINE_ID", "\"$inlineId\"")
             buildConfigField("String", "AD_START_UNIT_ID", "\"$adStartId\"")
             buildConfigField("String", "ADMOB_FULLSCREEN_ID", "\"$fullscreenId\"")
             buildConfigField("String", "ADMOB_INLINE_ID", "\"$inlineId\"")
@@ -102,4 +101,5 @@ dependencies {
     implementation(libs.compose.ui)
     implementation(libs.compose.material3)
     implementation(libs.play.services.ump)
+    implementation(project.dependencies.platform(libs.firebase.bom))
 }

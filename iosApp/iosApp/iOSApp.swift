@@ -82,7 +82,7 @@ struct iOSApp: App {
 
         FirebaseApp.configure()
 
-        MobileAds.shared.requestConfiguration.testDeviceIdentifiers = [ "82f23e9a6a77246e35c57400f34c93d5" ]
+        //MobileAds.shared.requestConfiguration.testDeviceIdentifiers = [ "82f23e9a6a77246e35c57400f34c93d5" ]
 
         let adInlineID = Bundle.main.object(forInfoDictionaryKey: "AD_BANNER_INLINE_ID") as? String ?? ""
         let adBannerID = Bundle.main.object(forInfoDictionaryKey: "AD_BANNER_ID") as? String ?? ""

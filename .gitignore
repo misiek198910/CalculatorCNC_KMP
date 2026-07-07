@@ -19,3 +19,4 @@ captures
 node_modules/
 google-service.json
 Config.xcconfig
+GoogleService-Info.plist

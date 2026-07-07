@@ -1,9 +1,10 @@
 package kalkulator.cnc.ui.components
 
 import android.annotation.SuppressLint
-import android.util.DisplayMetrics
+import android.graphics.Color
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.viewinterop.AndroidView
@@ -17,15 +18,20 @@ import kalkulator.cnc.shared.BuildConfig
 @Composable
 actual fun AdMobInline(modifier: Modifier) {
     AndroidView(
-        modifier = modifier.fillMaxWidth().padding(vertical = 8.dp),
+        modifier = modifier
+            .fillMaxWidth()
+            .wrapContentHeight()
+            .padding(vertical = 8.dp),
         factory = { context ->
             AdView(context).apply {
-                val displayMetrics: DisplayMetrics = context.resources.displayMetrics
+                val displayMetrics = context.resources.displayMetrics
                 val adWidth = (displayMetrics.widthPixels / displayMetrics.density).toInt()
 
                 setAdSize(AdSize.getCurrentOrientationInlineAdaptiveBannerAdSize(context, adWidth))
-
                 adUnitId = BuildConfig.ADMOB_INLINE_ID
+
+                setBackgroundColor(Color.TRANSPARENT)
+
                 loadAd(AdRequest.Builder().build())
             }
         }

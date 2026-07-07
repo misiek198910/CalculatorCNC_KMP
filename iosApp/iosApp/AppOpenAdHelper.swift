@@ -17,8 +17,7 @@ class AppOpenAdHelper: NSObject, FullScreenContentDelegate {
         self.hasFinished = false
 
         MobileAds.shared.start(completionHandler: nil)
-
-        // TIMEOUT
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) { [weak self] in
             guard let self = self else { return }
             if !self.isAdShowing && !self.hasFinished {
@@ -27,9 +26,10 @@ class AppOpenAdHelper: NSObject, FullScreenContentDelegate {
             }
         }
 
+        let adStartID = Bundle.main.object(forInfoDictionaryKey: "AD_START_ID") as? String ?? ""
         let request = Request()
 
-        AppOpenAd.load(with: "ca-app-pub-3940256099942544/5575463023",
+        AppOpenAd.load(with: adStartID,
                        request: request) { [weak self] (ad: AppOpenAd?, error: Error?) in
 
             guard let self = self else { return }

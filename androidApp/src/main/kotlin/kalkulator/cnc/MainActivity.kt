@@ -6,24 +6,18 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.viewinterop.AndroidView
 import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.AdSize
-import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.FullScreenContentCallback
 import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.appopen.AppOpenAd
+import com.google.android.gms.ads.appopen.AppOpenAd.AppOpenAdLoadCallback
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
-import com.google.android.ump.ConsentRequestParameters // NOWY IMPORT
-import com.google.android.ump.UserMessagingPlatform // NOWY IMPORT
+import com.google.android.ump.ConsentRequestParameters
+import com.google.android.ump.UserMessagingPlatform
 import kalkulator.cnc.billing.AndroidBillingController
 import kalkulator.cnc.billing.BillingManager
 import kalkulator.cnc.data.local.appContext
@@ -31,12 +25,11 @@ import kalkulator.cnc.data.local.createRoomDatabase
 import kalkulator.cnc.data.local.getDatabaseBuilder
 import kalkulator.cnc.ui.components.AdBanner
 import java.util.Locale
-import com.google.android.gms.ads.appopen.AppOpenAd
-import com.google.android.gms.ads.appopen.AppOpenAd.AppOpenAdLoadCallback
 
 class MainActivity : ComponentActivity() {
 
     private lateinit var billingManager: BillingManager
+
     private var mInterstitialAd: InterstitialAd? = null
 
     override fun attachBaseContext(newBase: Context) {
