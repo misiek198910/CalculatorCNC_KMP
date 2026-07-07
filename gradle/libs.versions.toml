@@ -1,4 +1,5 @@
 [versions]
+
 agp = "9.0.1"
 android-compileSdk = "36"
 android-minSdk = "27"
@@ -17,7 +18,7 @@ room = "2.7.0-alpha13"
 sqlite = "2.5.0-alpha13"
 ktor = "3.0.1"
 firebase-gitlive = "2.1.0"
-google-services-plugin = "4.4.2"
+google-services = "4.4.1"
 material3 = "1.7.3"
 compose = "1.7.0"
 kotlinx-datetime = "0.6.0"
@@ -25,8 +26,10 @@ coil3 = "3.1.0"
 billing = "9.1.0"
 composeMaterialIconsExtended = "1.7.0"
 play-services-ads = "23.6.0"
+ump = "3.0.0"
 
 [libraries]
+
 compose-material-icons-extended = { module = "org.jetbrains.compose.material:material-icons-extended", version.ref = "composeMaterialIconsExtended" }
 coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil3" }
 coil-network-ktor = { module = "io.coil-kt.coil3:coil-network-ktor3", version.ref = "coil3" }
@@ -51,22 +54,24 @@ room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
 sqlite-bundled = { module = "androidx.sqlite:sqlite-bundled", version.ref = "sqlite" }
 billing-ktx = { module = "com.android.billingclient:billing-ktx", version.ref = "billing" }
 play-services-ads = { group = "com.google.android.gms", name = "play-services-ads", version.ref = "play-services-ads" }
+play-services-ump = { module = "com.google.android.ump:user-messaging-platform", version.ref = "ump" }
 
 # KTOR
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
 ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
+
 # Silniki sieciowe dla poszczególnych platform (potrzebne do poprawnego działania)
 ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
 ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor" }
 
 # FIREBASE
-firebase-gitlive-auth = { module = "dev.gitlive:firebase-auth", version.ref = "firebase-gitlive" }
-firebase-gitlive-firestore = { module = "dev.gitlive:firebase-firestore", version.ref = "firebase-gitlive" }
+firebase-analytics = { module = "dev.gitlive:firebase-analytics", version.ref = "firebase-gitlive" }
 
 [plugins]
+
 kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
-googleServices = { id = "com.google.gms.google-services", version.ref = "google-services-plugin" }
+google-services = { id = "com.google.gms.google-services", version.ref = "google-services" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
 room = { id = "androidx.room", version.ref = "room" }

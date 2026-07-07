@@ -12,6 +12,8 @@ plugins {
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
     alias(libs.plugins.kotlinAndroid)
+    alias(libs.plugins.google.services)
+
 }
 
 extensions.configure<ApplicationExtension> {
@@ -99,4 +101,5 @@ dependencies {
     implementation(libs.compose.foundation)
     implementation(libs.compose.ui)
     implementation(libs.compose.material3)
+    implementation(libs.play.services.ump)
 }

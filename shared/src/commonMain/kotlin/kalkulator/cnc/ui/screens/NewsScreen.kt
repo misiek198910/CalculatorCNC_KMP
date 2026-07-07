@@ -40,11 +40,14 @@ import kalkulator.cnc.data.MainRepository
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import calculatorcnc.shared.generated.resources.back
+import kalkulator.cnc.utils.LogScreenView
 import org.jetbrains.compose.resources.stringResource
 
 
 @Composable
 fun NewsScreen(onBack: () -> Unit, repository: MainRepository, adContent: @Composable () -> Unit = {}) {
+
+    LogScreenView(screenName = "NewsScreen")
 
     val viewModel: AppViewModel = viewModel(factory = viewModelFactory {
         initializer {

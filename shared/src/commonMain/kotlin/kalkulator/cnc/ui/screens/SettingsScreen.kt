@@ -26,20 +26,38 @@ import calculatorcnc.shared.generated.resources.Res
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import kalkulator.cnc.ui.theme.ApplicationNewBlue
+import kalkulator.cnc.utils.LogScreenView
 import kalkulator.cnc.utils.changeLanguage
 import org.jetbrains.compose.resources.stringArrayResource
 import kalkulator.cnc.utils.getLanguagePreference
 import kalkulator.cnc.utils.getSystemPreference
 import kalkulator.cnc.utils.saveSystemPreference
+import kotlinx.coroutines.launch
 
 @Composable
-fun SettingsScreen(onBack: () -> Unit, onNavigateToPremium: () -> Unit, onNavigateToPrivacy: () -> Unit, adContent: @Composable () -> Unit = {}) {
+fun SettingsScreen(
+    onBack: () -> Unit,
+    onNavigateToPremium: () -> Unit,
+    onNavigateToPrivacy: () -> Unit,
+    onLanguageChanged: () -> Unit,
+    repository: kalkulator.cnc.data.MainRepository,
+    adContent: @Composable () -> Unit = {}
+) {
+
+    LogScreenView(screenName = "SettingsScreen")
+
     val supportedLanguages = listOf(
         "pl" to "Polski",
-        "en" to "English"
+        "en" to "English",
+        "de" to "Deutsch",
+        "it" to "Italiano",
+        "fr" to "Français",
+        "es" to "Español"
     )
 
     val uriHandler = LocalUriHandler.current
+
+    val scope = rememberCoroutineScope()
 
     var currentLanguageTag by remember { mutableStateOf(getLanguagePreference()) }
     var currentSystemIndex by remember { mutableStateOf(getSystemPreference()) }
@@ -47,6 +65,9 @@ fun SettingsScreen(onBack: () -> Unit, onNavigateToPremium: () -> Unit, onNaviga
 
     var showSystemDialog by remember { mutableStateOf(false) }
     var showLanguageDialog by remember { mutableStateOf(false) }
+
+    var showDbDownloadDialog by remember { mutableStateOf(false) }
+    var pendingLanguageTag by remember { mutableStateOf("") }
 
     val systemOptions = stringArrayResource(Res.array.spinner1_items)
     val languageOptions = supportedLanguages.map { it.second }
@@ -69,7 +90,6 @@ fun SettingsScreen(onBack: () -> Unit, onNavigateToPremium: () -> Unit, onNaviga
                 .fillMaxSize()
                 .windowInsetsPadding(WindowInsets.systemBars)
         ) {
-            // Header
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -173,7 +193,6 @@ fun SettingsScreen(onBack: () -> Unit, onNavigateToPremium: () -> Unit, onNaviga
         }
     }
 
-    // Okna dialogowe
     if (showSystemDialog) {
         CustomSelectionDialog(
             title = stringResource(Res.string.calc_system),
@@ -197,17 +216,51 @@ fun SettingsScreen(onBack: () -> Unit, onNavigateToPremium: () -> Unit, onNaviga
                 val selectedTag = supportedLanguages[index].first
 
                 if (selectedTag != currentLanguageTag) {
-                    currentLanguageTag = selectedTag
-
-                    changeLanguage(currentLanguageTag)
+                    pendingLanguageTag = selectedTag
+                    showLanguageDialog = false
+                    showDbDownloadDialog = true
+                } else {
+                    showLanguageDialog = false
                 }
-                showLanguageDialog = false
             },
             onDismiss = { showLanguageDialog = false }
         )
     }
-}
 
+    if (showDbDownloadDialog) {
+        AlertDialog(
+            onDismissRequest = { showDbDownloadDialog = false },
+            containerColor = ApplicationNewBlue,
+            title = {
+                Text(stringResource(Res.string.update_database_title), color = Color.White, fontWeight = FontWeight.Bold)
+            },
+            text = {
+                Text(
+                    stringResource(Res.string.update_database_message),
+                    color = Color(0xFFBDBDBD)
+                )
+            },
+            confirmButton = {
+                TextButton(onClick = {
+                    scope.launch {
+                        repository.clearToolsDatabase()
+                        currentLanguageTag = pendingLanguageTag
+                        changeLanguage(currentLanguageTag)
+                        showDbDownloadDialog = false
+                        onLanguageChanged()
+                    }
+                }) {
+                    Text(stringResource(Res.string.update_database_confirm), color = Color.White)
+                }
+            },
+            dismissButton = {
+                TextButton(onClick = { showDbDownloadDialog = false }) {
+                    Text(stringResource(Res.string.close), color = Color.Gray)
+                }
+            }
+        )
+    }
+}
 @Composable
 fun SettingsCard(
     iconRes: org.jetbrains.compose.resources.DrawableResource,

@@ -80,6 +80,7 @@ import kalkulator.cnc.ui.components.ParameterTuningSection
 import kalkulator.cnc.ui.components.ResultDialog
 import kalkulator.cnc.ui.components.ToolCascadeSelector
 import kalkulator.cnc.ui.theme.ApplicationNewBlue
+import kalkulator.cnc.utils.LogScreenView
 import kalkulator.cnc.utils.getSystemPreference
 import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.painterResource
@@ -96,6 +97,7 @@ fun TurningScreen(
     adContent: @Composable () -> Unit = {},
     showInterstitialAd: () -> Unit = {}
 ) {
+    LogScreenView(screenName = "TurningScreen")
 
     val isPremium by repository.isPremiumFlow.collectAsState(initial = false)
     var selectedOperationIndex by remember { mutableStateOf(0) }
@@ -111,10 +113,9 @@ fun TurningScreen(
     val isMetric = remember { getSystemPreference() == 0 }
     val toolViewModel: ToolViewModel = viewModel { ToolViewModel(repository) }
     val selectedTool by toolViewModel.toolParameters.collectAsState()
-    val selectedIso by toolViewModel.selectedMaterialGroup.collectAsState()
     val allCategories by toolViewModel.categories.collectAsState()
     val selectedModel by toolViewModel.selectedModel.collectAsState()
-    val selectedCategory by toolViewModel.selectedCategory.collectAsState()
+    var isDatabaseLoaded by remember { mutableStateOf(false) }
 
     val filteredCategories = remember(allCategories, selectedOperationIndex) {
         val techKeywords = when (selectedOperationIndex) {
@@ -144,6 +145,10 @@ fun TurningScreen(
 
     val focusManager = androidx.compose.ui.platform.LocalFocusManager.current
     val interactionSource = remember { MutableInteractionSource() }
+
+    LaunchedEffect(Unit) {
+        isDatabaseLoaded = repository.hasTools()
+    }
 
     LaunchedEffect(selectedOperationIndex) {
         inputValues = List(fieldLabels.size) { "" }
@@ -315,42 +320,49 @@ fun TurningScreen(
                             Row(
                                 modifier = Modifier
                                     .fillMaxWidth()
-                                    .clickable { isToolCardExpanded = !isToolCardExpanded }
+                                    .clickable(enabled = isDatabaseLoaded) {
+                                        isToolCardExpanded = !isToolCardExpanded
+                                    }
                                     .padding(12.dp),
                                 verticalAlignment = Alignment.CenterVertically
                             ) {
                                 Text(
                                     text = when {
+                                        !isDatabaseLoaded -> "Baza narzędzi obecnie niedostępna"
                                         !selectedModel.isNullOrEmpty() -> selectedModel!!
-
                                         else -> stringResource(Res.string.tool_select_base)
                                     },
-                                    color = Color.White,
+                                    color = if (isDatabaseLoaded) Color.White else Color.Gray,
                                     fontSize = 14.sp,
                                     modifier = Modifier.weight(1f)
                                 )
-                                Icon(
-                                    imageVector = if (isToolCardExpanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
-                                    contentDescription = null,
-                                    tint = Color.White
-                                )
+
+                                if (isDatabaseLoaded) {
+                                    Icon(
+                                        imageVector = if (isToolCardExpanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
+                                        contentDescription = null,
+                                        tint = Color.White
+                                    )
+                                }
                             }
 
-                            ToolCascadeSelector(
-                                labelStep1 = Res.string.step1_tourning_system,
-                                labelStep2 = Res.string.step2_tourning_radius,
-                                isVisible = isToolCardExpanded,
-                                viewModel = toolViewModel,
-                                isPremium = isPremium,
-                                filteredCategories = filteredCategories.map { it.name },
-                                isCategoryPremium = isCategoryPremium,
-                                isDiameterPremium = isDiameterPremium,
-                                isModelPremium = isModelPremium,
-                                onPremiumClick = { showPremiumDialog = true },
-                                onModelSelected = { model ->
-                                    isToolCardExpanded = false
-                                }
-                            )
+                            if (isDatabaseLoaded && isToolCardExpanded) {
+                                ToolCascadeSelector(
+                                    labelStep1 = Res.string.step1_tourning_system,
+                                    labelStep2 = Res.string.step2_tourning_radius,
+                                    isVisible = isToolCardExpanded,
+                                    viewModel = toolViewModel,
+                                    isPremium = isPremium,
+                                    filteredCategories = filteredCategories.map { it.name },
+                                    isCategoryPremium = isCategoryPremium,
+                                    isDiameterPremium = isDiameterPremium,
+                                    isModelPremium = isModelPremium,
+                                    onPremiumClick = { showPremiumDialog = true },
+                                    onModelSelected = { model ->
+                                        isToolCardExpanded = false
+                                    }
+                                )
+                            }
                         }
                     }
                 }

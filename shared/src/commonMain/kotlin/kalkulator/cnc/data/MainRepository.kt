@@ -100,6 +100,15 @@ class MainRepository(
         }
     }
 
+    suspend fun getPrivacyPolicy(serviceName: String): String? {
+        return try {
+            apiService.getPrivacyPolicy(serviceName)
+        } catch (e: Exception) {
+            println("$TAG 🔴 BŁĄD POBIERANIA POLITYKI: ${e.message}")
+            null
+        }
+    }
+
     suspend fun hasTools(): Boolean {
         return cncToolDao.getCount() > 0
     }
@@ -154,5 +163,9 @@ class MainRepository(
 
     suspend fun updateUserTool(tool: UserToolEntity) {
         userToolDao.updateTool(tool)
+    }
+
+    suspend fun clearToolsDatabase() {
+        cncToolDao.deleteAll()
     }
 }

@@ -25,6 +25,7 @@ import calculatorcnc.shared.generated.resources.*
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import androidx.compose.ui.unit.Dp
+import kalkulator.cnc.utils.LogScreenView
 import org.jetbrains.compose.resources.DrawableResource
 import org.jetbrains.compose.resources.StringResource
 
@@ -50,8 +51,10 @@ fun MainScreen(
     onNavigateToNews: () -> Unit,
     onNavigateToSubscription: () -> Unit,
     hasNewNews: Boolean,
-    adContent: @Composable () -> Unit = {} // Slot na baner reklamowy
+    adContent: @Composable () -> Unit = {}
 ) {
+    LogScreenView(screenName = "MainScreen")
+
     BoxWithConstraints(modifier = Modifier.fillMaxSize()) {
         val isLandscape = maxWidth > maxHeight
 

@@ -25,6 +25,15 @@
     <string name="app_restart_dialog">Um die App-Sprache zu ändern, ist ein Neustart der Anwendung erforderlich.</string>
     <string name="app_restart_dialog_ok">Ok</string>
     <string name="app_restart_dialog_save">Sprache gespeichert</string>
+    <string name="update_database_title">Datenbank aktualisieren</string>
+    <string name="update_database_message">Damit die Werkzeugdatenbank in der neuen Sprache verfügbar ist, muss die App aktualisierte Daten herunterladen. Download starten?</string>
+    <string name="update_database_confirm">Ja, herunterladen</string>
+
+    <!--  Splash-->
+    <string name="loading">Laden...</string>
+    <string name="downloading_database">Datenbank wird heruntergeladen...</string>
+    <string name="try_again">Erneut versuchen</string>
+    <string name="try_offline">Offline fortfahren</string>
 
     <!--  Cutting and boring-->
     <string name="calculate_txt">Berechnungsart:</string>

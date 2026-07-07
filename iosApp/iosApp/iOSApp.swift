@@ -2,6 +2,7 @@ import SwiftUI
 import GoogleMobileAds
 import UserMessagingPlatform
 import Shared
+import FirebaseCore
 
 // 1. Klasa delegata
 class BannerAdLogger: NSObject, BannerViewDelegate {
@@ -78,6 +79,9 @@ class InterstitialAdManager: NSObject, FullScreenContentDelegate {
 @main
 struct iOSApp: App {
     init() {
+
+        FirebaseApp.configure()
+
         MobileAds.shared.requestConfiguration.testDeviceIdentifiers = [ "82f23e9a6a77246e35c57400f34c93d5" ]
 
         let adInlineID = Bundle.main.object(forInfoDictionaryKey: "AD_BANNER_INLINE_ID") as? String ?? ""

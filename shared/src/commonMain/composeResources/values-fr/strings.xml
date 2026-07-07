@@ -25,6 +25,15 @@
     <string name="app_restart_dialog">Pour changer la langue de l\'application, un redémarrage est nécessaire.</string>
     <string name="app_restart_dialog_ok">Ok</string>
     <string name="app_restart_dialog_save">Langue enregistrée</string>
+    <string name="update_database_title">Mise à jour de la base de données</string>
+    <string name="update_database_message">Pour que la base de données d\'outils soit disponible dans la nouvelle langue, l\'application doit télécharger les données mises à jour. Commencer le téléchargement ?</string>
+    <string name="update_database_confirm">Oui, télécharger</string>
+
+    <!--  Splash-->
+    <string name="loading">Chargement...</string>
+    <string name="downloading_database">Téléchargement de la base de données...</string>
+    <string name="try_again">Réessayer</string>
+    <string name="try_offline">Continuer hors ligne</string>
 
     <!--  Cutting and boring-->
     <string name="calculate_txt">Type de calcul :</string>

@@ -34,6 +34,7 @@ import kalkulator.cnc.data.MainRepository
 import kalkulator.cnc.data.params.getMaterialsList
 import kalkulator.cnc.entity.UserToolEntity
 import kalkulator.cnc.ui.theme.ApplicationNewBlue
+import kalkulator.cnc.utils.LogScreenView
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.getString
 import org.jetbrains.compose.resources.painterResource
@@ -42,6 +43,9 @@ import org.jetbrains.compose.resources.stringResource
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AddToolScreen(toolId: Int?, onBack: () -> Unit, repository: MainRepository, adContent: @Composable () -> Unit = {}) {
+
+    LogScreenView(screenName = "AddToolScreen")
+
     val coroutineScope = rememberCoroutineScope()
     val focusManager = LocalFocusManager.current
 

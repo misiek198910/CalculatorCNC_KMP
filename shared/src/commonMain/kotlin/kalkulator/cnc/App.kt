@@ -4,7 +4,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -47,20 +46,27 @@ sealed class Screen {
     object Splash : Screen()
 }
 
+private var isCoilInitialized = false
+
 @Composable
 fun App(
     database: AppDatabase,
     billingController: BillingController? = null,
     adContent: @Composable () -> Unit = {},
-    showInterstitialAd: () -> Unit = {}
+    showInterstitialAd: () -> Unit = {},
+    onRequestConsent: (onComplete: () -> Unit) -> Unit = { onComplete -> onComplete() },
+    onShowStartAd: (onComplete: () -> Unit) -> Unit = { it() }
 ) {
-    setSingletonImageLoaderFactory { context ->
-        ImageLoader.Builder(context)
-            .components {
-                add(KtorNetworkFetcherFactory())
-            }
-            .crossfade(true)
-            .build()
+    if (!isCoilInitialized) {
+        setSingletonImageLoaderFactory { context ->
+            ImageLoader.Builder(context)
+                .components {
+                    add(KtorNetworkFetcherFactory())
+                }
+                .crossfade(true)
+                .build()
+        }
+        isCoilInitialized = true
     }
 
     val repository = remember {
@@ -84,6 +90,8 @@ fun App(
             is Screen.Splash -> {
                 SplashScreen(
                     viewModel = viewModel,
+                    onRequestConsent = onRequestConsent,
+                    onShowStartAd = onShowStartAd,
                     onNavigateToMain = { currentScreen = Screen.Main }
                 )
             }
@@ -131,6 +139,8 @@ fun App(
                     onBack = { currentScreen = Screen.Main },
                     onNavigateToPremium = { currentScreen = Screen.Subscription },
                     onNavigateToPrivacy = { currentScreen = Screen.Privacy },
+                    onLanguageChanged = { currentScreen = Screen.Splash },
+                    repository = repository,
                     adContent = adContent
                 )
             }
@@ -161,7 +171,7 @@ fun App(
             is Screen.Privacy -> {
                 PrivacyPolicyScreen(
                     onBack = { currentScreen = Screen.Settings },
-                    repository = repository
+                    viewModel = viewModel
                 )
             }
             is Screen.Tools ->{

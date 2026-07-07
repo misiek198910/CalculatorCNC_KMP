@@ -24,6 +24,7 @@ import androidx.compose.ui.unit.sp
 import calculatorcnc.shared.generated.resources.*
 import kalkulator.cnc.data.MainRepository
 import kalkulator.cnc.ui.theme.ApplicationNewBlue
+import kalkulator.cnc.utils.LogScreenView
 import kotlinx.coroutines.flow.StateFlow
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
@@ -40,8 +41,11 @@ interface BillingController {
 fun SubscriptionScreen(
     onBack: () -> Unit,
     repository: MainRepository,
-    billingController: BillingController? // Na iOS przekażemy null!
+    billingController: BillingController?
 ) {
+
+    LogScreenView(screenName = "SubscriptionScreen")
+
     val isPremium by repository.isPremiumFlow.collectAsState(initial = false)
 
     // Odczytywanie cen z kontrolera (jeśli istnieje)

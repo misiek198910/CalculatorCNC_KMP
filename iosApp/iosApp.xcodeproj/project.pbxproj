@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5033B4B92FFD2D3A004EC018 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5033B4B82FFD2D3A004EC018 /* FirebaseAnalytics */; };
 		50A2A09A2FFB1750004025FC /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 50A2A0992FFB1750004025FC /* GoogleMobileAds */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B3EF2606921E364BD13A340B /* CalculatorCNC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalculatorCNC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3EF2606921E364BD13A340B /* KalkulatorCNC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KalkulatorCNC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -45,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5033B4B92FFD2D3A004EC018 /* FirebaseAnalytics in Frameworks */,
 				50A2A09A2FFB1750004025FC /* GoogleMobileAds in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -55,9 +57,16 @@
 		052209E869A279AA0575A2A4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B3EF2606921E364BD13A340B /* CalculatorCNC.app */,
+				B3EF2606921E364BD13A340B /* KalkulatorCNC.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		5033B4B72FFD2D3A004EC018 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		8CFFEBB181B8EEB17026B70A = {
@@ -65,6 +74,7 @@
 			children = (
 				5EBE61AC73CF5F830A2EFBB6 /* Configuration */,
 				1EA1AAA40EDAFBF03CC00B92 /* iosApp */,
+				5033B4B72FFD2D3A004EC018 /* Frameworks */,
 				052209E869A279AA0575A2A4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,9 +101,10 @@
 			name = iosApp;
 			packageProductDependencies = (
 				50A2A0992FFB1750004025FC /* GoogleMobileAds */,
+				5033B4B82FFD2D3A004EC018 /* FirebaseAnalytics */,
 			);
 			productName = iosApp;
-			productReference = B3EF2606921E364BD13A340B /* CalculatorCNC.app */;
+			productReference = B3EF2606921E364BD13A340B /* KalkulatorCNC.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -122,6 +133,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				50A2A0982FFB1750004025FC /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+				501128122FFD2A2300494F02 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 052209E869A279AA0575A2A4 /* Products */;
@@ -381,6 +393,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		501128122FFD2A2300494F02 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.15.0;
+			};
+		};
 		50A2A0982FFB1750004025FC /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
@@ -392,6 +412,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5033B4B82FFD2D3A004EC018 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 501128122FFD2A2300494F02 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
 		50A2A0992FFB1750004025FC /* GoogleMobileAds */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 50A2A0982FFB1750004025FC /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;

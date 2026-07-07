@@ -36,6 +36,7 @@ import kalkulator.cnc.data.MainRepository
 import kalkulator.cnc.entity.UserToolEntity
 import kalkulator.cnc.ui.components.AdMobInline
 import kalkulator.cnc.ui.theme.ApplicationNewBlue
+import kalkulator.cnc.utils.LogScreenView
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
@@ -49,6 +50,8 @@ fun MyToolsScreen(
     onNavigateToPremium: () -> Unit,
     adContent: @Composable () -> Unit = {}
 ) {
+    LogScreenView(screenName = "MyToolsScreen")
+
     val isPremium by repository.isPremiumFlow.collectAsState(initial = false)
     val allTools by repository.getAllUserTools().collectAsState(initial = emptyList())
     val coroutineScope = rememberCoroutineScope()
@@ -63,7 +66,6 @@ fun MyToolsScreen(
                 (tool.workpiece?.contains(searchQuery, ignoreCase = true) ?: false)
     }
 
-    // Tworzymy listę z wstrzykniętymi reklamami
     val mixedList = remember(filteredTools) { createMixedList(filteredTools) }
 
     Scaffold(
@@ -72,7 +74,6 @@ fun MyToolsScreen(
             FloatingActionButton(
                 onClick = {
                     focusManager.clearFocus()
-                    // Zmiana limitu darmowych narzędzi z 3 na 6
                     if (!isPremium && allTools.size >= 6) {
                         showPremiumDialog = true
                     } else {
@@ -86,7 +87,6 @@ fun MyToolsScreen(
             }
         },
         bottomBar = {
-            // Globalny banner na samym dole - Scaffold sam podniesie FAB ponad to
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -142,7 +142,6 @@ fun MyToolsScreen(
                     items(
                         items = mixedList,
                         span = { item ->
-                            // Jeśli to reklama, zajmij całą szerokość linii
                             if (item is MyToolsListItem.Ad) GridItemSpan(maxLineSpan)
                             else GridItemSpan(1)
                         }
@@ -219,13 +218,12 @@ fun MyToolsScreen(
 @Composable
 fun UserToolCard(tool: UserToolEntity, onEditClick: () -> Unit, onDeleteClick: () -> Unit) {
     Card(
-        // Użyłem koloru tła z Twojego XML (#CC001F3F)
         colors = CardDefaults.cardColors(containerColor = Color(0xCC001F3F)),
         border = BorderStroke(1.dp, Color(0x33FFFFFF)),
         shape = RoundedCornerShape(16.dp),
         modifier = Modifier
             .fillMaxWidth()
-            .height(230.dp) // Zgodnie z prośbą trzymamy ten rozmiar
+            .height(230.dp)
             .padding(horizontal = 8.dp, vertical = 4.dp)
     ) {
         Column(
@@ -233,7 +231,6 @@ fun UserToolCard(tool: UserToolEntity, onEditClick: () -> Unit, onDeleteClick: (
                 .padding(12.dp)
                 .fillMaxSize()
         ) {
-            // 1. Nazwa narzędzia + Ikona (Tools)
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Image(
                     painter = painterResource(Res.drawable.tools),
@@ -244,7 +241,7 @@ fun UserToolCard(tool: UserToolEntity, onEditClick: () -> Unit, onDeleteClick: (
                 Text(
                     text = tool.name,
                     color = Color.White,
-                    fontSize = 16.sp, // Zmniejszone z 18sp
+                    fontSize = 16.sp,
                     fontWeight = FontWeight.Bold,
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis
@@ -253,7 +250,6 @@ fun UserToolCard(tool: UserToolEntity, onEditClick: () -> Unit, onDeleteClick: (
 
             Spacer(modifier = Modifier.height(6.dp))
 
-            // 2. Obrabiany materiał + Ikona (Material)
             if (!tool.workpiece.isNullOrBlank()) {
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Image(
@@ -277,7 +273,6 @@ fun UserToolCard(tool: UserToolEntity, onEditClick: () -> Unit, onDeleteClick: (
                 modifier = Modifier.padding(vertical = 8.dp)
             )
 
-            // 3. Parametry S i F (w jednym rzędzie, po lewej i prawej)
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 verticalAlignment = Alignment.CenterVertically
@@ -325,7 +320,6 @@ fun UserToolCard(tool: UserToolEntity, onEditClick: () -> Unit, onDeleteClick: (
                 }
             }
 
-            // 4. Sekcja notatek wypełniająca wolną przestrzeń i spychająca przyciski na dół
             Column(
                 modifier = Modifier
                     .weight(1f)
@@ -337,7 +331,7 @@ fun UserToolCard(tool: UserToolEntity, onEditClick: () -> Unit, onDeleteClick: (
                         modifier = Modifier.padding(bottom = 4.dp)
                     )
                     Text(
-                        text = "Notatki:", // Jeśli masz to w Res.string, można podmienić
+                        text = "Notatki:",
                         color = Color(0xFFBDBDBD),
                         fontSize = 11.sp,
                         fontWeight = FontWeight.Bold
@@ -355,7 +349,6 @@ fun UserToolCard(tool: UserToolEntity, onEditClick: () -> Unit, onDeleteClick: (
 
             HorizontalDivider(color = Color(0x22FFFFFF))
 
-            // 5. Przyciski akcji wyrównane do prawej (jak w XML gravity="end")
             Row(
                 modifier = Modifier
                     .fillMaxWidth()

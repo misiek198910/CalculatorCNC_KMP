@@ -14,6 +14,7 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material3.*
@@ -40,11 +41,17 @@ import kalkulator.cnc.ui.theme.ApplicationNewBlue
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import androidx.compose.material.icons.filled.ContentCopy
+import kalkulator.cnc.utils.LogScreenView
+import kotlinx.coroutines.launch
 import kotlin.math.round
+import kotlin.time.Duration.Companion.milliseconds
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TolerancesScreen(onBack: () -> Unit, repository: MainRepository, onNavigateToPremium: () -> Unit, adContent: @Composable () -> Unit = {}, showInterstitialAd: () -> Unit = {}) {
+
+    LogScreenView(screenName = "TolerancesScreen")
+
     val isPremium by repository.isPremiumFlow.collectAsState(initial = false)
     val clipboardManager = LocalClipboardManager.current
     val availableHoles = TolerancesCalculator.getHoleLabels()
@@ -68,6 +75,9 @@ fun TolerancesScreen(onBack: () -> Unit, repository: MainRepository, onNavigateT
 
     val focusManager = androidx.compose.ui.platform.LocalFocusManager.current
     val interactionSource = remember { MutableInteractionSource() }
+
+    val coroutineScope = rememberCoroutineScope()
+    var isCopied by remember { mutableStateOf(false) }
 
     fun calculateFit() {
         val dia = diameterInput.replace(',', '.').toDoubleOrNull()
@@ -411,16 +421,23 @@ fun TolerancesScreen(onBack: () -> Unit, repository: MainRepository, onNavigateT
                             IconButton(
                                 onClick = {
                                     focusManager.clearFocus()
-                                    val copyString =
-                                        "$statusText\n$holeValuesTxt\n$shaftValuesTxt\n$clearanceTxt"
+                                    val copyString = "$statusText\n$holeValuesTxt\n$shaftValuesTxt\n$clearanceTxt"
                                     clipboardManager.setText(AnnotatedString(copyString))
+
+                                    isCopied = true
+
+                                    coroutineScope.launch {
+                                        kotlinx.coroutines.delay(2000.milliseconds)
+                                        isCopied = false
+                                    }
                                 },
                                 modifier = Modifier.padding(top = 15.dp).size(40.dp)
                             ) {
                                 Icon(
-                                    imageVector = Icons.Default.ContentCopy,
+                                    imageVector = if (isCopied) Icons.Default.Check else Icons.Default.ContentCopy,
                                     contentDescription = stringResource(Res.string.copy_action),
-                                    tint = Color.White
+                                    // Dynamiczna zmiana koloru: zielony na potwierdzenie, biały domyślnie
+                                    tint = if (isCopied) Color.Green else Color.White
                                 )
                             }
                         }

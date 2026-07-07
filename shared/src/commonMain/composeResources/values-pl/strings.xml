@@ -25,6 +25,15 @@
     <string name="app_restart_dialog">Aby zmienić język aplikacji, konieczne jest jej ponowne uruchomienie.</string>
     <string name="app_restart_dialog_ok">Ok</string>
     <string name="app_restart_dialog_save">Zapisano język</string>
+    <string name="update_database_title">Aktualizacja bazy</string>
+    <string name="update_database_message">Aby baza narzędzi była dostępna w nowym języku, aplikacja musi pobrać zaktualizowane dane. Rozpocząć pobieranie?</string>
+    <string name="update_database_confirm">Tak, pobierz</string>
+
+    <!--  Splash-->
+    <string name="loading">Wczytywanie...</string>
+    <string name="downloading_database">Pobieranie bazy danych...</string>
+    <string name="try_again">Ponów</string>
+    <string name="try_offline">Kontynuuj offline</string>
 
     <!--  Cutting and boring-->
     <string name="calculate_txt">Rodzaj obliczeń:</string>

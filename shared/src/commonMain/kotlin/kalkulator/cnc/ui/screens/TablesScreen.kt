@@ -29,11 +29,15 @@ import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringArrayResource
 import org.jetbrains.compose.resources.stringResource
 import kalkulator.cnc.entity.ThreadEntity
+import kalkulator.cnc.utils.LogScreenView
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TablesScreen(onBack: () -> Unit, repository: MainRepository, initialSpinnerIdx: Int = 0, adContent: @Composable () -> Unit = {}, showInterstitialAd: () -> Unit = {}) {
+
+    LogScreenView(screenName = "TablesScreen")
+
     var spinnerIdx by remember { mutableStateOf(initialSpinnerIdx) }
     var tableIdx by remember { mutableStateOf(0) }
     var expandedDropdown by remember { mutableStateOf(false) }

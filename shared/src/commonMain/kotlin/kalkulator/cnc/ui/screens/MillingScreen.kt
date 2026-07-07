@@ -56,6 +56,7 @@ import kotlin.math.roundToInt
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.runtime.remember
+import kalkulator.cnc.utils.LogScreenView
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -65,6 +66,8 @@ fun MillingScreen(
     adContent: @Composable () -> Unit = {},
     showInterstitialAd: () -> Unit = {}
 ) {
+
+    LogScreenView(screenName = "MillingScreen")
 
     val isPremium by repository.isPremiumFlow.collectAsState(initial = false)
     var selectedOperationIndex by remember { mutableStateOf(0) }
@@ -78,14 +81,12 @@ fun MillingScreen(
     var showResultDialog by remember { mutableStateOf(false) }
     val operations = stringArrayResource(Res.array.miling_spinner1_data)
     val fieldLabels = getHintsForOperation(selectedOperationIndex)
-
     val toolViewModel: ToolViewModel = viewModel { ToolViewModel(repository) }
     val selectedTool by toolViewModel.toolParameters.collectAsState()
-    val selectedIso by toolViewModel.selectedMaterialGroup.collectAsState()
-
     val allCategories by toolViewModel.categories.collectAsState()
     val selectedModel by toolViewModel.selectedModel.collectAsState()
-    val selectedCategory by toolViewModel.selectedCategory.collectAsState()
+    var isDatabaseLoaded by remember { mutableStateOf(false) }
+
 
     val filteredCategories = remember(allCategories, selectedOperationIndex) {
         val techKeywords = when (selectedOperationIndex) {
@@ -153,6 +154,10 @@ fun MillingScreen(
 
     val focusManager = androidx.compose.ui.platform.LocalFocusManager.current
     val interactionSource = remember { MutableInteractionSource() }
+
+    LaunchedEffect(Unit) {
+        isDatabaseLoaded = repository.hasTools()
+    }
 
     LaunchedEffect(selectedOperationIndex) {
         inputValues = List(fieldLabels.size) { "" }
@@ -328,6 +333,7 @@ fun MillingScreen(
             ) {
                 Spacer(modifier = Modifier.height(16.dp))
 
+                // Zostawiamy tylko ten jeden blok:
                 if (selectedOperationIndex == 0 || selectedOperationIndex == 1 || selectedOperationIndex == 7) {
                     Box(
                         modifier = Modifier
@@ -340,45 +346,55 @@ fun MillingScreen(
                             Row(
                                 modifier = Modifier
                                     .fillMaxWidth()
-                                    .clickable { isToolCardExpanded = !isToolCardExpanded }
+                                    .clickable(enabled = isDatabaseLoaded) {
+                                        isToolCardExpanded = !isToolCardExpanded
+                                    }
                                     .padding(12.dp),
                                 verticalAlignment = Alignment.CenterVertically
                             ) {
                                 Text(
                                     text = when {
+                                        !isDatabaseLoaded -> "Baza narzędzi obecnie niedostępna"
                                         !selectedModel.isNullOrEmpty() -> selectedModel!!
-
                                         else -> stringResource(Res.string.tool_select_base)
                                     },
-                                    color = Color.White,
+                                    color = if (isDatabaseLoaded) Color.White else Color.Gray,
                                     fontSize = 14.sp,
                                     modifier = Modifier.weight(1f)
                                 )
-                                Icon(
-                                    imageVector = if (isToolCardExpanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
-                                    contentDescription = null,
-                                    tint = Color.White
-                                )
+
+                                if (isDatabaseLoaded) {
+                                    Icon(
+                                        imageVector = if (isToolCardExpanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
+                                        contentDescription = null,
+                                        tint = Color.White
+                                    )
+                                }
                             }
 
-                            ToolCascadeSelector(
-                                labelStep1 = Res.string.step1_milling_category,
-                                labelStep2 = Res.string.step2_milling_diameter,
-                                isVisible = isToolCardExpanded,
-                                viewModel = toolViewModel,
-                                isPremium = isPremium,
-                                filteredCategories = filteredCategories.map { it.name },
-                                isCategoryPremium = isCategoryPremium,
-                                isDiameterPremium = isDiameterPremium,
-                                isModelPremium = isModelPremium,
-                                onPremiumClick = { showPremiumDialog = true },
-                                onModelSelected = { model ->
-                                    isToolCardExpanded = false
-                                }
-                            )
+                            if (isDatabaseLoaded && isToolCardExpanded) {
+                                ToolCascadeSelector(
+                                    labelStep1 = Res.string.step1_milling_category,
+                                    labelStep2 = Res.string.step2_milling_diameter,
+                                    isVisible = isToolCardExpanded,
+                                    viewModel = toolViewModel,
+                                    isPremium = isPremium,
+                                    filteredCategories = filteredCategories.map { it.name },
+                                    isCategoryPremium = isCategoryPremium,
+                                    isDiameterPremium = isDiameterPremium,
+                                    isModelPremium = isModelPremium,
+                                    onPremiumClick = { showPremiumDialog = true },
+                                    onModelSelected = { model ->
+                                        isToolCardExpanded = false
+                                    }
+                                )
+                            }
                         }
                     }
                 }
+
+
+
 
                 Spacer(modifier = Modifier.height(16.dp))
                 Spacer(modifier = Modifier.height(16.dp))

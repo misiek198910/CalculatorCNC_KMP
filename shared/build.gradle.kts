@@ -12,6 +12,7 @@ plugins {
     alias(libs.plugins.room)
     alias(libs.plugins.ksp)
     alias(libs.plugins.kotlinSerialization)
+
 }
 
 room {
@@ -103,6 +104,7 @@ kotlin {
             implementation(libs.compose.components.resources)
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
+            implementation(libs.firebase.analytics)
         }
         iosMain.dependencies {
             implementation(libs.ktor.client.darwin)

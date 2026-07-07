@@ -8,6 +8,8 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.viewinterop.AndroidView
@@ -20,6 +22,8 @@ import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
+import com.google.android.ump.ConsentRequestParameters // NOWY IMPORT
+import com.google.android.ump.UserMessagingPlatform // NOWY IMPORT
 import kalkulator.cnc.billing.AndroidBillingController
 import kalkulator.cnc.billing.BillingManager
 import kalkulator.cnc.data.local.appContext
@@ -27,8 +31,11 @@ import kalkulator.cnc.data.local.createRoomDatabase
 import kalkulator.cnc.data.local.getDatabaseBuilder
 import kalkulator.cnc.ui.components.AdBanner
 import java.util.Locale
+import com.google.android.gms.ads.appopen.AppOpenAd
+import com.google.android.gms.ads.appopen.AppOpenAd.AppOpenAdLoadCallback
 
 class MainActivity : ComponentActivity() {
+
     private lateinit var billingManager: BillingManager
     private var mInterstitialAd: InterstitialAd? = null
 
@@ -50,9 +57,6 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         super.onCreate(savedInstanceState)
 
-        MobileAds.initialize(this) {}
-        loadInterstitialAd() // Pierwsze załadowanie reklamy
-
         appContext = applicationContext
 
         val database = createRoomDatabase(getDatabaseBuilder())
@@ -67,12 +71,92 @@ class MainActivity : ComponentActivity() {
                 adContent = {
                     AdBanner(isPremium = false)
                 },
-                showInterstitialAd = { showInterstitial() }
+                showInterstitialAd = { showInterstitial() },
+                onRequestConsent = { onComplete ->
+                    val consentInformation =
+                        UserMessagingPlatform.getConsentInformation(this@MainActivity)
+                    val params = ConsentRequestParameters.Builder().build()
+
+                    consentInformation.requestConsentInfoUpdate(
+                        this@MainActivity,
+                        params,
+                        {
+                            UserMessagingPlatform.loadAndShowConsentFormIfRequired(
+                                this@MainActivity
+                            ) { formError ->
+                                initializeMobileAds()
+                                onComplete()
+                            }
+                        },
+                        { requestConsentError ->
+                            initializeMobileAds()
+                            onComplete()
+                        }
+                    )
+                },
+                onShowStartAd = { onComplete ->
+                    var isCompleted = false
+
+                    // Zabezpieczenie: funkcja wywołująca onComplete tylko raz
+                    fun safeComplete() {
+                        if (!isCompleted) {
+                            isCompleted = true
+                            onComplete()
+                        }
+                    }
+
+                    // TIMEOUT ZABEZPIECZAJĄCY (4 sekundy = 4000 ms)
+                    val timeoutHandler = android.os.Handler(android.os.Looper.getMainLooper())
+                    val timeoutRunnable = Runnable {
+                        safeComplete()
+                    }
+                    timeoutHandler.postDelayed(timeoutRunnable, 4000L)
+
+                    val request = AdRequest.Builder().build()
+
+                    AppOpenAd.load(
+                        this@MainActivity,
+                        BuildConfig.AD_START_UNIT_ID, // To Twoje ID z build.gradle
+                        request,
+                        AppOpenAd.APP_OPEN_AD_ORIENTATION_PORTRAIT,
+                        object : AppOpenAdLoadCallback() {
+                            override fun onAdLoaded(ad: AppOpenAd) {
+                                // Jeśli timeout już minął, nie pokazujemy reklamy
+                                if (isCompleted) return
+
+                                // Zatrzymujemy timer, bo reklama zdążyła się pobrać
+                                timeoutHandler.removeCallbacks(timeoutRunnable)
+
+                                ad.fullScreenContentCallback = object : FullScreenContentCallback() {
+                                    override fun onAdDismissedFullScreenContent() {
+                                        safeComplete()
+                                    }
+                                    override fun onAdFailedToShowFullScreenContent(error: AdError) {
+                                        safeComplete()
+                                    }
+                                }
+                                // Wyświetlenie reklamy
+                                ad.show(this@MainActivity)
+                            }
+
+                            override fun onAdFailedToLoad(error: LoadAdError) {
+                                // Błąd ładowania reklamy (np. brak sieci) - idziemy do apki
+                                timeoutHandler.removeCallbacks(timeoutRunnable)
+                                safeComplete()
+                            }
+                        }
+                    )
+                }
             )
+
         }
     }
 
-    // Metoda pobierająca reklamę pełnoekranową
+    private fun initializeMobileAds() {
+        MobileAds.initialize(this) {}
+        loadInterstitialAd()
+    }
+
     private fun loadInterstitialAd() {
         val adRequest = AdRequest.Builder().build()
         InterstitialAd.load(
@@ -90,7 +174,6 @@ class MainActivity : ComponentActivity() {
         )
     }
 
-    // Metoda wyświetlająca reklamę
     private fun showInterstitial() {
         if (mInterstitialAd != null) {
             mInterstitialAd?.fullScreenContentCallback = object : FullScreenContentCallback() {
@@ -107,18 +190,4 @@ class MainActivity : ComponentActivity() {
             loadInterstitialAd()
         }
     }
-}
-
-@Composable
-fun AdMobBanner(modifier: Modifier = Modifier) {
-    AndroidView(
-        modifier = modifier.fillMaxWidth(),
-        factory = { context ->
-            AdView(context).apply {
-                setAdSize(AdSize.BANNER)
-                adUnitId = BuildConfig.AD_BANNER_ID
-                loadAd(AdRequest.Builder().build())
-            }
-        }
-    )
 }

@@ -25,6 +25,13 @@
     <string name="app_restart_dialog">To change the app language, a restart is required.</string>
     <string name="app_restart_dialog_ok">Ok</string>
     <string name="app_restart_dialog_save">Language saved</string>
+    <string name="update_database_title">Database Update</string>
+    <string name="update_database_message">To make the tool database available in the new language, the app needs to download updated data. Start downloading?</string>
+    <string name="update_database_confirm">Yes, download</string>
+
+    <!--  Splash-->
+    <string name="loading">Loading...</string>
+    <string name="downloading_database">Downloading database...</string>
 
     <!--  Cutting and boring-->
     <string name="calculate_txt">Calculation type:</string>

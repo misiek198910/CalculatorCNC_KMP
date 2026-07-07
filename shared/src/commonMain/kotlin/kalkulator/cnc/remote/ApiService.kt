@@ -9,11 +9,9 @@ import kalkulator.cnc.entity.NewsItem
 
 class ApiService(private val client: HttpClient) {
 
-    // 1. Adres dla bazy danych CNC
     private val cncBaseUrl = "https://kalkulatorcnc.mivs.dev"
-
-    // 2. Adres dla wspólnych wiadomości (newsów)
     private val parishBaseUrl = "https://api-parafia.mivs.dev"
+    private val privacyBaseUrl = "https://privacypolicy.mivs.dev"
 
     suspend fun getCncDatabase(lang: String, since: String?, onProgress: (Int) -> Unit): List<CncRecord>? {
         return try {
@@ -41,6 +39,16 @@ class ApiService(private val client: HttpClient) {
             client.get("$parishBaseUrl/news").body<List<NewsResponse>>()
         } catch (e: Exception) {
             println("[CNC_LOG] Błąd pobierania newsów: ${e.message}")
+            null
+        }
+    }
+
+    suspend fun getPrivacyPolicy(serviceName: String): String? {
+        return try {
+            val response: PrivacyPolicyResponse = client.get("$privacyBaseUrl/api/privacy/$serviceName").body()
+            response.content
+        } catch (e: Exception) {
+            println("[CNC_LOG] Błąd pobierania polityki prywatności: ${e.message}")
             null
         }
     }
