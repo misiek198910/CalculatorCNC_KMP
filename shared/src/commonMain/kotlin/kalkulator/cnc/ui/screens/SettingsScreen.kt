@@ -117,67 +117,72 @@ fun SettingsScreen(
                     modifier = Modifier.padding(start = 8.dp)
                 )
             }
-
-            LazyVerticalGrid(
-                columns = GridCells.Fixed(2),
-                contentPadding = PaddingValues(12.dp),
-                horizontalArrangement = Arrangement.spacedBy(16.dp),
-                verticalArrangement = Arrangement.spacedBy(16.dp),
+            Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .weight(1f)
+                    .weight(1f),
+                contentAlignment = Alignment.Center
             ) {
+                LazyVerticalGrid(
+                    columns = GridCells.Fixed(2),
+                    contentPadding = PaddingValues(16.dp),
+                    horizontalArrangement = Arrangement.spacedBy(16.dp),
+                    verticalArrangement = Arrangement.spacedBy(16.dp),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                ) {
 
-                item {
-                    SettingsCard(
-                        iconRes = Res.drawable.calc,
-                        title = stringResource(Res.string.calc_system),
-                        subtitle = if (systemOptions.isNotEmpty()) systemOptions[currentSystemIndex] else "",
-                        onClick = { showSystemDialog = true }
-                    )
-                }
+                    item {
+                        SettingsCard(
+                            iconRes = Res.drawable.calc,
+                            title = stringResource(Res.string.calc_system),
+                            subtitle = if (systemOptions.isNotEmpty()) systemOptions[currentSystemIndex] else "",
+                            onClick = { showSystemDialog = true }
+                        )
+                    }
 
-                item {
-                    SettingsCard(
-                        iconRes = Res.drawable.language,
-                        title = stringResource(Res.string.language),
-                        subtitle = supportedLanguages[currentLanguageIndex].second,
-                        onClick = { showLanguageDialog = true }
-                    )
-                }
+                    item {
+                        SettingsCard(
+                            iconRes = Res.drawable.language,
+                            title = stringResource(Res.string.language),
+                            subtitle = supportedLanguages[currentLanguageIndex].second,
+                            onClick = { showLanguageDialog = true }
+                        )
+                    }
 
-                item {
-                    SettingsCard(
-                        iconRes = Res.drawable.privacy,
-                        title = stringResource(Res.string.privacy),
-                        onClick = onNavigateToPrivacy
-                    )
-                }
+                    item {
+                        SettingsCard(
+                            iconRes = Res.drawable.privacy,
+                            title = stringResource(Res.string.privacy),
+                            onClick = onNavigateToPrivacy
+                        )
+                    }
 
-                item {
-                    SettingsCard(
-                        iconRes = Res.drawable.rate,
-                        title = stringResource(Res.string.settings_button3),
-                        onClick = {
-                            uriHandler.openUri("https://play.google.com/store/apps/details?id=kalkulator.cnc")
-                        }
-                    )
-                }
+                    item {
+                        SettingsCard(
+                            iconRes = Res.drawable.rate,
+                            title = stringResource(Res.string.settings_button3),
+                            onClick = {
+                                uriHandler.openUri("https://play.google.com/store/apps/details?id=kalkulator.cnc")
+                            }
+                        )
+                    }
 
-                item {
-                    SettingsCard(
-                        iconRes = Res.drawable.coffe,
-                        title = stringResource(Res.string.settings_button4),
-                        onClick = { uriHandler.openUri("https://buycoffee.to/mivs/MojaParafia") }
-                    )
-                }
+                    item {
+                        SettingsCard(
+                            iconRes = Res.drawable.coffe,
+                            title = stringResource(Res.string.settings_button4),
+                            onClick = { uriHandler.openUri("https://buycoffee.to/mivs/MojaParafia") }
+                        )
+                    }
 
-                item {
-                    SettingsCard(
-                        iconRes = Res.drawable.ads,
-                        title = stringResource(Res.string.settings_button5),
-                        onClick = onNavigateToPremium
-                    )
+                    item {
+                        SettingsCard(
+                            iconRes = Res.drawable.ads,
+                            title = stringResource(Res.string.settings_button5),
+                            onClick = onNavigateToPremium
+                        )
+                    }
                 }
             }
 

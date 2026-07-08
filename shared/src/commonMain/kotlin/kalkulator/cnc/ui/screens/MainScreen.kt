@@ -101,18 +101,23 @@ fun MainScreen(
                     MenuCardData(Res.string.news, Res.drawable.notification, secondaryCardHeight, smallIconSize, hasNewNews, onNavigateToNews),
                     MenuCardData(Res.string.premium_function, Res.drawable.ads, secondaryCardHeight, smallIconSize, false, onNavigateToSubscription)
                 )
-
-                LazyVerticalGrid(
-                    columns = GridCells.Fixed(if (isLandscape) 4 else 2),
+                Box(
                     modifier = Modifier
                         .fillMaxWidth()
                         .weight(1f),
-                    contentPadding = PaddingValues(12.dp),
-                    horizontalArrangement = Arrangement.spacedBy(16.dp),
-                    verticalArrangement = Arrangement.Center
+                    contentAlignment = Alignment.Center // 🎯 To ustawienie wyśrodkuje Grid na ekranie
                 ) {
-                    items(cards) { card ->
-                        XmlStyleDashboardCard(card)
+                    LazyVerticalGrid(
+                        columns = GridCells.Fixed(if (isLandscape) 4 else 2),
+                        modifier = Modifier
+                            .fillMaxWidth(),
+                        contentPadding = PaddingValues(12.dp),
+                        horizontalArrangement = Arrangement.spacedBy(16.dp),
+                        verticalArrangement = Arrangement.spacedBy(16.dp)
+                    ) {
+                        items(cards) { card ->
+                            XmlStyleDashboardCard(card)
+                        }
                     }
                 }
 

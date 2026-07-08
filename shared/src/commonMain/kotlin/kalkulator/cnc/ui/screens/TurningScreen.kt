@@ -7,11 +7,13 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.defaultMinSize
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -71,7 +73,7 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import calculatorcnc.shared.generated.resources.*
 import kalkulator.cnc.data.MainRepository
-import kalkulator.cnc.data.domain.CncCategory // <-- Import nowej klasy
+import kalkulator.cnc.data.domain.CncCategory
 import kalkulator.cnc.data.viewmodel.ToolViewModel
 import kalkulator.cnc.data.domain.TurningCalculationResult
 import kalkulator.cnc.data.domain.TurningCalculator
@@ -185,7 +187,241 @@ fun TurningScreen(
         }
     }
 
-    Box(
+    // --- KOMPONENTY UI ---
+
+    val operationSpinner = @Composable {
+        ExposedDropdownMenuBox(
+            expanded = expandedDropdown,
+            onExpandedChange = { expandedDropdown = it },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp, vertical = 8.dp)
+        ) {
+            OutlinedTextField(
+                value = operations[selectedOperationIndex],
+                onValueChange = {},
+                readOnly = true,
+                label = { Text("Rodzaj obliczeń:") },
+                trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expandedDropdown) },
+                colors = OutlinedTextFieldDefaults.colors(
+                    unfocusedContainerColor = Color(0x1AFFFFFF),
+                    focusedContainerColor = Color(0x1AFFFFFF),
+                    unfocusedBorderColor = Color(0x40FFFFFF),
+                    focusedBorderColor = Color.White,
+                    focusedTextColor = Color.White,
+                    unfocusedTextColor = Color.White,
+                    focusedLabelColor = Color.White,
+                    unfocusedLabelColor = Color(0xFFBDBDBD)
+                ),
+                shape = RoundedCornerShape(8.dp),
+                modifier = Modifier.menuAnchor().fillMaxWidth()
+            )
+            ExposedDropdownMenu(
+                expanded = expandedDropdown,
+                onDismissRequest = { expandedDropdown = false },
+                modifier = Modifier.background(Color(0xFF1E1E1E))
+            ) {
+                operations.forEachIndexed { index, operation ->
+                    val isLocked = !isPremium && index in 3..6
+
+                    DropdownMenuItem(
+                        text = {
+                            Row(verticalAlignment = Alignment.CenterVertically) {
+                                Text(operation, color = Color.White)
+                                if (isLocked) {
+                                    Spacer(modifier = Modifier.weight(1f))
+                                    Icon(
+                                        Icons.Default.Lock,
+                                        contentDescription = "Premium",
+                                        tint = Color(0xFFFFD700),
+                                        modifier = Modifier.size(16.dp)
+                                    )
+                                }
+                            }
+                        },
+                        onClick = {
+                            expandedDropdown = false
+                            if (isLocked) {
+                                showPremiumDialog = true
+                            } else {
+                                selectedOperationIndex = index
+                            }
+                        }
+                    )
+                }
+            }
+        }
+    }
+
+    val toolBaseCard = @Composable {
+        if (selectedOperationIndex in 0..2) {
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clip(RoundedCornerShape(12.dp))
+                    .background(Color(0x26FFFFFF))
+                    .border(1.dp, Color(0x40FFFFFF), RoundedCornerShape(12.dp))
+            ) {
+                Column {
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .clickable(enabled = isDatabaseLoaded) {
+                                isToolCardExpanded = !isToolCardExpanded
+                            }
+                            .padding(12.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text(
+                            text = when {
+                                !isDatabaseLoaded -> "Baza narzędzi obecnie niedostępna"
+                                !selectedModel.isNullOrEmpty() -> selectedModel!!
+                                else -> stringResource(Res.string.tool_select_base)
+                            },
+                            color = if (isDatabaseLoaded) Color.White else Color.Gray,
+                            fontSize = 14.sp,
+                            modifier = Modifier.weight(1f)
+                        )
+
+                        if (isDatabaseLoaded) {
+                            Icon(
+                                imageVector = if (isToolCardExpanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
+                                contentDescription = null,
+                                tint = Color.White
+                            )
+                        }
+                    }
+
+                    if (isDatabaseLoaded && isToolCardExpanded) {
+                        ToolCascadeSelector(
+                            labelStep1 = Res.string.step1_tourning_system,
+                            labelStep2 = Res.string.step2_tourning_radius,
+                            isVisible = isToolCardExpanded,
+                            viewModel = toolViewModel,
+                            isPremium = isPremium,
+                            filteredCategories = filteredCategories.map { it.name },
+                            isCategoryPremium = isCategoryPremium,
+                            isDiameterPremium = isDiameterPremium,
+                            isModelPremium = isModelPremium,
+                            onPremiumClick = { showPremiumDialog = true },
+                            onModelSelected = { _ ->
+                                isToolCardExpanded = false
+                            }
+                        )
+                    }
+                }
+            }
+        }
+    }
+
+    val inputFields = @Composable { isLandscape: Boolean ->
+        val vcIndex = fieldLabels.indexOfFirst { it.contains("Vc", true) }
+        val verticalPadding = if (isLandscape) 4.dp else 8.dp
+
+        fieldLabels.forEachIndexed { index, label ->
+            if (index == vcIndex && selectedTool != null) {
+                ParameterTuningSection(
+                    tool = selectedTool,
+                    vcValue = inputValues.getOrElse(index) { "" },
+                    onVcValueChange = { newValue ->
+                        if (newValue.isEmpty() || newValue.matches(Regex("^\\d*\\.?\\d*$"))) {
+                            val newValues = inputValues.toMutableList()
+                            newValues[index] = newValue
+                            inputValues = newValues
+                        }
+                    },
+                    isThreading = (selectedOperationIndex == 2), // Index 2 to Gwintowanie
+                    modifier = Modifier.padding(bottom = verticalPadding)
+                )
+            } else {
+                OutlinedTextField(
+                    value = inputValues.getOrElse(index) { "" },
+                    onValueChange = { newValue ->
+                        val sanitizedValue = newValue.replace(',', '.')
+                        if (sanitizedValue.isEmpty() || sanitizedValue.matches(Regex("^\\d*\\.?\\d*$"))) {
+                            val newValues = inputValues.toMutableList()
+                            newValues[index] = sanitizedValue
+                            inputValues = newValues
+                        }
+                    },
+                    label = { Text(label) },
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedTextColor = Color.White,
+                        unfocusedTextColor = Color.White,
+                        focusedBorderColor = Color.White,
+                        unfocusedBorderColor = Color(0x40FFFFFF),
+                        focusedLabelColor = Color.White,
+                        unfocusedLabelColor = Color(0xFFBDBDBD)
+                    ),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(bottom = verticalPadding)
+                )
+            }
+        }
+        result?.error?.let { errorMsg ->
+            Text(
+                text = errorMsg,
+                color = MaterialTheme.colorScheme.error,
+                modifier = Modifier.padding(top = 8.dp, bottom = 16.dp)
+            )
+        }
+    }
+
+    val actionButtons = @Composable { isLandscape: Boolean ->
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(vertical = if (isLandscape) 8.dp else 12.dp, horizontal = if (isLandscape) 0.dp else 16.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            FilledIconButton(
+                onClick = {
+                    inputValues = List(fieldLabels.size) { "" }
+                    toolViewModel.resetSelection()
+                    toolViewModel.setIsoGroup("")
+                    result = null
+                },
+                modifier = Modifier.size(if (isLandscape) 48.dp else 56.dp),
+                shape = RoundedCornerShape(12.dp),
+                colors = IconButtonDefaults.filledIconButtonColors(containerColor = ApplicationNewBlue, contentColor = Color.White)
+            ) {
+                Icon(imageVector = Icons.Default.Refresh, contentDescription = stringResource(Res.string.clear))
+            }
+
+            Spacer(modifier = Modifier.width(12.dp))
+
+            Button(
+                onClick = {
+                    val numericValues = inputValues.map { it.toDoubleOrNull() ?: 0.0 }
+                    result = TurningCalculator.calculate(selectedOperationIndex, numericValues, isMetric)
+                    isToolCardExpanded = false
+                    if (result != null) showResultDialog = true
+                },
+                modifier = Modifier.weight(1f).height(if (isLandscape) 48.dp else 56.dp),
+                shape = RoundedCornerShape(12.dp),
+                colors = ButtonDefaults.buttonColors(containerColor = ApplicationNewBlue)
+            ) {
+                Text(stringResource(Res.string.calculate), color = Color.White, fontSize = 16.sp, fontWeight = FontWeight.Bold)
+            }
+
+            Spacer(modifier = Modifier.width(12.dp))
+
+            FilledIconButton(
+                onClick = { showInfoDialog = true },
+                modifier = Modifier.size(if (isLandscape) 48.dp else 56.dp),
+                shape = RoundedCornerShape(12.dp),
+                colors = IconButtonDefaults.filledIconButtonColors(containerColor = ApplicationNewBlue, contentColor = Color.White)
+            ) {
+                Icon(imageVector = Icons.Default.Info, contentDescription = stringResource(Res.string.informationtext))
+            }
+        }
+    }
+
+    // --- GŁÓWNY WIDOK EKRANU ---
+
+    BoxWithConstraints(
         modifier = Modifier
             .fillMaxSize()
             .clickable(
@@ -195,8 +431,15 @@ fun TurningScreen(
                 focusManager.clearFocus()
             }
     ) {
+        val isLandscape = maxWidth > maxHeight
+        val backgroundImage = if (isLandscape) {
+            Res.drawable.background_landscape
+        } else {
+            Res.drawable.background_portrait
+        }
+
         Image(
-            painter = painterResource(Res.drawable.background_portrait),
+            painter = painterResource(backgroundImage),
             contentDescription = null,
             contentScale = ContentScale.Crop,
             modifier = Modifier.fillMaxSize()
@@ -212,11 +455,11 @@ fun TurningScreen(
                 .fillMaxSize()
                 .windowInsetsPadding(WindowInsets.systemBars)
         ) {
+            // --- NAGŁÓWEK ---
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
                     .background(ApplicationNewBlue)
-                    .padding(bottom = 12.dp)
             ) {
                 Row(
                     modifier = Modifier.fillMaxWidth().height(56.dp),
@@ -232,254 +475,71 @@ fun TurningScreen(
                     Spacer(modifier = Modifier.weight(1f))
                 }
 
-                Text(
-                    text = stringResource(Res.string.calculate_txt),
-                    color = Color(0xFFBDBDBD),
-                    fontSize = 14.sp,
-                    fontWeight = FontWeight.Bold,
-                    modifier = Modifier.padding(horizontal = 20.dp, vertical = 8.dp)
-                )
-
-                ExposedDropdownMenuBox(
-                    expanded = expandedDropdown,
-                    onExpandedChange = { expandedDropdown = it },
-                    modifier = Modifier.padding(horizontal = 16.dp)
-                ) {
-                    OutlinedTextField(
-                        value = operations[selectedOperationIndex],
-                        onValueChange = {},
-                        readOnly = true,
-                        trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expandedDropdown) },
-                        colors = OutlinedTextFieldDefaults.colors(
-                            unfocusedContainerColor = Color(0x1AFFFFFF),
-                            focusedContainerColor = Color(0x1AFFFFFF),
-                            unfocusedBorderColor = Color.Transparent,
-                            focusedBorderColor = Color.Transparent,
-                            focusedTextColor = Color.White,
-                            unfocusedTextColor = Color.White
-                        ),
-                        shape = RoundedCornerShape(8.dp),
-                        modifier = Modifier.menuAnchor().fillMaxWidth()
-                    )
-                    ExposedDropdownMenu(
-                        expanded = expandedDropdown,
-                        onDismissRequest = { expandedDropdown = false },
-                        modifier = Modifier.background(Color(0xFF1E1E1E))
-                    ) {
-                        operations.forEachIndexed { index, operation ->
-
-                            val isLocked = !isPremium && index in 3..6
-
-                            DropdownMenuItem(
-                                text = {
-                                    Row(verticalAlignment = Alignment.CenterVertically) {
-                                        Text(operation, color = Color.White)
-                                        if (isLocked) {
-                                            Spacer(modifier = Modifier.weight(1f))
-                                            Icon(
-                                                Icons.Default.Lock,
-                                                contentDescription = "Premium",
-                                                tint = Color(0xFFFFD700),
-                                                modifier = Modifier.size(16.dp)
-                                            )
-                                        }
-                                    }
-                                },
-                                onClick = {
-                                    expandedDropdown = false
-                                    if (isLocked) {
-                                        showPremiumDialog = true
-                                    } else {
-                                        selectedOperationIndex = index
-                                    }
-                                }
-                            )
-                        }
-                    }
-                }
+                operationSpinner()
             }
 
-            Column(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .weight(1f)
-                    .padding(horizontal = 16.dp)
-                    .verticalScroll(rememberScrollState())
-            ) {
-                Spacer(modifier = Modifier.height(16.dp))
-
-                if (selectedOperationIndex in 0..2) {
-                    Box(
+            // --- ZAWARTOŚĆ ---
+            if (isLandscape) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .weight(1f)
+                        .padding(horizontal = 16.dp, vertical = 8.dp),
+                    horizontalArrangement = Arrangement.spacedBy(16.dp)
+                ) {
+                    // LEWA KOLUMNA (Pola tekstowe)
+                    Column(
                         modifier = Modifier
-                            .fillMaxWidth()
-                            .clip(RoundedCornerShape(12.dp))
-                            .background(Color(0x26FFFFFF))
-                            .border(1.dp, Color(0x40FFFFFF), RoundedCornerShape(12.dp))
+                            .weight(1f)
+                            .fillMaxHeight()
+                            .verticalScroll(rememberScrollState())
                     ) {
-                        Column {
-                            Row(
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .clickable(enabled = isDatabaseLoaded) {
-                                        isToolCardExpanded = !isToolCardExpanded
-                                    }
-                                    .padding(12.dp),
-                                verticalAlignment = Alignment.CenterVertically
-                            ) {
-                                Text(
-                                    text = when {
-                                        !isDatabaseLoaded -> "Baza narzędzi obecnie niedostępna"
-                                        !selectedModel.isNullOrEmpty() -> selectedModel!!
-                                        else -> stringResource(Res.string.tool_select_base)
-                                    },
-                                    color = if (isDatabaseLoaded) Color.White else Color.Gray,
-                                    fontSize = 14.sp,
-                                    modifier = Modifier.weight(1f)
-                                )
+                        inputFields(true)
+                    }
 
-                                if (isDatabaseLoaded) {
-                                    Icon(
-                                        imageVector = if (isToolCardExpanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
-                                        contentDescription = null,
-                                        tint = Color.White
-                                    )
-                                }
-                            }
-
-                            if (isDatabaseLoaded && isToolCardExpanded) {
-                                ToolCascadeSelector(
-                                    labelStep1 = Res.string.step1_tourning_system,
-                                    labelStep2 = Res.string.step2_tourning_radius,
-                                    isVisible = isToolCardExpanded,
-                                    viewModel = toolViewModel,
-                                    isPremium = isPremium,
-                                    filteredCategories = filteredCategories.map { it.name },
-                                    isCategoryPremium = isCategoryPremium,
-                                    isDiameterPremium = isDiameterPremium,
-                                    isModelPremium = isModelPremium,
-                                    onPremiumClick = { showPremiumDialog = true },
-                                    onModelSelected = { model ->
-                                        isToolCardExpanded = false
-                                    }
-                                )
-                            }
-                        }
+                    // PRAWA KOLUMNA (Baza narzędziowa i przyciski)
+                    Column(
+                        modifier = Modifier
+                            .weight(1f)
+                            .fillMaxHeight()
+                            .verticalScroll(rememberScrollState())
+                    ) {
+                        toolBaseCard()
+                        Spacer(modifier = Modifier.height(16.dp))
+                        actionButtons(true)
                     }
                 }
-
-                Spacer(modifier = Modifier.height(16.dp))
-
-                val vcIndex = fieldLabels.indexOfFirst { it.contains("Vc", true) }
-
-                fieldLabels.forEachIndexed { index, label ->
-                    if (index == vcIndex && selectedTool != null) {
-                        ParameterTuningSection(
-                            tool = selectedTool,
-                            vcValue = inputValues.getOrElse(index) { "" },
-                            onVcValueChange = { newValue ->
-                                if (newValue.isEmpty() || newValue.matches(Regex("^\\d*\\.?\\d*$"))) {
-                                    val newValues = inputValues.toMutableList()
-                                    newValues[index] = newValue
-                                    inputValues = newValues
-                                }
-                            },
-                            isThreading = (selectedOperationIndex == 2), // Index 2 to Gwintowanie
-                            modifier = Modifier.padding(bottom = 8.dp)
-                        )
-                    } else {
-                        OutlinedTextField(
-                            value = inputValues.getOrElse(index) { "" },
-                            onValueChange = { newValue ->
-                                if (newValue.isEmpty() || newValue.matches(Regex("^\\d*\\.?\\d*$"))) {
-                                    val newValues = inputValues.toMutableList()
-                                    newValues[index] = newValue
-                                    inputValues = newValues
-                                }
-                            },
-                            label = { Text(label) },
-                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
-                            colors = OutlinedTextFieldDefaults.colors(
-                                focusedTextColor = Color.White,
-                                unfocusedTextColor = Color.White,
-                                focusedBorderColor = Color.White,
-                                unfocusedBorderColor = Color(0x40FFFFFF),
-                                focusedLabelColor = Color.White,
-                                unfocusedLabelColor = Color(0xFFBDBDBD)
-                            ),
-                            modifier = Modifier.fillMaxWidth().padding(bottom = 8.dp)
-                        )
-                    }
-                }
-
-                result?.error?.let { errorMsg ->
-                    Text(
-                        text = errorMsg,
-                        color = MaterialTheme.colorScheme.error,
-                        modifier = Modifier.padding(16.dp)
-                    )
-                }
-            }
-
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 16.dp, vertical = 12.dp),
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                FilledIconButton(
-                    onClick = {
-                        inputValues = List(fieldLabels.size) { "" }
-                        toolViewModel.resetSelection()
-                        toolViewModel.setIsoGroup("")
-                        result = null
-                    },
-                    modifier = Modifier.size(56.dp),
-                    shape = RoundedCornerShape(12.dp),
-                    colors = IconButtonDefaults.filledIconButtonColors(containerColor = ApplicationNewBlue, contentColor = Color.White)
+            } else {
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .weight(1f)
+                        .padding(horizontal = 16.dp)
+                        .verticalScroll(rememberScrollState())
                 ) {
-                    Icon(imageVector = Icons.Default.Refresh, contentDescription = stringResource(Res.string.clear))
+                    Spacer(modifier = Modifier.height(8.dp))
+                    toolBaseCard()
+                    Spacer(modifier = Modifier.height(16.dp))
+                    inputFields(false)
                 }
 
-                Spacer(modifier = Modifier.width(12.dp))
+                actionButtons(false)
 
-                Button(
-                    onClick = {
-                        val numericValues = inputValues.map { it.toDoubleOrNull() ?: 0.0 }
-                        result = TurningCalculator.calculate(selectedOperationIndex, numericValues, isMetric)
-                        isToolCardExpanded = false
-                        if (result != null) showResultDialog = true
-                    },
-                    modifier = Modifier.weight(1f).height(56.dp),
-                    shape = RoundedCornerShape(12.dp),
-                    colors = ButtonDefaults.buttonColors(containerColor = ApplicationNewBlue)
+                // Reklama tylko w trybie pionowym
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .background(Color(0x1A000000))
+                        .defaultMinSize(minHeight = 50.dp),
+                    contentAlignment = Alignment.Center
                 ) {
-                    Text(stringResource(Res.string.calculate), color = Color.White, fontSize = 16.sp, fontWeight = FontWeight.Bold)
+                    adContent()
                 }
-
-                Spacer(modifier = Modifier.width(12.dp))
-
-                FilledIconButton(
-                    onClick = { showInfoDialog = true },
-                    modifier = Modifier.size(56.dp),
-                    shape = RoundedCornerShape(12.dp),
-                    colors = IconButtonDefaults.filledIconButtonColors(containerColor = ApplicationNewBlue, contentColor = Color.White)
-                ) {
-                    Icon(imageVector = Icons.Default.Info, contentDescription = stringResource(Res.string.informationtext))
-                }
-            }
-
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .background(Color(0x1A000000))
-                    .defaultMinSize(minHeight = 50.dp),
-                contentAlignment = Alignment.Center
-            ) {
-                adContent()
             }
         }
     }
 
+    // --- DIALOGI ---
     if (showResultDialog && result != null) {
         val res = result!!
         val resultsList = mutableListOf<Pair<String, String>>()

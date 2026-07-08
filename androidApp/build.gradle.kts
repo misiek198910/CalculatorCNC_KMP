@@ -24,8 +24,8 @@ extensions.configure<ApplicationExtension> {
         applicationId = "kalkulator.cnc"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
-        versionCode = 93
-        versionName = "4.2.7"
+        versionCode = 95
+        versionName = "4.3.1"
 
         manifestPlaceholders["adMobAppId"] = ""
     }
@@ -102,4 +102,6 @@ dependencies {
     implementation(libs.compose.material3)
     implementation(libs.play.services.ump)
     implementation(project.dependencies.platform(libs.firebase.bom))
+    implementation(libs.play.app.update)
+    implementation(libs.play.app.update.ktx)
 }

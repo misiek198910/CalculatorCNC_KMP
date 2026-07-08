@@ -86,6 +86,8 @@ kotlin {
             implementation(libs.billing.ktx)
             implementation(libs.play.services.ads)
             implementation(project.dependencies.platform(libs.firebase.bom))
+            implementation(libs.play.app.update)
+            implementation(libs.play.app.update.ktx)
         }
         commonMain.dependencies {
             implementation(compose.ui)

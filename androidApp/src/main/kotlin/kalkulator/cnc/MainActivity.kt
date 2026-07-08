@@ -25,12 +25,15 @@ import kalkulator.cnc.data.local.createRoomDatabase
 import kalkulator.cnc.data.local.getDatabaseBuilder
 import kalkulator.cnc.ui.components.AdBanner
 import java.util.Locale
+import kalkulator.cnc.utils.UpdateHelper
 
 class MainActivity : ComponentActivity() {
 
     private lateinit var billingManager: BillingManager
 
     private var mInterstitialAd: InterstitialAd? = null
+
+    private lateinit var updateHelper: UpdateHelper
 
     override fun attachBaseContext(newBase: Context) {
         val prefs = newBase.getSharedPreferences("CncSettings", Context.MODE_PRIVATE)
@@ -54,6 +57,10 @@ class MainActivity : ComponentActivity() {
 
         val database = createRoomDatabase(getDatabaseBuilder())
         billingManager = BillingManager(this, database.subscriptionDao())
+
+        updateHelper = UpdateHelper(this)
+        updateHelper.registerListener()
+        updateHelper.checkForUpdates()
 
         setContent {
             val billingController = remember { AndroidBillingController(this, billingManager) }
@@ -142,6 +149,20 @@ class MainActivity : ComponentActivity() {
                 }
             )
 
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (::updateHelper.isInitialized) {
+            updateHelper.onResume()
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        if (::updateHelper.isInitialized) {
+            updateHelper.unregisterListener()
         }
     }
 
