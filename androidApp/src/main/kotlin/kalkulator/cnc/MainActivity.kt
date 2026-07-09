@@ -62,10 +62,12 @@ class MainActivity : ComponentActivity() {
         updateHelper.registerListener()
         updateHelper.checkForUpdates()
 
+
         setContent {
             val billingController = remember { AndroidBillingController(this, billingManager) }
 
             App(
+
                 database = database,
                 billingController = billingController,
                 adContent = {
@@ -97,7 +99,6 @@ class MainActivity : ComponentActivity() {
                 onShowStartAd = { onComplete ->
                     var isCompleted = false
 
-                    // Zabezpieczenie: funkcja wywołująca onComplete tylko raz
                     fun safeComplete() {
                         if (!isCompleted) {
                             isCompleted = true
@@ -105,7 +106,6 @@ class MainActivity : ComponentActivity() {
                         }
                     }
 
-                    // TIMEOUT ZABEZPIECZAJĄCY (4 sekundy = 4000 ms)
                     val timeoutHandler = android.os.Handler(android.os.Looper.getMainLooper())
                     val timeoutRunnable = Runnable {
                         safeComplete()
@@ -116,15 +116,14 @@ class MainActivity : ComponentActivity() {
 
                     AppOpenAd.load(
                         this@MainActivity,
-                        BuildConfig.AD_START_UNIT_ID, // To Twoje ID z build.gradle
+                        BuildConfig.AD_START_UNIT_ID,
                         request,
                         AppOpenAd.APP_OPEN_AD_ORIENTATION_PORTRAIT,
                         object : AppOpenAdLoadCallback() {
                             override fun onAdLoaded(ad: AppOpenAd) {
-                                // Jeśli timeout już minął, nie pokazujemy reklamy
+
                                 if (isCompleted) return
 
-                                // Zatrzymujemy timer, bo reklama zdążyła się pobrać
                                 timeoutHandler.removeCallbacks(timeoutRunnable)
 
                                 ad.fullScreenContentCallback = object : FullScreenContentCallback() {
@@ -140,7 +139,6 @@ class MainActivity : ComponentActivity() {
                             }
 
                             override fun onAdFailedToLoad(error: LoadAdError) {
-                                // Błąd ładowania reklamy (np. brak sieci) - idziemy do apki
                                 timeoutHandler.removeCallbacks(timeoutRunnable)
                                 safeComplete()
                             }
@@ -193,7 +191,7 @@ class MainActivity : ComponentActivity() {
             mInterstitialAd?.fullScreenContentCallback = object : FullScreenContentCallback() {
                 override fun onAdDismissedFullScreenContent() {
                     mInterstitialAd = null
-                    loadInterstitialAd() // Załaduj kolejną po zamknięciu
+                    loadInterstitialAd()
                 }
                 override fun onAdFailedToShowFullScreenContent(adError: AdError) {
                     mInterstitialAd = null

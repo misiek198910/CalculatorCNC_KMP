@@ -13,6 +13,7 @@ plugins {
     alias(libs.plugins.composeCompiler)
     alias(libs.plugins.kotlinAndroid)
     alias(libs.plugins.google.services)
+    alias(libs.plugins.firebase.crashlytics)
 
 }
 
@@ -24,8 +25,8 @@ extensions.configure<ApplicationExtension> {
         applicationId = "kalkulator.cnc"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
-        versionCode = 95
-        versionName = "4.3.1"
+        versionCode = 96
+        versionName = "4.3.2"
 
         manifestPlaceholders["adMobAppId"] = ""
     }
@@ -104,4 +105,5 @@ dependencies {
     implementation(project.dependencies.platform(libs.firebase.bom))
     implementation(libs.play.app.update)
     implementation(libs.play.app.update.ktx)
+    implementation(libs.firebase.analytics)
 }
