@@ -66,7 +66,7 @@ fun MyToolsScreen(
                 (tool.workpiece?.contains(searchQuery, ignoreCase = true) ?: false)
     }
 
-    val mixedList = remember(filteredTools) { createMixedList(filteredTools) }
+    val mixedList = remember(filteredTools, isPremium) { createMixedList(filteredTools, isPremium) }
 
     Scaffold(
         containerColor = Color.Transparent,
@@ -87,14 +87,16 @@ fun MyToolsScreen(
             }
         },
         bottomBar = {
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .background(Color(0x1A000000))
-                    .defaultMinSize(minHeight = 50.dp),
-                contentAlignment = Alignment.Center
-            ) {
-                adContent()
+            if (!isPremium) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .background(Color(0x1A000000))
+                        .defaultMinSize(minHeight = 50.dp),
+                    contentAlignment = Alignment.Center
+                ) {
+                    adContent()
+                }
             }
         }
     ) { paddingValues ->
@@ -160,7 +162,12 @@ fun MyToolsScreen(
                 onDismissRequest = { toolToDelete = null },
                 containerColor = ApplicationNewBlue,
                 title = { Text(stringResource(Res.string.confirm_delete_one), color = Color.White, fontWeight = FontWeight.Bold) },
-                text = { Text(stringResource(Res.string.confirm_delete_tool, toolToDelete?.name ?: ""), color = Color(0xFFBDBDBD)) },
+                text = {
+                    Text(
+                        text = stringResource(Res.string.confirm_delete_tool).formatKmp(toolToDelete?.name ?: ""),
+                        color = Color(0xFFBDBDBD)
+                    )
+                },
                 confirmButton = {
                     TextButton(onClick = {
                         toolToDelete?.let {
@@ -391,11 +398,11 @@ sealed class MyToolsListItem {
     object Ad : MyToolsListItem()
 }
 
-fun createMixedList(tools: List<UserToolEntity>): List<MyToolsListItem> {
+fun createMixedList(tools: List<UserToolEntity>, isPremium: Boolean): List<MyToolsListItem> {
     val result = mutableListOf<MyToolsListItem>()
     tools.forEachIndexed { index, tool ->
         result.add(MyToolsListItem.Tool(tool))
-        if ((index + 1) % 4 == 0) {
+        if (!isPremium && (index + 1) % 4 == 0) {
             result.add(MyToolsListItem.Ad)
         }
     }

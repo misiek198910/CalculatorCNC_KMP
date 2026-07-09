@@ -20,6 +20,9 @@ class BillingManager(
     private val scope = CoroutineScope(Dispatchers.IO + SupervisorJob())
     private val _productDetails = MutableStateFlow<ProductDetails?>(null)
 
+    private val _subscriptionStatus = MutableStateFlow<Boolean?>(null)
+    val subscriptionStatus = _subscriptionStatus.asStateFlow()
+
     val productDetails = _productDetails.asStateFlow()
 
     interface BillingManagerListener {
@@ -40,6 +43,10 @@ class BillingManager(
     }
 
     init {
+        scope.launch {
+            val savedStatus = dao.getStatus()
+            _subscriptionStatus.value = savedStatus?.isPremium == true
+        }
         billingClient = BillingClient.newBuilder(context.applicationContext)
             .setListener(purchasesUpdatedListener)
             .enablePendingPurchases(PendingPurchasesParams.newBuilder().enableOneTimeProducts().build())
@@ -136,6 +143,7 @@ class BillingManager(
     }
 
     private fun updateLocalStatus(hasPremium: Boolean, token: String?) {
+        _subscriptionStatus.value = hasPremium
         scope.launch {
             dao.insertStatus(
                 SubscriptionEntity(

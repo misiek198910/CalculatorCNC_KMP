@@ -178,8 +178,6 @@ fun MillingScreen(
         }
     }
 
-    // --- KOMPONENTY UI ---
-
     val operationSpinner = @Composable {
         ExposedDropdownMenuBox(
             expanded = expandedDropdown,
@@ -305,7 +303,6 @@ fun MillingScreen(
         }
     }
 
-    // Dodano parametr isLandscape, by dostosować marginesy
     val inputFields = @Composable { isLandscape: Boolean ->
         val vcIndex = fieldLabels.indexOfFirst { it.contains("Vc", true) }
         val verticalPadding = if (isLandscape) 4.dp else 8.dp // Gęstszy układ w poziomie
@@ -367,7 +364,6 @@ fun MillingScreen(
         }
     }
 
-    // Panel z przyciskami (Oblicz, Info, Wyczyść)
     val actionButtons = @Composable { isLandscape: Boolean ->
         Row(
             modifier = Modifier
@@ -439,8 +435,6 @@ fun MillingScreen(
         }
     }
 
-    // --- GŁÓWNY WIDOK EKRANU ---
-
     BoxWithConstraints(
         modifier = Modifier
             .fillMaxSize()
@@ -475,7 +469,6 @@ fun MillingScreen(
                 .fillMaxSize()
                 .windowInsetsPadding(WindowInsets.systemBars)
         ) {
-            // --- NAGŁÓWEK ---
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -508,13 +501,10 @@ fun MillingScreen(
                     Spacer(modifier = Modifier.weight(1f))
                 }
 
-                // Spinner wrzucony do nagłówka (bezpieczny obszar, zawsze nad scrollowaniem)
                 operationSpinner()
             }
 
-            // --- ZAWARTOŚĆ ---
             if (isLandscape) {
-                // TRYB POZIOMY (LANDSCAPE)
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -522,7 +512,6 @@ fun MillingScreen(
                         .padding(horizontal = 16.dp, vertical = 8.dp),
                     horizontalArrangement = Arrangement.spacedBy(16.dp)
                 ) {
-                    // LEWA KOLUMNA - Formularz tekstowy (Zwarty układ)
                     Column(
                         modifier = Modifier
                             .weight(1f)
@@ -532,7 +521,6 @@ fun MillingScreen(
                         inputFields(true)
                     }
 
-                    // PRAWA KOLUMNA - Karta narzędzi i przyciski akcji zaraz pod nią!
                     Column(
                         modifier = Modifier
                             .weight(1f)
@@ -541,12 +529,10 @@ fun MillingScreen(
                     ) {
                         toolBaseCard()
                         Spacer(modifier = Modifier.height(16.dp))
-                        actionButtons(true) // Przyciski przeniesione tutaj
+                        actionButtons(true)
                     }
                 }
-                // Reklama jest całkowicie pominięta w tym bloku
             } else {
-                // TRYB PIONOWY (PORTRAIT)
                 Column(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -560,10 +546,8 @@ fun MillingScreen(
                     inputFields(false)
                 }
 
-                // Przyciski akcji zablokowane na dole w pionie
                 actionButtons(false)
 
-                // Reklama na dole w trybie pionowym
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()

@@ -355,7 +355,6 @@ fun AddToolScreen(toolId: Int?, onBack: () -> Unit, repository: MainRepository, 
         AlertDialog(
             onDismissRequest = { showErrorDialog = false },
             containerColor = ApplicationNewBlue,
-            title = { Text(stringResource(Res.string.tools_error_code), color = Color.White, fontWeight = FontWeight.Bold) },
             text = { Text(stringResource(Res.string.tools_error), color = Color(0xFFBDBDBD)) },
             confirmButton = {
                 TextButton(onClick = { showErrorDialog = false }) {

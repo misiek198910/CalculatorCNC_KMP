@@ -106,4 +106,5 @@ dependencies {
     implementation(libs.play.app.update)
     implementation(libs.play.app.update.ktx)
     implementation(libs.firebase.analytics)
+    implementation(libs.firebase.crashlytics)
 }

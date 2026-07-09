@@ -51,6 +51,7 @@ fun MainScreen(
     onNavigateToNews: () -> Unit,
     onNavigateToSubscription: () -> Unit,
     hasNewNews: Boolean,
+    isPremium: Boolean,
     adContent: @Composable () -> Unit = {}
 ) {
     LogScreenView(screenName = "MainScreen")
@@ -105,7 +106,7 @@ fun MainScreen(
                     modifier = Modifier
                         .fillMaxWidth()
                         .weight(1f),
-                    contentAlignment = Alignment.Center // 🎯 To ustawienie wyśrodkuje Grid na ekranie
+                    contentAlignment = Alignment.Center
                 ) {
                     LazyVerticalGrid(
                         columns = GridCells.Fixed(if (isLandscape) 4 else 2),
@@ -121,14 +122,16 @@ fun MainScreen(
                     }
                 }
 
-                Box(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .background(Color(0x1A000000))
-                        .defaultMinSize(minHeight = 50.dp),
-                    contentAlignment = Alignment.Center
-                ) {
-                    adContent()
+                if (!isPremium) {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .background(Color(0x1A000000))
+                            .defaultMinSize(minHeight = 50.dp),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        adContent()
+                    }
                 }
             }
         }

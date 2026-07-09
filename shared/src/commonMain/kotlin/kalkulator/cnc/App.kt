@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -81,6 +82,7 @@ fun App(
 
     val viewModel = remember { AppViewModel(repository) }
     var currentScreen by remember { mutableStateOf<Screen>(Screen.Splash) }
+    val isPremium by repository.isPremiumFlow.collectAsState(initial = false)
 
     Surface(
         modifier = Modifier.fillMaxSize(),
@@ -107,6 +109,7 @@ fun App(
                     onNavigateToNews = { currentScreen = Screen.News },
                     onNavigateToSubscription = { currentScreen = Screen.Subscription },
                     hasNewNews = false,
+                    isPremium = isPremium,
                     adContent = adContent
                 )
             }

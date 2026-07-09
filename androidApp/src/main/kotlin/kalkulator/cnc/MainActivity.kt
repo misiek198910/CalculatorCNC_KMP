@@ -26,6 +26,8 @@ import kalkulator.cnc.data.local.getDatabaseBuilder
 import kalkulator.cnc.ui.components.AdBanner
 import java.util.Locale
 import kalkulator.cnc.utils.UpdateHelper
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 
 class MainActivity : ComponentActivity() {
 
@@ -64,16 +66,24 @@ class MainActivity : ComponentActivity() {
 
 
         setContent {
+
+            val isPremiumState by billingManager.subscriptionStatus.collectAsState()
+            val isPremium = isPremiumState == true
             val billingController = remember { AndroidBillingController(this, billingManager) }
 
             App(
-
                 database = database,
                 billingController = billingController,
                 adContent = {
-                    AdBanner(isPremium = false)
+                    if (!isPremium) {
+                        AdBanner(isPremium = false)
+                    }
                 },
-                showInterstitialAd = { showInterstitial() },
+                showInterstitialAd = {
+                    if (!isPremium) {
+                        showInterstitial()
+                    }
+                },
                 onRequestConsent = { onComplete ->
                     val consentInformation =
                         UserMessagingPlatform.getConsentInformation(this@MainActivity)
@@ -97,56 +107,60 @@ class MainActivity : ComponentActivity() {
                     )
                 },
                 onShowStartAd = { onComplete ->
-                    var isCompleted = false
 
-                    fun safeComplete() {
-                        if (!isCompleted) {
-                            isCompleted = true
-                            onComplete()
+                    if (isPremium) {
+                        onComplete()
+                    } else {
+                        var isCompleted = false
+
+                        fun safeComplete() {
+                            if (!isCompleted) {
+                                isCompleted = true
+                                onComplete()
+                            }
                         }
-                    }
 
-                    val timeoutHandler = android.os.Handler(android.os.Looper.getMainLooper())
-                    val timeoutRunnable = Runnable {
-                        safeComplete()
-                    }
-                    timeoutHandler.postDelayed(timeoutRunnable, 4000L)
+                        val timeoutHandler = android.os.Handler(android.os.Looper.getMainLooper())
+                        val timeoutRunnable = Runnable {
+                            safeComplete()
+                        }
+                        timeoutHandler.postDelayed(timeoutRunnable, 4000L)
 
-                    val request = AdRequest.Builder().build()
+                        val request = AdRequest.Builder().build()
 
-                    AppOpenAd.load(
-                        this@MainActivity,
-                        BuildConfig.AD_START_UNIT_ID,
-                        request,
-                        AppOpenAd.APP_OPEN_AD_ORIENTATION_PORTRAIT,
-                        object : AppOpenAdLoadCallback() {
-                            override fun onAdLoaded(ad: AppOpenAd) {
+                        AppOpenAd.load(
+                            this@MainActivity,
+                            BuildConfig.AD_START_UNIT_ID,
+                            request,
+                            AppOpenAd.APP_OPEN_AD_ORIENTATION_PORTRAIT,
+                            object : AppOpenAdLoadCallback() {
+                                override fun onAdLoaded(ad: AppOpenAd) {
+                                    if (isCompleted) return
 
-                                if (isCompleted) return
+                                    timeoutHandler.removeCallbacks(timeoutRunnable)
 
-                                timeoutHandler.removeCallbacks(timeoutRunnable)
+                                    ad.fullScreenContentCallback =
+                                        object : FullScreenContentCallback() {
+                                            override fun onAdDismissedFullScreenContent() {
+                                                safeComplete()
+                                            }
 
-                                ad.fullScreenContentCallback = object : FullScreenContentCallback() {
-                                    override fun onAdDismissedFullScreenContent() {
-                                        safeComplete()
-                                    }
-                                    override fun onAdFailedToShowFullScreenContent(error: AdError) {
-                                        safeComplete()
-                                    }
+                                            override fun onAdFailedToShowFullScreenContent(error: AdError) {
+                                                safeComplete()
+                                            }
+                                        }
+                                    ad.show(this@MainActivity)
                                 }
-                                // Wyświetlenie reklamy
-                                ad.show(this@MainActivity)
-                            }
 
-                            override fun onAdFailedToLoad(error: LoadAdError) {
-                                timeoutHandler.removeCallbacks(timeoutRunnable)
-                                safeComplete()
+                                override fun onAdFailedToLoad(error: LoadAdError) {
+                                    timeoutHandler.removeCallbacks(timeoutRunnable)
+                                    safeComplete()
+                                }
                             }
-                        }
-                    )
+                        )
+                    }
                 }
             )
-
         }
     }
 
