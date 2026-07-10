@@ -356,7 +356,13 @@ fun MillingScreen(
                 )
             }
         }
-        result?.error?.let { errorMsg ->
+        result?.errorRes?.let { resId ->
+            val errorMsg = if (result!!.errorArg != null) {
+                stringResource(resId).formatKmp(result!!.errorArg!!)
+            } else {
+                stringResource(resId)
+            }
+
             Text(
                 text = errorMsg,
                 color = MaterialTheme.colorScheme.error,
