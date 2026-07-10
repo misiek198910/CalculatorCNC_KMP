@@ -27,6 +27,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.KeyboardArrowDown
@@ -45,6 +46,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.MenuAnchorType
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
@@ -214,7 +216,7 @@ fun TurningScreen(
                     unfocusedLabelColor = Color(0xFFBDBDBD)
                 ),
                 shape = RoundedCornerShape(8.dp),
-                modifier = Modifier.menuAnchor().fillMaxWidth()
+                modifier = Modifier.menuAnchor(type = MenuAnchorType.PrimaryNotEditable).fillMaxWidth()
             )
             ExposedDropdownMenu(
                 expanded = expandedDropdown,
@@ -455,7 +457,6 @@ fun TurningScreen(
                 .fillMaxSize()
                 .windowInsetsPadding(WindowInsets.systemBars)
         ) {
-            // --- NAGŁÓWEK ---
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -466,7 +467,7 @@ fun TurningScreen(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     IconButton(onClick = onBack) {
-                        Icon(imageVector = Icons.Default.ArrowBack, contentDescription = stringResource(Res.string.back), tint = Color.White)
+                        Icon(imageVector = Icons.AutoMirrored.Filled.ArrowBack, contentDescription = stringResource(Res.string.back), tint = Color.White)
                     }
                     Spacer(modifier = Modifier.weight(1f))
                     Text(stringResource(Res.string.main_button2), color = Color.White, fontSize = 16.sp, fontWeight = FontWeight.Bold)
@@ -478,7 +479,6 @@ fun TurningScreen(
                 operationSpinner()
             }
 
-            // --- ZAWARTOŚĆ ---
             if (isLandscape) {
                 Row(
                     modifier = Modifier
@@ -487,7 +487,7 @@ fun TurningScreen(
                         .padding(horizontal = 16.dp, vertical = 8.dp),
                     horizontalArrangement = Arrangement.spacedBy(16.dp)
                 ) {
-                    // LEWA KOLUMNA (Pola tekstowe)
+
                     Column(
                         modifier = Modifier
                             .weight(1f)
@@ -497,7 +497,6 @@ fun TurningScreen(
                         inputFields(true)
                     }
 
-                    // PRAWA KOLUMNA (Baza narzędziowa i przyciski)
                     Column(
                         modifier = Modifier
                             .weight(1f)
@@ -525,7 +524,6 @@ fun TurningScreen(
 
                 actionButtons(false)
 
-                // Reklama tylko w trybie pionowym
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -539,7 +537,6 @@ fun TurningScreen(
         }
     }
 
-    // --- DIALOGI ---
     if (showResultDialog && result != null) {
         val res = result!!
         val resultsList = mutableListOf<Pair<String, String>>()

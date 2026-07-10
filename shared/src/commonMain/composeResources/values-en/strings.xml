@@ -166,6 +166,18 @@
     <string name="vc_expert_min">Select Minimum: If you have an unstable setup, a long tool overhang, or are machining without coolant.</string>
     <string name="vc_expert_opt">Select Optimum: Standard operating conditions.</string>
     <string name="vc_expert_max">Select Maximum: New machine, highly rigid setup, and high-pressure cooling.</string>
+    <string name="error_fill_required">Please fill in all required fields correctly.</string>
+    <string name="error_unknown_operation">Unknown operation.</string>
+    <string name="error_calc_exception">Calculation error: %s</string>
+    <string name="error_hardness_missing">Please enter a hardness value.</string>
+    <string name="error_hardness_multiple">You can only fill in one field at a time.</string>
+    <string name="error_hardness_range">Value out of conversion range.</string>
+
+    <!-- Billing-->
+    <string name="billing_error_canceled">Purchase canceled.</string>
+    <string name="billing_error_general">Error: %s</string>
+    <string name="billing_error_offer_not_found">Selected offer not found (%s).</string>
+    <string name="billing_error_auth">Authorization error: %s</string>
 
     <!-- Baza Danych-->
     <string name="app_database_download">Downloading database…</string>

@@ -13,6 +13,7 @@ import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Lock
@@ -143,7 +144,7 @@ fun TolerancesScreen(onBack: () -> Unit, repository: MainRepository, onNavigateT
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 IconButton(onClick = onBack) {
-                    Icon(imageVector = Icons.Default.ArrowBack, contentDescription = stringResource(Res.string.back), tint = Color.White)
+                    Icon(imageVector = Icons.AutoMirrored.Filled.ArrowBack, contentDescription = stringResource(Res.string.back), tint = Color.White)
                 }
                 Text(
                     text = stringResource(Res.string.tolerances),
@@ -233,7 +234,7 @@ fun TolerancesScreen(onBack: () -> Unit, repository: MainRepository, onNavigateT
                                 unfocusedContainerColor = Color(0x33000000),
                                 focusedContainerColor = Color(0x33000000)
                             ),
-                            modifier = Modifier.menuAnchor().fillMaxWidth().height(64.dp)
+                            modifier = Modifier.menuAnchor(type = MenuAnchorType.PrimaryNotEditable).fillMaxWidth().height(64.dp)
                         )
                         ExposedDropdownMenu(
                             expanded = expandedHoleDropdown,
@@ -291,7 +292,7 @@ fun TolerancesScreen(onBack: () -> Unit, repository: MainRepository, onNavigateT
                                 unfocusedContainerColor = Color(0x33000000),
                                 focusedContainerColor = Color(0x33000000)
                             ),
-                            modifier = Modifier.menuAnchor().fillMaxWidth().height(64.dp)
+                            modifier = Modifier.menuAnchor(type = MenuAnchorType.PrimaryNotEditable).fillMaxWidth().height(64.dp)
                         )
                         ExposedDropdownMenu(
                             expanded = expandedShaftDropdown,

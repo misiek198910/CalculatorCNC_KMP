@@ -13,6 +13,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Delete
@@ -114,12 +115,11 @@ fun MyToolsScreen(
             )
 
             Column(modifier = Modifier.fillMaxSize().padding(paddingValues)) {
-                // Nagłówek i wyszukiwarka
                 Row(
                     modifier = Modifier.fillMaxWidth().background(ApplicationNewBlue).padding(12.dp),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    IconButton(onClick = onBack) { Icon(Icons.Default.ArrowBack, contentDescription = null, tint = Color.White) }
+                    IconButton(onClick = onBack) { Icon(imageVector = Icons.AutoMirrored.Filled.ArrowBack, contentDescription = null, tint = Color.White) }
                     Text("Moje Narzędzia", color = Color.White, fontSize = 18.sp, fontWeight = FontWeight.Bold, modifier = Modifier.padding(start = 8.dp))
                     Spacer(modifier = Modifier.weight(1f))
                     Text("${filteredTools.size}", color = Color(0xFFBDBDBD), fontSize = 16.sp, fontWeight = FontWeight.Bold)

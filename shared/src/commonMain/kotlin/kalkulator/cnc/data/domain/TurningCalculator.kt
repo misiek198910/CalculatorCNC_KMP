@@ -24,7 +24,6 @@ object TurningCalculator {
     ): TurningCalculationResult {
         val calcSys = if (isMetric) 1000 else 12
 
-        // Walidacja pustych zer (poza specyficznym trybem obliczania stożka)
         if (vals.any { it <= 0.0 } && operationIndex != 6) {
             return TurningCalculationResult(error = "Wypełnij poprawnie wszystkie wymagane pola.")
         }

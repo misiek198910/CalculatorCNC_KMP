@@ -166,6 +166,19 @@
     <string name="vc_expert_min">Seleziona Minimo: Se hai un bloccaggio instabile, un forte sbalzo dell\'utensile o lavori senza lubrificazione.</string>
     <string name="vc_expert_opt">Seleziona Ottimo: Condizioni di lavoro standard.</string>
     <string name="vc_expert_max">Seleziona Massimo: Macchina nuova, bloccaggio molto rigido e lubrificazione ad alta pressione.</string>
+    <string name="error_fill_required">Compila correttamente tutti i campi richiesti.</string>
+    <string name="error_unknown_operation">Operazione sconosciuta.</string>
+    <string name="error_calc_exception">Errore di calcolo: %s</string>
+    <string name="error_hardness_missing">Inserisci un valore di durezza.</string>
+    <string name="error_hardness_multiple">Puoi compilare solo un campo alla volta.</string>
+    <string name="error_hardness_range">Valore fuori dall\'intervallo di conversione.</string>
+
+    <!-- Billing-->
+    <string name="billing_error_canceled">Acquisto annullato.</string>
+    <string name="billing_error_general">Errore: %s</string>
+    <string name="billing_error_offer_not_found">Offerta selezionata non trovata (%s).</string>
+    <string name="billing_error_auth">Errore di autorizzazione: %s</string>
+
     <!-- Baza Danych-->
     <string name="app_database_download">Download del database…</string>
     <string name="app_database_download_eror">Si è verificato un errore sconosciuto.</string>

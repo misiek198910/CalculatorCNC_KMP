@@ -1,6 +1,8 @@
 package kalkulator.cnc.data.domain
 
 import kotlin.math.PI
+import calculatorcnc.shared.generated.resources.*
+import org.jetbrains.compose.resources.StringResource
 
 data class CalculationResult(
     val f: Double = 0.0,
@@ -14,7 +16,8 @@ data class CalculationResult(
     val isHardnessMode: Boolean = false,
     val isCenterMode: Boolean = false,
     val isSawMode: Boolean = false,
-    val error: String? = null
+    val errorRes: StringResource? = null,
+    val errorArg: String? = null
 )
 
 object MillingCalculator {
@@ -25,19 +28,18 @@ object MillingCalculator {
     ): CalculationResult {
         val calcSys = if (isMetric) 1000 else 12
 
-        // Walidacja pustych zer (poza specyficznymi trybami)
         if (operationIndex != 8 && operationIndex != 9 && vals.any { it <= 0.0 }) {
-            return CalculationResult(error = "Wypełnij poprawnie wszystkie wymagane pola.")
+            return CalculationResult(errorRes = Res.string.error_fill_required)
         }
 
         return try {
             when (operationIndex) {
-                0 -> { // Frezowanie
+                0 -> {
                     val s = (vals[0] * calcSys) / (PI * vals[1])
                     val f = vals[2] * vals[3] * s
                     CalculationResult(f = f, s = s)
                 }
-                1, 7 -> { // Gwintowanie / Wytaczanie
+                1, 7 -> {
                     val s = (vals[0] * calcSys) / (PI * vals[1])
                     val f = vals[2] * s
                     CalculationResult(f = f, s = s)
@@ -61,17 +63,20 @@ object MillingCalculator {
                 6 -> CalculationResult(f = vals[2] * ((vals[0] - vals[1]) / vals[0]))
                 8 -> CalculationResult(center = (vals[0] + vals[1]) / 2.0, isCenterMode = true)
                 9 -> handleHardness(vals)
-                else -> CalculationResult(error = "Nieznana operacja")
+                else -> CalculationResult(errorRes = Res.string.error_unknown_operation)
             }
         } catch (e: Exception) {
-            CalculationResult(error = "Błąd obliczeń: ${e.message}")
+            CalculationResult(
+                errorRes = Res.string.error_calc_exception,
+                errorArg = e.message ?: "Unknown"
+            )
         }
     }
 
     private fun handleHardness(vals: List<Double>): CalculationResult {
         val filledCount = vals.count { it > 0.0 }
-        if (filledCount == 0) return CalculationResult(error = "Wprowadź wartość twardości.")
-        if (filledCount > 1) return CalculationResult(error = "Możesz wypełnić tylko jedno pole naraz.")
+        if (filledCount == 0) return CalculationResult(errorRes = Res.string.error_hardness_missing)
+        if (filledCount > 1) return CalculationResult(errorRes = Res.string.error_hardness_multiple)
 
         val inputIndex = vals.indexOfFirst { it > 0.0 }
         val res = HardnessConverter.calculate(inputIndex, vals[inputIndex])
@@ -82,7 +87,7 @@ object MillingCalculator {
                 isHardnessMode = true
             )
         } else {
-            CalculationResult(error = "Wartość poza zakresem konwersji.")
+            CalculationResult(errorRes = Res.string.error_hardness_range)
         }
     }
 }

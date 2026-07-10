@@ -25,8 +25,8 @@ extensions.configure<ApplicationExtension> {
         applicationId = "kalkulator.cnc"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
-        versionCode = 96
-        versionName = "4.3.2"
+        versionCode = 97
+        versionName = "4.3.3"
 
         manifestPlaceholders["adMobAppId"] = ""
     }

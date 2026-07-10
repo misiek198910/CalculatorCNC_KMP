@@ -3,13 +3,10 @@ package kalkulator.cnc.data.domain
 object TolerancesCalculator {
 
     private val allTolerances = ToleranceData.getIsoTolerances()
-
-    // Metody pobierające etykiety
     fun getHoleLabels(): List<String> = allTolerances.filter { it.isHole }.map { it.label }
     fun getShaftLabels(): List<String> = allTolerances.filter { !it.isHole }.map { it.label }
 
     fun calculateFit(diameter: Double, holeLabel: String, shaftLabel: String): FitResult? {
-        // Logika skopiowana z Twojego kodu
         val holeDevs = findDeviations(holeLabel, diameter, true) ?: return null
         val shaftDevs = findDeviations(shaftLabel, diameter, false) ?: return null
 

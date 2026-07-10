@@ -166,6 +166,19 @@
     <string name="vc_expert_min">Sélectionner Minimum : Si votre montage est instable, si l\'outil a un grand porte-à-faux ou si vous travaillez sans lubrification.</string>
     <string name="vc_expert_opt">Sélectionner Optimum : Conditions de travail standard.</string>
     <string name="vc_expert_max">Sélectionner Maximum : Machine neuve, montage très rigide et lubrification haute pression.</string>
+    <string name="error_fill_required">Veuillez remplir correctement tous les champs obligatoires.</string>
+    <string name="error_unknown_operation">Opération inconnue.</string>
+    <string name="error_calc_exception">Erreur de calcul : %s</string>
+    <string name="error_hardness_missing">Veuillez entrer une valeur de dureté.</string>
+    <string name="error_hardness_multiple">Vous ne pouvez remplir qu'un seul champ à la fois.</string>
+    <string name="error_hardness_range">Valeur hors de la plage de conversion.</string>
+
+    <!-- Billing-->
+    <string name="billing_error_canceled">Achat annulé.</string>
+    <string name="billing_error_general">Erreur : %s</string>
+    <string name="billing_error_offer_not_found">Offre sélectionnée introuvable (%s).</string>
+    <string name="billing_error_auth">Erreur d\'autorisation : %s</string>
+
     <!-- Baza Danych-->
     <string name="app_database_download">Téléchargement de la base de données…</string>
     <string name="app_database_download_eror">Une erreur inconnue est survenue.</string>

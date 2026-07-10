@@ -11,6 +11,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.KeyboardArrowDown
@@ -190,12 +191,12 @@ fun MillingScreen(
                 value = operations[selectedOperationIndex],
                 onValueChange = {},
                 readOnly = true,
-                label = { Text("Rodzaj obliczeń:") }, // Zrzut ekranu sugerował tę etykietę
+                label = { Text("Rodzaj obliczeń:") },
                 trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expandedDropdown) },
                 colors = OutlinedTextFieldDefaults.colors(
                     unfocusedContainerColor = Color(0x1AFFFFFF),
                     focusedContainerColor = Color(0x1AFFFFFF),
-                    unfocusedBorderColor = Color(0x40FFFFFF), // Dodana widoczna ramka!
+                    unfocusedBorderColor = Color(0x40FFFFFF),
                     focusedBorderColor = Color.White,
                     focusedTextColor = Color.White,
                     unfocusedTextColor = Color.White,
@@ -203,7 +204,7 @@ fun MillingScreen(
                     unfocusedLabelColor = Color(0xFFBDBDBD)
                 ),
                 shape = RoundedCornerShape(8.dp),
-                modifier = Modifier.menuAnchor().fillMaxWidth()
+                modifier = Modifier.menuAnchor(type = MenuAnchorType.PrimaryNotEditable).fillMaxWidth()
             )
             ExposedDropdownMenu(
                 expanded = expandedDropdown,
@@ -480,7 +481,7 @@ fun MillingScreen(
                 ) {
                     IconButton(onClick = onBack) {
                         Icon(
-                            imageVector = Icons.Default.ArrowBack,
+                            imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                             contentDescription = stringResource(Res.string.back),
                             tint = Color.White
                         )

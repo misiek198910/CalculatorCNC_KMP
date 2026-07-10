@@ -166,6 +166,19 @@
     <string name="vc_expert_min">Seleccionar Mínimo: Si tiene una fijación inestable, voladizo largo de la herramienta o trabaja sin refrigeración.</string>
     <string name="vc_expert_opt">Seleccionar Óptimo: Condiciones de trabajo estándar.</string>
     <string name="vc_expert_max">Seleccionar Máximo: Máquina nueva, fijación muy rígida y refrigeración a alta presión.</string>
+    <string name="error_fill_required">Por favor, rellene correctamente todos los campos obligatorios.</string>
+    <string name="error_unknown_operation">Operación desconocida.</string>
+    <string name="error_calc_exception">Error de cálculo: %s</string>
+    <string name="error_hardness_missing">Introduzca un valor de dureza.</string>
+    <string name="error_hardness_multiple">Solo puede rellenar un campo a la vez.</string>
+    <string name="error_hardness_range">Valor fuera del rango de conversión.</string>
+
+    <!-- Billing-->
+    <string name="billing_error_canceled">Compra cancelada.</string>
+    <string name="billing_error_general">Error: %s</string>
+    <string name="billing_error_offer_not_found">Oferta seleccionada no encontrada (%s).</string>
+    <string name="billing_error_auth">Error de autorización: %s</string>
+
     <!-- Baza Danych-->
     <string name="app_database_download">Descargando la base de datos…</string>
     <string name="app_database_download_eror">Ocurrió un error desconocido.</string>

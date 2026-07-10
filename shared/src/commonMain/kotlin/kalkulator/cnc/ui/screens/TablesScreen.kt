@@ -10,6 +10,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -109,7 +110,7 @@ fun TablesScreen(onBack: () -> Unit, repository: MainRepository, initialSpinnerI
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 IconButton(onClick = onBack) {
-                    Icon(imageVector = Icons.Default.ArrowBack, contentDescription = stringResource(Res.string.back), tint = Color.White)
+                    Icon(imageVector = Icons.AutoMirrored.Filled.ArrowBack, contentDescription = stringResource(Res.string.back), tint = Color.White)
                 }
 
                 Text(
@@ -147,7 +148,7 @@ fun TablesScreen(onBack: () -> Unit, repository: MainRepository, initialSpinnerI
                                 unfocusedTextColor = Color.White
                             ),
                             shape = RoundedCornerShape(8.dp),
-                            modifier = Modifier.menuAnchor().fillMaxWidth().height(50.dp)
+                            modifier = Modifier.menuAnchor(type = MenuAnchorType.PrimaryNotEditable).fillMaxWidth().height(50.dp)
                         )
                         ExposedDropdownMenu(
                             expanded = expandedDropdown,

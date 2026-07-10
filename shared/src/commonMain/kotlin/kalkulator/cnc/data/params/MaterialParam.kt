@@ -33,9 +33,3 @@ fun getMaterialsList(): List<MaterialParam> {
     )
 }
 
-@Composable
-fun getIsoGroupForMaterial(materialName: String?): String {
-    if (materialName.isNullOrBlank()) return ""
-    val list = getMaterialsList()
-    return list.find { it.name.equals(materialName, ignoreCase = true) }?.isoGroup ?: ""
-}

@@ -166,6 +166,18 @@
     <string name="vc_expert_min">Wybierz Minimum: Jeśli masz niestabilne mocowanie, długie narzędzie lub pracujesz bez chłodzenia.</string>
     <string name="vc_expert_opt">Wybierz Optimum: Standardowe warunki pracy.</string>
     <string name="vc_expert_max">Wybierz Maximum: Nowa maszyna, bardzo sztywne mocowanie i intensywne chłodzenie.</string>
+    <string name="error_fill_required">Wypełnij poprawnie wszystkie wymagane pola.</string>
+    <string name="error_unknown_operation">Nieznana operacja.</string>
+    <string name="error_calc_exception">Błąd obliczeń: %s</string>
+    <string name="error_hardness_missing">Wprowadź wartość twardości.</string>
+    <string name="error_hardness_multiple">Możesz wypełnić tylko jedno pole naraz.</string>
+    <string name="error_hardness_range">Wartość poza zakresem konwersji.</string>
+
+    <!-- Billing-->
+    <string name="billing_error_canceled">Anulowano zakup.</string>
+    <string name="billing_error_general">Błąd: %s</string>
+    <string name="billing_error_offer_not_found">Nie znaleziono wybranej oferty (%s).</string>
+    <string name="billing_error_auth">Błąd autoryzacji: %s</string>
 
     <!-- Baza Danych-->
     <string name="app_database_download">Pobieranie bazy danych…</string>

@@ -133,7 +133,7 @@ private fun DropdownSelector(
                 unfocusedContainerColor = Color(0x1AFFFFFF),
                 focusedContainerColor = Color(0x1AFFFFFF),
             ),
-            modifier = Modifier.menuAnchor().fillMaxWidth()
+            modifier = Modifier.menuAnchor(type = MenuAnchorType.PrimaryNotEditable).fillMaxWidth()
         )
 
         ExposedDropdownMenu(

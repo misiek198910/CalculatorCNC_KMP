@@ -2,7 +2,6 @@ package kalkulator.cnc.data
 
 import kalkulator.cnc.data.dao.CncToolDao
 import kalkulator.cnc.remote.ApiService
-import kalkulator.cnc.remote.NewsResponse
 import kotlinx.coroutines.flow.Flow
 import kalkulator.cnc.data.dao.SubscriptionDao
 import kalkulator.cnc.entity.ThreadEntity
@@ -24,17 +23,9 @@ class MainRepository(
     private val threadDao: ThreadDao,
     private val userToolDao: UserToolDao
 ) {
-    private val TAG = "[CNC_LOG]"
-
-    suspend fun getNews(): List<NewsResponse> {
-        return apiService.getNewsFeed() ?: emptyList()
-    }
 
     suspend fun syncDatabase(systemLanguage: String, onProgress: (Int) -> Unit): Boolean {
-
         initThreadsIfEmpty()
-
-        println("$TAG Rozpoczynam pobieranie rekordów z serwera dla języka: $systemLanguage...")
 
         return try {
             val records = apiService.getCncDatabase(lang = systemLanguage, since = null) { progress ->
@@ -42,7 +33,6 @@ class MainRepository(
             }
 
             if (records != null) {
-                println("$TAG Pomyślnie pobrano ${records.size} rekordów! Zapisuję do lokalnej bazy Room...")
                 val entities = records.map { record ->
                     CncToolEntity(
                         articleNumber = record.articleNumber ?: "",
@@ -60,16 +50,11 @@ class MainRepository(
 
                 cncToolDao.deleteAll()
                 cncToolDao.insertAll(entities)
-
-                println("$TAG Zapis do bazy zakończony sukcesem!")
                 true
             } else {
-                println("$TAG Błąd: Funkcja getCncDatabase zwróciła null. Sprawdź logi z wewnątrz ApiService.")
                 false
             }
         } catch (e: Exception) {
-            println("$TAG 🔴 KRYTYCZNY BŁĄD POBIERANIA: ${e.message}")
-            e.printStackTrace()
             false
         }
     }
@@ -77,12 +62,9 @@ class MainRepository(
     @OptIn(ExperimentalResourceApi::class)
     suspend fun initThreadsIfEmpty() {
         try {
-
             val count = threadDao.getThreadsCount()
 
             if (count == 0) {
-                println("$TAG Tabela gwintów jest pusta. Ładuję z lokalnego pliku JSON...")
-
                 val bytes = Res.readBytes("files/threads.json")
                 val jsonString = bytes.decodeToString()
 
@@ -90,13 +72,8 @@ class MainRepository(
                 val threads = jsonParser.decodeFromString<List<ThreadEntity>>(jsonString)
 
                 threadDao.insertAll(threads)
-                println("$TAG Sukces! Załadowano ${threads.size} gwintów do lokalnej bazy.")
-            } else {
-                println("$TAG Tabele gwintów są już w bazie (ilość: $count). Pomijam ładowanie.")
             }
         } catch (e: Exception) {
-            println("$TAG 🔴 BŁĄD ŁADOWANIA GWINTÓW Z PLIKU: ${e.message}")
-            e.printStackTrace()
         }
     }
 
@@ -104,7 +81,6 @@ class MainRepository(
         return try {
             apiService.getPrivacyPolicy(serviceName)
         } catch (e: Exception) {
-            println("$TAG 🔴 BŁĄD POBIERANIA POLITYKI: ${e.message}")
             null
         }
     }
@@ -131,13 +107,6 @@ class MainRepository(
 
     private val _isMetricFlow = MutableStateFlow(true)
     val isMetricFlow: Flow<Boolean> = _isMetricFlow
-
-    fun setMetricSystem(isMetric: Boolean) {
-        _isMetricFlow.value = isMetric
-    }
-
-    private val _languageFlow = MutableStateFlow(0)
-    val languageFlow: Flow<Int> = _languageFlow
 
     val isPremiumFlow: Flow<Boolean> = subscriptionDao.observePremiumStatus().map { it ?: false }
 

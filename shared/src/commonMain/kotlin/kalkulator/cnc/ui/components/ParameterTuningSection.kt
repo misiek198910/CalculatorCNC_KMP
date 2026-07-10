@@ -28,7 +28,6 @@ fun ParameterTuningSection(
 ) {
     if (tool == null) return
 
-    // Dodajemy stan, który śledzi, czy użytkownik już coś zmienił
     var isEdited by remember { mutableStateOf(false) }
 
     LaunchedEffect(vcValue) {
@@ -43,7 +42,6 @@ fun ParameterTuningSection(
 
     val currentVc = vcValue.toDoubleOrNull() ?: 0.0
 
-    // Logika koloru: jeśli nie edytowano -> Biały, jeśli edytowano -> licz kolor
     val vcColor = if (!isEdited) {
         Color.White
     } else {

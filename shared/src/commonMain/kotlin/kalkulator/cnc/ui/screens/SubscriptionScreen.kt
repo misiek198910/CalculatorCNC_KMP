@@ -8,6 +8,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material3.*
@@ -47,8 +48,6 @@ fun SubscriptionScreen(
     LogScreenView(screenName = "SubscriptionScreen")
 
     val isPremium by repository.isPremiumFlow.collectAsState(initial = false)
-
-    // Odczytywanie cen z kontrolera (jeśli istnieje)
     val monthlyPrice by billingController?.monthlyPrice?.collectAsState(initial = "Ładowanie...") ?: remember { mutableStateOf("") }
     val yearlyPrice by billingController?.yearlyPrice?.collectAsState(initial = "Ładowanie...") ?: remember { mutableStateOf("") }
 
@@ -70,7 +69,6 @@ fun SubscriptionScreen(
                 .fillMaxSize()
                 .windowInsetsPadding(WindowInsets.systemBars)
         ) {
-            // Header
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -79,7 +77,7 @@ fun SubscriptionScreen(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 IconButton(onClick = onBack) {
-                    Icon(imageVector = Icons.Default.ArrowBack, contentDescription = "Back", tint = Color.White)
+                    Icon(imageVector = Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back", tint = Color.White)
                 }
                 Image(
                     painter = painterResource(Res.drawable.ads),
@@ -127,12 +125,11 @@ fun SubscriptionScreen(
                             modifier = Modifier.padding(top = 12.dp, bottom = 24.dp)
                         )
 
-                        // Lista korzyści
                         Box(
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .clip(RoundedCornerShape(12.dp))
-                                .background(Color(0x33000000)) // Odpowiednik bg_search_input
+                                .background(Color(0x33000000))
                                 .padding(16.dp)
                         ) {
                             Column {
@@ -171,8 +168,7 @@ fun SubscriptionScreen(
                         )
 
                         Spacer(modifier = Modifier.height(32.dp))
-
-                        // 🔥 ZAŚLEPKA DLA iOS LUB LOGIKA ANDROIDA
+                        
                         if (billingController == null) {
                             Text(
                                 text = "System subskrypcji dla systemu iOS jest w trakcie przygotowywania. Funkcje premium będą wkrótce dostępne.",

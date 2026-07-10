@@ -37,10 +37,8 @@ abstract class AppDatabase : RoomDatabase() {
 val MIGRATION_8_9 = object : Migration(8, 9) {
     override fun migrate(connection: SQLiteConnection) {
 
-        // 1. Tworzymy nową tabelę user_tools dokładnie tak, jak oczekuje Room
         connection.execSQL("CREATE TABLE IF NOT EXISTS `user_tools` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `workpiece` TEXT, `name` TEXT NOT NULL, `f` TEXT, `s` TEXT, `notes` TEXT)")
 
-        // 2. Kopiujemy dane ze starej tabeli tools do user_tools (jeśli stara tabela w ogóle istnieje)
         try {
             connection.execSQL(
                 """
@@ -56,21 +54,15 @@ val MIGRATION_8_9 = object : Migration(8, 9) {
                 """.trimIndent()
             )
         } catch (e: Exception) {
-            // Ignorujemy błąd - oznacza to, że u tego użytkownika z jakiegoś powodu
-            // stara tabela narzędzi już nie istnieje (np. wyczyścił dane).
+
         }
 
-        // 3. Usuwamy absolutnie wszystkie stare tabele, żeby nie było konfliktów przy walidacji
         connection.execSQL("DROP TABLE IF EXISTS `tools`")
         connection.execSQL("DROP TABLE IF EXISTS `subscription_status`")
         connection.execSQL("DROP TABLE IF EXISTS `threads`")
         connection.execSQL("DROP TABLE IF EXISTS `cnc_tools`")
-
-        // 4. Odtwarzamy resztę tabel (świeżutkie, zgodne w 100% z nowym schematem Room)
         connection.execSQL("CREATE TABLE IF NOT EXISTS `subscription_status` (`id` INTEGER NOT NULL, `isPremium` INTEGER NOT NULL, `purchaseToken` TEXT, PRIMARY KEY(`id`))")
-
         connection.execSQL("CREATE TABLE IF NOT EXISTS `threads` (`id` INTEGER NOT NULL, `category_id` INTEGER NOT NULL, `table_id` INTEGER NOT NULL, `name` TEXT NOT NULL, `pitch` TEXT NOT NULL, `hole_min` TEXT NOT NULL, `hole_max` TEXT NOT NULL, `hole_size` TEXT NOT NULL, PRIMARY KEY(`id`))")
-
         connection.execSQL("CREATE TABLE IF NOT EXISTS `cnc_tools` (`articleNumber` TEXT NOT NULL, `toolCategory` TEXT NOT NULL, `toolModelName` TEXT NOT NULL, `materialGroup` TEXT NOT NULL, `diameter` REAL NOT NULL, `flutesCount` INTEGER NOT NULL, `vcMin` REAL NOT NULL, `vcMax` REAL NOT NULL, `feedStep` REAL NOT NULL, `category_code` TEXT NOT NULL, PRIMARY KEY(`articleNumber`, `materialGroup`))")
     }
 }

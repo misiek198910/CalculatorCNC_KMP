@@ -2,13 +2,36 @@ package kalkulator.cnc.ui.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.WindowInsetsSides
+import androidx.compose.foundation.layout.defaultMinSize
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.only
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.systemBars
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.material3.*
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -22,25 +45,23 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.lifecycle.viewmodel.initializer
+import androidx.lifecycle.viewmodel.viewModelFactory
 import calculatorcnc.shared.generated.resources.Res
+import calculatorcnc.shared.generated.resources.back
 import calculatorcnc.shared.generated.resources.background_portrait
 import calculatorcnc.shared.generated.resources.notification
-import kalkulator.cnc.data.viewmodel.AppViewModel
-import kalkulator.cnc.entity.NewsItem
-import org.jetbrains.compose.resources.painterResource
-import kotlinx.datetime.Instant
-import kotlinx.datetime.TimeZone
-import kotlinx.datetime.toLocalDateTime
 import coil3.compose.AsyncImage
 import coil3.compose.AsyncImagePainter
 import kalkulator.cnc.data.MainRepository
-import androidx.lifecycle.viewmodel.initializer
-import androidx.lifecycle.viewmodel.viewModelFactory
-import calculatorcnc.shared.generated.resources.back
+import kalkulator.cnc.data.viewmodel.AppViewModel
+import kalkulator.cnc.entity.NewsItem
 import kalkulator.cnc.utils.LogScreenView
+import kotlinx.datetime.Instant
+import kotlinx.datetime.TimeZone
+import kotlinx.datetime.toLocalDateTime
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 
@@ -84,7 +105,7 @@ fun NewsScreen(onBack: () -> Unit, repository: MainRepository, adContent: @Compo
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     IconButton(onClick = onBack) {
-                        Icon(Icons.Default.ArrowBack, contentDescription = stringResource(Res.string.back), tint = Color.White)
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = stringResource(Res.string.back), tint = Color.White)
                     }
                     Spacer(modifier = Modifier.width(8.dp))
                     Image(painter = painterResource(Res.drawable.notification), contentDescription = null, modifier = Modifier.size(35.dp))
@@ -189,7 +210,6 @@ fun NewsItemCard(item: NewsItem) {
                         .clip(RoundedCornerShape(8.dp)),
                     contentScale = ContentScale.Crop,
                     onState = { state ->
-                        // Wyłapujemy błąd i wypisujemy w konsoli!
                         if (state is AsyncImagePainter.State.Error) {
                             println("[COIL_LOG] Błąd pobierania obrazka: ${state.result.throwable}")
                             state.result.throwable.printStackTrace()

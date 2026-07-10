@@ -166,6 +166,19 @@
     <string name="vc_expert_min">Minimum wählen: Bei instabiler Aufspannung, langem Werkzeugüberhang oder Trockenbearbeitung.</string>
     <string name="vc_expert_opt">Optimum wählen: Standardarbeitsbedingungen.</string>
     <string name="vc_expert_max">Maximum wählen: Neue Maschine, sehr starre Aufspannung und Hochdruckkühlung.</string>
+    <string name="error_fill_required">Bitte füllen Sie alle Pflichtfelder korrekt aus.</string>
+    <string name="error_unknown_operation">Unbekannte Operation.</string>
+    <string name="error_calc_exception">Berechnungsfehler: %s</string>
+    <string name="error_hardness_missing">Bitte geben Sie einen Härtewert ein.</string>
+    <string name="error_hardness_multiple">Sie können nur ein Feld gleichzeitig ausfüllen.</string>
+    <string name="error_hardness_range">Wert außerhalb des Umrechnungsbereichs.</string>
+
+    <!-- Billing-->
+    <string name="billing_error_canceled">Kauf abgebrochen.</string>
+    <string name="billing_error_general">Fehler: %s</string>
+    <string name="billing_error_offer_not_found">Ausgewähltes Angebot nicht gefunden (%s).</string>
+    <string name="billing_error_auth">Autorisierungsfehler: %s</string>
+
     <!-- Baza Danych-->
     <string name="app_database_download">Datenbank wird geladen…</string>
     <string name="app_database_download_eror">Ein unbekannter Fehler ist aufgetreten.</string>

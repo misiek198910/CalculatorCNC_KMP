@@ -14,7 +14,6 @@ fun LogScreenView(screenName: String) {
                 param("screen_name", screenName)
                 param("screen_class", screenName)
             }
-            println("[ANALYTICS] Zarejestrowano widok: $screenName")
         } catch (e: Exception) {
             println("[ANALYTICS] Błąd logowania ekranu: ${e.message}")
         }

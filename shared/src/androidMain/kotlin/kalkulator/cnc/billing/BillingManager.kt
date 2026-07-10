@@ -36,9 +36,14 @@ class BillingManager(
         if (billingResult.responseCode == BillingClient.BillingResponseCode.OK && purchases != null) {
             for (purchase in purchases) { handlePurchase(purchase) }
         } else if (billingResult.responseCode == BillingClient.BillingResponseCode.USER_CANCELED) {
-            listener?.onPurchaseError("Anulowano zakup.") // Przywrócono z oryginalnego pliku
+            scope.launch(Dispatchers.Main) {
+                listener?.onPurchaseError(getString(Res.string.billing_error_canceled))
+            }
         } else {
-            listener?.onPurchaseError("Błąd: ${billingResult.debugMessage}")
+            scope.launch(Dispatchers.Main) {
+                val errorMsg = getString(Res.string.billing_error_general).replace("%s", billingResult.debugMessage)
+                listener?.onPurchaseError(errorMsg)
+            }
         }
     }
 
@@ -91,7 +96,10 @@ class BillingManager(
         val offerDetails = productDetails.subscriptionOfferDetails?.find { it.basePlanId == basePlanId }
 
         if (offerDetails == null) {
-            listener?.onPurchaseError("Nie znaleziono wybranej oferty ($basePlanId).")
+            scope.launch(Dispatchers.Main) {
+                val errorMsg = getString(Res.string.billing_error_offer_not_found).replace("%s", basePlanId)
+                listener?.onPurchaseError(errorMsg)
+            }
             return
         }
 
@@ -132,9 +140,14 @@ class BillingManager(
             billingClient.acknowledgePurchase(params) { result ->
                 if (result.responseCode == BillingClient.BillingResponseCode.OK) {
                     updateLocalStatus(true, purchase.purchaseToken)
-                    listener?.onPurchaseAcknowledged()
+                    scope.launch(Dispatchers.Main) {
+                        listener?.onPurchaseAcknowledged()
+                    }
                 } else {
-                    listener?.onPurchaseError("Błąd autoryzacji: ${result.debugMessage}")
+                    scope.launch(Dispatchers.Main) {
+                        val errorMsg = getString(Res.string.billing_error_auth).replace("%s", result.debugMessage)
+                        listener?.onPurchaseError(errorMsg)
+                    }
                 }
             }
         } else if (purchase.isAcknowledged) {
@@ -163,7 +176,6 @@ class BillingManager(
 
         return when {
             basePlanId == BASE_PLAN_YEARLY_TRIAL && trialPhase != null && basePhase != null -> {
-                // Łączenie stringów bezpieczne dla Compose Multiplatform (bez formatowania %s)
                 getString(Res.string.subs_trial_button) + " " + price
             }
             basePlanId == SKU_REMOVE_ADS_MONTH && basePhase != null -> {
