@@ -132,7 +132,6 @@ class MainActivity : ComponentActivity() {
                             this@MainActivity,
                             BuildConfig.AD_START_UNIT_ID,
                             request,
-                            AppOpenAd.APP_OPEN_AD_ORIENTATION_PORTRAIT,
                             object : AppOpenAdLoadCallback() {
                                 override fun onAdLoaded(ad: AppOpenAd) {
                                     if (isCompleted) return
