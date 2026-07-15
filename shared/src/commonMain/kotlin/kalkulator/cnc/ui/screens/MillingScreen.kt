@@ -409,7 +409,10 @@ fun MillingScreen(
                         isMetric
                     )
                     isToolCardExpanded = false
-                    if (result != null) showResultDialog = true
+
+                    if (result?.errorRes == null) {
+                        showResultDialog = true
+                    }
                 },
                 modifier = Modifier.weight(1f).height(if (isLandscape) 48.dp else 56.dp),
                 shape = RoundedCornerShape(12.dp),

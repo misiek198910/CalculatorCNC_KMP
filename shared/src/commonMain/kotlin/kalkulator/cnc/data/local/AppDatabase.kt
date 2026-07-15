@@ -18,6 +18,10 @@ import kalkulator.cnc.entity.UserToolEntity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
 
+val sharedDatabase: AppDatabase by lazy {
+    createRoomDatabase(getDatabaseBuilder())
+}
+
 @Database(
     entities = [
         CncToolEntity::class,
@@ -73,6 +77,7 @@ fun createRoomDatabase(builder: RoomDatabase.Builder<AppDatabase>): AppDatabase 
         .fallbackToDestructiveMigration(true)
         .setDriver(BundledSQLiteDriver())
         .setQueryCoroutineContext(Dispatchers.IO)
+        .setJournalMode(RoomDatabase.JournalMode.WRITE_AHEAD_LOGGING)
         .build()
 }
 

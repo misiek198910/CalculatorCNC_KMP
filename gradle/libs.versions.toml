@@ -15,7 +15,7 @@ junit = "4.13.2"
 kotlin = "2.1.0"
 ksp = "2.1.0-1.0.29"
 room = "2.7.0-alpha13"
-sqlite = "2.5.0-alpha13"
+sqlite = "2.7.0"
 ktor = "3.0.1"
 firebase-gitlive = "2.1.0"
 google-services = "4.4.1"
@@ -56,8 +56,10 @@ room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
 room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
 sqlite-bundled = { module = "androidx.sqlite:sqlite-bundled", version.ref = "sqlite" }
 billing-ktx = { module = "com.android.billingclient:billing-ktx", version.ref = "billing" }
+
 play-services-ads = { group = "com.google.android.gms", name = "play-services-ads", version.ref = "play-services-ads" }
 play-services-ump = { module = "com.google.android.ump:user-messaging-platform", version.ref = "ump" }
+
 play-app-update = { module = "com.google.android.play:app-update", version.ref = "playUpdate" }
 play-app-update-ktx = { module = "com.google.android.play:app-update-ktx", version.ref = "playUpdate" }
 

@@ -2,6 +2,8 @@ package kalkulator.cnc.data.domain
 
 import kotlin.math.PI
 import kotlin.math.atan
+import calculatorcnc.shared.generated.resources.*
+import org.jetbrains.compose.resources.StringResource
 
 enum class TurningResultMode { STANDARD, TIME, VOLUME, ROUGHNESS, TAPER, NONE }
 
@@ -13,7 +15,8 @@ data class TurningCalculationResult(
     val ra: Double = 0.0,
     val angle: Double = 0.0,
     val mode: TurningResultMode = TurningResultMode.NONE,
-    val error: String? = null
+    val errorRes: StringResource? = null,
+    val errorArg: String? = null
 )
 
 object TurningCalculator {
@@ -25,7 +28,7 @@ object TurningCalculator {
         val calcSys = if (isMetric) 1000 else 12
 
         if (vals.any { it <= 0.0 } && operationIndex != 6) {
-            return TurningCalculationResult(error = "Wypełnij poprawnie wszystkie wymagane pola.")
+            return TurningCalculationResult(errorRes = Res.string.error_fill_required)
         }
 
         return try {
@@ -61,10 +64,13 @@ object TurningCalculator {
                     val angle = atan((vals[0] - vals[1]) / (2 * vals[2])) * (180.0 / PI)
                     TurningCalculationResult(angle = angle, mode = TurningResultMode.TAPER)
                 }
-                else -> TurningCalculationResult(error = "Nieznana operacja")
+                else -> TurningCalculationResult(errorRes = Res.string.error_unknown_operation)
             }
         } catch (e: Exception) {
-            TurningCalculationResult(error = "Błąd obliczeń: ${e.message}")
+            TurningCalculationResult(
+                errorRes = Res.string.error_calc_exception,
+                errorArg = e.message ?: "Unknown"
+            )
         }
     }
 }

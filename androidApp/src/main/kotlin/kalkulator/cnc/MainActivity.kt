@@ -28,6 +28,7 @@ import java.util.Locale
 import kalkulator.cnc.utils.UpdateHelper
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import kalkulator.cnc.data.local.sharedDatabase
 
 class MainActivity : ComponentActivity() {
 
@@ -57,7 +58,8 @@ class MainActivity : ComponentActivity() {
 
         appContext = applicationContext
 
-        val database = createRoomDatabase(getDatabaseBuilder())
+        val database = sharedDatabase
+
         billingManager = BillingManager(this, database.subscriptionDao())
 
         updateHelper = UpdateHelper(this)

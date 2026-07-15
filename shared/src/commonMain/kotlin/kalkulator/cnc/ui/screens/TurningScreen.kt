@@ -362,7 +362,13 @@ fun TurningScreen(
                 )
             }
         }
-        result?.error?.let { errorMsg ->
+        result?.errorRes?.let { resId ->
+            val errorMsg = if (result!!.errorArg != null) {
+                stringResource(resId).formatKmp(result!!.errorArg!!)
+            } else {
+                stringResource(resId)
+            }
+
             Text(
                 text = errorMsg,
                 color = MaterialTheme.colorScheme.error,
@@ -399,7 +405,10 @@ fun TurningScreen(
                     val numericValues = inputValues.map { it.toDoubleOrNull() ?: 0.0 }
                     result = TurningCalculator.calculate(selectedOperationIndex, numericValues, isMetric)
                     isToolCardExpanded = false
-                    if (result != null) showResultDialog = true
+
+                    if (result?.errorRes == null) {
+                        showResultDialog = true
+                    }
                 },
                 modifier = Modifier.weight(1f).height(if (isLandscape) 48.dp else 56.dp),
                 shape = RoundedCornerShape(12.dp),
