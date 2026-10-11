@@ -21,6 +21,7 @@
     <string name="calc_system">Sistema di calcolo</string>
     <string name="error">Impossibile trovare l\'application</string>
     <string name="privacy">Informativa sulla privacy</string>
+    <string name="statute">Termini e condizioni</string>
     <string name="app_restart">Riavvio richiesto</string>
     <string name="app_restart_dialog">Per cambiare la lingua dell\'applicazione, è necessario riavviarla.</string>
     <string name="app_restart_dialog_ok">Ok</string>
@@ -279,7 +280,7 @@
     <string name="subs_annual_button">Abbonamento annuale: </string>
     <string name="subs_monthly_button">Abbonamento mensile: </string>
     <string name="subs_buy_button">Attiva abbonamento</string>
-    <string name="subs_info">I primi 7 giorni sono completamente gratuiti. Puoi annullare l\'abbonamento in qualsiasi momento nelle impostazioni di Google Play; se lo fai prima della fine della settimana, non ti verrà addebitato alcun costo.</string>
+    <string name="subs_info">L\'abbonamento si rinnova automaticamente. Il pagamento verrà addebitato sul tuo account previa conferma. Puoi annullare l\'abbonamento in qualsiasi momento nelle impostazioni dell\'account dello store (App Store / Google Play) almeno 24 ore prima della fine del periodo in corso.</string>
     <string name="subs_trial_button">Inizia la prova gratuita di 7 giorni\npoi  / anno</string>
     <string name="info_0_m"><![CDATA[<b>Parametri di fresatura</b><br/><br/><b>VC</b> - Velocità di taglio [m/min]<br/><b>DC</b> - Diametro utensile [mm]<br/><b>FZ</b> - Avanzamento per dente [mm]<br/><b>Z</b> - Numero di denti (per le punte inserire 1)]]></string>
     <string name="info_0_inch"><![CDATA[<b>Parametri di fresatura (Pollici)</b><br/><br/><b>VC</b> - Velocità di taglio [piedi/min]<br/><b>DC</b> - Diametro utensile [pollici]<br/><b>FZ</b> - Avanzamento per dente [pollici]<br/><b>Z</b> - Numero di denti (per le punte inserire 1)]]></string>
@@ -382,4 +383,13 @@
         <item>Maschiatura a rullare</item>
         <item>Filettatura PG</item>
     </string-array>
+    <string name="remove_ads">Rimuovi annunci</string>
+    <string name="reward_title">Oppure provalo gratis</string>
+    <string name="reward_desc">Guarda un breve video e usa l\'app senza pubblicità per 24 ore.</string>
+    <string name="reward_button">Guarda un video – 24h senza pubblicità</string>
+    <string name="reward_active_until">Senza pubblicità attivo fino a %1$s</string>
+    <string name="reward_unavailable">L\'annuncio non è disponibile al momento. Riprova più tardi.</string>
+    <string name="reward_granted">Fatto! Goditi 24 ore senza pubblicità.</string>
+    <string name="reward_loading">Caricamento annuncio…</string>
+    <string name="tool_db_unavailable">Il database degli utensili non è al momento disponibile</string>
 </resources>

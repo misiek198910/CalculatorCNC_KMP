@@ -1,5 +1,6 @@
 package kalkulator.cnc.ui.screens
 
+import kalkulator.cnc.ads.LocalHideAds
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -191,7 +192,7 @@ fun MillingScreen(
                 value = operations[selectedOperationIndex],
                 onValueChange = {},
                 readOnly = true,
-                label = { Text("Rodzaj obliczeń:") },
+                label = { Text(stringResource(Res.string.calculate_txt)) },
                 trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expandedDropdown) },
                 colors = OutlinedTextFieldDefaults.colors(
                     unfocusedContainerColor = Color(0x1AFFFFFF),
@@ -264,7 +265,7 @@ fun MillingScreen(
                     ) {
                         Text(
                             text = when {
-                                !isDatabaseLoaded -> "Baza narzędzi obecnie niedostępna"
+                                !isDatabaseLoaded -> stringResource(Res.string.tool_db_unavailable)
                                 !selectedModel.isNullOrEmpty() -> selectedModel!!
                                 else -> stringResource(Res.string.tool_select_base)
                             },
@@ -558,14 +559,16 @@ fun MillingScreen(
 
                 actionButtons(false)
 
-                Box(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .background(Color(0x1A000000))
-                        .defaultMinSize(minHeight = 50.dp),
-                    contentAlignment = Alignment.Center
-                ) {
-                    adContent()
+                if (!LocalHideAds.current) {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .background(Color(0x1A000000))
+                            .defaultMinSize(minHeight = 50.dp),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        adContent()
+                    }
                 }
             }
         }

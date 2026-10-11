@@ -25,8 +25,8 @@ extensions.configure<ApplicationExtension> {
         applicationId = "kalkulator.cnc"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
-        versionCode = 99
-        versionName = "4.3.5"
+        versionCode = 100
+        versionName = "4.3.6"
 
         manifestPlaceholders["adMobAppId"] = ""
     }
@@ -59,6 +59,7 @@ extensions.configure<ApplicationExtension> {
             buildConfigField("String", "AD_BANNER_INLINE_ID", "\"ca-app-pub-3940256099942544/6300978111\"")
             buildConfigField("String", "ADMOB_FULLSCREEN_ID", "\"ca-app-pub-3940256099942544/1033173712\"")
             buildConfigField("String", "ADMOB_INLINE_ID", "\"ca-app-pub-3940256099942544/6300978111\"")
+            buildConfigField("String", "ADMOB_REWARDED_ID", "\"ca-app-pub-3940256099942544/5224354917\"")
         }
 
         getByName("release") {
@@ -70,6 +71,7 @@ extensions.configure<ApplicationExtension> {
             val adStartId = localProperties.getProperty("ADMOB_ADSTART_ID") ?: ""
             val fullscreenId = localProperties.getProperty("ADMOB_FULLSCREEN_ID") ?: ""
             val inlineId = localProperties.getProperty("ADMOB_INLINE_ID") ?: ""
+            val rewardedId = localProperties.getProperty("ADMOB_REWARDED_ID") ?: "ca-app-pub-8612826840770530/2773816579"
 
             manifestPlaceholders["adMobAppId"] = adMobAppId
 
@@ -78,6 +80,12 @@ extensions.configure<ApplicationExtension> {
             buildConfigField("String", "AD_START_UNIT_ID", "\"$adStartId\"")
             buildConfigField("String", "ADMOB_FULLSCREEN_ID", "\"$fullscreenId\"")
             buildConfigField("String", "ADMOB_INLINE_ID", "\"$inlineId\"")
+            buildConfigField("String", "ADMOB_REWARDED_ID", "\"$rewardedId\"")
+
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
 

@@ -21,6 +21,7 @@
     <string name="calc_system">Système de calcul</string>
     <string name="error">Impossible de trouver l\'application</string>
     <string name="privacy">Politique de confidentialité</string>
+    <string name="statute">Conditions générales</string>
     <string name="app_restart">Redémarrage requis</string>
     <string name="app_restart_dialog">Pour changer la langue de l\'application, un redémarrage est nécessaire.</string>
     <string name="app_restart_dialog_ok">Ok</string>
@@ -279,7 +280,7 @@
     <string name="subs_annual_button">Abonnement annuel : </string>
     <string name="subs_monthly_button">Abonnement mensuel : </string>
     <string name="subs_buy_button">Acheter l\'abonnement</string>
-    <string name="subs_info">Les 7 premiers jours sont entièrement gratuits. Vous pouvez annuler à tout moment dans les paramètres de Google Play – si vous le faites avant la fin de la semaine, aucun frais ne vous sera facturé.</string>
+    <string name="subs_info">L\'abonnement se renouvelle automatiquement. Le paiement sera prélevé sur votre compte dès la confirmation. Vous pouvez annuler votre abonnement à tout moment dans les paramètres de votre compte de la boutique (App Store / Google Play) au moins 24 heures avant la fin de la période en cours.</string>
     <string name="subs_trial_button">Commencer l\'essai gratuit de 7 jours\npuis  / an</string>
     <string name="info_0_m"><![CDATA[<b>Paramètres de fraisage</b><br/><br/><b>VC</b> - Vitesse de coupe [m/min]<br/><b>DC</b> - Diamètre de l\'outil [mm]<br/><b>FZ</b> - Avance par dent [mm]<br/><b>Z</b> - Nombre de dents (pour les forets, entrez 1)]]></string>
     <string name="info_0_inch"><![CDATA[<b>Paramètres de fraisage (Pouces)</b><br/><br/><b>VC</b> - Vitesse de coupe [pieds/min]<br/><b>DC</b> - Diamètre de l\'outil [pouce]<br/><b>FZ</b> - Avance par dent [pouce]<br/><b>Z</b> - Nombre de dents (pour les forets, entrez 1)]]></string>
@@ -368,4 +369,13 @@
         <item>Taraudage par déformation</item>
         <item>Filetage électrique (PG)</item>
     </string-array>
+    <string name="remove_ads">Supprimer les pubs</string>
+    <string name="reward_title">Ou essayez gratuitement</string>
+    <string name="reward_desc">Regardez une courte vidéo et utilisez l\'application sans publicité pendant 24 heures.</string>
+    <string name="reward_button">Regarder une pub – 24 h sans pub</string>
+    <string name="reward_active_until">Sans publicité actif jusqu\'à %1$s</string>
+    <string name="reward_unavailable">La publicité n\'est pas disponible pour le moment. Réessayez plus tard.</string>
+    <string name="reward_granted">C\'est fait ! Profitez de 24 heures sans publicité.</string>
+    <string name="reward_loading">Chargement de la publicité…</string>
+    <string name="tool_db_unavailable">La base d\'outils est actuellement indisponible</string>
 </resources>

@@ -1,25 +1,27 @@
 package kalkulator.cnc
 
-import androidx.compose.runtime.remember // <--- PAMIĘTAJ O IMPORCIE
 import androidx.compose.ui.window.ComposeUIViewController
-import kalkulator.cnc.data.local.createRoomDatabase
-import kalkulator.cnc.data.local.getDatabaseBuilder
+import kalkulator.cnc.data.local.sharedDatabase
 import kalkulator.cnc.ui.components.AdBanner
+import kalkulator.cnc.ui.screens.BillingController // Dodany import
 
 @Suppress("UNUSED")
 fun MainViewController(
+    billingController: BillingController,
     onShowStartAd: (onComplete: () -> Unit) -> Unit
 ) = ComposeUIViewController {
 
-    val database = remember { createRoomDatabase(getDatabaseBuilder()) }
-
     App(
-        database = database,
+        database = sharedDatabase,
+        billingController = billingController,
         adContent = {
             AdBanner(isPremium = false)
         },
         showInterstitialAd = {
             AdMobConfigBridge.showInterstitial?.invoke()
+        },
+        showRewardedAd = { onResult ->
+            AdMobConfigBridge.requestRewarded(onResult)
         },
         onShowStartAd = onShowStartAd
     )

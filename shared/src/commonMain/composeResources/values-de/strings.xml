@@ -21,6 +21,7 @@
     <string name="calc_system">Berechnungssystem</string>
     <string name="error">App konnte nicht gefunden werden</string>
     <string name="privacy">Datenschutzerklärung</string>
+    <string name="statute">AGB (Allgemeine Geschäftsbedingungen)</string>
     <string name="app_restart">Neustart erforderlich</string>
     <string name="app_restart_dialog">Um die App-Sprache zu ändern, ist ein Neustart der Anwendung erforderlich.</string>
     <string name="app_restart_dialog_ok">Ok</string>
@@ -279,7 +280,7 @@
     <string name="subs_annual_button">Jahresabo: </string>
     <string name="subs_monthly_button">Monatsabo: </string>
     <string name="subs_buy_button">Abonnieren</string>
-    <string name="subs_info">Die ersten 7 Tage sind völlig kostenlos. Sie können jederzeit in den Google Play-Einstellungen kündigen – wenn Sie dies vor Ablauf der ersten Woche tun, entstehen Ihnen keinerlei Kosten.</string>
+    <string name="subs_info">Das Abonnement verlängert sich automatisch. Die Zahlung wird Ihrem Konto nach Bestätigung belastet. Sie können Ihr Abonnement jederzeit in den Konto-Einstellungen des Stores (App Store / Google Play) spätestens 24 Stunden vor Ablauf des aktuellen Zeitraums kündigen.</string>
     <string name="subs_trial_button">7 Tage kostenlos testen\ndanach  / Jahr</string>
 
     <string name="info_0_m"><![CDATA[<b>Fräsparameter</b><br/><br/><b>Vc</b> - Schnittgeschwindigkeit [m/min]<br/><b>Dc</b> - Werkzeugdurchmesser [mm]<br/><b>fz</b> - Vorschub pro Zahn [mm]<br/><b>z</b> - Zähnezahl (für Bohrer 1 eingeben)]]></string>
@@ -382,4 +383,13 @@
         <item>Gewindefurchen</item>
         <item>Stahlpanzerrohrgewinde</item>
     </string-array>
+    <string name="remove_ads">Werbung entfernen</string>
+    <string name="reward_title">Oder kostenlos testen</string>
+    <string name="reward_desc">Sieh dir ein kurzes Video an und nutze die App 24 Stunden lang ohne Werbung.</string>
+    <string name="reward_button">Video ansehen – 24h werbefrei</string>
+    <string name="reward_active_until">Werbefrei aktiv bis %1$s</string>
+    <string name="reward_unavailable">Die Werbung ist derzeit nicht verfügbar. Bitte versuche es später erneut.</string>
+    <string name="reward_granted">Fertig! 24 Stunden ohne Werbung.</string>
+    <string name="reward_loading">Werbung wird geladen…</string>
+    <string name="tool_db_unavailable">Werkzeugdatenbank ist derzeit nicht verfügbar</string>
 </resources>

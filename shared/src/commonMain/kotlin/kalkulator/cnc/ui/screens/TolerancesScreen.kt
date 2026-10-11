@@ -1,5 +1,6 @@
 package kalkulator.cnc.ui.screens
 
+import kalkulator.cnc.ads.LocalHideAds
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -491,14 +492,16 @@ fun TolerancesScreen(onBack: () -> Unit, repository: MainRepository, onNavigateT
                 }
             }
 
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .background(Color(0x1A000000))
-                    .defaultMinSize(minHeight = 50.dp),
-                contentAlignment = Alignment.Center
-            ) {
-                adContent()
+            if (!LocalHideAds.current) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .background(Color(0x1A000000))
+                        .defaultMinSize(minHeight = 50.dp),
+                    contentAlignment = Alignment.Center
+                ) {
+                    adContent()
+                }
             }
         }
     }

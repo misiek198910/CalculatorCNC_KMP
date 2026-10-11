@@ -21,6 +21,7 @@
     <string name="calc_system">Sistema de cálculo</string>
     <string name="error">No se pudo encontrar la aplicación</string>
     <string name="privacy">Política de privacidad</string>
+    <string name="statute">Términos y condiciones</string>
     <string name="app_restart">Reinicio requerido</string>
     <string name="app_restart_dialog">Para cambiar el idioma de la aplicación, es necesario reiniciar la aplicación.</string>
     <string name="app_restart_dialog_ok">Ok</string>
@@ -279,7 +280,7 @@
     <string name="subs_annual_button">Suscripción anual: </string>
     <string name="subs_monthly_button">Suscripción mensual: </string>
     <string name="subs_buy_button">Comprar suscripción</string>
-    <string name="subs_info">Los primeros 7 días son completamente gratuitos. Puede cancelar en cualquier momento en los ajustes de Google Play; si lo hace antes de que termine la semana, no se le cobrará ningún coste.</string>
+    <string name="subs_info">La suscripción se renueva automáticamente. El pago se cargará a tu cuenta tras la confirmación. Puedes cancelar tu suscripción en cualquier momento en los ajustes de tu cuenta de la tienda (App Store / Google Play) al menos 24 horas antes de que finalice el periodo actual.</string>
     <string name="subs_trial_button">Comenzar prueba gratuita de 7 días\nluego  / año</string>
 
     <string name="info_0_m"><![CDATA[<b>Parámetros de fresado</b><br/><br/><b>VC</b> - Velocidad de corte [m/min]<br/><b>DC</b> - Diámetro de la herramienta [mm]<br/><b>FZ</b> - Avance por diente [mm]<br/><b>Z</b> - Número de dientes (para brocas ingrese 1)]]></string>
@@ -383,4 +384,13 @@
         <item>Roscado por laminación</item>
         <item>Rosca PG</item>
     </string-array>
+    <string name="remove_ads">Quitar anuncios</string>
+    <string name="reward_title">O pruébalo gratis</string>
+    <string name="reward_desc">Mira un vídeo corto y usa la aplicación sin anuncios durante 24 horas.</string>
+    <string name="reward_button">Ver anuncio – 24 h sin anuncios</string>
+    <string name="reward_active_until">Sin anuncios activo hasta %1$s</string>
+    <string name="reward_unavailable">El anuncio no está disponible ahora. Inténtalo más tarde.</string>
+    <string name="reward_granted">¡Listo! Disfruta de 24 horas sin anuncios.</string>
+    <string name="reward_loading">Cargando anuncio…</string>
+    <string name="tool_db_unavailable">La base de herramientas no está disponible en este momento</string>
 </resources>

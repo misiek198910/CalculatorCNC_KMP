@@ -2,37 +2,43 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CADisableMinimumFrameDurationOnPhone</key>
-	<true/>
     <key>AD_BANNER_ID</key>
     <string>$(AD_BANNER_ID)</string>
-
     <key>AD_BANNER_INLINE_ID</key>
     <string>$(AD_BANNER_INLINE_ID)</string>
-
-    <key>AD_START_ID</key>
-    <string>$(AD_START_ID)</string>
-
     <key>AD_FULLSCREEN_ID</key>
     <string>$(AD_FULLSCREEN_ID)</string>
-
+    <key>AD_START_ID</key>
+    <string>$(AD_START_ID)</string>
+    <key>APP_STORE_ID</key>
+    <string>$(APP_STORE_ID)</string>
+    <key>AD_REWARDED_ID</key>
+    <string>$(AD_REWARDED_ID)</string>
+    <key>CADisableMinimumFrameDurationOnPhone</key>
+    <true/>
     <key>GADApplicationIdentifier</key>
     <string>$(APP_ID)</string>
 
+    <key>NSUserTrackingUsageDescription</key>
+    <string>Kalkulator CNC requires access to your device's advertising identifier to deliver personalized, relevant advertisements. Allowing tracking helps us support ongoing development and keep the application free to use. Your data is handled securely and used solely for ad optimization.</string>
+
+    <key>ITSAppUsesNonExemptEncryption</key>
+    <false/>
+
     <key>SKAdNetworkItems</key>
     <array>
-        <dict>
-            <key>SKAdNetworkIdentifier</key>
-            <string>cstr6suwn9.skadnetwork</string>
-        </dict>
-        <dict>
-            <key>SKAdNetworkIdentifier</key>
-            <string>4fzdc2evr5.skadnetwork</string>
-        </dict>
-        <dict>
-            <key>SKAdNetworkIdentifier</key>
-            <string>4pfyvq9l8r.skadnetwork</string>
-        </dict>
+       <dict>
+          <key>SKAdNetworkIdentifier</key>
+          <string>cstr6suwn9.skadnetwork</string>
+       </dict>
+       <dict>
+          <key>SKAdNetworkIdentifier</key>
+          <string>4fzdc2evr5.skadnetwork</string>
+       </dict>
+       <dict>
+          <key>SKAdNetworkIdentifier</key>
+          <string>4pfyvq9l8r.skadnetwork</string>
+       </dict>
     </array>
 </dict>
 </plist>

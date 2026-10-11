@@ -9,14 +9,16 @@
 /* Begin PBXBuildFile section */
 		5033B4B92FFD2D3A004EC018 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5033B4B82FFD2D3A004EC018 /* FirebaseAnalytics */; };
 		50A2A09A2FFB1750004025FC /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 50A2A0992FFB1750004025FC /* GoogleMobileAds */; };
+		9067042C302A8093002FC35E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9067042B302A8093002FC35E /* StoreKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9067042B302A8093002FC35E /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		B3EF2606921E364BD13A340B /* KalkulatorCNC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KalkulatorCNC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		E923A98722C68346D588532D /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+		E923A98722C68346D588532D /* Exceptions for "iosApp" folder in "iosApp" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -29,7 +31,7 @@
 		1EA1AAA40EDAFBF03CC00B92 /* iosApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				E923A98722C68346D588532D /* PBXFileSystemSynchronizedBuildFileExceptionSet */,
+				E923A98722C68346D588532D /* Exceptions for "iosApp" folder in "iosApp" target */,
 			);
 			path = iosApp;
 			sourceTree = "<group>";
@@ -46,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9067042C302A8093002FC35E /* StoreKit.framework in Frameworks */,
 				5033B4B92FFD2D3A004EC018 /* FirebaseAnalytics in Frameworks */,
 				50A2A09A2FFB1750004025FC /* GoogleMobileAds in Frameworks */,
 			);
@@ -65,6 +68,7 @@
 		5033B4B72FFD2D3A004EC018 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9067042B302A8093002FC35E /* StoreKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -211,6 +215,7 @@
 					"@executable_path/Frameworks",
 				);
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = mivs.kalkulatorcnc;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -363,6 +368,7 @@
 					"@executable_path/Frameworks",
 				);
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = mivs.kalkulatorcnc;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

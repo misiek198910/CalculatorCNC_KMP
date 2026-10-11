@@ -35,6 +35,7 @@ import androidx.compose.ui.unit.sp
 import calculatorcnc.shared.generated.resources.*
 import kalkulator.cnc.data.MainRepository
 import kalkulator.cnc.entity.UserToolEntity
+import kalkulator.cnc.ads.AdFreeManager
 import kalkulator.cnc.ui.components.AdMobInline
 import kalkulator.cnc.ui.theme.ApplicationNewBlue
 import kalkulator.cnc.utils.LogScreenView
@@ -54,6 +55,7 @@ fun MyToolsScreen(
     LogScreenView(screenName = "MyToolsScreen")
 
     val isPremium by repository.isPremiumFlow.collectAsState(initial = false)
+    val isAdFree by AdFreeManager.isAdFreeFlow.collectAsState(initial = AdFreeManager.isAdFreeNow())
     val allTools by repository.getAllUserTools().collectAsState(initial = emptyList())
     val coroutineScope = rememberCoroutineScope()
     val focusManager = LocalFocusManager.current
@@ -67,7 +69,7 @@ fun MyToolsScreen(
                 (tool.workpiece?.contains(searchQuery, ignoreCase = true) ?: false)
     }
 
-    val mixedList = remember(filteredTools, isPremium) { createMixedList(filteredTools, isPremium) }
+    val mixedList = remember(filteredTools, isPremium, isAdFree) { createMixedList(filteredTools, isPremium || isAdFree) }
 
     Scaffold(
         containerColor = Color.Transparent,
@@ -88,7 +90,7 @@ fun MyToolsScreen(
             }
         },
         bottomBar = {
-            if (!isPremium) {
+            if (!isPremium && !isAdFree) {
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -120,7 +122,7 @@ fun MyToolsScreen(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     IconButton(onClick = onBack) { Icon(imageVector = Icons.AutoMirrored.Filled.ArrowBack, contentDescription = null, tint = Color.White) }
-                    Text("Moje Narzędzia", color = Color.White, fontSize = 18.sp, fontWeight = FontWeight.Bold, modifier = Modifier.padding(start = 8.dp))
+                    Text(stringResource(Res.string.tools), color = Color.White, fontSize = 18.sp, fontWeight = FontWeight.Bold, modifier = Modifier.padding(start = 8.dp))
                     Spacer(modifier = Modifier.weight(1f))
                     Text("${filteredTools.size}", color = Color(0xFFBDBDBD), fontSize = 16.sp, fontWeight = FontWeight.Bold)
                 }

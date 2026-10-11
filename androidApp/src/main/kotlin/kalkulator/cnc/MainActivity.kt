@@ -16,6 +16,8 @@ import com.google.android.gms.ads.appopen.AppOpenAd
 import com.google.android.gms.ads.appopen.AppOpenAd.AppOpenAdLoadCallback
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
+import com.google.android.gms.ads.rewarded.RewardedAd
+import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
 import com.google.android.ump.ConsentRequestParameters
 import com.google.android.ump.UserMessagingPlatform
 import kalkulator.cnc.billing.AndroidBillingController
@@ -35,6 +37,10 @@ class MainActivity : ComponentActivity() {
     private lateinit var billingManager: BillingManager
 
     private var mInterstitialAd: InterstitialAd? = null
+
+    private var mRewardedAd: RewardedAd? = null
+    private var isRewardedLoading = false
+    private var pendingRewardedShow: ((Boolean) -> Unit)? = null
 
     private lateinit var updateHelper: UpdateHelper
 
@@ -86,6 +92,7 @@ class MainActivity : ComponentActivity() {
                         showInterstitial()
                     }
                 },
+                showRewardedAd = { onResult -> showRewarded(onResult) },
                 onRequestConsent = { onComplete ->
                     val consentInformation =
                         UserMessagingPlatform.getConsentInformation(this@MainActivity)
@@ -182,6 +189,63 @@ class MainActivity : ComponentActivity() {
     private fun initializeMobileAds() {
         MobileAds.initialize(this) {}
         loadInterstitialAd()
+        loadRewardedAd()
+    }
+
+    private fun loadRewardedAd() {
+        if (mRewardedAd != null || isRewardedLoading) return
+        isRewardedLoading = true
+        RewardedAd.load(
+            this,
+            BuildConfig.ADMOB_REWARDED_ID,
+            AdRequest.Builder().build(),
+            object : RewardedAdLoadCallback() {
+                override fun onAdLoaded(ad: RewardedAd) {
+                    isRewardedLoading = false
+                    mRewardedAd = ad
+                    pendingRewardedShow?.let {
+                        pendingRewardedShow = null
+                        showRewarded(it)
+                    }
+                }
+
+                override fun onAdFailedToLoad(adError: LoadAdError) {
+                    isRewardedLoading = false
+                    mRewardedAd = null
+                    pendingRewardedShow?.let {
+                        pendingRewardedShow = null
+                        it(false)
+                    }
+                }
+            }
+        )
+    }
+
+    private fun showRewarded(onResult: (Boolean) -> Unit) {
+        val ad = mRewardedAd
+        if (ad == null) {
+            // Reklama jeszcze się nie załadowała - pokażemy ją zaraz po załadowaniu
+            pendingRewardedShow?.invoke(false)
+            pendingRewardedShow = onResult
+            loadRewardedAd()
+            return
+        }
+
+        var earned = false
+        ad.fullScreenContentCallback = object : FullScreenContentCallback() {
+            override fun onAdDismissedFullScreenContent() {
+                mRewardedAd = null
+                loadRewardedAd()
+                onResult(earned)
+            }
+
+            override fun onAdFailedToShowFullScreenContent(adError: AdError) {
+                mRewardedAd = null
+                loadRewardedAd()
+                onResult(false)
+            }
+        }
+        ad.show(this) { earned = true }
     }
 
     private fun loadInterstitialAd() {

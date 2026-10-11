@@ -1,5 +1,6 @@
 package kalkulator.cnc.ui.screens
 
+import kalkulator.cnc.ads.LocalHideAds
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -250,15 +251,17 @@ fun TablesScreen(onBack: () -> Unit, repository: MainRepository, initialSpinnerI
                 }
             }
             
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .background(Color(0x1A000000))
-                    .padding(top = 8.dp)
-                    .defaultMinSize(minHeight = 50.dp),
-                contentAlignment = Alignment.Center
-            ) {
-                adContent()
+            if (!LocalHideAds.current) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .background(Color(0x1A000000))
+                        .padding(top = 8.dp)
+                        .defaultMinSize(minHeight = 50.dp),
+                    contentAlignment = Alignment.Center
+                ) {
+                    adContent()
+                }
             }
         }
     }

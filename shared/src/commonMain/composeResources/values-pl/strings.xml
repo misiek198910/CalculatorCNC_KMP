@@ -21,6 +21,7 @@
     <string name="calc_system">System kalkulacji</string>
     <string name="error">Nie można odnaleść aplikacjii</string>
     <string name="privacy">Polityka prywatności</string>
+    <string name="statute">Regulamin</string>
     <string name="app_restart">Wymagany restart</string>
     <string name="app_restart_dialog">Aby zmienić język aplikacji, konieczne jest jej ponowne uruchomienie.</string>
     <string name="app_restart_dialog_ok">Ok</string>
@@ -279,7 +280,7 @@
     <string name="subs_annual_button">Subskrypcja roczna: </string>
     <string name="subs_monthly_button">Subskrypcja miesięczna: </string>
     <string name="subs_buy_button">Kup subskrypcję</string>
-    <string name="subs_info">Pierwsze 7 dni jest całkowicie darmowe. Możesz zrezygnować w dowolnym momencie w ustawieniach Google Play – jeśli zrobisz to przed upływem tygodnia, nie poniesiesz żadnych kosztów.</string>
+    <string name="subs_info">Subskrypcja odnawia się automatycznie. Płatność zostanie pobrana z Twojego konta po potwierdzeniu. Możesz anulować subskrypcję w dowolnym momencie w ustawieniach konta sklepu (App Store / Google Play) najpóźniej 24 godziny przed końcem bieżącego okresu.</string>
     <string name="subs_trial_button">Zacznij 7 dni za darmo\npotem  / rok</string>
 
     <!--  Info texts-->
@@ -386,4 +387,13 @@
         <item>Wygniatanie</item>
         <item>Gwint do rurek pancernych</item>
     </string-array>
+    <string name="remove_ads">Usuń reklamy</string>
+    <string name="reward_title">Albo wypróbuj za darmo</string>
+    <string name="reward_desc">Obejrzyj krótki film i korzystaj z aplikacji bez reklam przez 24 godziny.</string>
+    <string name="reward_button">Obejrzyj reklamę – 24h bez reklam</string>
+    <string name="reward_active_until">Brak reklam aktywny do %1$s</string>
+    <string name="reward_unavailable">Reklama jest teraz niedostępna. Spróbuj ponownie później.</string>
+    <string name="reward_granted">Gotowe! Korzystaj 24 godziny bez reklam.</string>
+    <string name="reward_loading">Ładowanie reklamy…</string>
+    <string name="tool_db_unavailable">Baza narzędzi obecnie niedostępna</string>
 </resources>

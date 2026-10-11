@@ -21,6 +21,7 @@
     <string name="calc_system">Measurement system</string>
     <string name="error">App could not be found</string>
     <string name="privacy">Privacy policy</string>
+    <string name="statute">Terms &amp; Conditions</string>
     <string name="app_restart">Restart required</string>
     <string name="app_restart_dialog">To change the app language, a restart is required.</string>
     <string name="app_restart_dialog_ok">Ok</string>
@@ -276,7 +277,7 @@
     <string name="subs_annual_button">Annual subscription: </string>
     <string name="subs_monthly_button">Monthly subscription: </string>
     <string name="subs_buy_button">Buy subscription</string>
-    <string name="subs_info">The first 7 days are completely free. You can cancel at any time in your store settings – if you do so before the week ends, you will not be charged.</string>
+    <string name="subs_info">Subscription renews automatically. Payment will be charged to your account upon confirmation. You can cancel your subscription at any time in your store account settings (App Store / Google Play) at least 24 hours before the end of the current period.</string>
     <string name="subs_trial_button">Start 7-day free trial\nthen  / year</string>
 
     <string name="info_0_m"><![CDATA[<b>Milling Parameters</b><br/><br/><b>VC</b> - Cutting speed [m/min]<br/><b>DC</b> - Tool diameter [mm]<br/><b>FZ</b> - Feed per tooth [mm]<br/><b>Z</b> - Number of teeth (for drill enter 1)]]></string>
@@ -379,4 +380,13 @@
         <item>Kneading</item>
         <item>Thread for armored pipes</item>
     </string-array>
+    <string name="remove_ads">Remove ads</string>
+    <string name="reward_title">Or try it for free</string>
+    <string name="reward_desc">Watch a short video and use the app without ads for 24 hours.</string>
+    <string name="reward_button">Watch ad – 24h without ads</string>
+    <string name="reward_active_until">Ad-free active until %1$s</string>
+    <string name="reward_unavailable">The ad is not available right now. Please try again later.</string>
+    <string name="reward_granted">Done! Enjoy 24 hours without ads.</string>
+    <string name="reward_loading">Loading ad…</string>
+    <string name="tool_db_unavailable">Tool database is currently unavailable</string>
 </resources>

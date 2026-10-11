@@ -1,5 +1,6 @@
 package kalkulator.cnc.ui.screens
 
+import kalkulator.cnc.ads.LocalHideAds
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -10,7 +11,6 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -32,6 +32,7 @@ import kalkulator.cnc.utils.changeLanguage
 import org.jetbrains.compose.resources.stringArrayResource
 import kalkulator.cnc.utils.getLanguagePreference
 import kalkulator.cnc.utils.getSystemPreference
+import kalkulator.cnc.utils.openStoreRating
 import kalkulator.cnc.utils.saveSystemPreference
 import kotlinx.coroutines.launch
 
@@ -42,6 +43,7 @@ fun SettingsScreen(
     onNavigateToPrivacy: () -> Unit,
     onLanguageChanged: () -> Unit,
     repository: kalkulator.cnc.data.MainRepository,
+    isIos: Boolean, // <--- DODANO FLAGĘ PLATFORMY
     adContent: @Composable () -> Unit = {}
 ) {
 
@@ -163,18 +165,19 @@ fun SettingsScreen(
                         SettingsCard(
                             iconRes = Res.drawable.rate,
                             title = stringResource(Res.string.settings_button3),
-                            onClick = {
-                                uriHandler.openUri("https://play.google.com/store/apps/details?id=kalkulator.cnc")
-                            }
+                            onClick = { openStoreRating() }
                         )
                     }
 
-                    item {
-                        SettingsCard(
-                            iconRes = Res.drawable.coffe,
-                            title = stringResource(Res.string.settings_button4),
-                            onClick = { uriHandler.openUri("https://buycoffee.to/mivs/MojaParafia") }
-                        )
+                    // Zewnętrzne wsparcie tylko na Androidzie - App Store nie pozwala na płatności poza StoreKit
+                    if (!isIos) {
+                        item {
+                            SettingsCard(
+                                iconRes = Res.drawable.coffe,
+                                title = stringResource(Res.string.settings_button4),
+                                onClick = { uriHandler.openUri("https://buycoffee.to/mivs/MojaParafia") }
+                            )
+                        }
                     }
 
                     item {
@@ -187,14 +190,16 @@ fun SettingsScreen(
                 }
             }
 
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .background(Color(0x1A000000))
-                    .defaultMinSize(minHeight = 50.dp),
-                contentAlignment = Alignment.Center
-            ) {
-                adContent()
+            if (!LocalHideAds.current) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .background(Color(0x1A000000))
+                        .defaultMinSize(minHeight = 50.dp),
+                    contentAlignment = Alignment.Center
+                ) {
+                    adContent()
+                }
             }
         }
     }

@@ -23,10 +23,15 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import calculatorcnc.shared.generated.resources.*
+import kalkulator.cnc.ads.AdFreeManager
 import kalkulator.cnc.data.MainRepository
 import kalkulator.cnc.ui.theme.ApplicationNewBlue
 import kalkulator.cnc.utils.LogScreenView
+import kalkulator.cnc.utils.termsOfServiceUrl
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.datetime.Instant
+import kotlinx.datetime.TimeZone
+import kotlinx.datetime.toLocalDateTime
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 interface BillingController {
@@ -42,14 +47,19 @@ interface BillingController {
 fun SubscriptionScreen(
     onBack: () -> Unit,
     repository: MainRepository,
-    billingController: BillingController?
+    billingController: BillingController?,
+    showRewardedAd: (onResult: (rewarded: Boolean) -> Unit) -> Unit = { it(false) }
 ) {
 
     LogScreenView(screenName = "SubscriptionScreen")
 
     val isPremium by repository.isPremiumFlow.collectAsState(initial = false)
-    val monthlyPrice by billingController?.monthlyPrice?.collectAsState(initial = "Ładowanie...") ?: remember { mutableStateOf("") }
-    val yearlyPrice by billingController?.yearlyPrice?.collectAsState(initial = "Ładowanie...") ?: remember { mutableStateOf("") }
+    val loadingText = stringResource(Res.string.loading)
+    val monthlyPriceRaw by billingController?.monthlyPrice?.collectAsState() ?: remember { mutableStateOf("") }
+    val yearlyPriceRaw by billingController?.yearlyPrice?.collectAsState() ?: remember { mutableStateOf("") }
+    val monthlyPrice = monthlyPriceRaw.ifBlank { loadingText }
+    val yearlyPrice = yearlyPriceRaw.ifBlank { loadingText }
+    val uriHandler = androidx.compose.ui.platform.LocalUriHandler.current
 
     Box(modifier = Modifier.fillMaxSize()) {
         Image(
@@ -177,6 +187,10 @@ fun SubscriptionScreen(
                                 textAlign = TextAlign.Center,
                                 modifier = Modifier.padding(top = 16.dp)
                             )
+
+                            if (!isPremium) {
+                                RewardedAdOffer(showRewardedAd = showRewardedAd)
+                            }
                         } else {
                             if (isPremium) {
                                 Button(
@@ -194,7 +208,14 @@ fun SubscriptionScreen(
                                     colors = ButtonDefaults.buttonColors(containerColor = ApplicationNewBlue),
                                     shape = RoundedCornerShape(12.dp)
                                 ) {
-                                    Text(monthlyPrice, color = Color.White, fontSize = 16.sp, fontWeight = FontWeight.Bold)
+                                    Row(
+                                        modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
+                                        horizontalArrangement = Arrangement.SpaceBetween,
+                                        verticalAlignment = Alignment.CenterVertically
+                                    ) {
+                                        Text(stringResource(Res.string.subs_monthly_button), color = Color.White, fontSize = 15.sp, fontWeight = FontWeight.Bold)
+                                        Text(monthlyPrice, color = Color.White, fontSize = 15.sp, fontWeight = FontWeight.Bold)
+                                    }
                                 }
 
                                 Spacer(modifier = Modifier.height(12.dp))
@@ -205,7 +226,14 @@ fun SubscriptionScreen(
                                     colors = ButtonDefaults.buttonColors(containerColor = ApplicationNewBlue),
                                     shape = RoundedCornerShape(12.dp)
                                 ) {
-                                    Text(yearlyPrice, color = Color.White, fontSize = 16.sp, fontWeight = FontWeight.Bold)
+                                    Row(
+                                        modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
+                                        horizontalArrangement = Arrangement.SpaceBetween,
+                                        verticalAlignment = Alignment.CenterVertically
+                                    ) {
+                                        Text(stringResource(Res.string.subs_annual_button), color = Color.White, fontSize = 15.sp, fontWeight = FontWeight.Bold)
+                                        Text(yearlyPrice, color = Color.White, fontSize = 15.sp, fontWeight = FontWeight.Bold)
+                                    }
                                 }
 
                                 Spacer(modifier = Modifier.height(12.dp))
@@ -217,13 +245,34 @@ fun SubscriptionScreen(
                                     Text(stringResource(Res.string.buy_back), color = Color.White, fontSize = 14.sp)
                                 }
 
+                                RewardedAdOffer(showRewardedAd = showRewardedAd)
+
                                 Text(
                                     text = stringResource(Res.string.subs_info),
                                     color = Color(0xFF9E9E9E),
-                                    fontSize = 12.sp,
+                                    fontSize = 10.sp,
                                     textAlign = TextAlign.Center,
-                                    modifier = Modifier.padding(top = 24.dp)
+                                    modifier = Modifier.padding(top = 16.dp, bottom = 4.dp, start = 16.dp, end = 16.dp),
+                                    lineHeight = 14.sp
                                 )
+
+                                Row(
+                                    modifier = Modifier.fillMaxWidth().padding(bottom = 16.dp),
+                                    horizontalArrangement = Arrangement.Center,
+                                    verticalAlignment = Alignment.CenterVertically
+                                ) {
+                                    TextButton(onClick = { uriHandler.openUri(termsOfServiceUrl()) }) {
+                                        Text(stringResource(Res.string.statute), color = Color(0xFFBDBDBD), fontSize = 10.sp)
+                                    }
+                                    Text(
+                                        text = "|",
+                                        color = Color(0xFFBDBDBD),
+                                        fontSize = 10.sp
+                                    )
+                                    TextButton(onClick = { uriHandler.openUri("https://privacypolicy.mivs.dev/kalkulator-cnc.html") }) {
+                                        Text(stringResource(Res.string.privacy), color = Color(0xFFBDBDBD), fontSize = 10.sp)
+                                    }
+                                }
                             }
                         }
                     }
@@ -231,4 +280,96 @@ fun SubscriptionScreen(
             }
         }
     }
+}
+
+@Composable
+private fun RewardedAdOffer(showRewardedAd: (onResult: (rewarded: Boolean) -> Unit) -> Unit) {
+    val adFreeUntil by AdFreeManager.adFreeUntil.collectAsState()
+    val isAdFree by AdFreeManager.isAdFreeFlow.collectAsState(initial = AdFreeManager.isAdFreeNow())
+    var isLoading by remember { mutableStateOf(false) }
+    var resultMessage by remember { mutableStateOf<String?>(null) }
+    val grantedText = stringResource(Res.string.reward_granted)
+    val unavailableText = stringResource(Res.string.reward_unavailable)
+
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(top = 16.dp)
+            .clip(RoundedCornerShape(12.dp))
+            .background(Color(0x33000000))
+            .padding(16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text(
+            text = stringResource(Res.string.reward_title),
+            color = Color.White,
+            fontSize = 16.sp,
+            fontWeight = FontWeight.Bold
+        )
+        Text(
+            text = stringResource(Res.string.reward_desc),
+            color = Color(0xFFBDBDBD),
+            fontSize = 13.sp,
+            textAlign = TextAlign.Center,
+            modifier = Modifier.padding(top = 6.dp, bottom = 12.dp)
+        )
+
+        if (isAdFree) {
+            Text(
+                text = stringResource(Res.string.reward_active_until, formatDateTime(adFreeUntil)),
+                color = Color(0xFF4CAF50),
+                fontSize = 14.sp,
+                fontWeight = FontWeight.Bold,
+                textAlign = TextAlign.Center
+            )
+        } else {
+            OutlinedButton(
+                onClick = {
+                    isLoading = true
+                    resultMessage = null
+                    showRewardedAd { rewarded ->
+                        isLoading = false
+                        if (rewarded) {
+                            AdFreeManager.grantReward()
+                            resultMessage = grantedText
+                        } else {
+                            resultMessage = unavailableText
+                        }
+                    }
+                },
+                enabled = !isLoading,
+                modifier = Modifier.fillMaxWidth().height(50.dp),
+                border = BorderStroke(1.dp, Color(0xFFFFD700)),
+                shape = RoundedCornerShape(12.dp)
+            ) {
+                if (isLoading) {
+                    CircularProgressIndicator(
+                        modifier = Modifier.size(18.dp),
+                        color = Color(0xFFFFD700),
+                        strokeWidth = 2.dp
+                    )
+                    Spacer(modifier = Modifier.width(8.dp))
+                    Text(stringResource(Res.string.reward_loading), color = Color.White, fontSize = 14.sp)
+                } else {
+                    Text(stringResource(Res.string.reward_button), color = Color(0xFFFFD700), fontSize = 14.sp, fontWeight = FontWeight.Bold)
+                }
+            }
+        }
+
+        resultMessage?.let {
+            Text(
+                text = it,
+                color = Color(0xFFBDBDBD),
+                fontSize = 12.sp,
+                textAlign = TextAlign.Center,
+                modifier = Modifier.padding(top = 8.dp)
+            )
+        }
+    }
+}
+
+private fun formatDateTime(epochMillis: Long): String {
+    val dt = Instant.fromEpochMilliseconds(epochMillis).toLocalDateTime(TimeZone.currentSystemDefault())
+    fun Int.pad() = toString().padStart(2, '0')
+    return "${dt.dayOfMonth.pad()}.${dt.monthNumber.pad()} ${dt.hour.pad()}:${dt.minute.pad()}"
 }

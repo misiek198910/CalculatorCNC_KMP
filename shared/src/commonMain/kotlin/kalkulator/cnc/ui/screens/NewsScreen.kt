@@ -1,5 +1,6 @@
 package kalkulator.cnc.ui.screens
 
+import kalkulator.cnc.ads.LocalHideAds
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -51,6 +52,7 @@ import androidx.lifecycle.viewmodel.viewModelFactory
 import calculatorcnc.shared.generated.resources.Res
 import calculatorcnc.shared.generated.resources.back
 import calculatorcnc.shared.generated.resources.background_portrait
+import calculatorcnc.shared.generated.resources.news
 import calculatorcnc.shared.generated.resources.notification
 import coil3.compose.AsyncImage
 import coil3.compose.AsyncImagePainter
@@ -110,7 +112,7 @@ fun NewsScreen(onBack: () -> Unit, repository: MainRepository, adContent: @Compo
                     Spacer(modifier = Modifier.width(8.dp))
                     Image(painter = painterResource(Res.drawable.notification), contentDescription = null, modifier = Modifier.size(35.dp))
                     Spacer(modifier = Modifier.width(8.dp))
-                    Text("Wiadomości", color = Color.White, fontSize = 18.sp, fontWeight = FontWeight.Bold)
+                    Text(stringResource(Res.string.news), color = Color.White, fontSize = 18.sp, fontWeight = FontWeight.Bold)
                 }
             }
         ) { padding ->
@@ -150,14 +152,16 @@ fun NewsScreen(onBack: () -> Unit, repository: MainRepository, adContent: @Compo
                     }
                 }
 
-                Box(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .background(Color(0x1A000000))
-                        .defaultMinSize(minHeight = 50.dp),
-                    contentAlignment = Alignment.Center
-                ) {
-                    adContent()
+                if (!LocalHideAds.current) {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .background(Color(0x1A000000))
+                            .defaultMinSize(minHeight = 50.dp),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        adContent()
+                    }
                 }
             }
         }
